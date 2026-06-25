@@ -1,5 +1,7 @@
 # proposal-ppt-skill
 
+[中文说明](./README.zh-CN.md) | English
+
 Stage-gated business proposal presentation skill for AI agents.
 
 `proposal-ppt` turns client briefs, tender files, research, brand materials, budgets, cases, and execution plans into a commercial proposal package:
