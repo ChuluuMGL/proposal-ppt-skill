@@ -1,0 +1,8 @@
+interface:
+  display_name: "Business Proposal Presentation"
+  short_description: "Stage-gated proposal decks and scripts"
+  brand_color: "#0E5E43"
+  default_prompt: "Use $proposal-ppt in guided mode to create a business proposal deck and presenter script from my brief."
+
+policy:
+  allow_implicit_invocation: true

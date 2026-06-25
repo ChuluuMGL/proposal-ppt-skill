@@ -1,0 +1,9 @@
+.DS_Store
+*.inspect.ndjson
+*.tmp
+*.log
+output/
+outputs/
+work/
+tmp/
+node_modules/

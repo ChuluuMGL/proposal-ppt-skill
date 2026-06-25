@@ -1,0 +1,33 @@
+{
+  "name": "proposal-ppt",
+  "display_name": "Business Proposal Presentation",
+  "description": "Create stage-gated commercial proposal PPT decks and presenter scripts from briefs, research, budgets, cases, timelines, and execution plans.",
+  "version": "0.1.1",
+  "author": "YUEYU TECH",
+  "license": "MIT",
+  "repository": "https://github.com/ChuluuMGL/proposal-ppt-skill",
+  "category": "business",
+  "keywords": [
+    "proposal-ppt",
+    "business proposal",
+    "proposal deck",
+    "pitch deck",
+    "commercial proposal",
+    "RFP",
+    "bid deck",
+    "tender presentation",
+    "提案PPT",
+    "商业提案",
+    "比稿PPT",
+    "竞标方案",
+    "方案PPT",
+    "逐字稿"
+  ],
+  "related_skills": [
+    {
+      "name": "yueyu-skill",
+      "repository": "https://github.com/ChuluuMGL/yueyu-skill",
+      "description": "Query YUEYU TECH company and marketing-service information."
+    }
+  ]
+}
