@@ -1,6 +1,6 @@
 ---
 name: proposal-ppt
-description: Create, write, design, edit, or audit commercial proposal presentations and presenter scripts. Use when the user asks for a proposal PPT, business proposal deck, pitch deck, bid/RFP deck, client proposal, tender presentation, annual operation plan deck, marketing/social/content proposal, execution plan deck, budget proposal, or a PPT plus逐字稿 from briefs, research, brand assets, budgets, cases, timelines, or existing PPTX files.
+description: Create, write, design, edit, or audit commercial proposal presentations and presenter scripts. Use when the user asks for a proposal PPT, business proposal deck, pitch deck, bid/RFP deck, client proposal, tender presentation, annual operation plan deck, marketing/social/content proposal, execution plan deck, budget proposal, style-rich proposal template, AI-generated proposal visuals, or a PPT plus逐字稿 from briefs, research, brand assets, budgets, cases, timelines, or existing PPTX files.
 ---
 
 # Proposal PPT
@@ -32,6 +32,9 @@ Load only the references needed for the current task:
 - For slide rhythm, whitespace balance, layout density, and page-to-page pacing, read `references/layout-rhythm.md`.
 - For visual direction, palette, typography, and PPT template use, read `references/visual-system.md`.
 - For default high-taste palette presets when no client VI is provided, read `references/palette-library.md`.
+- For style-rich proposal routes such as Swiss, product launch, fashion/beauty editorial, Japanese collage, cinematic photography, Web3/AI glass, ink, pixel, oil, or e-reader, read `references/style-systems.md`.
+- For AI-generated images, user assets, HTML/SVG-to-PPT hybrid backgrounds, and visual asset QA, read `references/asset-pipeline.md`.
+- For free/commercial-safe font pairing and fallbacks, read `references/font-system.md`.
 - For final file and script format, read `references/output-contract.md`.
 - For delivery QA and failure modes, read `references/quality-check.md`.
 
@@ -42,11 +45,11 @@ Use `assets/minimal-proposal-template.pptx` only as a fallback visual asset when
 Default to `guided` mode unless the user explicitly asks to generate everything directly.
 
 - `guided`: Use staged checkpoints. First return brief audit, winning thesis, chapter structure, page plan, proof objects, and visual direction for confirmation. After confirmation, build the PPTX and script.
-- `auto`: If the user says to proceed directly or is under time pressure, make reasonable assumptions, mark unknowns as待确认, and produce the full `.pptx` plus `.md`.
+- `auto`: If the user says to proceed directly or is under time pressure, make reasonable assumptions, mark unknowns as `待确认`, and produce the full `.pptx` plus `.md`.
 - `edit`: If the user provides an existing PPTX, audit and modify the deck instead of rebuilding from scratch unless the user asks for a rebuild.
 - `audit`: If the user asks for review only, do not generate a new deck. Return findings, page-level issues, and revision recommendations.
 
-In guided mode, ask only high-impact routing questions. Do not block on details that can be marked待确认.
+In guided mode, ask only high-impact routing questions. Do not block on details that can be marked `待确认`.
 
 ## Workflow
 
@@ -105,4 +108,6 @@ Follow `references/workflow.md` for the full stage-gate process. The high-level 
 - Do not make a PPT that requires the presenter to explain missing logic verbally. The visual argument must stand on its own.
 - Do not leave large empty placeholder frames or a visually dead lower third. If evidence is missing, mark the item compactly as `待确认` and rebalance the layout.
 - Do not make every slide dense. Insert deliberate breathing slides, section dividers, big-idea pages, or visual proof pages every 3-5 slides.
+- Do not treat a style as only a palette. If a rich style is chosen, adapt assets, typography, component language, proof objects, and page-type boundaries.
+- Do not present AI-generated visuals as real client proof. Mark them as conceptual when relevant.
 - Do not insert the skill author's company information into user decks unless the user explicitly asks to present under that company identity.

@@ -1,8 +1,8 @@
 {
   "name": "proposal-ppt",
   "display_name": "Business Proposal Presentation",
-  "description": "Create stage-gated commercial proposal PPT decks and presenter scripts with layout rhythm, palette presets, and proof-object QA.",
-  "version": "0.1.2",
+  "description": "Create stage-gated commercial proposal PPT decks and presenter scripts with layout rhythm, rich style systems, AI visual asset planning, font guidance, palette presets, and proof-object QA.",
+  "version": "0.1.3",
   "author": "YUEYU TECH",
   "license": "MIT",
   "repository": "https://github.com/ChuluuMGL/proposal-ppt-skill",
@@ -16,11 +16,17 @@
     "RFP",
     "bid deck",
     "tender presentation",
+    "style-rich deck",
+    "AI visuals",
+    "presentation style system",
+    "visual asset pipeline",
     "提案PPT",
     "商业提案",
     "比稿PPT",
     "竞标方案",
     "方案PPT",
+    "风格模板",
+    "视觉资产",
     "逐字稿"
   ],
   "related_skills": [

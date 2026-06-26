@@ -91,6 +91,8 @@ After finishing, report:
 - script MD path
 - whether the deck used client VI, a reference deck, or the minimal fallback template
 - selected palette and visual style family when no client VI/reference was provided
+- selected rich style system, font pairing, and asset pipeline when a style-rich route was used
+- whether generated/HTML/SVG assets were used, and whether they are editable or background-only
 - rhythm summary, including where breathing slides, section resets, or big-idea pages appear
 - tests/QA performed
 - unresolved assumptions

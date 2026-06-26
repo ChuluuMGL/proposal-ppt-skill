@@ -20,7 +20,7 @@ For each slide:
 - The proof object supports the title.
 - The slide has an obvious reason to be in this deck.
 - Long explanations are in the script, not the slide body.
-- Unknown data is marked as待确认/暂无公开数据/需客户确认.
+- Unknown data is marked as `待确认` / `暂无公开数据` / `需客户确认`.
 
 ## Evidence QA
 
@@ -43,6 +43,10 @@ For each slide:
 - No meaningless decoration, fake logos, low-resolution images, or stretched media.
 - The palette does not become a one-color monotone or cheap gradient theme.
 - When no VI is provided, a named palette from `palette-library.md` is selected and applied consistently.
+- If a rich style is selected, the deck changes more than color: typography, layout grammar, components, proof-object forms, and asset treatment all match the chosen style system.
+- Asset-heavy styles have real client assets, sourced assets, AI-generated conceptual images, or explicit placeholders; the deck does not fake photographic/editorial/ink/product quality with generic shapes alone.
+- HTML/SVG-generated style layers do not turn core business text, tables, budgets, KPI, or risk controls into uneditable screenshots unless the user accepts that tradeoff.
+- Free/commercial-safe fonts or documented fallbacks are used; no unlicensed commercial font dependency is required.
 
 ## Commercial QA
 

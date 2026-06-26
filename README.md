@@ -6,7 +6,7 @@
 [Simplified Chinese](./README.zh-CN.md) | English
 
 [![Skill](https://img.shields.io/badge/AI%20Skill-proposal--ppt-0E5E43)](./SKILL.md)
-[![Version](https://img.shields.io/badge/version-0.1.2-green)](./skill.json)
+[![Version](https://img.shields.io/badge/version-0.1.3-green)](./skill.json)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](./LICENSE)
 [![Template](https://img.shields.io/badge/template-PPTX-blue)](./assets/minimal-proposal-template.pptx)
 [![Workflow](https://img.shields.io/badge/workflow-stage--gated-purple)](./references/workflow.md)
@@ -22,6 +22,7 @@
 | Editable `.pptx` | A business proposal deck with a coherent storyline, slide-by-slide proof objects, visual system, and QA-ready layout. |
 | Presenter script `.md` | The proposal logic, section rhythm, slide-by-slide talk track, transition lines, and assumptions to confirm. |
 | Missing-information list | A clear list of unknowns that should be marked instead of invented. |
+| Style and asset plan | Optional rich style system, font pairing, asset plan, and AI-image/HTML/SVG background route when needed. |
 
 The purpose is not to make slides decorative. The purpose is to help the client understand why this proposal should be selected.
 
@@ -98,9 +99,13 @@ See [`references/proposal-routes.md`](./references/proposal-routes.md) for the f
 | [`references/layout-rhythm.md`](./references/layout-rhythm.md) | Slide density, whitespace balance, and deck pacing rules. |
 | [`references/visual-system.md`](./references/visual-system.md) | Visual families, typography, layout, chart, and screenshot rules. |
 | [`references/palette-library.md`](./references/palette-library.md) | Default high-taste palette presets when no client visual identity exists. |
+| [`references/style-systems.md`](./references/style-systems.md) | Rich style systems such as Swiss, launch minimal, editorial, Japanese collage, cinematic, and Web3/AI glass. |
+| [`references/asset-pipeline.md`](./references/asset-pipeline.md) | User assets, AI-generated visuals, HTML/SVG backgrounds, and image QA rules. |
+| [`references/font-system.md`](./references/font-system.md) | Free/commercial-safe font pairings and fallbacks. |
 | [`references/output-contract.md`](./references/output-contract.md) | Required PPTX and presenter-script output format. |
 | [`references/quality-check.md`](./references/quality-check.md) | Final QA checklist and common failure modes. |
 | [`assets/minimal-proposal-template.pptx`](./assets/minimal-proposal-template.pptx) | Neutral fallback PowerPoint template. |
+| [`assets/style-system-reference.pptx`](./assets/style-system-reference.pptx) | Reference PPTX showing deep style-system examples. |
 | [`agents/openai.yaml`](./agents/openai.yaml) | Codex/OpenAI-style skill UI metadata. |
 | [`skill.json`](./skill.json) | Machine-readable metadata for directories and marketplaces. |
 
@@ -176,6 +181,25 @@ Brief:
 ...
 ```
 
+### Style-Rich Proposal
+
+```text
+Use $proposal-ppt in guided mode to create a style-rich business proposal.
+
+Before generating PPTX, recommend:
+1. proposal route and winning thesis
+2. style system from style-systems.md
+3. font pairing and fallback
+4. visual asset plan, including user assets vs AI-generated conceptual assets
+5. page types that should not use the expressive style
+
+Visual direction:
+Japanese magazine collage / fashion-beauty editorial / Web3 AI glass / etc.
+
+Brief:
+...
+```
+
 ### Existing Deck Revision
 
 ```text
@@ -236,7 +260,7 @@ Yes, if they support skill folders or can read `SKILL.md`-style packages. Instal
 | Repository | `ChuluuMGL/proposal-ppt-skill` |
 | Format | Local skill folder with `SKILL.md`, references, assets, and metadata |
 | Primary output | `.pptx` + `.md` |
-| Bundled asset | Neutral fallback PowerPoint template |
+| Bundled assets | Neutral fallback PowerPoint template; style-system reference PPTX |
 | License | MIT |
 | Author | YUEYU TECH |
 
@@ -252,14 +276,18 @@ proposal-ppt-skill/
 ├── agents/
 │   └── openai.yaml
 ├── assets/
-│   └── minimal-proposal-template.pptx
+│   ├── minimal-proposal-template.pptx
+│   └── style-system-reference.pptx
 └── references/
+    ├── asset-pipeline.md
+    ├── font-system.md
     ├── output-contract.md
     ├── page-types.md
     ├── layout-rhythm.md
     ├── palette-library.md
     ├── proposal-routes.md
     ├── quality-check.md
+    ├── style-systems.md
     ├── visual-system.md
     └── workflow.md
 ```
@@ -295,5 +323,5 @@ MIT
     "name": "YUEYU TECH",
     "url": "https://www.yueyu.tech/"
   },
-  "softwareVersion": "0.1.2"
+  "softwareVersion": "0.1.3"
 } -->

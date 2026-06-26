@@ -1,10 +1,10 @@
 # Visual System
 
-Use client VI first. Use a user-provided reference deck before any fallback style. Use this guide only when no stronger visual source exists. For page density and rhythm, use `layout-rhythm.md`. For richer default color choices, use `palette-library.md`.
+Use client VI first. Use a user-provided reference deck before any fallback style. Use this guide only when no stronger visual source exists. For page density and rhythm, use `layout-rhythm.md`. For richer default color choices, use `palette-library.md`. For style-rich routes, use `style-systems.md`, `asset-pipeline.md`, and `font-system.md`.
 
 ## Visual Style Families
 
-Choose one primary family, then pick a specific palette from `palette-library.md`. Do not reuse the same green/gold palette for every proposal.
+Choose one primary family, then pick a specific palette from `palette-library.md`. If the user asks for a specific style such as magazine, launch, cinematic, Web3, pixel, ink, or beauty, choose a style system from `style-systems.md` instead of merely changing colors. Do not reuse the same green/gold palette for every proposal.
 
 ### corporate-trust
 
@@ -67,6 +67,8 @@ Preferred fonts:
 - Chinese: PingFang SC, Microsoft YaHei, Source Han Sans
 - English/numbers: Arial, Helvetica, Inter, Aptos
 
+For style-specific and open-source font pairings, use `font-system.md`.
+
 Suggested PPT sizes:
 
 - Cover title: 48-64 pt
@@ -105,6 +107,8 @@ Rules:
 - Do not stretch images.
 - Do not rely on stock-looking dark, blurred, decorative images to carry the argument.
 - Cite or label third-party sources when needed.
+- For AI-generated images, HTML/SVG backgrounds, or texture assets, follow `asset-pipeline.md`.
+- Keep commercial text, tables, budgets, KPI, and risk controls editable whenever possible. Use generated/HTML assets mainly as background, texture, collage, or hero visual layers.
 
 ## Minimal Template Asset
 

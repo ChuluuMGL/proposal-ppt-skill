@@ -6,7 +6,7 @@
 中文 | [English](./README.md)
 
 [![Skill](https://img.shields.io/badge/AI%20Skill-proposal--ppt-0E5E43)](./SKILL.md)
-[![Version](https://img.shields.io/badge/version-0.1.2-green)](./skill.json)
+[![Version](https://img.shields.io/badge/version-0.1.3-green)](./skill.json)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](./LICENSE)
 [![Template](https://img.shields.io/badge/template-PPTX-blue)](./assets/minimal-proposal-template.pptx)
 [![Workflow](https://img.shields.io/badge/workflow-stage--gated-purple)](./references/workflow.md)
@@ -22,6 +22,7 @@
 | 可编辑 `.pptx` | 一份有完整叙事、逐页 proof object、视觉系统和 QA 标准的商业提案 PPT。 |
 | 逐字稿 `.md` | 提案总逻辑、章节讲述节奏、逐页话术、转场句和待确认信息。 |
 | 缺失信息清单 | 明确列出不能编造、需要客户补充或进一步确认的信息。 |
+| 风格与资产计划 | 可选的强风格系统、字体搭配、素材计划、AI 图像或 HTML/SVG 背景路线。 |
 
 它的目标不是“把 PPT 做漂亮”，而是帮助客户判断：为什么这份方案值得被选择。
 
@@ -99,9 +100,13 @@
 | [`references/layout-rhythm.md`](./references/layout-rhythm.md) | 页面密度、留白均衡和整套 PPT 节奏规则。 |
 | [`references/visual-system.md`](./references/visual-system.md) | 视觉方向、字体、版式、图表和截图规范。 |
 | [`references/palette-library.md`](./references/palette-library.md) | 无客户 VI 时使用的高级默认配色预设。 |
+| [`references/style-systems.md`](./references/style-systems.md) | Swiss、发布会极简、时尚美妆、日杂拼贴、摄影叙事、Web3/AI glass 等强风格系统。 |
+| [`references/asset-pipeline.md`](./references/asset-pipeline.md) | 用户素材、AI 生成图、HTML/SVG 背景和图片 QA 规则。 |
+| [`references/font-system.md`](./references/font-system.md) | 免费可商用字体搭配和 fallback。 |
 | [`references/output-contract.md`](./references/output-contract.md) | PPTX 和逐字稿的输出格式要求。 |
 | [`references/quality-check.md`](./references/quality-check.md) | 交付前 QA 清单和常见失败模式。 |
 | [`assets/minimal-proposal-template.pptx`](./assets/minimal-proposal-template.pptx) | 中性 fallback PowerPoint 模板。 |
+| [`assets/style-system-reference.pptx`](./assets/style-system-reference.pptx) | 展示深度风格系统示例的参考 PPTX。 |
 | [`agents/openai.yaml`](./agents/openai.yaml) | Codex / OpenAI 风格 Skill 界面元数据。 |
 | [`skill.json`](./skill.json) | 供 Skill 目录、市场和其他 Agent 读取的机器可读元数据。 |
 
@@ -177,6 +182,25 @@ brief:
 ...
 ```
 
+### 强风格提案
+
+```text
+用 $proposal-ppt in guided mode 做一份强风格商业提案。
+
+先不要生成 PPTX，请先推荐：
+1. 提案路线和赢标主张
+2. style-systems.md 中的风格系统
+3. 字体搭配和 fallback
+4. 视觉资产计划，包括用户素材和 AI 概念图
+5. 哪些页面不适合使用强表现风格
+
+视觉方向：
+日式杂志拼贴 / 时尚美妆 editorial / Web3 AI glass / 等等
+
+brief:
+...
+```
+
 ### 修改已有提案 PPT
 
 ```text
@@ -237,7 +261,7 @@ A：可以，只要对应 Agent 支持 Skill 文件夹，或能读取 `SKILL.md`
 | 仓库 | `ChuluuMGL/proposal-ppt-skill` |
 | 形态 | 本地 Skill 文件夹，包含 `SKILL.md`、references、assets 和 metadata |
 | 主要输出 | `.pptx` + `.md` |
-| 内置资产 | 中性 fallback PowerPoint 模板 |
+| 内置资产 | 中性 fallback PowerPoint 模板；风格系统参考 PPTX |
 | License | MIT |
 | 作者 | YUEYU TECH |
 
@@ -253,14 +277,18 @@ proposal-ppt-skill/
 ├── agents/
 │   └── openai.yaml
 ├── assets/
-│   └── minimal-proposal-template.pptx
+│   ├── minimal-proposal-template.pptx
+│   └── style-system-reference.pptx
 └── references/
+    ├── asset-pipeline.md
+    ├── font-system.md
     ├── output-contract.md
     ├── page-types.md
     ├── layout-rhythm.md
     ├── palette-library.md
     ├── proposal-routes.md
     ├── quality-check.md
+    ├── style-systems.md
     ├── visual-system.md
     └── workflow.md
 ```
@@ -296,5 +324,5 @@ MIT
     "name": "YUEYU TECH",
     "url": "https://www.yueyu.tech/"
   },
-  "softwareVersion": "0.1.2"
+  "softwareVersion": "0.1.3"
 } -->
