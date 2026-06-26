@@ -45,6 +45,9 @@ For each slide:
 - When no VI is provided, a named palette from `palette-library.md` is selected and applied consistently.
 - If a rich style is selected, the deck changes more than color: typography, layout grammar, components, proof-object forms, and asset treatment all match the chosen style system.
 - Asset-heavy styles have real client assets, sourced assets, AI-generated conceptual images, or explicit placeholders; the deck does not fake photographic/editorial/ink/product quality with generic shapes alone.
+- Review style-rich pages full-size before delivery or bundling; contact sheets only prove macro rhythm, not quality.
+- Reject slides where the claimed style is represented by crude primitive shapes, oversized generic circles, decorative dots, or ordinary cards with a new palette.
+- Reject any public skill asset or reusable template that has not passed human full-size visual review.
 - HTML/SVG-generated style layers do not turn core business text, tables, budgets, KPI, or risk controls into uneditable screenshots unless the user accepts that tradeoff.
 - Free/commercial-safe fonts or documented fallbacks are used; no unlicensed commercial font dependency is required.
 

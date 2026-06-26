@@ -119,3 +119,4 @@ Rules:
 - the user still needs an editable PPTX quickly.
 
 Do not force this template when the client has an established style.
+Do not treat the fallback template as a quality benchmark for strong visual directions. For editorial, cinematic, pixel, ink, oil, Web3/glass, or product-launch styles, use `style-systems.md` and `asset-pipeline.md` instead of repainting the fallback template.

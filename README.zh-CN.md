@@ -6,7 +6,7 @@
 中文 | [English](./README.md)
 
 [![Skill](https://img.shields.io/badge/AI%20Skill-proposal--ppt-0E5E43)](./SKILL.md)
-[![Version](https://img.shields.io/badge/version-0.1.3-green)](./skill.json)
+[![Version](https://img.shields.io/badge/version-0.1.4-green)](./skill.json)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](./LICENSE)
 [![Template](https://img.shields.io/badge/template-PPTX-blue)](./assets/minimal-proposal-template.pptx)
 [![Workflow](https://img.shields.io/badge/workflow-stage--gated-purple)](./references/workflow.md)
@@ -106,7 +106,6 @@
 | [`references/output-contract.md`](./references/output-contract.md) | PPTX 和逐字稿的输出格式要求。 |
 | [`references/quality-check.md`](./references/quality-check.md) | 交付前 QA 清单和常见失败模式。 |
 | [`assets/minimal-proposal-template.pptx`](./assets/minimal-proposal-template.pptx) | 中性 fallback PowerPoint 模板。 |
-| [`assets/style-system-reference.pptx`](./assets/style-system-reference.pptx) | 展示深度风格系统示例的参考 PPTX。 |
 | [`agents/openai.yaml`](./agents/openai.yaml) | Codex / OpenAI 风格 Skill 界面元数据。 |
 | [`skill.json`](./skill.json) | 供 Skill 目录、市场和其他 Agent 读取的机器可读元数据。 |
 
@@ -261,7 +260,7 @@ A：可以，只要对应 Agent 支持 Skill 文件夹，或能读取 `SKILL.md`
 | 仓库 | `ChuluuMGL/proposal-ppt-skill` |
 | 形态 | 本地 Skill 文件夹，包含 `SKILL.md`、references、assets 和 metadata |
 | 主要输出 | `.pptx` + `.md` |
-| 内置资产 | 中性 fallback PowerPoint 模板；风格系统参考 PPTX |
+| 内置资产 | 中性 fallback PowerPoint 模板 |
 | License | MIT |
 | 作者 | YUEYU TECH |
 
@@ -277,8 +276,7 @@ proposal-ppt-skill/
 ├── agents/
 │   └── openai.yaml
 ├── assets/
-│   ├── minimal-proposal-template.pptx
-│   └── style-system-reference.pptx
+│   └── minimal-proposal-template.pptx
 └── references/
     ├── asset-pipeline.md
     ├── font-system.md
@@ -324,5 +322,5 @@ MIT
     "name": "YUEYU TECH",
     "url": "https://www.yueyu.tech/"
   },
-  "softwareVersion": "0.1.3"
+  "softwareVersion": "0.1.4"
 } -->

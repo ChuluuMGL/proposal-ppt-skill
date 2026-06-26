@@ -12,6 +12,44 @@ A style system is not a color palette. It must define:
 
 Do not clone protected brand templates, media layouts, logos, mastheads, or exact commercial designs. Use references as design grammar only.
 
+## Style DNA Gate
+
+Before building any rich-style PPTX, define and check the style DNA. A named style is not approved until it has all six parts:
+
+1. **Reference grammar**: 3-5 words that describe the source logic, such as strict grid, image-led spread, film still, pixel grid, ink diffusion, or glass depth.
+2. **Asset behavior**: what real/generative images, textures, screenshots, cutouts, or SVG/HTML layers make the style visible.
+3. **Typography signature**: heading font, body font, number font, scale contrast, and whether serif/mono/caption styles are allowed.
+4. **Component grammar**: how cards, proof objects, tables, timelines, diagrams, labels, and captions change for this style.
+5. **Density rhythm**: which slides are sparse, which are proof-dense, and where breathing slides appear.
+6. **Anti-examples**: what must be rejected because it looks generic, decorative, or low-taste.
+
+If the user asks for a strong style and no reference deck exists, first create a compact style direction checkpoint instead of building the full deck:
+
+```markdown
+### Style DNA Checkpoint
+
+| Item | Decision |
+|---|---|
+| Style route |  |
+| Visual grammar |  |
+| Required assets |  |
+| Typography signature |  |
+| Component changes |  |
+| Pages that should stay business-clean |  |
+| Reject if it looks like |  |
+```
+
+Then build only 2-3 full-size sample pages for review when possible: one cover/big-idea page, one proof/mechanism page, and one dense business page. Do not mass-generate a full visual demo until these samples pass human review.
+
+## Style Quality Bar
+
+- Do not publish or bundle style reference PPTX files unless every slide has been reviewed full-size, not only as a contact sheet.
+- Contact sheets are useful for rhythm checks, but they are not visual approval.
+- Shape-only approximations are internal wireframes, not style templates.
+- A slide that claims ink, oil, photography, magazine, pixel, or Web3 style must contain the visual grammar of that style, not only a matching palette.
+- If the slide is built from crude circles, oversized ovals, generic cards, fake brush marks, or decorative neon dots, reject it and restart from assets/reference grammar.
+- If the style requires assets and assets are missing, request/generate assets or explicitly downgrade to a clean business style.
+
 ## Reference Anchors
 
 Use these sources as visual-grammar anchors, not as templates to copy:
@@ -44,6 +82,90 @@ Expressive add-ons:
 | `pixel-retro` | gaming, youth, interactive campaigns, gamified mechanisms | Use for creative/module pages; avoid budget/legal pages. |
 | `oil-salon` | art, gifting, hospitality, culture, exhibition-like concepts | Use for cover/concept/case pages; keep numbers readable. |
 | `e-reader-mono` | research, whitepaper, knowledge product, strategy memo | Can be full deck if the goal is calm reading. |
+
+### Expressive Add-on Rules
+
+Use these add-ons only when their visual grammar is visible. They are not palette names.
+
+#### ink-wash
+
+Visual DNA:
+
+- Monochrome tonal range, brush diffusion, rice-paper texture, negative space, and one restrained red seal/accent.
+- The page should feel like ink breathes across the canvas; proof objects remain precise and lightly ruled.
+- Use asymmetry and silence: one dominant ink field is better than many decorative marks.
+
+Asset/component requirements:
+
+- Requires a real or generated ink texture, brush stroke, paper grain, or SVG/HTML ink layer.
+- Tables and proof objects should use thin rules, ample margins, and small seal-like markers.
+- Dense business pages should be clean editorial pages with ink only as texture or section marker.
+
+Reject if it looks like:
+
+- A black oval, donut, blob, or random brush sticker.
+- Fake calligraphy with unreadable decorative text.
+- Red seals used repeatedly as decoration instead of one deliberate accent.
+
+#### pixel-retro
+
+Visual DNA:
+
+- Hard pixel grid, limited palette, stepped edges, tile rhythm, sprite-like icons, and no smooth gradients.
+- Page logic should feel like a game interface, inventory, map, quest board, score panel, or level path.
+- Pixel style works best when the proposal topic has youth, gaming, interactive, or gamified mechanics.
+
+Asset/component requirements:
+
+- Use HTML/SVG or generated bitmap assets to create crisp pixel grids, tiles, icons, and borders.
+- Keep charts and tables readable by making the pixel treatment a frame/system, not tiny body text.
+- Use monospaced or geometric fonts for English/numbers and clear sans-serif Chinese fallbacks.
+
+Reject if it looks like:
+
+- Normal rounded cards with a pixel font.
+- Smooth shadows, blurred gradients, or anti-aliased decorative icons pretending to be pixel art.
+- Random 8-bit icons that do not map to proposal logic.
+
+#### oil-salon
+
+Visual DNA:
+
+- Canvas grain, warm gallery light, framed artwork, still-life composition, rich shadow, and ceremonial spacing.
+- The page should feel curated like a gallery wall or exhibition poster, not like corporate beige.
+- Use strong image/texture fields; flat vector ellipses cannot carry this style.
+
+Asset/component requirements:
+
+- Requires oil/canvas texture, generated still-life imagery, real art/product photos, or frame-like editorial crops.
+- Concept pages can use large framed visuals; proof and budget pages should return to clean cream paper with thin warm rules.
+- Captions should read like exhibition labels: short, precise, source-aware.
+
+Reject if it looks like:
+
+- Brown background plus flat circles.
+- Generic vintage palette without canvas, lighting, image, or frame behavior.
+- Decorative frames that make business proof harder to read.
+
+#### e-reader-mono
+
+Visual DNA:
+
+- Monochrome or near-monochrome, e-ink contrast, quiet margins, serif/sans pairing, annotation marks, and document-like pacing.
+- Best for research-heavy decks where the tone should feel reflective, credible, and slow.
+- The style comes from reading rhythm, footnotes, folios, marginalia, and restrained diagrams.
+
+Asset/component requirements:
+
+- Use page folios, marginal notes, source blocks, quoted findings, and low-ink charts.
+- Avoid heavy fills; use lines, spacing, and hierarchy to create structure.
+- Works without images, but benefits from scans, diagrams, or source excerpts when permitted.
+
+Reject if it looks like:
+
+- A plain black-and-white corporate deck.
+- Dense Word-document pages pasted into PPT.
+- Tiny gray text that sacrifices readability for a printed-paper mood.
 
 ## Blueprint Output Requirement
 
@@ -141,6 +263,7 @@ Visual DNA:
 - Editorial headline, caption, page folio, and narrow text columns.
 - High contrast between large title and tiny credits/captions.
 - Soft surfaces for beauty; sharper black/cream/red for fashion.
+- Commercial proof feels like an art-directed spread, not a card dashboard.
 
 Fonts:
 
@@ -174,6 +297,7 @@ Visual DNA:
 - Grid exists, but objects may rotate or overlap slightly.
 - Page feels browsable, not corporate.
 - Rich proof-wall layouts for screenshots, samples, creator cards, product scenes.
+- Detail density is intentional; every small object must carry a caption, tag, source, or implication.
 
 Fonts:
 
@@ -240,6 +364,7 @@ Visual DNA:
 - Neon accent is used for nodes, flows, risk, or active state.
 - Glass cards are controlled; contrast must remain high.
 - Components should explain architecture, asset flow, governance, and risk.
+- Glow and gradients must reveal system structure; colored circles alone are not Web3/AI style.
 
 Fonts:
 

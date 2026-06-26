@@ -6,7 +6,7 @@
 [Simplified Chinese](./README.zh-CN.md) | English
 
 [![Skill](https://img.shields.io/badge/AI%20Skill-proposal--ppt-0E5E43)](./SKILL.md)
-[![Version](https://img.shields.io/badge/version-0.1.3-green)](./skill.json)
+[![Version](https://img.shields.io/badge/version-0.1.4-green)](./skill.json)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](./LICENSE)
 [![Template](https://img.shields.io/badge/template-PPTX-blue)](./assets/minimal-proposal-template.pptx)
 [![Workflow](https://img.shields.io/badge/workflow-stage--gated-purple)](./references/workflow.md)
@@ -105,7 +105,6 @@ See [`references/proposal-routes.md`](./references/proposal-routes.md) for the f
 | [`references/output-contract.md`](./references/output-contract.md) | Required PPTX and presenter-script output format. |
 | [`references/quality-check.md`](./references/quality-check.md) | Final QA checklist and common failure modes. |
 | [`assets/minimal-proposal-template.pptx`](./assets/minimal-proposal-template.pptx) | Neutral fallback PowerPoint template. |
-| [`assets/style-system-reference.pptx`](./assets/style-system-reference.pptx) | Reference PPTX showing deep style-system examples. |
 | [`agents/openai.yaml`](./agents/openai.yaml) | Codex/OpenAI-style skill UI metadata. |
 | [`skill.json`](./skill.json) | Machine-readable metadata for directories and marketplaces. |
 
@@ -260,7 +259,7 @@ Yes, if they support skill folders or can read `SKILL.md`-style packages. Instal
 | Repository | `ChuluuMGL/proposal-ppt-skill` |
 | Format | Local skill folder with `SKILL.md`, references, assets, and metadata |
 | Primary output | `.pptx` + `.md` |
-| Bundled assets | Neutral fallback PowerPoint template; style-system reference PPTX |
+| Bundled asset | Neutral fallback PowerPoint template |
 | License | MIT |
 | Author | YUEYU TECH |
 
@@ -276,8 +275,7 @@ proposal-ppt-skill/
 ├── agents/
 │   └── openai.yaml
 ├── assets/
-│   ├── minimal-proposal-template.pptx
-│   └── style-system-reference.pptx
+│   └── minimal-proposal-template.pptx
 └── references/
     ├── asset-pipeline.md
     ├── font-system.md
@@ -323,5 +321,5 @@ MIT
     "name": "YUEYU TECH",
     "url": "https://www.yueyu.tech/"
   },
-  "softwareVersion": "0.1.3"
+  "softwareVersion": "0.1.4"
 } -->

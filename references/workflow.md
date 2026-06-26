@@ -136,9 +136,11 @@ Required output:
 若使用强风格路线，必须包含：
 
 - 风格系统：
+- Style DNA：
 - 字体方案：
 - 资产计划：
 - 组件变形：
+- 需要先测试的 2-3 页样张：
 - 不适合该风格承载的页面：
 
 ### 6. 页面节奏图
@@ -154,7 +156,7 @@ Required output:
 ### 8. 需要确认的问题
 ```
 
-Gate: in guided mode, stop here and ask the user to confirm the blueprint before building PPTX. In auto mode, proceed.
+Gate: in guided mode, stop here and ask the user to confirm the blueprint before building PPTX. If a rich style is requested and the user has not already approved a reference deck, create 2-3 full-size style sample pages before scaling to the full deck. In auto mode, proceed, but still apply the Style DNA Gate and record visual assumptions in the script.
 
 ## Stage 3: Slide Copy Draft
 
@@ -186,14 +188,14 @@ Build order:
 
 1. Create or inherit visual system.
 2. Select a named palette from `palette-library.md` when no client VI exists.
-3. If a rich style is requested, select a style system from `style-systems.md` and define component transformations before drawing.
+3. If a rich style is requested, run the Style DNA Gate in `style-systems.md`; define reference grammar, assets, typography, component transformations, density rhythm, and anti-examples before drawing.
 4. Select fonts and fallbacks from `font-system.md`.
 5. Create or generate required assets using `asset-pipeline.md`; keep key business text editable.
 6. Create master chrome: margins, title zone, page numbers, footer/source style.
 7. Build slides by page type and density class from `layout-rhythm.md`.
 8. Insert proof objects: tables, matrices, timelines, screenshots, diagrams, sample pages.
-9. Render previews and a contact sheet.
-10. Fix overlap, clipping, wrapping, alignment, density, over-clustered content, and dead empty zones.
+9. Render full-size previews and a contact sheet.
+10. Fix overlap, clipping, wrapping, alignment, density, over-clustered content, dead empty zones, weak style recognition, and low-taste primitive-shape placeholders.
 
 Gate: do not deliver before rendering/inspection. Mention if visual QA could not be fully performed.
 

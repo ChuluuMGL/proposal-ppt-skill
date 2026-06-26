@@ -88,6 +88,7 @@ Follow `references/workflow.md` for the full stage-gate process. The high-level 
    - If the user provides a template/reference deck, follow it as the visual source.
    - If the client has VI, use client brand colors and typography first.
    - If no visual source exists, use `references/visual-system.md` and the minimal template as fallback.
+   - If a rich style is requested, run the Style DNA Gate in `references/style-systems.md` before building the deck.
    - When creating a PowerPoint deck, follow the active PowerPoint/presentations skill requirements, including deck rendering and overlap QA.
 
 8. **Write the presenter script**
@@ -109,5 +110,7 @@ Follow `references/workflow.md` for the full stage-gate process. The high-level 
 - Do not leave large empty placeholder frames or a visually dead lower third. If evidence is missing, mark the item compactly as `待确认` and rebalance the layout.
 - Do not make every slide dense. Insert deliberate breathing slides, section dividers, big-idea pages, or visual proof pages every 3-5 slides.
 - Do not treat a style as only a palette. If a rich style is chosen, adapt assets, typography, component language, proof objects, and page-type boundaries.
+- Do not use crude primitive shapes, oversized circles, generic cards, or decorative dots as substitutes for real style grammar.
+- Do not publish or reuse a style-rich template/demo unless full-size slides have been visually reviewed, not only contact-sheet checked.
 - Do not present AI-generated visuals as real client proof. Mark them as conceptual when relevant.
 - Do not insert the skill author's company information into user decks unless the user explicitly asks to present under that company identity.

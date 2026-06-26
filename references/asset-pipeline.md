@@ -45,6 +45,8 @@ Before building an asset-heavy deck, output:
 | 01 | 产品主图 | 封面 hero | 客户提供 / AI 生成 / 待补充 |  |
 ```
 
+For style-rich routes, also state the visual job of each asset. Example: `hero proof`, `texture only`, `collage evidence`, `product cutout`, `concept atmosphere`, `interface mock`, or `source-backed screenshot`. Decorative assets without a visual job should be removed.
+
 ## Image Generation Prompt Contract
 
 For AI-generated visuals, write prompts with these fields:
@@ -102,6 +104,9 @@ Before delivery:
 - Third-party/public assets have source labels where appropriate.
 - The same generic image is not reused across unrelated pages.
 - Generated visuals are marked as conceptual in the script if needed.
+- Full-size slide QA is required for every style-critical slide; a contact sheet alone is insufficient.
+- Shape-only substitutes for photographic, ink, oil, magazine, pixel, or Web3 styles must be labeled as wireframes, not reference templates or final visuals.
+- If the intended style is not recognizable after removing the title text, the asset treatment is too weak.
 
 ## Missing Asset Fallback
 
