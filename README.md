@@ -6,7 +6,7 @@
 [Simplified Chinese](./README.zh-CN.md) | English
 
 [![Skill](https://img.shields.io/badge/AI%20Skill-proposal--ppt-0E5E43)](./SKILL.md)
-[![Version](https://img.shields.io/badge/version-0.1.4-green)](./skill.json)
+[![Version](https://img.shields.io/badge/version-0.1.5-green)](./skill.json)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](./LICENSE)
 [![Template](https://img.shields.io/badge/template-PPTX-blue)](./assets/minimal-proposal-template.pptx)
 [![Workflow](https://img.shields.io/badge/workflow-stage--gated-purple)](./references/workflow.md)
@@ -321,5 +321,5 @@ MIT
     "name": "YUEYU TECH",
     "url": "https://www.yueyu.tech/"
   },
-  "softwareVersion": "0.1.4"
+  "softwareVersion": "0.1.5"
 } -->

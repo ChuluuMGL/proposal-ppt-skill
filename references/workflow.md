@@ -196,6 +196,7 @@ Build order:
 8. Insert proof objects: tables, matrices, timelines, screenshots, diagrams, sample pages.
 9. Render full-size previews and a contact sheet.
 10. Fix overlap, clipping, wrapping, alignment, density, over-clustered content, dead empty zones, weak style recognition, and low-taste primitive-shape placeholders.
+11. Run PPTX compatibility QA from `quality-check.md`; if the file is structurally valid but PowerPoint cannot open it, rewrite it through an Office-compatible exporter and deliver the repaired copy.
 
 Gate: do not deliver before rendering/inspection. Mention if visual QA could not be fully performed.
 

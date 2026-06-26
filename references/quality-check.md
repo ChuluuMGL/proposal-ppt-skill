@@ -51,6 +51,13 @@ For each slide:
 - HTML/SVG-generated style layers do not turn core business text, tables, budgets, KPI, or risk controls into uneditable screenshots unless the user accepts that tradeoff.
 - Free/commercial-safe fonts or documented fallbacks are used; no unlicensed commercial font dependency is required.
 
+## PPTX Compatibility QA
+
+- The final `.pptx` passes ZIP integrity check and XML well-formedness checks.
+- The deck can be rendered or converted by an Office-compatible tool before delivery when available.
+- For bundled skill assets or reusable templates, do not rely on ZIP validity alone; validate that PowerPoint/Keynote/LibreOffice or the local preview pipeline can actually open/render the file.
+- If a generated PPTX is valid XML but fails to open in PowerPoint, rewrite it through an Office-compatible exporter and deliver the repaired copy.
+
 ## Commercial QA
 
 - Brief requirements are mapped to proposal responses.
