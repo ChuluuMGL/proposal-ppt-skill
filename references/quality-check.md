@@ -37,6 +37,8 @@ For each slide:
 - No accidental overlap, clipping, or broken connectors.
 - No page has all major content clustered in one corner or one half unless the layout is deliberately asymmetric and balanced by a visual anchor.
 - No large empty lower-third, empty bordered placeholder, or unused media frame remains on a client-facing slide.
+- Each slide has an explicit layout recipe and density class when building a new deck.
+- Standard and proof-dense pages use the lower third deliberately through proof, conclusion, timeline, source status, or a visual anchor.
 - Every 3-5 slides, the deck changes rhythm through a section divider, big-idea slide, visual proof page, quote, summary, or low-density transition.
 - Tables have clear headers, units, assumptions, and exclusions.
 - Screenshots are cropped cleanly and aligned.
@@ -44,6 +46,8 @@ For each slide:
 - The palette does not become a one-color monotone or cheap gradient theme.
 - When no VI is provided, a named palette from `palette-library.md` is selected and applied consistently.
 - If a rich style is selected, the deck changes more than color: typography, layout grammar, components, proof-object forms, and asset treatment all match the chosen style system.
+- If no approved reference deck exists, strong visual styles pass the three-page sample gate: cover/big idea, proof/mechanism, and dense business page.
+- Components are not identical across different style routes. A magazine collage page, Web3 dashboard, pixel quest path, and editorial proof board should not share the same generic card grid.
 - Asset-heavy styles have real client assets, sourced assets, AI-generated conceptual images, or explicit placeholders; the deck does not fake photographic/editorial/ink/product quality with generic shapes alone.
 - Review style-rich pages full-size before delivery or bundling; contact sheets only prove macro rhythm, not quality.
 - Reject slides where the claimed style is represented by crude primitive shapes, oversized generic circles, decorative dots, or ordinary cards with a new palette.

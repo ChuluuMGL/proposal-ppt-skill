@@ -6,6 +6,13 @@ Use client VI first. Use a user-provided reference deck before any fallback styl
 
 Choose one primary family, then pick a specific palette from `palette-library.md`. If the user asks for a specific style such as magazine, launch, cinematic, Web3, pixel, ink, or beauty, choose a style system from `style-systems.md` instead of merely changing colors. Do not reuse the same green/gold palette for every proposal.
 
+When no VI exists, choose one of two routes:
+
+1. **Clean business route**: use a palette from `palette-library.md` plus the layout recipes in `layout-rhythm.md`.
+2. **Strong style route**: use `style-systems.md`, run the three-page style sample gate, and only then scale the style.
+
+Do not mix many style families in one deck. A proposal may use one primary style plus one restrained accent language. For example, `fashion-beauty-editorial` may use clean clinical tables, but it should not also introduce pixel frames or Web3 glass unless the brief explicitly demands a multi-world concept.
+
 ### corporate-trust
 
 Use for consulting, B2B, finance, government-adjacent, annual service, and formal tenders.
@@ -59,6 +66,8 @@ Use for AI, SaaS, digital platforms, automation, data, and productized services.
 - Never place a large empty bordered placeholder on a client-facing slide. If an asset is missing, use a compact `待确认` note or restructure the slide.
 - Do not use more than two consecutive pure tables or pure matrices without a strategy/sample/mechanism page.
 - Use page numbers as two digits when appropriate: `01`, `02`, `03`.
+- Before drawing a slide, choose a named layout recipe from `layout-rhythm.md`; after drawing, check whether the page still looks balanced when the title is hidden.
+- In strong style decks, each repeated component should inherit the style grammar. A Web3 proof object can be a glass dashboard; a magazine proof object can be a captioned clipping board; a pixel mechanism can be a quest path. Ordinary rounded cards are allowed only when the chosen style calls for them.
 
 ## Typography
 

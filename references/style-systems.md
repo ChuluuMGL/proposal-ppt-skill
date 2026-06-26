@@ -23,6 +23,23 @@ Before building any rich-style PPTX, define and check the style DNA. A named sty
 5. **Density rhythm**: which slides are sparse, which are proof-dense, and where breathing slides appear.
 6. **Anti-examples**: what must be rejected because it looks generic, decorative, or low-taste.
 
+## Three-Page Style Sample Gate
+
+When the user requests a strong visual style and no approved reference deck exists, do not scale the style directly to a full proposal. First create 3 full-size sample pages and review them at slide size:
+
+| Sample | Purpose | Must Prove |
+|---|---|---|
+| Cover / big-idea page | Show the emotional and visual peak of the style. | The style is recognizable without reading the style name. |
+| Proof / mechanism page | Show how the style carries business evidence. | Proof objects change form, not only color. |
+| Dense business page | Show budget, KPI, risk, brief coverage, or timeline treatment. | The style remains readable and auditable under information pressure. |
+
+Gate:
+
+- If only the cover looks styled, the route is not approved.
+- If the dense page becomes unreadable, restrict the style to cover, section, concept, and sample pages.
+- If the proof/mechanism page falls back to ordinary rounded cards, redesign the component grammar before continuing.
+- If the sample pages pass, record the approved grammar in the presenter script so later pages do not drift.
+
 If the user asks for a strong style and no reference deck exists, first create a compact style direction checkpoint instead of building the full deck:
 
 ```markdown
@@ -65,23 +82,48 @@ Use these sources as visual-grammar anchors, not as templates to copy:
 
 Use client VI or a user-provided reference deck first. Use these style systems only when the user requests a visual direction or no stronger visual source exists.
 
+### Full-Deck Style Systems
+
+These systems can carry most of a proposal if the dense-page treatment is respected.
+
 | Style System | Best For | Use As Full Deck? | Requires Images? |
 |---|---|---:|---:|
 | `swiss-boardroom` | B2B, consulting, finance, government-adjacent, formal tenders | Yes | Optional |
-| `product-launch-minimal` | product strategy, AI/SaaS, big idea, launch, keynote-style pitch | Partial | Strongly recommended |
 | `fashion-beauty-editorial` | beauty, fashion, premium consumer, hospitality, high-end lifestyle | Yes, with assets | Required |
-| `japanese-magazine-collage` | social/content proposals, creator pools, lifestyle scenes, sample-heavy decks | Partial | Required |
-| `cinematic-photography` | brand story, event, activation, case proof, experience design | Partial | Required |
+| `beauty-gloss-clinical` | skincare, health-beauty, premium FMCG, product efficacy | Yes, with assets | Required |
+| `japanese-minimal` | premium lifestyle, culture, education, calm executive strategy | Yes | Optional |
+| `french-editorial` | hospitality, wine/food, luxury service, lifestyle brands | Yes, with assets | Recommended |
+| `american-campaign-bold` | launch campaign, entertainment, sports, youth activation, growth pitch | Yes, if tone fits | Optional |
 | `web3-ai-glass` | Web3, crypto, AI, data platforms, fintech, automation | Yes, if legible | Optional |
+| `e-reader-mono` | research, whitepaper, knowledge product, strategy memo | Yes | Optional |
 
-Expressive add-ons:
+### Hybrid / Expressive Systems
+
+These systems are strongest on cover, chapter, big idea, proof gallery, creative sample, and mechanism pages. Use clean business layouts for budget, risk, legal, KPI, and procurement-heavy pages unless the three-page sample gate proves they remain readable.
 
 | Add-on | Best Use | Boundary |
 |---|---|---|
+| `product-launch-minimal` | product strategy, AI/SaaS, big idea, launch, keynote-style pitch | Reveal pages can be sparse; proof and budget pages must be clearer. |
+| `japanese-magazine-collage` | social/content proposals, creator pools, lifestyle scenes, sample-heavy decks | Use for browsable proof walls; dense pages become index/table pages. |
+| `cinematic-photography` | brand story, event, activation, case proof, experience design | Use for scene-led proof; dense pages need separate business treatment. |
 | `ink-wash` | Chinese culture, government-adjacent, heritage, premium ceremony pages | Use for cover, section, big idea, proof summary; keep dense pages clean. |
 | `pixel-retro` | gaming, youth, interactive campaigns, gamified mechanisms | Use for creative/module pages; avoid budget/legal pages. |
 | `oil-salon` | art, gifting, hospitality, culture, exhibition-like concepts | Use for cover/concept/case pages; keep numbers readable. |
-| `e-reader-mono` | research, whitepaper, knowledge product, strategy memo | Can be full deck if the goal is calm reading. |
+| `craft-paper-natural` | organic food, sustainability, handmade, agriculture, wellness | Use when natural materials and real product scenes exist. |
+
+### Style Pack Component Rule
+
+For every selected style, define how these components transform:
+
+| Component | Must Decide |
+|---|---|
+| Cards | Are they cards, magazine clippings, glass panels, score tiles, exhibition labels, or ruled ledger rows? |
+| Tables | What header, rule, spacing, and highlight behavior keeps them readable? |
+| Timelines | Are they roadmaps, issue calendars, level paths, storyboards, release layers, or chapter folios? |
+| Proof galleries | Are images full-bleed, captioned boards, contact sheets, framed art, pixel sprites, or dashboard thumbnails? |
+| Callouts | Are they margin notes, seals, ticker chips, campaign stickers, glass alerts, or quiet footnotes? |
+
+If component treatment is the same across styles, the style library has failed.
 
 ### Expressive Add-on Rules
 
@@ -385,6 +427,171 @@ Page-type coverage:
 
 - Full style: strategy, architecture, dashboard, roadmap, risk, proof.
 - Keep text at readable contrast; never use glow behind small body text.
+
+### beauty-gloss-clinical
+
+Reference grammar: premium skincare decks, clinical clarity, glossy product macro, soft light, clean efficacy tables, refined neutral/pastel surfaces.
+
+Use for: skincare, beauty care, nutrition, premium FMCG, maternal/child care, health-adjacent products.
+
+Visual DNA:
+
+- Product macro or texture image is the visual anchor; avoid generic model-only beauty.
+- Soft light, controlled shadow, translucent product panels, cream/white/rose/sage surfaces.
+- Claims are handled clinically: ingredient, benefit, evidence, usage moment, compliance note.
+- Typography can be elegant, but efficacy and budget pages must be table-readable.
+
+Fonts:
+
+- English/numbers: `Inter`, `Libre Baskerville`, `Cormorant Garamond`.
+- Chinese: `Source Han Sans SC`, `Noto Sans CJK SC`, `Noto Serif CJK SC` for display only.
+
+Component transformation:
+
+| Component | Beauty gloss treatment |
+|---|---|
+| Insight | Product macro + user moment + concise claim boundary. |
+| Proof object | Efficacy / content / channel table with clean white panels. |
+| Content sample | Product cutout, usage scene, captioned sample board. |
+| KPI | Clinical-looking measurement table; no decorative sparkle. |
+
+Reject if it looks like:
+
+- Pink/beige template without product texture or proof.
+- Overly feminine stock-photo mood with no business evidence.
+- Thin serif body text that cannot survive projection.
+
+### japanese-minimal
+
+Reference grammar: quiet Japanese editorial minimalism, asymmetry, natural materials, generous negative space, vertical rhythm, restrained marks.
+
+Use for: culture, premium lifestyle, education, sustainability, government-adjacent strategy, calm executive proposals.
+
+Visual DNA:
+
+- One strong focal object, many quiet margins, and deliberate asymmetry.
+- Natural paper, stone, wood, or ink-adjacent neutrals; accent is used sparingly.
+- Page rhythm is slow: big idea pages can be sparse, but dense pages use ruled editorial grids.
+- The style is about restraint and proportion, not empty slides.
+
+Fonts:
+
+- English/numbers: `Inter`, `IBM Plex Sans`, `Libre Baskerville`.
+- Chinese: `Noto Serif CJK SC` for titles, `Source Han Sans SC` for body.
+
+Component transformation:
+
+| Component | Japanese minimal treatment |
+|---|---|
+| Winning thesis | One sentence with large negative space and a small proof cue. |
+| Mechanism | Thin ruled diagram, few labels, no heavy fills. |
+| Table | Editorial ledger with soft rules and ample row height. |
+| Source note | Marginalia or folio-like note, not a footer dump. |
+
+Reject if it looks like:
+
+- A blank corporate slide with small text in the corner.
+- Random red circle/seal decoration without meaning.
+- Beige-only monotony with no focal hierarchy.
+
+### french-editorial
+
+Reference grammar: refined lifestyle editorial, understated luxury, serif headlines, warm photography, narrow captions, gallery-like spacing.
+
+Use for: hospitality, wine, food, tourism, premium retail, cultural lifestyle, service experience.
+
+Visual DNA:
+
+- Warm cream, burgundy, ink, brass, and muted blue/green accents.
+- Large lifestyle or place image balanced by small precise captions.
+- Layout feels like a magazine feature or lookbook, but proof remains source-aware.
+- Avoid excessive ornament; use rules, folios, and captions instead.
+
+Fonts:
+
+- English/numbers: `Cormorant Garamond`, `Libre Baskerville`, `Inter`.
+- Chinese: `Noto Serif CJK SC`, `Source Han Sans SC`.
+
+Component transformation:
+
+| Component | French editorial treatment |
+|---|---|
+| Cover | Image-led feature spread with restrained serif headline. |
+| Case proof | Gallery image + caption + transferable method. |
+| Timeline | Chaptered itinerary or editorial sequence. |
+| Budget | Clean cream ledger with brass/burgundy emphasis only on totals. |
+
+Reject if it looks like:
+
+- Paris cliches, script fonts, flourishes, or decorative frames.
+- Luxury mood with no operational detail.
+- Low-contrast beige text.
+
+### american-campaign-bold
+
+Reference grammar: bold campaign posters, high-contrast type, direct slogans, modular blocks, punchy accent colors, action-oriented proof.
+
+Use for: campaign launches, entertainment, sports, youth activation, growth pitches, sales-driving proposals.
+
+Visual DNA:
+
+- Big declarative typography, strong scale contrast, energetic composition.
+- Red/blue/black/cream, cobalt/citrus, or high-contrast brand colors.
+- Components feel like campaign boards, scorecards, activation maps, and rollout posters.
+- The tone is confident and direct, but not noisy.
+
+Fonts:
+
+- English/numbers: `Anton`, `Archivo Black`, `Inter`, `IBM Plex Sans`.
+- Chinese: `Source Han Sans SC`, `Noto Sans CJK SC`.
+
+Component transformation:
+
+| Component | American campaign treatment |
+|---|---|
+| Big idea | Slogan-scale headline with one proof anchor. |
+| Activation plan | Bold modular blocks and route arrows. |
+| KPI | Scoreboard / target board with large numbers and units. |
+| Risk | Clear warning strips, not hidden caveats. |
+
+Reject if it looks like:
+
+- Random patriotic color use.
+- Loud poster pages that cannot explain execution.
+- All-caps body text that hurts readability.
+
+### craft-paper-natural
+
+Reference grammar: natural materials, packaging labels, paper texture, warm product photography, farm/handmade cues, earthy but not dull.
+
+Use for: organic food, agriculture, wellness, sustainability, handmade products, family lifestyle.
+
+Visual DNA:
+
+- Paper texture, label systems, product/ingredient close-ups, hand-drawn-style separators used sparingly.
+- Earthy palette balanced with fresh green/blue or product color.
+- Proof objects look like ledgers, recipe cards, sourcing maps, or packaging systems.
+- Avoid fake rustic decoration; real product/source images matter.
+
+Fonts:
+
+- English/numbers: `Inter`, `IBM Plex Sans`, `Libre Baskerville`.
+- Chinese: `Source Han Sans SC`, `Noto Serif CJK SC` for selected titles.
+
+Component transformation:
+
+| Component | Craft natural treatment |
+|---|---|
+| Insight | Product/ingredient scene + plain-language implication. |
+| Mechanism | Label-card system or sourcing map. |
+| Timeline | Seasonal calendar or batch plan. |
+| Budget | Kraft-paper ledger with clear inclusions/exclusions. |
+
+Reject if it looks like:
+
+- Brown/orange monotone.
+- Fake hand-drawn clutter.
+- Low-contrast text on textured backgrounds.
 
 ## Asset-Heavy Style Rule
 

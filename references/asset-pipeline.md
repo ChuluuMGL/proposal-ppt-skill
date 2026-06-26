@@ -18,7 +18,7 @@ Do not use random stock-like images only because they look decorative.
 
 The skill must not include API keys. If image generation is needed, ask the user to configure a provider or use tools available in the current agent environment.
 
-Current provider reference anchors include OpenAI image generation APIs and ByteDance/Seedream-style image generation/editing APIs. Verify the current provider endpoint, model name, usage rights, and content policy at runtime before calling an external API.
+Current provider reference anchors include OpenAI image generation APIs and ByteDance/Seedream-style image generation/editing APIs. Verify the current provider endpoint, model name, usage rights, and content policy at runtime before calling an external API. Other providers can be used when the current agent supports them, but the skill must never assume a key exists.
 
 Supported provider pattern:
 
@@ -32,6 +32,24 @@ image_provider:
 ```
 
 If the provider is unavailable, continue with editable placeholders and list the missing assets in the script.
+
+## Style Asset Requirements
+
+Strong styles need style-specific assets. Do not let ordinary shapes impersonate an asset-heavy style.
+
+| Style | Minimum Asset Layer | Good Asset Types | Fallback If Missing |
+|---|---|---|---|
+| fashion-beauty-editorial | hero product/person/scene image | product macro, campaign sample, lifestyle crop, caption board | typography-led spread plus explicit `图片待补充` frame |
+| beauty-gloss-clinical | product macro or texture | packaging, ingredient, usage scene, efficacy table | clean clinical table with product placeholder |
+| japanese-magazine-collage | multiple small proof images | screenshots, creator cards, product scenes, labels, tape/paper texture | structured index board, not random blank clippings |
+| cinematic-photography | one dominant scene | real event, activation, store, table, user moment | generated conceptual scene marked as conceptual |
+| web3-ai-glass | interface / node / dashboard layer | architecture map, data flow, UI mock, metric cards | editable system diagram on dark grid |
+| pixel-retro | pixel grid / sprites / tile system | pixel icons, quest map, inventory/score frames | hard-grid SVG frame and normal readable body text |
+| ink-wash | ink / paper / seal texture | brush diffusion, rice paper, red seal | clean ruled editorial page with one ink marker |
+| oil-salon | canvas / framed image | still-life, product art, gallery wall, warm canvas | cream gallery layout with image placeholder |
+| e-reader-mono | document texture / scans | source excerpts, diagrams, margin notes | monochrome ruled report layout |
+
+If the style cannot be recognized after removing the style title, generate/request better assets or downgrade the style.
 
 ## Asset Plan Output
 
@@ -92,6 +110,12 @@ Preferred route:
 4. Keep titles, body text, tables, budgets, KPI, and page numbers as editable PPT objects.
 
 Avoid full-page screenshots for editable proposal pages unless the user explicitly accepts non-editable slides.
+
+Recommended hybrid split:
+
+- Background, texture, collage frame, pixel grid, ink wash, glass glow, and oil/canvas treatment may be raster/SVG layers.
+- Titles, body text, tables, budgets, KPI, risk controls, page numbers, and source notes should remain editable PPT objects whenever practical.
+- When a quick style sample uses rasterized text for speed, label it as a visual QA demo, not as the final production method.
 
 ## Asset QA
 

@@ -35,6 +35,8 @@ Use the full content field deliberately.
 
 - Keep a stable page frame: title zone, content zone, footer/source zone.
 - In standard pages, content should visually occupy the middle 60-75% of the slide height, not only the upper half.
+- In proof-dense pages, the proof object should usually span at least 70% of the content field width and 60% of its height unless an image or side panel intentionally balances it.
+- In two-column pages, neither column should carry more than roughly 65% of the visual weight unless the other side has a strong visual anchor.
 - If the lower 25-30% is empty, either:
   - expand/rebalance the proof object,
   - add a conclusion strip,
@@ -44,6 +46,28 @@ Use the full content field deliberately.
 - Do not add a blank rectangle, media frame, or border only to fill space.
 - Avoid orphan groups: no single small table or card cluster should sit in one area while the rest of the canvas is visually dead.
 - Use optical balance: a sparse left side needs a visual anchor on the right; a heavy top needs a grounded lower conclusion or proof band.
+- Do not solve empty space with a decorative border or blank media frame. The added element must be proof, conclusion, navigation, source status, or an intentional visual anchor.
+
+## Layout Selection Gate
+
+Choose the recipe before placing objects. For every slide, record:
+
+```markdown
+Layout recipe:
+Density class:
+Content field:
+Primary visual weight:
+Lower-third plan:
+Breathing / transition role:
+```
+
+Reject the page draft if:
+
+- more than one-third of the slide is accidentally unused,
+- all content sits in the top half without a lower proof band or conclusion,
+- a large blank rectangle is used as placeholder,
+- cards have inconsistent widths, heights, gutters, or internal padding,
+- the page would still look unbalanced when the title is hidden.
 
 ## Preferred Layout Recipes
 

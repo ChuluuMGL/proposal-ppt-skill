@@ -46,6 +46,8 @@ Priority order:
 5. Style system from `style-systems.md` plus palette/font/asset plan
 6. `assets/minimal-proposal-template.pptx` fallback
 
+When a strong style is requested and no approved reference deck exists, the visual source is not considered approved until the three-page style sample gate in `style-systems.md` passes.
+
 ### Required Deliverables
 
 Default deliverables:
@@ -158,6 +160,14 @@ Required output:
 
 Gate: in guided mode, stop here and ask the user to confirm the blueprint before building PPTX. If a rich style is requested and the user has not already approved a reference deck, create 2-3 full-size style sample pages before scaling to the full deck. In auto mode, proceed, but still apply the Style DNA Gate and record visual assumptions in the script.
 
+For strong visual routes, the preferred sample set is exactly:
+
+1. cover / big-idea page,
+2. proof / mechanism page,
+3. dense business page.
+
+Use these samples to decide whether the style can be used across the deck or only on expressive pages.
+
 ## Stage 3: Slide Copy Draft
 
 Write slide-level copy from the approved blueprint.
@@ -195,7 +205,7 @@ Build order:
 7. Build slides by page type and density class from `layout-rhythm.md`.
 8. Insert proof objects: tables, matrices, timelines, screenshots, diagrams, sample pages.
 9. Render full-size previews and a contact sheet.
-10. Fix overlap, clipping, wrapping, alignment, density, over-clustered content, dead empty zones, weak style recognition, and low-taste primitive-shape placeholders.
+10. Fix overlap, clipping, wrapping, alignment, density, over-clustered content, dead empty zones, weak style recognition, identical component grammar across styles, and low-taste primitive-shape placeholders.
 11. Run PPTX compatibility QA from `quality-check.md`; if the file is structurally valid but PowerPoint cannot open it, rewrite it through an Office-compatible exporter and deliver the repaired copy.
 
 Gate: do not deliver before rendering/inspection. Mention if visual QA could not be fully performed.

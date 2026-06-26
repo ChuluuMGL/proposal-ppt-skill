@@ -147,6 +147,118 @@ Best for healthcare, education, family, and trust-led proposals that need softne
 | Risk | `#C86652` |
 | Line | `#DDE5E8` |
 
+### 9. Editorial Noir Cream
+
+Best for fashion, beauty, hospitality, premium culture, and image-led proposal openings.
+
+| Token | Hex |
+|---|---|
+| Base | `#F7EFE6` |
+| Surface | `#FFF9F1` |
+| Text | `#2A1712` |
+| Muted | `#8B746A` |
+| Primary | `#2A1712` |
+| Secondary | `#6E1F2B` |
+| Accent | `#C8A15A` |
+| Risk | `#B7493D` |
+| Line | `#E2D2C4` |
+
+### 10. Clinical Pearl Sage
+
+Best for skincare, healthcare-adjacent FMCG, maternal/child care, and premium product efficacy decks.
+
+| Token | Hex |
+|---|---|
+| Base | `#FBFAF6` |
+| Surface | `#FFFFFF` |
+| Text | `#18201B` |
+| Muted | `#727A70` |
+| Primary | `#496B5A` |
+| Secondary | `#D8C7BE` |
+| Accent | `#C9A46A` |
+| Risk | `#C96D5A` |
+| Line | `#E5E1D8` |
+
+### 11. Digital Glass Night
+
+Best for AI, Web3, crypto, fintech, data systems, and technical governance proposals.
+
+| Token | Hex |
+|---|---|
+| Base | `#070A13` |
+| Surface | `#111827` |
+| Text | `#F5FBFF` |
+| Muted | `#A8BCD3` |
+| Primary | `#65F7FF` |
+| Secondary | `#1E335A` |
+| Accent | `#B8FF2C` |
+| Risk | `#FF5C4D` |
+| Line | `#25314D` |
+
+### 12. Pixel Arcade
+
+Best for gamified campaigns, youth culture, gaming, entertainment, and interactive proposal mechanisms.
+
+| Token | Hex |
+|---|---|
+| Base | `#0C1421` |
+| Surface | `#121D2C` |
+| Text | `#D8E9FF` |
+| Muted | `#7D8AA3` |
+| Primary | `#F7E36D` |
+| Secondary | `#52D8A7` |
+| Accent | `#7FA7FF` |
+| Risk | `#FF6B6B` |
+| Line | `#2B3D58` |
+
+### 13. Ink Paper Seal
+
+Best for cultural, heritage, ceremony, government-adjacent, and premium Eastern aesthetics.
+
+| Token | Hex |
+|---|---|
+| Base | `#F6F1E5` |
+| Surface | `#FFFDF7` |
+| Text | `#151310` |
+| Muted | `#6C665D` |
+| Primary | `#0E0D0B` |
+| Secondary | `#7E7A70` |
+| Accent | `#B3202A` |
+| Risk | `#A85C45` |
+| Line | `#D8CDBB` |
+
+### 14. Gallery Oil
+
+Best for art, gifting, hospitality, cultural IP, exhibition, and ceremonial concept pages.
+
+| Token | Hex |
+|---|---|
+| Base | `#EFE2CF` |
+| Surface | `#FFF7EA` |
+| Text | `#2E1A13` |
+| Muted | `#7A5A45` |
+| Primary | `#3E2117` |
+| Secondary | `#8B4D28` |
+| Accent | `#B7894F` |
+| Risk | `#9E3E34` |
+| Line | `#D6B990` |
+
+### 15. Campaign Pop
+
+Best for bold launches, sports, entertainment, campaign strategy, and growth presentations.
+
+| Token | Hex |
+|---|---|
+| Base | `#FFF6E8` |
+| Surface | `#FFFFFF` |
+| Text | `#111111` |
+| Muted | `#5F6672` |
+| Primary | `#123C8C` |
+| Secondary | `#D92C35` |
+| Accent | `#FFB000` |
+| Risk | `#E64B3C` |
+| Line | `#D9D4C8` |
+
 ## Usage Pattern
 
 On a typical deck:

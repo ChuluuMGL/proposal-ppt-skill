@@ -6,7 +6,7 @@
 [Simplified Chinese](./README.zh-CN.md) | English
 
 [![Skill](https://img.shields.io/badge/AI%20Skill-proposal--ppt-0E5E43)](./SKILL.md)
-[![Version](https://img.shields.io/badge/version-0.1.5-green)](./skill.json)
+[![Version](https://img.shields.io/badge/version-0.1.6-green)](./skill.json)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](./LICENSE)
 [![Template](https://img.shields.io/badge/template-PPTX-blue)](./assets/minimal-proposal-template.pptx)
 [![Workflow](https://img.shields.io/badge/workflow-stage--gated-purple)](./references/workflow.md)
@@ -72,6 +72,24 @@ Default mode is `guided`: the agent stops after the blueprint and waits for conf
 
 ---
 
+## Rich Style Workflow
+
+If you ask for a strong direction such as pixel retro, fashion editorial, launch minimal, Japanese minimal, Japanese magazine collage, ink wash, oil salon, or Web3/AI glass, the skill should not merely repaint a generic template.
+
+It first defines the Style DNA and prefers a three-page sample gate:
+
+| Sample | Purpose | What It Checks |
+|---|---|---|
+| Cover / big-idea page | Tests the visual peak of the style. | The style is recognizable without reading the style name. |
+| Proof / mechanism page | Tests whether the style can carry commercial evidence. | Proof objects change component form, not only color. |
+| Dense business page | Tests budget, KPI, risk, timeline, or brief-coverage readability. | The style does not sacrifice legibility or acceptance boundaries. |
+
+If a style only works for cover or divider pages, the skill restricts it to expressive pages. Budget, KPI, risk, and brief-coverage pages return to clearer business structures.
+
+Included style systems include `fashion-beauty-editorial`, `beauty-gloss-clinical`, `japanese-minimal`, `japanese-magazine-collage`, `cinematic-photography`, `web3-ai-glass`, `pixel-retro`, `ink-wash`, `oil-salon`, `french-editorial`, `american-campaign-bold`, `craft-paper-natural`, and `e-reader-mono`.
+
+---
+
 ## Proposal Routes
 
 The skill does not force every proposal into the same template. It routes the project into one primary proposal type:
@@ -99,7 +117,7 @@ See [`references/proposal-routes.md`](./references/proposal-routes.md) for the f
 | [`references/layout-rhythm.md`](./references/layout-rhythm.md) | Slide density, whitespace balance, and deck pacing rules. |
 | [`references/visual-system.md`](./references/visual-system.md) | Visual families, typography, layout, chart, and screenshot rules. |
 | [`references/palette-library.md`](./references/palette-library.md) | Default high-taste palette presets when no client visual identity exists. |
-| [`references/style-systems.md`](./references/style-systems.md) | Rich style systems such as Swiss, launch minimal, editorial, Japanese collage, cinematic, and Web3/AI glass. |
+| [`references/style-systems.md`](./references/style-systems.md) | Rich style systems such as Swiss, launch minimal, beauty editorial, Japanese minimal, Japanese collage, cinematic, Web3/AI glass, pixel, ink, and oil. |
 | [`references/asset-pipeline.md`](./references/asset-pipeline.md) | User assets, AI-generated visuals, HTML/SVG backgrounds, and image QA rules. |
 | [`references/font-system.md`](./references/font-system.md) | Free/commercial-safe font pairings and fallbacks. |
 | [`references/output-contract.md`](./references/output-contract.md) | Required PPTX and presenter-script output format. |
@@ -190,7 +208,8 @@ Before generating PPTX, recommend:
 2. style system from style-systems.md
 3. font pairing and fallback
 4. visual asset plan, including user assets vs AI-generated conceptual assets
-5. page types that should not use the expressive style
+5. three-page style sample plan: cover / proof-mechanism / dense business page
+6. page types that should not use the expressive style
 
 Visual direction:
 Japanese magazine collage / fashion-beauty editorial / Web3 AI glass / etc.
@@ -321,5 +340,5 @@ MIT
     "name": "YUEYU TECH",
     "url": "https://www.yueyu.tech/"
   },
-  "softwareVersion": "0.1.5"
+  "softwareVersion": "0.1.6"
 } -->

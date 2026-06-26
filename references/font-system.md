@@ -22,6 +22,7 @@ Use installed system fonts when the target machine may not have custom fonts.
 | Mono/data | `IBM Plex Mono`, `Space Mono`, `JetBrains Mono` | `Courier New` |
 | Editorial serif | `Playfair Display`, `Cormorant Garamond`, `Libre Baskerville` | `Georgia` |
 | Pixel accent | `Press Start 2P`, `Pixelify Sans`, `DotGothic16` | `Courier New` |
+| Bold campaign | `Anton`, `Archivo Black`, `Bebas Neue` | `Arial Black` |
 
 ## Style-Specific Pairings
 
@@ -30,8 +31,13 @@ Use installed system fonts when the target machine may not have custom fonts.
 | swiss-boardroom | `Inter` / `IBM Plex Sans` | `Source Han Sans SC` | `IBM Plex Mono` | Use few weights, strict hierarchy. |
 | product-launch-minimal | `Inter` / `Aptos` | `Source Han Sans SC` | `Inter` | Large titles, very short copy. |
 | fashion-beauty-editorial | `Playfair Display` / `Cormorant Garamond` | `Noto Serif CJK SC` or `Source Han Sans SC` | `Inter` | Use serif for mood, sans for proof. |
+| beauty-gloss-clinical | `Cormorant Garamond` / `Inter` | `Source Han Sans SC` | `Inter` | Keep efficacy and table copy sans-serif. |
+| japanese-minimal | `Noto Serif CJK SC` / `Libre Baskerville` | `Source Han Sans SC` | `Inter` | Sparse titles, quiet body, generous line height. |
 | japanese-magazine-collage | `IBM Plex Sans Condensed` / `Inter` | `Source Han Sans SC` | `IBM Plex Mono` | Many small labels need high legibility. |
 | cinematic-photography | `Inter` / `Libre Franklin` | `Source Han Sans SC` | `Inter` | Avoid thin weights on photos. |
+| french-editorial | `Cormorant Garamond` / `Libre Baskerville` | `Noto Serif CJK SC` / `Source Han Sans SC` | `Inter` | Use serif for display and captions, sans for tables. |
+| american-campaign-bold | `Anton` / `Archivo Black` | `Source Han Sans SC` | `IBM Plex Sans` | Bold headings only; body must remain readable. |
+| craft-paper-natural | `Libre Baskerville` / `Inter` | `Source Han Sans SC` | `Inter` | Use serif sparingly for label-like headings. |
 | web3-ai-glass | `Space Grotesk` / `Inter` | `Source Han Sans SC` | `IBM Plex Mono` | Mono for metrics and IDs. |
 | ink-wash | `Noto Serif CJK SC` / `Source Han Serif SC` | `Source Han Sans SC` | `Inter` | Serif for titles, sans for proof. |
 | pixel-retro | `Press Start 2P` / `Pixelify Sans` | `Source Han Sans SC` | `IBM Plex Mono` | Pixel fonts only for labels/headings. |

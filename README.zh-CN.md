@@ -6,7 +6,7 @@
 中文 | [English](./README.md)
 
 [![Skill](https://img.shields.io/badge/AI%20Skill-proposal--ppt-0E5E43)](./SKILL.md)
-[![Version](https://img.shields.io/badge/version-0.1.5-green)](./skill.json)
+[![Version](https://img.shields.io/badge/version-0.1.6-green)](./skill.json)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](./LICENSE)
 [![Template](https://img.shields.io/badge/template-PPTX-blue)](./assets/minimal-proposal-template.pptx)
 [![Workflow](https://img.shields.io/badge/workflow-stage--gated-purple)](./references/workflow.md)
@@ -73,6 +73,24 @@
 
 ---
 
+## 强风格工作流
+
+如果你要求“像素风、时尚杂志风、发布会极简、日式极简、日杂拼贴、水墨、油画、Web3 科技”等强视觉方向，Skill 不会只换一套颜色。
+
+它会先建立 Style DNA，并优先做 3 页样张：
+
+| 样张 | 用途 | 检查重点 |
+|---|---|---|
+| 封面 / big idea 页 | 验证风格峰值。 | 不看风格名也能认出视觉语言。 |
+| 证据 / 机制页 | 验证风格能承载商业证明。 | proof object 的组件形态真的改变。 |
+| 密集业务页 | 验证预算、KPI、风险、排期等页面可读。 | 风格不牺牲可读性和验收边界。 |
+
+如果一个风格只适合封面或章节页，Skill 会把它限制为表达型页面；预算、KPI、风险和 Brief 覆盖页会回到更清晰的商务结构。
+
+新增风格系统包括：`fashion-beauty-editorial`、`beauty-gloss-clinical`、`japanese-minimal`、`japanese-magazine-collage`、`cinematic-photography`、`web3-ai-glass`、`pixel-retro`、`ink-wash`、`oil-salon`、`french-editorial`、`american-campaign-bold`、`craft-paper-natural`、`e-reader-mono`。
+
+---
+
 ## 提案路线
 
 这个 Skill 不会把所有提案塞进同一套模板，而是根据 brief 选择主路线：
@@ -100,7 +118,7 @@
 | [`references/layout-rhythm.md`](./references/layout-rhythm.md) | 页面密度、留白均衡和整套 PPT 节奏规则。 |
 | [`references/visual-system.md`](./references/visual-system.md) | 视觉方向、字体、版式、图表和截图规范。 |
 | [`references/palette-library.md`](./references/palette-library.md) | 无客户 VI 时使用的高级默认配色预设。 |
-| [`references/style-systems.md`](./references/style-systems.md) | Swiss、发布会极简、时尚美妆、日杂拼贴、摄影叙事、Web3/AI glass 等强风格系统。 |
+| [`references/style-systems.md`](./references/style-systems.md) | Swiss、发布会极简、时尚美妆、日式极简、日杂拼贴、摄影叙事、Web3/AI glass、像素、水墨、油画等强风格系统。 |
 | [`references/asset-pipeline.md`](./references/asset-pipeline.md) | 用户素材、AI 生成图、HTML/SVG 背景和图片 QA 规则。 |
 | [`references/font-system.md`](./references/font-system.md) | 免费可商用字体搭配和 fallback。 |
 | [`references/output-contract.md`](./references/output-contract.md) | PPTX 和逐字稿的输出格式要求。 |
@@ -191,7 +209,8 @@ brief:
 2. style-systems.md 中的风格系统
 3. 字体搭配和 fallback
 4. 视觉资产计划，包括用户素材和 AI 概念图
-5. 哪些页面不适合使用强表现风格
+5. 三页风格样张计划：封面 / 证据机制页 / 密集业务页
+6. 哪些页面不适合使用强表现风格
 
 视觉方向：
 日式杂志拼贴 / 时尚美妆 editorial / Web3 AI glass / 等等
@@ -322,5 +341,5 @@ MIT
     "name": "YUEYU TECH",
     "url": "https://www.yueyu.tech/"
   },
-  "softwareVersion": "0.1.5"
+  "softwareVersion": "0.1.6"
 } -->
