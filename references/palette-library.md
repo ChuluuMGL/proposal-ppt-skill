@@ -1,0 +1,160 @@
+# Palette Library
+
+Use this when the client has no visual identity or reference deck. Select one named palette and keep it consistent. Each palette includes a base, text, primary, secondary, accent, risk, and line color.
+
+Trend anchors used for this library:
+
+- 2026 presentation/design trends favor warm neutrals, earthy tones, restorative greens/teals, rich jewel accents, and restrained bright accents.
+- Pantone 2026's Cloud Dancer direction supports warm whites and calm negative space.
+- 2025-2026 branding trends continue to pair organic neutrals with more expressive accents.
+
+## Selection Rules
+
+- Use one base color family, one deep primary, one secondary, one accent, one risk color, and one line color.
+- Bright or saturated colors are accents only, not full-slide defaults.
+- Avoid a one-note deck dominated by one hue.
+- For FMCG and lifestyle, use warmth and product-friendly contrast.
+- For finance/B2B/government, use lower saturation and high trust.
+- For AI/SaaS/technology, use cooler neutrals, mineral blues, and restrained electric accents.
+
+## Palettes
+
+### 1. Cloud Editorial
+
+Best for formal proposals, consulting, and clean premium decks.
+
+| Token | Hex |
+|---|---|
+| Base | `#F8F7F2` |
+| Surface | `#FFFFFF` |
+| Text | `#101418` |
+| Muted | `#6B7280` |
+| Primary | `#17324D` |
+| Secondary | `#7A8B8B` |
+| Accent | `#C8A45D` |
+| Risk | `#B85C4A` |
+| Line | `#DCD8CC` |
+
+### 2. FMCG Warm Fresh
+
+Best for food, beverage, family, seasonal campaigns, and lifestyle proposals.
+
+| Token | Hex |
+|---|---|
+| Base | `#FBF7EF` |
+| Surface | `#FFFFFF` |
+| Text | `#16201A` |
+| Muted | `#6D746A` |
+| Primary | `#0E5E43` |
+| Secondary | `#8E6B2F` |
+| Accent | `#E07A4F` |
+| Risk | `#B94E3B` |
+| Line | `#E2D8C5` |
+
+### 3. Teal Intelligence
+
+Best for AI, SaaS, analytics, healthcare, and strategic transformation.
+
+| Token | Hex |
+|---|---|
+| Base | `#F5F8F8` |
+| Surface | `#FFFFFF` |
+| Text | `#0B1720` |
+| Muted | `#62717A` |
+| Primary | `#0B6B78` |
+| Secondary | `#143D59` |
+| Accent | `#28B6A7` |
+| Risk | `#D66A4A` |
+| Line | `#D5E3E4` |
+
+### 4. Cobalt Citrus
+
+Best for investor-style pitches, growth plans, and energetic launches.
+
+| Token | Hex |
+|---|---|
+| Base | `#F7F9FC` |
+| Surface | `#FFFFFF` |
+| Text | `#0A1020` |
+| Muted | `#647087` |
+| Primary | `#123C8C` |
+| Secondary | `#071A3A` |
+| Accent | `#FF8A3D` |
+| Risk | `#D94A4A` |
+| Line | `#D8E1F0` |
+
+### 5. Burgundy Mineral
+
+Best for premium consumer, culture, fashion, hospitality, and ceremony-heavy proposals.
+
+| Token | Hex |
+|---|---|
+| Base | `#FAF6F1` |
+| Surface | `#FFFFFF` |
+| Text | `#1E1516` |
+| Muted | `#756B69` |
+| Primary | `#6E1F2B` |
+| Secondary | `#3B5C6B` |
+| Accent | `#C8A15A` |
+| Risk | `#B7493D` |
+| Line | `#E3D8CF` |
+
+### 6. Olive Ink
+
+Best for government-adjacent, sustainability, B2B, manufacturing, and grounded corporate proposals.
+
+| Token | Hex |
+|---|---|
+| Base | `#F6F5EF` |
+| Surface | `#FFFFFF` |
+| Text | `#121611` |
+| Muted | `#687064` |
+| Primary | `#2F4A2F` |
+| Secondary | `#202A3A` |
+| Accent | `#B49B57` |
+| Risk | `#A85C45` |
+| Line | `#DAD8C8` |
+
+### 7. Charcoal Neon Accent
+
+Best for bold tech, youth culture, entertainment, and creative proposals. Use bright colors sparingly.
+
+| Token | Hex |
+|---|---|
+| Base | `#F6F7F9` |
+| Surface | `#FFFFFF` |
+| Text | `#0D1117` |
+| Muted | `#68707D` |
+| Primary | `#141821` |
+| Secondary | `#2B4C7E` |
+| Accent | `#B7F000` |
+| Risk | `#FF5C4D` |
+| Line | `#D7DEE8` |
+
+### 8. Powder Blue Calm
+
+Best for healthcare, education, family, and trust-led proposals that need softness without looking childish.
+
+| Token | Hex |
+|---|---|
+| Base | `#F7F9F7` |
+| Surface | `#FFFFFF` |
+| Text | `#111827` |
+| Muted | `#667085` |
+| Primary | `#3D83A5` |
+| Secondary | `#7C8B6F` |
+| Accent | `#D8A84E` |
+| Risk | `#C86652` |
+| Line | `#DDE5E8` |
+
+## Usage Pattern
+
+On a typical deck:
+
+- 60-75% base/surface
+- 15-25% text/neutral line
+- 5-10% primary blocks or headers
+- 3-5% accent
+- risk color only for warnings, deltas, or exceptions
+
+Do not apply accent colors to every card. Accent should tell the reader where to look.

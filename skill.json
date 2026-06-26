@@ -1,8 +1,8 @@
 {
   "name": "proposal-ppt",
   "display_name": "Business Proposal Presentation",
-  "description": "Create stage-gated commercial proposal PPT decks and presenter scripts from briefs, research, budgets, cases, timelines, and execution plans.",
-  "version": "0.1.1",
+  "description": "Create stage-gated commercial proposal PPT decks and presenter scripts with layout rhythm, palette presets, and proof-object QA.",
+  "version": "0.1.2",
   "author": "YUEYU TECH",
   "license": "MIT",
   "repository": "https://github.com/ChuluuMGL/proposal-ppt-skill",

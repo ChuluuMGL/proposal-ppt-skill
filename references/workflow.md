@@ -132,7 +132,12 @@ Required output:
 
 ### 5. 视觉系统建议
 
-### 6. 需要确认的问题
+### 6. 页面节奏图
+
+| 页码 | 密度 | 页型 | 节奏作用 |
+|---|---|---|---|
+
+### 7. 需要确认的问题
 ```
 
 Gate: in guided mode, stop here and ask the user to confirm the blueprint before building PPTX. In auto mode, proceed.
@@ -166,11 +171,12 @@ Use the active presentation tooling and its QA rules. For new PowerPoint decks, 
 Build order:
 
 1. Create or inherit visual system.
-2. Create master chrome: margins, title zone, page numbers, footer/source style.
-3. Build slides by page type.
-4. Insert proof objects: tables, matrices, timelines, screenshots, diagrams, sample pages.
-5. Render previews.
-6. Fix overlap, clipping, wrapping, alignment, and density issues.
+2. Select a named palette from `palette-library.md` when no client VI exists.
+3. Create master chrome: margins, title zone, page numbers, footer/source style.
+4. Build slides by page type and density class from `layout-rhythm.md`.
+5. Insert proof objects: tables, matrices, timelines, screenshots, diagrams, sample pages.
+6. Render previews and a contact sheet.
+7. Fix overlap, clipping, wrapping, alignment, density, over-clustered content, and dead empty zones.
 
 Gate: do not deliver before rendering/inspection. Mention if visual QA could not be fully performed.
 

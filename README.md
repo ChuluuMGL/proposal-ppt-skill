@@ -6,7 +6,7 @@
 [Simplified Chinese](./README.zh-CN.md) | English
 
 [![Skill](https://img.shields.io/badge/AI%20Skill-proposal--ppt-0E5E43)](./SKILL.md)
-[![Version](https://img.shields.io/badge/version-0.1.1-green)](./skill.json)
+[![Version](https://img.shields.io/badge/version-0.1.2-green)](./skill.json)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](./LICENSE)
 [![Template](https://img.shields.io/badge/template-PPTX-blue)](./assets/minimal-proposal-template.pptx)
 [![Workflow](https://img.shields.io/badge/workflow-stage--gated-purple)](./references/workflow.md)
@@ -95,7 +95,9 @@ See [`references/proposal-routes.md`](./references/proposal-routes.md) for the f
 | [`references/workflow.md`](./references/workflow.md) | Guided workflow, stage gates, recommended prompts. |
 | [`references/proposal-routes.md`](./references/proposal-routes.md) | Proposal type routing and chapter structures. |
 | [`references/page-types.md`](./references/page-types.md) | Page-type library and proof-object standards. |
+| [`references/layout-rhythm.md`](./references/layout-rhythm.md) | Slide density, whitespace balance, and deck pacing rules. |
 | [`references/visual-system.md`](./references/visual-system.md) | Visual families, typography, layout, chart, and screenshot rules. |
+| [`references/palette-library.md`](./references/palette-library.md) | Default high-taste palette presets when no client visual identity exists. |
 | [`references/output-contract.md`](./references/output-contract.md) | Required PPTX and presenter-script output format. |
 | [`references/quality-check.md`](./references/quality-check.md) | Final QA checklist and common failure modes. |
 | [`assets/minimal-proposal-template.pptx`](./assets/minimal-proposal-template.pptx) | Neutral fallback PowerPoint template. |
@@ -254,6 +256,8 @@ proposal-ppt-skill/
 └── references/
     ├── output-contract.md
     ├── page-types.md
+    ├── layout-rhythm.md
+    ├── palette-library.md
     ├── proposal-routes.md
     ├── quality-check.md
     ├── visual-system.md
@@ -291,5 +295,5 @@ MIT
     "name": "YUEYU TECH",
     "url": "https://www.yueyu.tech/"
   },
-  "softwareVersion": "0.1.1"
+  "softwareVersion": "0.1.2"
 } -->

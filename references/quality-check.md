@@ -35,10 +35,14 @@ For each slide:
 - Consistent margins, title positions, page numbers, and footer/source style.
 - No unreadable text below 8 pt.
 - No accidental overlap, clipping, or broken connectors.
+- No page has all major content clustered in one corner or one half unless the layout is deliberately asymmetric and balanced by a visual anchor.
+- No large empty lower-third, empty bordered placeholder, or unused media frame remains on a client-facing slide.
+- Every 3-5 slides, the deck changes rhythm through a section divider, big-idea slide, visual proof page, quote, summary, or low-density transition.
 - Tables have clear headers, units, assumptions, and exclusions.
 - Screenshots are cropped cleanly and aligned.
 - No meaningless decoration, fake logos, low-resolution images, or stretched media.
 - The palette does not become a one-color monotone or cheap gradient theme.
+- When no VI is provided, a named palette from `palette-library.md` is selected and applied consistently.
 
 ## Commercial QA
 

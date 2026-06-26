@@ -6,7 +6,7 @@
 中文 | [English](./README.md)
 
 [![Skill](https://img.shields.io/badge/AI%20Skill-proposal--ppt-0E5E43)](./SKILL.md)
-[![Version](https://img.shields.io/badge/version-0.1.1-green)](./skill.json)
+[![Version](https://img.shields.io/badge/version-0.1.2-green)](./skill.json)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](./LICENSE)
 [![Template](https://img.shields.io/badge/template-PPTX-blue)](./assets/minimal-proposal-template.pptx)
 [![Workflow](https://img.shields.io/badge/workflow-stage--gated-purple)](./references/workflow.md)
@@ -96,7 +96,9 @@
 | [`references/workflow.md`](./references/workflow.md) | 阶段化工作流、检查门和推荐提示词。 |
 | [`references/proposal-routes.md`](./references/proposal-routes.md) | 提案类型路由和章节结构。 |
 | [`references/page-types.md`](./references/page-types.md) | 页型库和 proof object 标准。 |
+| [`references/layout-rhythm.md`](./references/layout-rhythm.md) | 页面密度、留白均衡和整套 PPT 节奏规则。 |
 | [`references/visual-system.md`](./references/visual-system.md) | 视觉方向、字体、版式、图表和截图规范。 |
+| [`references/palette-library.md`](./references/palette-library.md) | 无客户 VI 时使用的高级默认配色预设。 |
 | [`references/output-contract.md`](./references/output-contract.md) | PPTX 和逐字稿的输出格式要求。 |
 | [`references/quality-check.md`](./references/quality-check.md) | 交付前 QA 清单和常见失败模式。 |
 | [`assets/minimal-proposal-template.pptx`](./assets/minimal-proposal-template.pptx) | 中性 fallback PowerPoint 模板。 |
@@ -255,6 +257,8 @@ proposal-ppt-skill/
 └── references/
     ├── output-contract.md
     ├── page-types.md
+    ├── layout-rhythm.md
+    ├── palette-library.md
     ├── proposal-routes.md
     ├── quality-check.md
     ├── visual-system.md
@@ -292,5 +296,5 @@ MIT
     "name": "YUEYU TECH",
     "url": "https://www.yueyu.tech/"
   },
-  "softwareVersion": "0.1.1"
+  "softwareVersion": "0.1.2"
 } -->

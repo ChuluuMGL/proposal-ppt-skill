@@ -29,7 +29,9 @@ Load only the references needed for the current task:
 - For guided execution modes, stage gates, and user-option handling, read `references/workflow.md`.
 - For story structure and proposal type routing, read `references/proposal-routes.md`.
 - For page planning and proof objects, read `references/page-types.md`.
+- For slide rhythm, whitespace balance, layout density, and page-to-page pacing, read `references/layout-rhythm.md`.
 - For visual direction, palette, typography, and PPT template use, read `references/visual-system.md`.
+- For default high-taste palette presets when no client VI is provided, read `references/palette-library.md`.
 - For final file and script format, read `references/output-contract.md`.
 - For delivery QA and failure modes, read `references/quality-check.md`.
 
@@ -101,4 +103,6 @@ Follow `references/workflow.md` for the full stage-gate process. The high-level 
 - Do not default to a service-list deck. Start from the client problem and decision criteria.
 - Do not let budget pages hide exclusions or uncertain costs in unreadable footnotes.
 - Do not make a PPT that requires the presenter to explain missing logic verbally. The visual argument must stand on its own.
+- Do not leave large empty placeholder frames or a visually dead lower third. If evidence is missing, mark the item compactly as `待确认` and rebalance the layout.
+- Do not make every slide dense. Insert deliberate breathing slides, section dividers, big-idea pages, or visual proof pages every 3-5 slides.
 - Do not insert the skill author's company information into user decks unless the user explicitly asks to present under that company identity.

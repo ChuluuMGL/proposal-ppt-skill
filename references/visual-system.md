@@ -1,10 +1,10 @@
 # Visual System
 
-Use client VI first. Use a user-provided reference deck before any fallback style. Use this guide only when no stronger visual source exists.
+Use client VI first. Use a user-provided reference deck before any fallback style. Use this guide only when no stronger visual source exists. For page density and rhythm, use `layout-rhythm.md`. For richer default color choices, use `palette-library.md`.
 
 ## Visual Style Families
 
-Choose one primary family.
+Choose one primary family, then pick a specific palette from `palette-library.md`. Do not reuse the same green/gold palette for every proposal.
 
 ### corporate-trust
 
@@ -54,6 +54,9 @@ Use for AI, SaaS, digital platforms, automation, data, and productized services.
 - Align title, cards, tables, and diagrams to a grid.
 - Use at most three information levels on normal slides: title, key content, support note.
 - Break complex pages instead of shrinking core text.
+- Distribute content through the intended content field. Avoid clustering all objects in the top half while leaving the lower third visually dead.
+- Use empty space deliberately. A page may be sparse only when it is a title, section divider, big idea, quote, transition, or visual focus slide.
+- Never place a large empty bordered placeholder on a client-facing slide. If an asset is missing, use a compact `待确认` note or restructure the slide.
 - Do not use more than two consecutive pure tables or pure matrices without a strategy/sample/mechanism page.
 - Use page numbers as two digits when appropriate: `01`, `02`, `03`.
 
