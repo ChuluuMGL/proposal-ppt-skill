@@ -5,7 +5,7 @@ description: Create, write, design, edit, or audit commercial proposal presentat
 
 # Proposal PPT
 
-Use this skill to turn client briefs, tender files, research, brand materials, budgets, cases, and execution plans into a commercial proposal package:
+Use this skill to turn client briefs, tender files, research, brand materials, budgets, cases, and execution plans into a commercial proposal package. When the runtime has PPTX support, the package includes:
 
 - an editable `.pptx`
 - a same-name presenter script `.md`
@@ -15,10 +15,12 @@ The goal is not to decorate information. The goal is to help the client decide w
 
 ## Required Output
 
-When creating a proposal, produce both deliverables unless the user explicitly asks for only one:
+When creating a proposal in a runtime with PPTX support, produce both deliverables unless the user explicitly asks for only one:
 
 1. `*.pptx` with the full proposal deck.
 2. `*.md` with presenter script. Include presentation logic, slide-by-slide talking points, transition notes, and exact speaker script. Do not put long oral explanation into slide bodies.
+
+If PPTX support is unavailable, downgrade using `references/runtime-compatibility.md` and state the limitation clearly.
 
 If information is missing, continue with a working draft and mark unknowns as `待补充`, `待确认`, `暂无公开数据`, or `需客户确认`. Do not invent data, results, awards, client cases, pricing, permissions, or platform rules.
 
@@ -37,6 +39,7 @@ Load only the references needed for the current task:
 - For AI-generated images, user assets, HTML/SVG-to-PPT hybrid backgrounds, and visual asset QA, read `references/asset-pipeline.md`.
 - For free/commercial-safe font pairing and fallbacks, read `references/font-system.md`.
 - For final file and script format, read `references/output-contract.md`.
+- For runtime compatibility, PPTX backend requirements, and fallback modes, read `references/runtime-compatibility.md`.
 - For delivery QA and failure modes, read `references/quality-check.md`.
 
 Use `assets/minimal-proposal-template.pptx` only as a fallback visual asset when no client VI, reference deck, or stronger design direction is provided.
@@ -46,11 +49,24 @@ Use `assets/minimal-proposal-template.pptx` only as a fallback visual asset when
 Default to `guided` mode unless the user explicitly asks to generate everything directly.
 
 - `guided`: Use staged checkpoints. First return brief audit, winning thesis, chapter structure, page plan, proof objects, and visual direction for confirmation. After confirmation, build the PPTX and script.
-- `auto`: If the user says to proceed directly or is under time pressure, make reasonable assumptions, mark unknowns as `待确认`, and produce the full `.pptx` plus `.md`.
+- `auto`: If the user says to proceed directly or is under time pressure, make reasonable assumptions, mark unknowns as `待确认`, and produce the full `.pptx` plus `.md` when a PPTX backend is available. Otherwise use the best fallback mode and state the limitation.
 - `edit`: If the user provides an existing PPTX, audit and modify the deck instead of rebuilding from scratch unless the user asks for a rebuild.
 - `audit`: If the user asks for review only, do not generate a new deck. Return findings, page-level issues, and revision recommendations.
 
 In guided mode, ask only high-impact routing questions. Do not block on details that can be marked `待确认`.
+
+## Runtime Requirements
+
+This skill is not itself a PowerPoint rendering engine. A finished editable `.pptx` requires a host runtime with a presentation backend, such as a native presentations skill/tool, `python-pptx`, `pptxgenjs`, an Office-compatible exporter, PowerPoint/Keynote/LibreOffice automation, or an equivalent runtime-specific tool.
+
+At the start of a PPTX creation task, identify the available backend:
+
+- PPTX creation/editing backend
+- preview/render backend
+- image-generation backend, if needed
+- fallback mode if the backend is missing
+
+If the runtime cannot create an editable `.pptx`, downgrade honestly to `blueprint-only`, `copy-and-script`, `template-spec`, or `html-demo` mode from `references/runtime-compatibility.md`. Do not claim a PowerPoint deck was delivered when only markdown, HTML, images, or a PDF exists.
 
 ## Workflow
 
@@ -90,8 +106,9 @@ Follow `references/workflow.md` for the full stage-gate process. The high-level 
    - If the client has VI, use client brand colors and typography first.
    - If no visual source exists, use `references/visual-system.md` and the minimal template as fallback.
    - If a rich style is requested or no client VI exists, run the Style DNA Gate in `references/style-template-strategy.md` before building the deck.
+   - Use `references/style-systems.md` for component-level style transformations after the route is chosen.
    - If a rich style has no approved reference deck, create or recommend the three-page style sample set before scaling: cover/big idea, proof/mechanism, and dense business page.
-   - When creating a PowerPoint deck, follow the active PowerPoint/presentations skill requirements, including deck rendering and overlap QA.
+   - When creating a PowerPoint deck, use the active runtime's PPTX backend and follow `references/runtime-compatibility.md`, including render/overlap QA where available.
 
 8. **Write the presenter script**
    - The `.md` must be usable by a presenter, not just a slide outline.
@@ -118,3 +135,4 @@ Follow `references/workflow.md` for the full stage-gate process. The high-level 
 - Do not scale a new visual style to a full deck before the cover/big-idea, strategy/mechanism, and proof-dense sample pages pass full-size review.
 - Do not present AI-generated visuals as real client proof. Mark them as conceptual when relevant.
 - Do not insert the skill author's company information into user decks unless the user explicitly asks to present under that company identity.
+- Do not hide runtime limitations. If the current agent cannot generate, render, or open PPTX files, say so and deliver the best fallback package instead.

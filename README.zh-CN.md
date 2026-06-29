@@ -6,7 +6,7 @@
 中文 | [English](./README.md)
 
 [![Skill](https://img.shields.io/badge/AI%20Skill-proposal--ppt-0E5E43)](./SKILL.md)
-[![Version](https://img.shields.io/badge/version-0.1.6-green)](./skill.json)
+[![Version](https://img.shields.io/badge/version-0.1.7-green)](./skill.json)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](./LICENSE)
 [![Template](https://img.shields.io/badge/template-PPTX-blue)](./assets/minimal-proposal-template.pptx)
 [![Workflow](https://img.shields.io/badge/workflow-stage--gated-purple)](./references/workflow.md)
@@ -91,6 +91,25 @@
 
 ---
 
+## 运行环境兼容性
+
+这个 Skill 不是独立 PPTX 渲染引擎。它提供提案策略、页面规划、视觉系统、逐字稿和 QA 闸门；最终是否能直接生成可编辑 `.pptx`，取决于宿主 Agent 是否具备 PPTX 生成/编辑后端。
+
+| 状态 | Runtime / Agent | 说明 |
+|---|---|---|
+| tested | Claude Code | 用户在 2026-06 做过本地提案生成流程测试。PPTX 输出仍依赖宿主工具能力。 |
+| tested | Codex / OpenAI coding agent | 本仓库编辑、校验、发布，以及本地 PPTX 风格 demo 生成在 Codex 环境验证。 |
+| expected | Generic `SKILL.md` readers | 只要能读取本地 skill 文件夹和 references，理论可作为指令包工作。 |
+| expected, unverified | Cursor / Windsurf / Trae / Qoder / Antigravity / OpenClaw / Hermes | 预计可读取，但未逐一维护者实测。正式使用前应验证 skill 调用、文件访问和 PPTX 后端。 |
+
+完整说明见 [`references/runtime-compatibility.md`](./references/runtime-compatibility.md)。
+
+可编辑 `.pptx` 生成需要至少一种后端：宿主 presentation skill、`python-pptx`、`pptxgenjs`、Office-compatible exporter、PowerPoint / Keynote / LibreOffice 自动化，或其他等价工具。
+
+如果当前 runtime 没有 PPTX 后端，Skill 应降级输出：提案蓝图、逐页文案、视觉规格和逐字稿，而不是假装已经生成 PowerPoint。
+
+---
+
 ## 提案路线
 
 这个 Skill 不会把所有提案塞进同一套模板，而是根据 brief 选择主路线：
@@ -144,6 +163,7 @@
 | [`references/asset-pipeline.md`](./references/asset-pipeline.md) | 用户素材、AI 生成图、HTML/SVG 背景和图片 QA 规则。 |
 | [`references/font-system.md`](./references/font-system.md) | 免费可商用字体搭配和 fallback。 |
 | [`references/output-contract.md`](./references/output-contract.md) | PPTX 和逐字稿的输出格式要求。 |
+| [`references/runtime-compatibility.md`](./references/runtime-compatibility.md) | Agent 兼容性、PPTX 后端要求和降级路径。 |
 | [`references/quality-check.md`](./references/quality-check.md) | 交付前 QA 清单和常见失败模式。 |
 | [`assets/minimal-proposal-template.pptx`](./assets/minimal-proposal-template.pptx) | 中性 fallback PowerPoint 模板。 |
 | [`agents/openai.yaml`](./agents/openai.yaml) | Codex / OpenAI 风格 Skill 界面元数据。 |
@@ -277,7 +297,7 @@ brief:
 A：这是 AI Skill。内置 PPTX 只是中性 fallback 模板，核心价值是提案工作流、页型规划、proof object 逻辑和逐字稿结构。
 
 **Q：它会自动生成 PPTX 吗？**  
-A：可以，但需要在支持创建或编辑 PowerPoint 的 Agent 环境中使用。Codex 环境下通常会结合本地 presentation 工具生成可编辑 PPTX。
+A：可以，但需要在支持创建或编辑 PowerPoint 的 Agent 环境中使用，例如宿主 presentation tool、`python-pptx`、`pptxgenjs`、Office-compatible exporter 或 PowerPoint / Keynote / LibreOffice 自动化。没有 PPTX 后端时，应降级为蓝图、逐页文案和逐字稿。
 
 **Q：需要 MCP 服务器吗？**  
 A：不需要。这是本地 Skill 包，不是 MCP Server。
@@ -302,6 +322,7 @@ A：可以，只要对应 Agent 支持 Skill 文件夹，或能读取 `SKILL.md`
 | 形态 | 本地 Skill 文件夹，包含 `SKILL.md`、references、assets 和 metadata |
 | 主要输出 | `.pptx` + `.md` |
 | 内置资产 | 中性 fallback PowerPoint 模板 |
+| PPTX 生成 | 依赖宿主 Agent 的 presentation / PPTX 后端 |
 | License | MIT |
 | 作者 | YUEYU TECH |
 
@@ -327,6 +348,7 @@ proposal-ppt-skill/
     ├── palette-library.md
     ├── proposal-routes.md
     ├── quality-check.md
+    ├── runtime-compatibility.md
     ├── style-template-strategy.md
     ├── style-systems.md
     ├── visual-system.md
@@ -364,5 +386,5 @@ MIT
     "name": "YUEYU TECH",
     "url": "https://www.yueyu.tech/"
   },
-  "softwareVersion": "0.1.6"
+  "softwareVersion": "0.1.7"
 } -->

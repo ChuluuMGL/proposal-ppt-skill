@@ -10,6 +10,14 @@ Most Google Fonts are open source and can be used commercially under their liste
 
 Reference anchors: Google Fonts FAQ, SIL Open Font License, Inter license, IBM Plex license, Noto/Source Han open-source font projects. Re-check licenses before bundling font binaries into a public skill release.
 
+Runtime rule:
+
+- Do not assume a preferred font is installed on the user's machine.
+- Do not download or install fonts unless the user approves it or the runtime already has a safe font-install workflow.
+- If a preferred font is unavailable, use the fallback stack and keep the layout intact.
+- Do not fail a proposal build only because a display font is missing.
+- If a public template or demo requires a non-system font for its appearance, document the font name, license, source, and fallback.
+
 ## General Fallback Stack
 
 Use installed system fonts when the target machine may not have custom fonts.
@@ -44,6 +52,11 @@ Use installed system fonts when the target machine may not have custom fonts.
 
 ## Typography QA
 
+- [ ] Preferred fonts are free/commercial-safe or user-provided.
+- [ ] No commercial font is bundled without a license.
+- [ ] Missing fonts fall back without text overflow or layout breakage.
+- [ ] Display/serif/pixel fonts are not used for dense body copy.
+- [ ] Font choices are documented in the presenter script or final handoff when they materially affect the visual system.
 - Do not use more than two font families per deck unless a style system explicitly needs an accent font.
 - Keep body text readable; avoid thin weights on dark or image backgrounds.
 - Use serif/display fonts for mood, not for dense tables.

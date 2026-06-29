@@ -88,7 +88,7 @@ Suggested PPT sizes:
 - Dense table text: 10-13 pt
 - Notes/source: 8-10 pt
 
-When using the PowerPoint/presentations skill with no template, follow its minimum font-size requirements unless the deck has a stronger template or explicit compact business style.
+When using a runtime-specific PPTX/presentation backend with no template, follow that backend's minimum font-size and compatibility requirements unless the deck has a stronger template or explicit compact business style. See `runtime-compatibility.md`.
 
 Rules:
 

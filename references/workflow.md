@@ -9,7 +9,7 @@ Determine these routing choices before writing slide content.
 ### Work Mode
 
 - `guided`: first produce blueprint, then wait for user confirmation before building files.
-- `auto`: produce the full PPTX and script in one pass with assumptions marked.
+- `auto`: produce the full PPTX and script in one pass with assumptions marked when a PPTX backend is available; otherwise use the best fallback mode.
 - `edit`: modify an existing PPTX and keep the source deck's visual rules unless asked to restyle.
 - `audit`: review a proposal deck and return issues/recommendations only.
 
@@ -64,6 +64,19 @@ Optional deliverables:
 - speaker notes embedded in PPTX
 - bilingual version
 
+### Runtime Capability Check
+
+Before promising a `.pptx`, identify the runtime capabilities from `runtime-compatibility.md`:
+
+```markdown
+PPTX backend:
+Preview/render backend:
+Image-generation backend:
+Fallback mode if PPTX backend is unavailable:
+```
+
+If no PPTX backend is available, do not enter full PPT build mode. Use `blueprint-only`, `copy-and-script`, `template-spec`, or `html-demo` fallback and state the limitation clearly.
+
 ## Stage 0 Output
 
 If the user has not already specified routing, output a compact startup summary:
@@ -75,6 +88,8 @@ If the user has not already specified routing, output a compact startup summary:
 - 提案类型：
 - 页数深度：
 - 视觉来源：
+- PPTX 后端：
+- 预览/渲染能力：
 - 必须包含：
 - 当前缺失但可先推进：
 ```
@@ -193,7 +208,7 @@ Quality gate:
 
 Build or edit the PPTX after the copy draft is stable.
 
-Use the active presentation tooling and its QA rules. For new PowerPoint decks, produce editable objects rather than screenshots where possible.
+Use the identified PPTX backend and its QA rules from `runtime-compatibility.md`. For new PowerPoint decks, produce editable objects rather than screenshots where possible.
 
 Build order:
 
@@ -211,7 +226,7 @@ Build order:
 12. Fix overlap, clipping, wrapping, alignment, density, over-clustered content, dead empty zones, weak style recognition, identical component grammar across styles, and low-taste primitive-shape placeholders.
 13. Run PPTX compatibility QA from `quality-check.md`; if the file is structurally valid but PowerPoint cannot open it, rewrite it through an Office-compatible exporter and deliver the repaired copy.
 
-Gate: do not deliver before rendering/inspection. Mention if visual QA could not be fully performed.
+Gate: do not deliver before rendering/inspection when the runtime can render. If rendering/open validation is unavailable, say exactly what was checked and what remains unverified.
 
 ## Stage 5: Presenter Script
 
@@ -236,6 +251,7 @@ Final response must include:
 - PPTX path
 - script MD path
 - mode used: guided / auto / edit / audit
+- runtime and PPTX backend used
 - template or visual source used
 - QA performed
 - unresolved assumptions

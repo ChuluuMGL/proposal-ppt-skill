@@ -2,6 +2,8 @@
 
 When the task is to create a commercial proposal, deliver a PPTX and a presenter script Markdown file.
 
+If the current runtime cannot create an editable PPTX, do not claim full delivery. Use a fallback mode from `runtime-compatibility.md` and clearly label the package as blueprint/script/spec/prototype output.
+
 ## File Naming
 
 Use clear names:
@@ -89,6 +91,10 @@ After finishing, report:
 
 - PPTX path
 - script MD path
+- mode used: guided / auto / edit / audit / fallback
+- runtime/agent used
+- PPTX backend used, or fallback reason if unavailable
+- preview/render/open validation method used
 - whether the deck used client VI, a reference deck, or the minimal fallback template
 - selected palette and visual style family when no client VI/reference was provided
 - selected rich style system, font pairing, and asset pipeline when a style-rich route was used

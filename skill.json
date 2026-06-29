@@ -1,8 +1,8 @@
 {
   "name": "proposal-ppt",
   "display_name": "Business Proposal Presentation",
-  "description": "Create stage-gated commercial proposal PPT decks and presenter scripts with public style-template families, three-page sample gates, AI visual asset planning, font guidance, palette presets, and proof-object QA.",
-  "version": "0.1.6",
+  "description": "Create stage-gated commercial proposal PPT decks and presenter scripts with public style-template families, runtime compatibility, three-page sample gates, AI visual asset planning, font guidance, palette presets, and proof-object QA.",
+  "version": "0.1.7",
   "author": "YUEYU TECH",
   "license": "MIT",
   "repository": "https://github.com/ChuluuMGL/proposal-ppt-skill",
@@ -20,6 +20,8 @@
     "AI visuals",
     "presentation style system",
     "three-page style sample gate",
+    "runtime compatibility",
+    "pptx backend",
     "visual asset pipeline",
     "提案PPT",
     "商业提案",
@@ -36,5 +38,70 @@
       "repository": "https://github.com/ChuluuMGL/yueyu-skill",
       "description": "Query YUEYU TECH company and marketing-service information."
     }
+  ],
+  "compatibility": {
+    "tested": [
+      {
+        "runtime": "Claude Code",
+        "status": "user-tested",
+        "date": "2026-06",
+        "notes": "User-tested with a local proposal-generation flow. PPTX output depends on the host runtime's file and presentation-generation tools."
+      },
+      {
+        "runtime": "Codex / OpenAI coding agent",
+        "status": "maintainer-validated",
+        "date": "2026-06",
+        "notes": "Repository editing, JSON/Markdown checks, GitHub publishing, and local PPTX style-demo generation were validated in Codex with available local presentation tooling."
+      }
+    ],
+    "expected": [
+      {
+        "runtime": "Generic SKILL.md readers",
+        "notes": "Expected when the agent can read local skill folders and referenced markdown files."
+      },
+      {
+        "runtime": "Cursor / Windsurf / Trae / Qoder / Antigravity / OpenClaw / Hermes",
+        "notes": "Expected as instruction packs when installed in a readable local skill folder, but not maintainer-verified. Validate file access, skill invocation, and PPTX backend before auto mode."
+      }
+    ],
+    "limitations": [
+      "This skill is not a standalone PPTX rendering engine.",
+      "Editable PPTX generation requires a host presentation backend.",
+      "Image generation requires a user-configured provider or runtime tool.",
+      "Strong visual styles require full-size visual review before client delivery."
+    ]
+  },
+  "runtime_requirements": {
+    "required": [
+      "Agent can read SKILL.md and references/*.md",
+      "Agent can access user-provided source files",
+      "Agent can write output files"
+    ],
+    "pptx_generation_requires_any_of": [
+      "native presentation/PPTX generation skill or tool",
+      "python-pptx",
+      "pptxgenjs",
+      "Office-compatible exporter",
+      "PowerPoint/Keynote/LibreOffice automation",
+      "runtime-specific presentation backend"
+    ],
+    "recommended_for_qa": [
+      "PPTX render/open validation",
+      "ZIP/XML integrity check",
+      "slide preview or contact sheet generation",
+      "full-size visual review for style-critical pages"
+    ],
+    "optional": [
+      "image generation provider",
+      "HTML/SVG renderer",
+      "PDF/image extraction tools"
+    ]
+  },
+  "fallback_modes": [
+    "blueprint-only",
+    "copy-and-script",
+    "template-spec",
+    "html-demo",
+    "repair-needed"
   ]
 }

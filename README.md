@@ -6,7 +6,7 @@
 [Simplified Chinese](./README.zh-CN.md) | English
 
 [![Skill](https://img.shields.io/badge/AI%20Skill-proposal--ppt-0E5E43)](./SKILL.md)
-[![Version](https://img.shields.io/badge/version-0.1.6-green)](./skill.json)
+[![Version](https://img.shields.io/badge/version-0.1.7-green)](./skill.json)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](./LICENSE)
 [![Template](https://img.shields.io/badge/template-PPTX-blue)](./assets/minimal-proposal-template.pptx)
 [![Workflow](https://img.shields.io/badge/workflow-stage--gated-purple)](./references/workflow.md)
@@ -90,6 +90,25 @@ Included style systems include `fashion-beauty-editorial`, `beauty-gloss-clinica
 
 ---
 
+## Runtime Compatibility
+
+This skill is not a standalone PPTX rendering engine. It provides proposal strategy, page planning, visual systems, presenter scripts, and QA gates. Direct editable `.pptx` generation depends on the host agent's presentation backend.
+
+| Status | Runtime / Agent | Notes |
+|---|---|---|
+| tested | Claude Code | User-tested with a local proposal-generation flow in 2026-06. PPTX output still depends on host tooling. |
+| tested | Codex / OpenAI coding agent | Repository editing, validation, publishing, and local PPTX style-demo generation were validated in Codex. |
+| expected | Generic `SKILL.md` readers | Expected when the agent can read local skill folders and referenced markdown files. |
+| expected, unverified | Cursor / Windsurf / Trae / Qoder / Antigravity / OpenClaw / Hermes | Expected as instruction packs, but not maintainer-verified. Validate invocation, file access, and PPTX backend before auto mode. |
+
+See [`references/runtime-compatibility.md`](./references/runtime-compatibility.md) for the full matrix.
+
+Editable `.pptx` generation requires at least one backend: host presentation skill/tooling, `python-pptx`, `pptxgenjs`, an Office-compatible exporter, PowerPoint / Keynote / LibreOffice automation, or an equivalent runtime-specific tool.
+
+If the current runtime has no PPTX backend, the skill should downgrade to a proposal blueprint, slide-by-slide copy, visual specification, and presenter script instead of pretending a PowerPoint file was created.
+
+---
+
 ## Proposal Routes
 
 The skill does not force every proposal into the same template. It routes the project into one primary proposal type:
@@ -143,6 +162,7 @@ See [`references/style-template-strategy.md`](./references/style-template-strate
 | [`references/asset-pipeline.md`](./references/asset-pipeline.md) | User assets, AI-generated visuals, HTML/SVG backgrounds, and image QA rules. |
 | [`references/font-system.md`](./references/font-system.md) | Free/commercial-safe font pairings and fallbacks. |
 | [`references/output-contract.md`](./references/output-contract.md) | Required PPTX and presenter-script output format. |
+| [`references/runtime-compatibility.md`](./references/runtime-compatibility.md) | Agent compatibility, PPTX backend requirements, and fallback modes. |
 | [`references/quality-check.md`](./references/quality-check.md) | Final QA checklist and common failure modes. |
 | [`assets/minimal-proposal-template.pptx`](./assets/minimal-proposal-template.pptx) | Neutral fallback PowerPoint template. |
 | [`agents/openai.yaml`](./agents/openai.yaml) | Codex/OpenAI-style skill UI metadata. |
@@ -276,7 +296,7 @@ File:
 It is an AI skill. The included PPTX is only a neutral fallback template. The main value is the workflow, page planning, proof-object logic, and presenter-script structure.
 
 **Does it create the PPTX automatically?**  
-Yes, when used inside an agent that can create or edit PowerPoint files. In Codex, it should be used together with the local presentation tooling available in the environment.
+Yes, when used inside an agent that can create or edit PowerPoint files, such as a host presentation tool, `python-pptx`, `pptxgenjs`, an Office-compatible exporter, or PowerPoint / Keynote / LibreOffice automation. Without a PPTX backend, it should downgrade to blueprint, slide copy, visual specification, and presenter script.
 
 **Does it require an MCP server?**  
 No. This is a local skill package, not an MCP server.
@@ -301,6 +321,7 @@ Yes, if they support skill folders or can read `SKILL.md`-style packages. Instal
 | Format | Local skill folder with `SKILL.md`, references, assets, and metadata |
 | Primary output | `.pptx` + `.md` |
 | Bundled asset | Neutral fallback PowerPoint template |
+| PPTX generation | Depends on the host agent's presentation / PPTX backend |
 | License | MIT |
 | Author | YUEYU TECH |
 
@@ -326,6 +347,7 @@ proposal-ppt-skill/
     ├── palette-library.md
     ├── proposal-routes.md
     ├── quality-check.md
+    ├── runtime-compatibility.md
     ├── style-template-strategy.md
     ├── style-systems.md
     ├── visual-system.md
@@ -363,5 +385,5 @@ MIT
     "name": "YUEYU TECH",
     "url": "https://www.yueyu.tech/"
   },
-  "softwareVersion": "0.1.6"
+  "softwareVersion": "0.1.7"
 } -->
