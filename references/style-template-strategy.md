@@ -16,6 +16,21 @@ A proposal template is acceptable only when it changes the full visual grammar:
 
 Do not treat a style as a palette. Do not create a public template by recoloring the same card layout.
 
+## Market Reference Gate
+
+Before creating or revising a public style template, inspect 3-6 strong market references from sources such as Behance, Pitch, Envato/Creative Market, Slidesgo, Canva, SlideModel, or high-quality agency decks. Use references only as design grammar; never copy protected layouts, screenshots, imagery, logos, mastheads, or exact slide compositions.
+
+The audit must extract:
+
+- page-type coverage: cover, brief/problem, strategy, proof, KPI, budget, roadmap, risk, team, close,
+- asset behavior: photography, screenshots, product mockups, interface visuals, texture, icons,
+- graph/table treatment: header style, line weight, row rhythm, highlight behavior, caption/source behavior,
+- layout grammar: margins, columns, crop rules, asymmetry, title zone, footer/folio,
+- component kit: reusable chart, table, timeline, gallery, matrix, caption rail, and source note patterns,
+- anti-patterns to avoid in the generated deck.
+
+Reject the template direction if the audit only describes colors or mood words. A usable audit must explain how business proof pages are handled.
+
 ## Public Template Families
 
 Default to these four public style families when the user has no client VI or reference deck. They are separated by commercial posture and proof style, so the default options do not collapse into one visual template.
@@ -60,6 +75,24 @@ Gate rules:
 - If the style disappears when the title text is removed, reject the system.
 - If proof-dense pages become image screenshots or unreadable art boards, reject the system.
 - If the lower third is accidentally empty, add a conclusion band, rebalance the layout, or convert the slide to a deliberate breathing page.
+
+## Component Kit Requirement
+
+A reusable public proposal template must define a component kit, not only sample pages. At minimum, specify how these components look in the selected style:
+
+| Component | Required behavior |
+|---|---|
+| Hero visual | Real/client/generative image or a refined visual asset frame; not crude rectangles. |
+| Caption rail | Explains what the image proves and how it transfers into the proposal. |
+| KPI strip | Metrics with unit, definition, status, and owner; no decorative numbers. |
+| Budget table | Amount, usage, deliverable, acceptance, exclusions, assumptions. |
+| Risk register | Risk, trigger, response, owner, escalation boundary. |
+| Roadmap | Phase, milestone, deliverable, dependency, review point. |
+| Proof gallery | Source-backed images/screenshots/cases with captions and usage rights. |
+| Platform/module matrix | Role, content action, asset produced, KPI, boundary. |
+| Source/footer system | Low-contrast but readable sources, assumptions, and page folios. |
+
+If the same rounded-card or flat-color-block component appears across every family, the template has failed. Each family must have its own proof language: board memo, editorial spread, launch interface, or product/catalog shelf.
 
 ## Template Family DNA
 
@@ -182,14 +215,18 @@ Strong style usually needs assets. Use this priority:
 
 Keep core business text, tables, budgets, KPI, risks, and page numbers editable. Use generated/HTML/SVG assets mainly for backgrounds, textures, hero visuals, collage layers, and style-specific atmosphere.
 
+Do not let large flat color blocks do the job of real visuals. If a slide depends on color blocks to look "designed", replace them with a real image, screenshot, mockup, chart, table, or captioned proof object. Color is an accent and hierarchy tool, not the primary evidence.
+
 ## Build Sequence
 
 1. Select template family.
-2. Complete the Style DNA Contract.
-3. Create a slide rhythm map with density classes.
-4. Create an asset plan.
-5. Build the three-page sample gate.
-6. Visually review full-size samples.
-7. Only after approval, scale the system to the full deck.
-8. Render final full-size slides and contact sheet.
-9. Fix layout, style, readability, and compatibility issues.
+2. Complete the Market Reference Gate.
+3. Complete the Style DNA Contract.
+4. Define the component kit.
+5. Create a slide rhythm map with density classes.
+6. Create an asset plan.
+7. Build the three-page sample gate.
+8. Visually review full-size samples.
+9. Only after approval, scale the system to the full deck.
+10. Render final full-size slides and contact sheet.
+11. Fix layout, style, readability, and compatibility issues.

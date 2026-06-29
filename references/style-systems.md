@@ -136,6 +136,34 @@ For every selected style, define how these components transform:
 
 If component treatment is the same across styles, the style library has failed.
 
+### Market-Grade Component Kit
+
+Market-grade proposal templates include enough reusable parts to build a full deck, not just attractive covers. For every public style family, define at least these components:
+
+| Component | Boardroom | Editorial Brand | Tech Launch | Lifestyle Commerce |
+|---|---|---|---|---|
+| Hero visual | document/report spread | full-bleed crop or art-directed product image | product/interface hero | product scene or shelf image |
+| Proof gallery | source board with audit labels | image/caption spread | dashboard/UI thumbnail set | catalog/contact-sheet proof wall |
+| Table | report ledger with thin rules | editorial thin-rule table | dark status table or light product table | procurement-style spend table |
+| KPI | restrained metric row | captioned proof number | dashboard metric strip | retail/social metric shelf |
+| Timeline | phased roadmap | issue/editorial calendar | launch/release path | campaign calendar or shelf rhythm |
+| Risk | risk register | rights/source checklist | control panel plus register | included/not-included checklist |
+
+The component kit must be visible in samples. If the generated deck only shows title pages and generic cards, it is not a reusable template.
+
+### Color Block Rule
+
+Flat color blocks are allowed only as:
+
+- small accents,
+- table headers,
+- caption rails,
+- image mats,
+- section dividers,
+- status highlights.
+
+They should not be the main proof object. If a slide looks empty without a color block, redesign the slide around an asset, chart, table, or source-backed proof.
+
 ### Expressive Add-on Rules
 
 Use these add-ons only when their visual grammar is visible. They are not palette names.

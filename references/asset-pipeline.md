@@ -14,6 +14,30 @@ Use assets in this order:
 
 Do not use random stock-like images only because they look decorative.
 
+## Asset-First Quality Bar
+
+For a style-rich public template, visual surfaces must be asset-first:
+
+- Use real product/scene/case/screenshot assets when available.
+- Use AI-generated conceptual images only when they are clearly marked conceptual and do not impersonate real client proof.
+- Use public assets only when their source and usage status are suitable for the context.
+- Use HTML/SVG/raster layers for texture, collage frames, interface fields, and visual atmosphere, while keeping business text editable.
+
+Reject a slide if its main visual is only a large flat color block, a generic gradient, a crude shape collage, or a fake screenshot. These may be internal wireframes, but they are not publishable style templates.
+
+Every asset must have a visual job:
+
+| Visual job | Meaning |
+|---|---|
+| `hero proof` | Carries the main emotional/business proof of the page. |
+| `source-backed screenshot` | Shows real platform, case, or execution evidence. |
+| `concept atmosphere` | Sets direction only; must be marked conceptual. |
+| `product/scene proof` | Shows product, usage, shelf, event, or consumer context. |
+| `interface mock` | Explains system/product logic without pretending to be a real UI. |
+| `texture/frame` | Supports style grammar without carrying business claims. |
+
+Decorative assets without one of these jobs should be removed.
+
 ## Provider Model
 
 The skill must not include API keys. If image generation is needed, ask the user to configure a provider or use tools available in the current agent environment.
@@ -129,6 +153,8 @@ Before delivery:
 - Full-size slide QA is required for every style-critical slide; a contact sheet alone is insufficient.
 - Shape-only substitutes for photographic, oil, magazine, pixel, or Web3 styles must be labeled as wireframes, not reference templates or final visuals.
 - If the intended style is not recognizable after removing the title text, the asset treatment is too weak.
+- If color blocks, pills, and cards remain the only visual language, the deck has not met the asset-first bar.
+- If a public/demo asset is used, add a source note in the deck or presenter script.
 
 ## Missing Asset Fallback
 
