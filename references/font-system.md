@@ -39,7 +39,6 @@ Use installed system fonts when the target machine may not have custom fonts.
 | american-campaign-bold | `Anton` / `Archivo Black` | `Source Han Sans SC` | `IBM Plex Sans` | Bold headings only; body must remain readable. |
 | craft-paper-natural | `Libre Baskerville` / `Inter` | `Source Han Sans SC` | `Inter` | Use serif sparingly for label-like headings. |
 | web3-ai-glass | `Space Grotesk` / `Inter` | `Source Han Sans SC` | `IBM Plex Mono` | Mono for metrics and IDs. |
-| ink-wash | `Noto Serif CJK SC` / `Source Han Serif SC` | `Source Han Sans SC` | `Inter` | Serif for titles, sans for proof. |
 | pixel-retro | `Press Start 2P` / `Pixelify Sans` | `Source Han Sans SC` | `IBM Plex Mono` | Pixel fonts only for labels/headings. |
 | e-reader-mono | `Noto Serif CJK SC` | `Noto Serif CJK SC` | `IBM Plex Mono` | Use book-like line height and narrow measure. |
 

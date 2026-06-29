@@ -1,6 +1,6 @@
 interface:
   display_name: "Business Proposal Presentation"
-  short_description: "Style-rich proposal decks and scripts"
+  short_description: "Proposal decks, scripts, and style gates"
   brand_color: "#0E5E43"
   default_prompt: "Use $proposal-ppt in guided mode to create a business proposal deck and presenter script from my brief."
 

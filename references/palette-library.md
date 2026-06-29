@@ -17,6 +17,19 @@ Trend anchors used for this library:
 - For finance/B2B/government, use lower saturation and high trust.
 - For AI/SaaS/technology, use cooler neutrals, mineral blues, and restrained electric accents.
 
+## Template Family Starting Points
+
+When no client VI exists, start with these palette routes before fine-tuning:
+
+| Template family | Primary palette choices | Use when |
+|---|---|---|
+| `premium-boardroom` | Cloud Editorial, Olive Ink, Teal Intelligence | trust, auditability, tender seriousness |
+| `editorial-brand` | Burgundy Mineral, Cloud Editorial, Powder Blue Calm | taste, premium consumer, beauty/fashion/hospitality |
+| `tech-launch` | Teal Intelligence, Cobalt Citrus, Charcoal Neon Accent | AI/SaaS/product/system narrative |
+| `lifestyle-commerce` | FMCG Warm Fresh, Burgundy Mineral, Powder Blue Calm | food, beverage, retail, creator/content/social commerce |
+
+If the brief has no brand color, do not default to green/gold. Pick the palette that best matches the proposal's commercial posture and explain the choice in the visual system checkpoint.
+
 ## Palettes
 
 ### 1. Cloud Editorial

@@ -75,7 +75,7 @@
 
 ## 强风格工作流
 
-如果你要求“像素风、时尚杂志风、发布会极简、日式极简、日杂拼贴、水墨、油画、Web3 科技”等强视觉方向，Skill 不会只换一套颜色。
+如果你要求“像素风、时尚杂志风、发布会极简、日式极简、日杂拼贴、油画、Web3 科技”等强视觉方向，Skill 不会只换一套颜色。
 
 它会先建立 Style DNA，并优先做 3 页样张：
 
@@ -87,7 +87,7 @@
 
 如果一个风格只适合封面或章节页，Skill 会把它限制为表达型页面；预算、KPI、风险和 Brief 覆盖页会回到更清晰的商务结构。
 
-新增风格系统包括：`fashion-beauty-editorial`、`beauty-gloss-clinical`、`japanese-minimal`、`japanese-magazine-collage`、`cinematic-photography`、`web3-ai-glass`、`pixel-retro`、`ink-wash`、`oil-salon`、`french-editorial`、`american-campaign-bold`、`craft-paper-natural`、`e-reader-mono`。
+新增风格系统包括：`fashion-beauty-editorial`、`beauty-gloss-clinical`、`japanese-minimal`、`japanese-magazine-collage`、`cinematic-photography`、`web3-ai-glass`、`pixel-retro`、`oil-salon`、`french-editorial`、`american-campaign-bold`、`craft-paper-natural`、`e-reader-mono`。
 
 ---
 
@@ -107,6 +107,27 @@
 
 ---
 
+## 风格模板家族
+
+当客户没有 VI、没有参考 PPT 时，这个 Skill 不再只给 fallback 模板换色，而是先路由到 4 个公开模板家族：
+
+| 模板家族 | 适合项目 | 视觉逻辑 |
+|---|---|---|
+| `premium-boardroom` | B2B、咨询、金融、正式竞标、年度服务 | 严格网格、董事会文件感、高信任 proof 页面。 |
+| `editorial-brand` | 品牌营销、时尚、美妆、高端消费、酒店文旅 | 图片或字体主导的杂志版式，配商业解释 caption。 |
+| `tech-launch` | AI、SaaS、产品发布、金融科技、技术方案 | 发布会式聚焦、产品/界面 hero、清晰系统图。 |
+| `lifestyle-commerce` | FMCG、食品饮料、零售、达人内容、电商社媒 | 产品场景、目录式证据墙、执行样张和转化清晰度。 |
+
+新的强风格路线必须先通过三页样张检查，再扩展成完整 PPT：
+
+1. 封面或 big idea 页；
+2. 策略或机制页；
+3. proof-dense 页，例如预算、KPI、风险、排期或 brief 覆盖。
+
+详见 [`references/style-template-strategy.md`](./references/style-template-strategy.md)。
+
+---
+
 ## 包含文件
 
 | 文件 / 目录 | 用途 |
@@ -118,7 +139,8 @@
 | [`references/layout-rhythm.md`](./references/layout-rhythm.md) | 页面密度、留白均衡和整套 PPT 节奏规则。 |
 | [`references/visual-system.md`](./references/visual-system.md) | 视觉方向、字体、版式、图表和截图规范。 |
 | [`references/palette-library.md`](./references/palette-library.md) | 无客户 VI 时使用的高级默认配色预设。 |
-| [`references/style-systems.md`](./references/style-systems.md) | Swiss、发布会极简、时尚美妆、日式极简、日杂拼贴、摄影叙事、Web3/AI glass、像素、水墨、油画等强风格系统。 |
+| [`references/style-template-strategy.md`](./references/style-template-strategy.md) | 4 个公开风格模板家族、Style DNA 合约和三页样张门槛。 |
+| [`references/style-systems.md`](./references/style-systems.md) | Swiss、发布会极简、时尚美妆、日式极简、拼贴、摄影叙事、Web3/AI glass、像素、油画等二级组件变形参考。 |
 | [`references/asset-pipeline.md`](./references/asset-pipeline.md) | 用户素材、AI 生成图、HTML/SVG 背景和图片 QA 规则。 |
 | [`references/font-system.md`](./references/font-system.md) | 免费可商用字体搭配和 fallback。 |
 | [`references/output-contract.md`](./references/output-contract.md) | PPTX 和逐字稿的输出格式要求。 |
@@ -206,14 +228,14 @@ brief:
 
 先不要生成 PPTX，请先推荐：
 1. 提案路线和赢标主张
-2. style-systems.md 中的风格系统
-3. 字体搭配和 fallback
-4. 视觉资产计划，包括用户素材和 AI 概念图
-5. 三页风格样张计划：封面 / 证据机制页 / 密集业务页
-6. 哪些页面不适合使用强表现风格
+2. style-template-strategy.md 中的模板家族
+3. Style DNA 和三页样张检查
+4. 字体搭配和 fallback
+5. 视觉资产计划，包括用户素材和 AI 概念图
+6. 哪些页面必须保持清晰商务页
 
 视觉方向：
-日式杂志拼贴 / 时尚美妆 editorial / Web3 AI glass / 等等
+premium-boardroom / editorial-brand / tech-launch / lifestyle-commerce
 
 brief:
 ...
@@ -305,6 +327,7 @@ proposal-ppt-skill/
     ├── palette-library.md
     ├── proposal-routes.md
     ├── quality-check.md
+    ├── style-template-strategy.md
     ├── style-systems.md
     ├── visual-system.md
     └── workflow.md

@@ -9,7 +9,7 @@ Use assets in this order:
 1. Client-provided real assets: product photos, brand VI, screenshots, case photos, logos, packaging, store/event photos.
 2. Publicly available assets with source labels and usage rights suitable for the context.
 3. AI-generated conceptual assets using the user's configured provider.
-4. Lightweight bundled or generated textures: paper, grain, pixel grid, ink wash edges, glass blur, editorial labels.
+4. Lightweight bundled or generated textures: paper, grain, pixel grid, glass blur, editorial labels.
 5. Clean editable shapes if no asset path is safe.
 
 Do not use random stock-like images only because they look decorative.
@@ -45,7 +45,6 @@ Strong styles need style-specific assets. Do not let ordinary shapes impersonate
 | cinematic-photography | one dominant scene | real event, activation, store, table, user moment | generated conceptual scene marked as conceptual |
 | web3-ai-glass | interface / node / dashboard layer | architecture map, data flow, UI mock, metric cards | editable system diagram on dark grid |
 | pixel-retro | pixel grid / sprites / tile system | pixel icons, quest map, inventory/score frames | hard-grid SVG frame and normal readable body text |
-| ink-wash | ink / paper / seal texture | brush diffusion, rice paper, red seal | clean ruled editorial page with one ink marker |
 | oil-salon | canvas / framed image | still-life, product art, gallery wall, warm canvas | cream gallery layout with image placeholder |
 | e-reader-mono | document texture / scans | source excerpts, diagrams, margin notes | monochrome ruled report layout |
 
@@ -96,7 +95,6 @@ Output: 1920x1080.
 
 Use HTML/SVG generation when a style needs texture or complex visual language that is hard to build with native PPT shapes:
 
-- ink wash: brush-edge masks, ink diffusion, red seal blocks,
 - pixel: exact pixel grids, tile patterns, retro UI frames,
 - Web3/AI: glassmorphism backgrounds, node fields, grid glows,
 - magazine collage: sticker sheets, paper textures, tape strips,
@@ -129,7 +127,7 @@ Before delivery:
 - The same generic image is not reused across unrelated pages.
 - Generated visuals are marked as conceptual in the script if needed.
 - Full-size slide QA is required for every style-critical slide; a contact sheet alone is insufficient.
-- Shape-only substitutes for photographic, ink, oil, magazine, pixel, or Web3 styles must be labeled as wireframes, not reference templates or final visuals.
+- Shape-only substitutes for photographic, oil, magazine, pixel, or Web3 styles must be labeled as wireframes, not reference templates or final visuals.
 - If the intended style is not recognizable after removing the title text, the asset treatment is too weak.
 
 ## Missing Asset Fallback

@@ -32,7 +32,8 @@ Load only the references needed for the current task:
 - For slide rhythm, whitespace balance, layout density, and page-to-page pacing, read `references/layout-rhythm.md`.
 - For visual direction, palette, typography, and PPT template use, read `references/visual-system.md`.
 - For default high-taste palette presets when no client VI is provided, read `references/palette-library.md`.
-- For style-rich proposal routes such as Swiss, product launch, fashion/beauty editorial, Japanese collage, cinematic photography, Web3/AI glass, ink, pixel, oil, or e-reader, read `references/style-systems.md`.
+- For reusable public style-template families, style DNA contracts, and three-page sample gates, read `references/style-template-strategy.md`.
+- For style-rich proposal routes and component-level style transformations, read `references/style-systems.md`.
 - For AI-generated images, user assets, HTML/SVG-to-PPT hybrid backgrounds, and visual asset QA, read `references/asset-pipeline.md`.
 - For free/commercial-safe font pairing and fallbacks, read `references/font-system.md`.
 - For final file and script format, read `references/output-contract.md`.
@@ -87,10 +88,10 @@ Follow `references/workflow.md` for the full stage-gate process. The high-level 
 7. **Build or edit the PPTX**
    - If the user provides a template/reference deck, follow it as the visual source.
    - If the client has VI, use client brand colors and typography first.
-- If no visual source exists, use `references/visual-system.md` and the minimal template as fallback.
-- If a rich style is requested, run the Style DNA Gate in `references/style-systems.md` before building the deck.
-- If a rich style has no approved reference deck, create or recommend the three-page style sample set before scaling: cover/big idea, proof/mechanism, and dense business page.
-- When creating a PowerPoint deck, follow the active PowerPoint/presentations skill requirements, including deck rendering and overlap QA.
+   - If no visual source exists, use `references/visual-system.md` and the minimal template as fallback.
+   - If a rich style is requested or no client VI exists, run the Style DNA Gate in `references/style-template-strategy.md` before building the deck.
+   - If a rich style has no approved reference deck, create or recommend the three-page style sample set before scaling: cover/big idea, proof/mechanism, and dense business page.
+   - When creating a PowerPoint deck, follow the active PowerPoint/presentations skill requirements, including deck rendering and overlap QA.
 
 8. **Write the presenter script**
    - The `.md` must be usable by a presenter, not just a slide outline.
@@ -114,5 +115,6 @@ Follow `references/workflow.md` for the full stage-gate process. The high-level 
 - Do not approve a strong style that only works on the cover. It must also handle at least one proof/mechanism page and one dense business page, or be restricted to expressive pages.
 - Do not use crude primitive shapes, oversized circles, generic cards, or decorative dots as substitutes for real style grammar.
 - Do not publish or reuse a style-rich template/demo unless full-size slides have been visually reviewed, not only contact-sheet checked.
+- Do not scale a new visual style to a full deck before the cover/big-idea, strategy/mechanism, and proof-dense sample pages pass full-size review.
 - Do not present AI-generated visuals as real client proof. Mark them as conceptual when relevant.
 - Do not insert the skill author's company information into user decks unless the user explicitly asks to present under that company identity.

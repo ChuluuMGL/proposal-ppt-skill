@@ -1,6 +1,8 @@
 # Style Systems
 
-Use this file when the user asks for richer visual directions, when no client VI exists, or when a proposal should deliberately use a recognizable style such as editorial, product-launch, magazine collage, cinematic, Web3, pixel, ink wash, or premium lifestyle.
+Use this file after `style-template-strategy.md` when a chosen template family needs component-level transformation details. The default public template families are `premium-boardroom`, `editorial-brand`, `tech-launch`, and `lifestyle-commerce`.
+
+Do not start from this file when no client VI exists. First select a public template family in `style-template-strategy.md`, then use this file only to refine components, assets, and page-type treatment. Expressive modes such as pixel, oil, e-reader, or other custom styles are opt-in only when the user explicitly asks.
 
 A style system is not a color palette. It must define:
 
@@ -12,11 +14,22 @@ A style system is not a color palette. It must define:
 
 Do not clone protected brand templates, media layouts, logos, mastheads, or exact commercial designs. Use references as design grammar only.
 
+## Default Family Mapping
+
+| Public family | Use these style notes |
+|---|---|
+| `premium-boardroom` | `swiss-boardroom` plus stricter proof/budget/risk pages |
+| `editorial-brand` | `fashion-beauty-editorial` and selected `cinematic-photography` pages |
+| `tech-launch` | `product-launch-minimal` and selected `web3-ai-glass` architecture pages |
+| `lifestyle-commerce` | `japanese-magazine-collage`, `cinematic-photography`, and premium consumer proof pages |
+
+If a requested custom style does not fit these families, create a Style DNA checkpoint and three-page sample gate before expanding it.
+
 ## Style DNA Gate
 
 Before building any rich-style PPTX, define and check the style DNA. A named style is not approved until it has all six parts:
 
-1. **Reference grammar**: 3-5 words that describe the source logic, such as strict grid, image-led spread, film still, pixel grid, ink diffusion, or glass depth.
+1. **Reference grammar**: 3-5 words that describe the source logic, such as strict grid, image-led spread, film still, pixel grid, paper grain, or glass depth.
 2. **Asset behavior**: what real/generative images, textures, screenshots, cutouts, or SVG/HTML layers make the style visible.
 3. **Typography signature**: heading font, body font, number font, scale contrast, and whether serif/mono/caption styles are allowed.
 4. **Component grammar**: how cards, proof objects, tables, timelines, diagrams, labels, and captions change for this style.
@@ -63,7 +76,7 @@ Then build only 2-3 full-size sample pages for review when possible: one cover/b
 - Do not publish or bundle style reference PPTX files unless every slide has been reviewed full-size, not only as a contact sheet.
 - Contact sheets are useful for rhythm checks, but they are not visual approval.
 - Shape-only approximations are internal wireframes, not style templates.
-- A slide that claims ink, oil, photography, magazine, pixel, or Web3 style must contain the visual grammar of that style, not only a matching palette.
+- A slide that claims oil, photography, magazine, pixel, or Web3 style must contain the visual grammar of that style, not only a matching palette.
 - If the slide is built from crude circles, oversized ovals, generic cards, fake brush marks, or decorative neon dots, reject it and restart from assets/reference grammar.
 - If the style requires assets and assets are missing, request/generate assets or explicitly downgrade to a clean business style.
 
@@ -75,12 +88,11 @@ Use these sources as visual-grammar anchors, not as templates to copy:
 - Product-launch minimalism: Apple Human Interface typography/layout guidance and keynote-style one-idea slide practice.
 - Fashion editorial: fashion typography/editorial discussions around high-contrast serif, white space, and image-led spreads.
 - Japanese magazine collage: Japanese lifestyle/editorial magazine coverage around highly specific, browseable, image-caption dense spreads.
-- Ink wash: ink wash painting principles such as monochrome tonal range, brushwork, red seals, spirit over literal imitation, and negative space.
 - Web3/AI glass: contemporary dark UI, glassmorphism, dashboard, node-flow, and high-contrast interface patterns.
 
 ## Selection Rule
 
-Use client VI or a user-provided reference deck first. Use these style systems only when the user requests a visual direction or no stronger visual source exists.
+Use client VI or a user-provided reference deck first. Use `style-template-strategy.md` to select the public template family. Use these style systems only as secondary transformation notes.
 
 ### Full-Deck Style Systems
 
@@ -106,7 +118,6 @@ These systems are strongest on cover, chapter, big idea, proof gallery, creative
 | `product-launch-minimal` | product strategy, AI/SaaS, big idea, launch, keynote-style pitch | Reveal pages can be sparse; proof and budget pages must be clearer. |
 | `japanese-magazine-collage` | social/content proposals, creator pools, lifestyle scenes, sample-heavy decks | Use for browsable proof walls; dense pages become index/table pages. |
 | `cinematic-photography` | brand story, event, activation, case proof, experience design | Use for scene-led proof; dense pages need separate business treatment. |
-| `ink-wash` | Chinese culture, government-adjacent, heritage, premium ceremony pages | Use for cover, section, big idea, proof summary; keep dense pages clean. |
 | `pixel-retro` | gaming, youth, interactive campaigns, gamified mechanisms | Use for creative/module pages; avoid budget/legal pages. |
 | `oil-salon` | art, gifting, hospitality, culture, exhibition-like concepts | Use for cover/concept/case pages; keep numbers readable. |
 | `craft-paper-natural` | organic food, sustainability, handmade, agriculture, wellness | Use when natural materials and real product scenes exist. |
@@ -128,26 +139,6 @@ If component treatment is the same across styles, the style library has failed.
 ### Expressive Add-on Rules
 
 Use these add-ons only when their visual grammar is visible. They are not palette names.
-
-#### ink-wash
-
-Visual DNA:
-
-- Monochrome tonal range, brush diffusion, rice-paper texture, negative space, and one restrained red seal/accent.
-- The page should feel like ink breathes across the canvas; proof objects remain precise and lightly ruled.
-- Use asymmetry and silence: one dominant ink field is better than many decorative marks.
-
-Asset/component requirements:
-
-- Requires a real or generated ink texture, brush stroke, paper grain, or SVG/HTML ink layer.
-- Tables and proof objects should use thin rules, ample margins, and small seal-like markers.
-- Dense business pages should be clean editorial pages with ink only as texture or section marker.
-
-Reject if it looks like:
-
-- A black oval, donut, blob, or random brush sticker.
-- Fake calligraphy with unreadable decorative text.
-- Red seals used repeatedly as decoration instead of one deliberate accent.
 
 #### pixel-retro
 
@@ -602,4 +593,4 @@ If the chosen style requires images and the user did not provide them:
 3. If proceeding automatically, generate conceptual assets or use abstract editable backgrounds.
 4. Mark generated images as conceptual in the presenter script when they are not real proof.
 
-Do not pretend a deck has a photographic, editorial, ink, or product style if the only change is color and generic shapes.
+Do not pretend a deck has a photographic, editorial, or product style if the only change is color and generic shapes.

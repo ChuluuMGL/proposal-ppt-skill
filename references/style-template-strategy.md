@@ -1,0 +1,195 @@
+# Style Template Strategy
+
+Use this file before creating or revising reusable proposal PPT style templates. This file defines how to turn a visual direction into a real proposal template system, not a one-page mood demo.
+
+## Core Judgment
+
+A proposal template is acceptable only when it changes the full visual grammar:
+
+- composition and page frame,
+- typography and scale contrast,
+- image and asset behavior,
+- proof-object treatment,
+- component shape language,
+- slide-to-slide rhythm,
+- QA rules and anti-examples.
+
+Do not treat a style as a palette. Do not create a public template by recoloring the same card layout.
+
+## Public Template Families
+
+Default to these four public style families when the user has no client VI or reference deck. They are separated by commercial posture and proof style, so the default options do not collapse into one visual template.
+
+| Template family | Best for | Visual source logic | Default density |
+|---|---|---|---|
+| `premium-boardroom` | B2B, consulting, finance, formal tenders, annual service retainers | strict grid, high-trust editorial reports, board documents | standard / proof-dense |
+| `editorial-brand` | brand marketing, fashion, beauty, premium consumer, hospitality | magazine spread, art direction, product/people/scene-led pages | breathing / standard |
+| `tech-launch` | AI, SaaS, product launch, Web3/fintech when clarity matters | keynote minimalism, product hero, interface/system diagrams | breathing / standard |
+| `lifestyle-commerce` | FMCG, food/beverage, retail, social/content/e-commerce proposals | catalog, campaign moodboard, product scene, social proof wall | standard / proof-dense |
+
+Do not use oil, pixel, kindle/e-reader, or other expressive modes as default public templates. Use them only when the user explicitly asks and after 2-3 full-size samples pass review. The default public skill should feel broadly useful, not like a novelty style gallery.
+
+## Style DNA Contract
+
+Before generating a style-rich PPTX, complete this contract:
+
+| Field | Requirement |
+|---|---|
+| Template family | one of the four public families, or explicit custom user style |
+| Commercial fit | why this style helps the client decide |
+| Layout grammar | margins, grid, axis, asymmetry, whitespace, page chrome |
+| Typography signature | heading/body/data fonts, scale contrast, max number of weights |
+| Asset behavior | required real assets, AI-generated conceptual assets, textures, screenshots |
+| Component grammar | how cards, tables, matrices, timelines, proof galleries, diagrams look |
+| Density rhythm | breathing/standard/proof-dense sequence and where transitions happen |
+| Business-clean pages | pages that must stay clear even if the style is expressive |
+| Reject if | concrete anti-examples that trigger a rebuild |
+
+## Three-Page Sample Gate
+
+For a new style family, visual route, or public reusable template, do not build a full deck first. Build or specify three sample pages:
+
+1. `cover-or-big-idea`: the style must be recognizable at first glance.
+2. `strategy-or-mechanism`: the style must support commercial reasoning, not only atmosphere.
+3. `proof-dense`: budget, KPI, risk, timeline, or brief-coverage content must remain readable and editable.
+
+Gate rules:
+
+- Review each page full-size, not only in a contact sheet.
+- If all three samples use the same card-grid structure, reject the system.
+- If the style disappears when the title text is removed, reject the system.
+- If proof-dense pages become image screenshots or unreadable art boards, reject the system.
+- If the lower third is accidentally empty, add a conclusion band, rebalance the layout, or convert the slide to a deliberate breathing page.
+
+## Template Family DNA
+
+### premium-boardroom
+
+Use for high-stakes commercial trust. The slide should feel like a partner-quality board memo, not a startup UI.
+
+DNA:
+
+- strict 12-column or 6-column grid,
+- high whitespace discipline,
+- small folios and source notes,
+- one sharp accent color,
+- audit tables, numbered judgments, understated dividers.
+
+Components:
+
+- Brief translation: audit table with requirement, interpretation, response, slide reference.
+- Decision criteria: numbered board grid with large numeric anchors.
+- Budget: clean table plus one commercial implication strip.
+- Timeline: thin phased roadmap with accountable milestones.
+- Proof gallery: restrained source-backed evidence, not decorative screenshots.
+
+Reject if:
+
+- it looks like generic green/gold consulting cards,
+- every page is a rounded-card dashboard,
+- accents appear on every object,
+- the slide cannot be printed as a serious appendix.
+
+### editorial-brand
+
+Use when taste, brand feeling, product imagery, or cultural fluency is part of the selling point.
+
+DNA:
+
+- image-led or typography-led spreads,
+- high contrast between headline and caption,
+- serif/display accent allowed for headings,
+- product/person/scene imagery with clean captions,
+- asymmetry and editorial whitespace.
+
+Components:
+
+- Insight: pull quote, image proof, implication caption.
+- Content sample: moodboard or editorial spread, not equal cards.
+- Benchmark: image/case board with "method to transfer" labels.
+- Budget/KPI: return to clear tables using editorial typography and thin rules.
+
+Reject if:
+
+- it is only cream background plus serif title,
+- imagery is generic stock atmosphere,
+- captions do not explain business relevance,
+- beauty/fashion styling makes proof unreadable.
+
+### tech-launch
+
+Use when the proposal must feel focused, productized, and executive-friendly.
+
+DNA:
+
+- one idea per reveal slide,
+- large statement or product/interface hero,
+- low density before proof,
+- clean system diagrams after the reveal,
+- dark or light canvas with controlled contrast.
+
+Components:
+
+- Winning thesis: one-line reveal with product/interface/idea hero.
+- Strategy map: 3-5 layer system, not a decorative flow.
+- KPI: clean dashboard with units, owners, and data status.
+- Roadmap: milestone cards, release path, or operating phases.
+- Risk: business-clean table, not neon decoration.
+
+Reject if:
+
+- neon circles replace architecture,
+- small text sits on glowing backgrounds,
+- the deck looks like a crypto website instead of a proposal,
+- all pages become dark dashboards.
+
+### lifestyle-commerce
+
+Use for FMCG, food, beverage, retail, creator/content, and commerce proposals where product scenes and execution samples matter.
+
+DNA:
+
+- warm premium base,
+- product scene or social sample as proof,
+- catalog-like proof walls,
+- clear package/module structure,
+- friendly but not cute typography.
+
+Components:
+
+- Platform strategy: role matrix plus sample content proof.
+- Content mechanism: columns, scenario map, sample board, asset reuse.
+- Campaign rhythm: calendar or issue-planning spread.
+- Creator/scene pool: catalog grid with tags and evidence captions.
+- Budget: clear spend-to-deliverable table with included/not-included tags.
+
+Reject if:
+
+- it becomes beige food-blog decoration,
+- there are product photos with no commercial implication,
+- social screenshots are scattered without labels,
+- proof pages are too cute or too crowded to sell execution certainty.
+
+## Asset Policy
+
+Strong style usually needs assets. Use this priority:
+
+1. user/client-provided real assets,
+2. sourced public assets with labels and rights suitable for the context,
+3. AI-generated conceptual assets with disclosure in the script,
+4. generated textures/background layers,
+5. clean editable placeholders marked `待补充`.
+
+Keep core business text, tables, budgets, KPI, risks, and page numbers editable. Use generated/HTML/SVG assets mainly for backgrounds, textures, hero visuals, collage layers, and style-specific atmosphere.
+
+## Build Sequence
+
+1. Select template family.
+2. Complete the Style DNA Contract.
+3. Create a slide rhythm map with density classes.
+4. Create an asset plan.
+5. Build the three-page sample gate.
+6. Visually review full-size samples.
+7. Only after approval, scale the system to the full deck.
+8. Render final full-size slides and contact sheet.
+9. Fix layout, style, readability, and compatibility issues.

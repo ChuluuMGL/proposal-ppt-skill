@@ -1,10 +1,10 @@
 # Visual System
 
-Use client VI first. Use a user-provided reference deck before any fallback style. Use this guide only when no stronger visual source exists. For page density and rhythm, use `layout-rhythm.md`. For richer default color choices, use `palette-library.md`. For style-rich routes, use `style-systems.md`, `asset-pipeline.md`, and `font-system.md`.
+Use client VI first. Use a user-provided reference deck before any fallback style. Use this guide only when no stronger visual source exists. For page density and rhythm, use `layout-rhythm.md`. For richer default color choices, use `palette-library.md`. For reusable public template families and the three-page sample gate, use `style-template-strategy.md`. For component-level style transformations, use `style-systems.md`, `asset-pipeline.md`, and `font-system.md`.
 
 ## Visual Style Families
 
-Choose one primary family, then pick a specific palette from `palette-library.md`. If the user asks for a specific style such as magazine, launch, cinematic, Web3, pixel, ink, or beauty, choose a style system from `style-systems.md` instead of merely changing colors. Do not reuse the same green/gold palette for every proposal.
+Choose one primary family, then pick a specific palette from `palette-library.md`. If no client VI exists, first route to one of the four public template families in `style-template-strategy.md`: `premium-boardroom`, `editorial-brand`, `tech-launch`, or `lifestyle-commerce`. If the user asks for a specific custom style such as magazine, launch, cinematic, Web3, pixel, oil, or e-reader, use `style-systems.md` as a transformation reference instead of merely changing colors. Do not reuse the same green/gold palette for every proposal.
 
 When no VI exists, choose one of two routes:
 
@@ -128,4 +128,4 @@ Rules:
 - the user still needs an editable PPTX quickly.
 
 Do not force this template when the client has an established style.
-Do not treat the fallback template as a quality benchmark for strong visual directions. For editorial, cinematic, pixel, ink, oil, Web3/glass, or product-launch styles, use `style-systems.md` and `asset-pipeline.md` instead of repainting the fallback template.
+Do not treat the fallback template as a quality benchmark for strong visual directions. For editorial, cinematic, pixel, oil, Web3/glass, or product-launch styles, use `style-systems.md` and `asset-pipeline.md` instead of repainting the fallback template.

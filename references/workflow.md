@@ -43,7 +43,7 @@ Priority order:
 2. User-provided client template or reference deck
 3. Client VI / logo / brand colors
 4. Explicit user visual direction
-5. Style system from `style-systems.md` plus palette/font/asset plan
+5. Public template family from `style-template-strategy.md` plus palette/font/asset plan
 6. `assets/minimal-proposal-template.pptx` fallback
 
 When a strong style is requested and no approved reference deck exists, the visual source is not considered approved until the three-page style sample gate in `style-systems.md` passes.
@@ -137,12 +137,13 @@ Required output:
 
 若使用强风格路线，必须包含：
 
-- 风格系统：
+- 模板家族：
+- 商业适配理由：
 - Style DNA：
 - 字体方案：
 - 资产计划：
 - 组件变形：
-- 需要先测试的 2-3 页样张：
+- 需要先测试的 3 页样张：
 - 不适合该风格承载的页面：
 
 ### 6. 页面节奏图
@@ -158,7 +159,7 @@ Required output:
 ### 8. 需要确认的问题
 ```
 
-Gate: in guided mode, stop here and ask the user to confirm the blueprint before building PPTX. If a rich style is requested and the user has not already approved a reference deck, create 2-3 full-size style sample pages before scaling to the full deck. In auto mode, proceed, but still apply the Style DNA Gate and record visual assumptions in the script.
+Gate: in guided mode, stop here and ask the user to confirm the blueprint before building PPTX. If a rich style is requested, no client VI exists, or a reusable public template is being created, use `style-template-strategy.md` and create/specify the three-page sample gate before scaling to the full deck. In auto mode, proceed, but still apply the Style DNA Contract and record visual assumptions in the script.
 
 For strong visual routes, the preferred sample set is exactly:
 
@@ -198,15 +199,17 @@ Build order:
 
 1. Create or inherit visual system.
 2. Select a named palette from `palette-library.md` when no client VI exists.
-3. If a rich style is requested, run the Style DNA Gate in `style-systems.md`; define reference grammar, assets, typography, component transformations, density rhythm, and anti-examples before drawing.
-4. Select fonts and fallbacks from `font-system.md`.
-5. Create or generate required assets using `asset-pipeline.md`; keep key business text editable.
-6. Create master chrome: margins, title zone, page numbers, footer/source style.
-7. Build slides by page type and density class from `layout-rhythm.md`.
-8. Insert proof objects: tables, matrices, timelines, screenshots, diagrams, sample pages.
-9. Render full-size previews and a contact sheet.
-10. Fix overlap, clipping, wrapping, alignment, density, over-clustered content, dead empty zones, weak style recognition, identical component grammar across styles, and low-taste primitive-shape placeholders.
-11. Run PPTX compatibility QA from `quality-check.md`; if the file is structurally valid but PowerPoint cannot open it, rewrite it through an Office-compatible exporter and deliver the repaired copy.
+3. If no client VI exists or a rich style is requested, select a public template family from `style-template-strategy.md` or document the explicit custom route.
+4. Run the Style DNA Contract; define commercial fit, layout grammar, assets, typography, component transformations, density rhythm, business-clean pages, and anti-examples before drawing.
+5. Select fonts and fallbacks from `font-system.md`.
+6. Create or generate required assets using `asset-pipeline.md`; keep key business text editable.
+7. For a new style/template route, build or specify three full-size samples first: cover/big-idea, strategy/mechanism, and proof-dense.
+8. Create master chrome: margins, title zone, page numbers, footer/source style.
+9. Build slides by page type and density class from `layout-rhythm.md`.
+10. Insert proof objects: tables, matrices, timelines, screenshots, diagrams, sample pages.
+11. Render full-size previews and a contact sheet.
+12. Fix overlap, clipping, wrapping, alignment, density, over-clustered content, dead empty zones, weak style recognition, identical component grammar across styles, and low-taste primitive-shape placeholders.
+13. Run PPTX compatibility QA from `quality-check.md`; if the file is structurally valid but PowerPoint cannot open it, rewrite it through an Office-compatible exporter and deliver the repaired copy.
 
 Gate: do not deliver before rendering/inspection. Mention if visual QA could not be fully performed.
 

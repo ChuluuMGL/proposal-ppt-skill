@@ -47,10 +47,15 @@ For each slide:
 - When no VI is provided, a named palette from `palette-library.md` is selected and applied consistently.
 - If a rich style is selected, the deck changes more than color: typography, layout grammar, components, proof-object forms, and asset treatment all match the chosen style system.
 - If no approved reference deck exists, strong visual styles pass the three-page sample gate: cover/big idea, proof/mechanism, and dense business page.
+- If no client VI exists, one of the four public template families in `style-template-strategy.md` is selected or an explicit custom route is documented.
+- New style/template routes have passed the three-page sample gate: cover/big-idea, strategy/mechanism, and proof-dense.
 - Components are not identical across different style routes. A magazine collage page, Web3 dashboard, pixel quest path, and editorial proof board should not share the same generic card grid.
-- Asset-heavy styles have real client assets, sourced assets, AI-generated conceptual images, or explicit placeholders; the deck does not fake photographic/editorial/ink/product quality with generic shapes alone.
+- Asset-heavy styles have real client assets, sourced assets, AI-generated conceptual images, or explicit placeholders; the deck does not fake photographic/editorial/product quality with generic shapes alone.
 - Review style-rich pages full-size before delivery or bundling; contact sheets only prove macro rhythm, not quality.
 - Reject slides where the claimed style is represented by crude primitive shapes, oversized generic circles, decorative dots, or ordinary cards with a new palette.
+- Reject public template candidates where all sample pages share the same card-grid silhouette.
+- Reject style-rich pages where the style becomes unrecognizable after removing the title text.
+- Reject proof-dense style samples where budget, KPI, risk, timeline, or brief coverage is not readable and editable.
 - Reject any public skill asset or reusable template that has not passed human full-size visual review.
 - HTML/SVG-generated style layers do not turn core business text, tables, budgets, KPI, or risk controls into uneditable screenshots unless the user accepts that tradeoff.
 - Free/commercial-safe fonts or documented fallbacks are used; no unlicensed commercial font dependency is required.

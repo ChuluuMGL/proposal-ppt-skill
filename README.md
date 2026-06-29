@@ -74,7 +74,7 @@ Default mode is `guided`: the agent stops after the blueprint and waits for conf
 
 ## Rich Style Workflow
 
-If you ask for a strong direction such as pixel retro, fashion editorial, launch minimal, Japanese minimal, Japanese magazine collage, ink wash, oil salon, or Web3/AI glass, the skill should not merely repaint a generic template.
+If you ask for a strong direction such as pixel retro, fashion editorial, launch minimal, Japanese minimal, Japanese magazine collage, oil salon, or Web3/AI glass, the skill should not merely repaint a generic template.
 
 It first defines the Style DNA and prefers a three-page sample gate:
 
@@ -86,7 +86,7 @@ It first defines the Style DNA and prefers a three-page sample gate:
 
 If a style only works for cover or divider pages, the skill restricts it to expressive pages. Budget, KPI, risk, and brief-coverage pages return to clearer business structures.
 
-Included style systems include `fashion-beauty-editorial`, `beauty-gloss-clinical`, `japanese-minimal`, `japanese-magazine-collage`, `cinematic-photography`, `web3-ai-glass`, `pixel-retro`, `ink-wash`, `oil-salon`, `french-editorial`, `american-campaign-bold`, `craft-paper-natural`, and `e-reader-mono`.
+Included style systems include `fashion-beauty-editorial`, `beauty-gloss-clinical`, `japanese-minimal`, `japanese-magazine-collage`, `cinematic-photography`, `web3-ai-glass`, `pixel-retro`, `oil-salon`, `french-editorial`, `american-campaign-bold`, `craft-paper-natural`, and `e-reader-mono`.
 
 ---
 
@@ -106,6 +106,27 @@ See [`references/proposal-routes.md`](./references/proposal-routes.md) for the f
 
 ---
 
+## Style Template Families
+
+When no client visual identity or reference deck is provided, the skill routes visual design into four public template families instead of repainting the same fallback deck:
+
+| Template Family | Best For | Visual Logic |
+|---|---|---|
+| `premium-boardroom` | B2B, consulting, finance, tenders, annual retainers | Strict grid, board-document clarity, high-trust proof pages. |
+| `editorial-brand` | Brand marketing, fashion, beauty, premium consumer, hospitality | Image-led or typography-led editorial spreads with business captions. |
+| `tech-launch` | AI, SaaS, product launch, fintech, technical proposals | Keynote-like focus, product/interface heroes, clear system diagrams. |
+| `lifestyle-commerce` | FMCG, food/beverage, retail, creator/content/social commerce | Product scenes, catalog proof walls, execution samples, commerce clarity. |
+
+New style routes must pass a three-page sample gate before scaling to a full deck:
+
+1. cover or big-idea page,
+2. strategy or mechanism page,
+3. proof-dense page such as budget, KPI, risk, timeline, or brief coverage.
+
+See [`references/style-template-strategy.md`](./references/style-template-strategy.md).
+
+---
+
 ## Included Files
 
 | File / Folder | Purpose |
@@ -117,7 +138,8 @@ See [`references/proposal-routes.md`](./references/proposal-routes.md) for the f
 | [`references/layout-rhythm.md`](./references/layout-rhythm.md) | Slide density, whitespace balance, and deck pacing rules. |
 | [`references/visual-system.md`](./references/visual-system.md) | Visual families, typography, layout, chart, and screenshot rules. |
 | [`references/palette-library.md`](./references/palette-library.md) | Default high-taste palette presets when no client visual identity exists. |
-| [`references/style-systems.md`](./references/style-systems.md) | Rich style systems such as Swiss, launch minimal, beauty editorial, Japanese minimal, Japanese collage, cinematic, Web3/AI glass, pixel, ink, and oil. |
+| [`references/style-template-strategy.md`](./references/style-template-strategy.md) | Four public style-template families, Style DNA contract, and three-page sample gate. |
+| [`references/style-systems.md`](./references/style-systems.md) | Secondary component transformations such as Swiss, launch minimal, beauty editorial, Japanese minimal, collage, cinematic, Web3/AI glass, pixel, and oil. |
 | [`references/asset-pipeline.md`](./references/asset-pipeline.md) | User assets, AI-generated visuals, HTML/SVG backgrounds, and image QA rules. |
 | [`references/font-system.md`](./references/font-system.md) | Free/commercial-safe font pairings and fallbacks. |
 | [`references/output-contract.md`](./references/output-contract.md) | Required PPTX and presenter-script output format. |
@@ -205,14 +227,14 @@ Use $proposal-ppt in guided mode to create a style-rich business proposal.
 
 Before generating PPTX, recommend:
 1. proposal route and winning thesis
-2. style system from style-systems.md
-3. font pairing and fallback
-4. visual asset plan, including user assets vs AI-generated conceptual assets
-5. three-page style sample plan: cover / proof-mechanism / dense business page
-6. page types that should not use the expressive style
+2. template family from style-template-strategy.md
+3. Style DNA and three-page sample gate
+4. font pairing and fallback
+5. visual asset plan, including user assets vs AI-generated conceptual assets
+6. page types that should stay business-clean
 
 Visual direction:
-Japanese magazine collage / fashion-beauty editorial / Web3 AI glass / etc.
+premium-boardroom / editorial-brand / tech-launch / lifestyle-commerce
 
 Brief:
 ...
@@ -304,6 +326,7 @@ proposal-ppt-skill/
     ├── palette-library.md
     ├── proposal-routes.md
     ├── quality-check.md
+    ├── style-template-strategy.md
     ├── style-systems.md
     ├── visual-system.md
     └── workflow.md
