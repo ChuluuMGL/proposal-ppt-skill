@@ -76,6 +76,21 @@ Gate rules:
 - If proof-dense pages become image screenshots or unreadable art boards, reject the system.
 - If the lower third is accidentally empty, add a conclusion band, rebalance the layout, or convert the slide to a deliberate breathing page.
 
+## Reference Imitation Score
+
+After the market reference audit and sample generation, record the benchmark and imitation score:
+
+| Field | Requirement |
+|---|---|
+| Benchmark reference type | Examples: Swiss consulting memo, editorial brand proposal, product-launch pitch deck, catalog commerce proposal. |
+| What is being borrowed | Grid, crop behavior, table treatment, caption rail, page rhythm, typography contrast, proof-object language. |
+| What is not being copied | Exact layouts, imagery, screenshots, logos, mastheads, slogans, or protected template assets. |
+| Sample score | 0-10 layout/style score from `layout-rhythm.md`. |
+| Imitation level | Approximate percentage versus a good market template preview. |
+| Remaining gap | Specific changes needed to reach 8+ quality. |
+
+Do not claim a sample is high-end only because it has different colors. If the sample is below `7.5/10`, call it a draft. A public reusable template should aim for `8.2/10` or higher after real assets and component variants are added.
+
 ## Component Kit Requirement
 
 A reusable public proposal template must define a component kit, not only sample pages. At minimum, specify how these components look in the selected style:

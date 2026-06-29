@@ -48,6 +48,38 @@ Use the full content field deliberately.
 - Use optical balance: a sparse left side needs a visual anchor on the right; a heavy top needs a grounded lower conclusion or proof band.
 - Do not solve empty space with a decorative border or blank media frame. The added element must be proof, conclusion, navigation, source status, or an intentional visual anchor.
 
+## Layout Beauty Score
+
+Before delivering a style sample or full proposal, score the layout honestly. Use this as a design gate, not as a client-facing page.
+
+| Dimension | 0-2 pts |
+|---|---|
+| Visual weight | Main content is balanced across the content field; no accidental top-heavy, left-heavy, or dead lower-third composition. |
+| Grid discipline | Objects share clear axes, gutters, baselines, and column logic. |
+| Text-object pairing | Titles, captions, images, tables, and callouts visually belong together instead of floating as separate pieces. |
+| Density rhythm | Breathing, standard, and proof-dense pages alternate intentionally. |
+| Component taste | Cards, tables, labels, sidebars, dividers, and proof objects match the chosen style rather than generic UI. |
+
+Scoring guide:
+
+- `0-5`: internal wireframe only.
+- `6-7`: usable draft, but not publishable as a public template.
+- `7.5-8`: acceptable market-facing skill sample.
+- `8.2+`: strong enough to scale into a full reusable template family.
+
+If the score is below `7.5`, revise before presenting the sample as a template. If the score is below `8`, name the remaining weaknesses clearly.
+
+## Shape Radius Rule
+
+Choose shape language by proposal posture:
+
+- `premium-boardroom`: mostly square or 0-3 px radius; use thin rules, ledgers, memo panels, and straight document frames. Avoid rounded SaaS cards.
+- `editorial-brand`: square image crops, caption rails, thin rules, and occasional sharp color blocks. Use rounded corners only when the brand reference requires softness.
+- `tech-launch`: controlled 10-18 px radius for interface panels, status modules, and product UI; do not round every proof object.
+- `lifestyle-commerce`: 10-18 px radius is acceptable for catalog cards and sample boards, but tables and budget pages should stay sharper.
+
+Do not mix square and rounded components randomly. If a page contains both, the reason should be clear: for example, a square proof table plus rounded product sample cards.
+
 ## Layout Selection Gate
 
 Choose the recipe before placing objects. For every slide, record:
