@@ -89,6 +89,24 @@ Use this only when a strong style system is selected.
 - [ ] Reject style-rich pages where the style becomes unrecognizable after removing the title text.
 - [ ] Reject proof-dense style samples where budget, KPI, risk, timeline, or brief coverage is not readable and editable.
 
+## 5A. Public Demo Hard-Fail Gate
+
+Reusable public demos and skill showcase decks have a higher bar than working drafts. A demo must be rejected, not scored as acceptable, if any full-size slide has one of these issues:
+
+- [ ] [BLOCKER] Text overflows, clips, wraps awkwardly, or escapes its intended module.
+- [ ] [BLOCKER] A module is visually cramped while another large area is accidentally empty.
+- [ ] [BLOCKER] The lower third is blank without being a deliberate breathing-page composition.
+- [ ] [BLOCKER] Images collide, stack, or mask each other in a way that makes the viewer unsure where to look.
+- [ ] [BLOCKER] Connectors are broken, disconnected, visually random, or fail to explain the logic path.
+- [ ] [BLOCKER] A sidebar, caption strip, tag, or conclusion band is only decoration and does not carry proof, source status, or decision logic.
+- [ ] [BLOCKER] Repeated proof images are used as filler instead of distinct evidence.
+- [ ] [BLOCKER] The page relies on a red-box-worthy empty area, ornamental border, or floating component to feel complete.
+- [ ] [BLOCKER] The slide would make a reasonable user conclude the skill produces ugly or untrustworthy decks.
+
+If one of these appears, do not publish the deck as a demo and do not describe it as high-end. Mark the sample as failed, write the failure reason, and rebuild from a simpler layout system.
+
+For public demos, full-size visual inspection is mandatory for every slide. Contact sheets, ZIP integrity checks, and keyword searches for overlap warnings are not sufficient.
+
 ## 6. Commercial Gate
 
 - [ ] [BLOCKER] Brief requirements are mapped to proposal responses.

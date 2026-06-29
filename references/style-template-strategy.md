@@ -44,6 +44,20 @@ Default to these four public style families when the user has no client VI or re
 
 Do not use oil, pixel, kindle/e-reader, or other expressive modes as default public templates. Use them only when the user explicitly asks and after 2-3 full-size samples pass review. The default public skill should feel broadly useful, not like a novelty style gallery.
 
+## Public Demo Scope
+
+Do not create a public demo by placing multiple unrelated style families into one showcase deck unless the goal is explicitly a style sampler. A sampler is useful for direction selection, but it is a weak proof of deck-making quality.
+
+For a skill showcase, prefer one focused family at a time:
+
+1. choose one benchmark family,
+2. build 6-10 pages that include cover, brief/problem, strategy/mechanism, proof gallery, KPI/budget/risk, and close,
+3. inspect every page full-size,
+4. reject the demo if any page fails the public demo hard-fail rules in `quality-check.md`,
+5. only then expand to more styles.
+
+A public demo should prove that the skill can produce a coherent proposal, not merely that it can repaint components in different palettes.
+
 ## Style DNA Contract
 
 Before generating a style-rich PPTX, complete this contract:
