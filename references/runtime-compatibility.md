@@ -74,6 +74,18 @@ If full PPTX generation is unavailable, use the highest safe fallback:
 | `html-demo` | optional visual prototype plus `.md` script | Runtime can render HTML/SVG but cannot create editable PPTX. Clearly mark as non-PPTX prototype. |
 | `repair-needed` | generated PPTX plus warning and repair notes | PPTX exists but fails compatibility checks; do not call it final. |
 
+## HTML Demo Stage Contract
+
+Use this when a visual prototype, style sampler, or HTML-to-PPT design reference is created before an editable PPTX.
+
+- Author each slide on a fixed 16:9 stage, preferably `1920x1080`, and scale the whole stage to the viewport. Do not let slide content reflow independently at different browser widths.
+- Keep the stage dimensions, slide chrome, folio, title zones, gutters, and lower-third usage consistent across the sample set.
+- Use responsive CSS only for fitting the whole stage into the browser window, not for changing the slide composition.
+- Render full-size PNG screenshots for QA. Contact sheets are useful for rhythm, but cannot approve text safety distance, overlap, connector continuity, or image hierarchy.
+- Do not rely on `scrollHeight`, DOM bounding boxes, or no-console-error checks alone. A slide can pass DOM checks while still looking cramped, visually collided, or unbalanced.
+- If the HTML demo will later become PPTX, keep core business text, tables, budgets, KPI, risk registers, and page numbers as editable PPTX elements in the final deck. HTML/SVG/raster layers should mainly carry background texture, hero imagery, collage, device/interface mockups, or style atmosphere.
+- If a slide fails full-size visual review, simplify the layout before adding more decorative style. A clean grid is preferable to a distinctive but confusing page.
+
 ## Runtime QA
 
 Before final delivery, state:

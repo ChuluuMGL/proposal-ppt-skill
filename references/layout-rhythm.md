@@ -47,6 +47,7 @@ Use the full content field deliberately.
 - Avoid orphan groups: no single small table or card cluster should sit in one area while the rest of the canvas is visually dead.
 - Use optical balance: a sparse left side needs a visual anchor on the right; a heavy top needs a grounded lower conclusion or proof band.
 - Do not solve empty space with a decorative border or blank media frame. The added element must be proof, conclusion, navigation, source status, or an intentional visual anchor.
+- Keep internal safety distance inside tables, ledgers, cards, and column modules. Text should sit at least 18-24 px away from dividers, borders, and vertical rules. If a divider touches or nearly touches the first character of a column, the page fails detail QA even when there is no formal overlap.
 
 ## Layout Beauty Score
 

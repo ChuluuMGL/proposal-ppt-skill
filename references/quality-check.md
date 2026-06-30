@@ -66,6 +66,7 @@ Check every slide:
 - [ ] Standard and proof-dense pages use the lower third deliberately through proof, conclusion, timeline, source status, or a visual anchor.
 - [ ] Every 3-5 slides, the deck changes rhythm through a section divider, big-idea slide, visual proof page, quote, summary, or low-density transition.
 - [ ] Margins, title positions, page numbers, and footer/source style are consistent.
+- [ ] Tables, ledgers, cards, and column modules have enough internal safety distance: text is not visually attached to dividers, borders, or vertical rules.
 - [ ] Tables have clear headers, units, assumptions, and exclusions.
 - [ ] Screenshots are cropped cleanly and aligned.
 - [ ] No meaningless decoration, fake logos, low-resolution images, or stretched media.
@@ -99,6 +100,7 @@ Reusable public demos and skill showcase decks have a higher bar than working dr
 - [ ] [BLOCKER] Images collide, stack, or mask each other in a way that makes the viewer unsure where to look.
 - [ ] [BLOCKER] Connectors are broken, disconnected, visually random, or fail to explain the logic path.
 - [ ] [BLOCKER] A sidebar, caption strip, tag, or conclusion band is only decoration and does not carry proof, source status, or decision logic.
+- [ ] [BLOCKER] Text is visually attached to a divider, border, or column rule because internal padding/gutter is missing.
 - [ ] [BLOCKER] Repeated proof images are used as filler instead of distinct evidence.
 - [ ] [BLOCKER] The page relies on a red-box-worthy empty area, ornamental border, or floating component to feel complete.
 - [ ] [BLOCKER] The slide would make a reasonable user conclude the skill produces ugly or untrustworthy decks.
@@ -106,6 +108,17 @@ Reusable public demos and skill showcase decks have a higher bar than working dr
 If one of these appears, do not publish the deck as a demo and do not describe it as high-end. Mark the sample as failed, write the failure reason, and rebuild from a simpler layout system.
 
 For public demos, full-size visual inspection is mandatory for every slide. Contact sheets, ZIP integrity checks, and keyword searches for overlap warnings are not sufficient.
+
+## 5B. HTML Demo Visual QA Gate
+
+Use this when a style demo or prototype is produced as HTML before PPTX conversion.
+
+- [ ] [BLOCKER] The HTML demo uses a fixed 16:9 slide stage and scales the whole stage, instead of reflowing slide content by browser width.
+- [ ] [BLOCKER] Full-size PNG screenshots were rendered and inspected for every public-demo slide.
+- [ ] [BLOCKER] Visual review confirms text is not attached to dividers, borders, image masks, or column rules.
+- [ ] [BLOCKER] Visual review confirms no image/caption/component stack obscures the intended reading order.
+- [ ] [BLOCKER] DOM checks, `scrollHeight`, and contact sheets are treated as support checks only, not final approval.
+- [ ] HTML/SVG/raster layers are limited to style assets unless the user accepts non-editable text or proof objects.
 
 ## 6. Commercial Gate
 

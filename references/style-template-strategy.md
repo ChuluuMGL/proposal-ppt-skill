@@ -31,6 +31,23 @@ The audit must extract:
 
 Reject the template direction if the audit only describes colors or mood words. A usable audit must explain how business proof pages are handled.
 
+## Visual Discovery Gate
+
+When the user has no client VI, approved reference deck, or chosen template family, use a visual discovery step before building a full proposal. This is especially important for public skill demos and style-rich requests.
+
+Create 2-3 visual directions or three-page sample candidates that the user can judge visually. Each candidate must look like a real proposal page, not an internal diagnostic card.
+
+Preview rules:
+
+- Use real proposal content or neutral sample business content, not visible labels such as `preview`, `template`, `option A`, file paths, or process notes.
+- Make the directions meaningfully different in proof language, not only palette.
+- Include at least one conservative/business-safe option for high-stakes B2B work.
+- Include at most one expressive/bold option unless the user explicitly asked for experimental styles.
+- Do not scale to a full deck until the user selects a direction or the three-page gate passes.
+- If a large template library is available, shortlist from compact metadata first; load full design rules only for the chosen family.
+
+This gate is inspired by visual-first slide workflows such as `frontend-slides`, but proposal-ppt must keep business proof, budget, KPI, risk, and presenter-script requirements above motion or decorative style.
+
 ## Public Template Families
 
 Default to these four public style families when the user has no client VI or reference deck. They are separated by commercial posture and proof style, so the default options do not collapse into one visual template.
@@ -73,6 +90,27 @@ Before generating a style-rich PPTX, complete this contract:
 | Density rhythm | breathing/standard/proof-dense sequence and where transitions happen |
 | Business-clean pages | pages that must stay clear even if the style is expressive |
 | Reject if | concrete anti-examples that trigger a rebuild |
+
+## Design System Contract
+
+Every reusable public template family must include a lightweight design system contract before it is converted into PPTX or published as a skill asset. This is separate from the sample pages. It prevents the style from becoming a one-off composition that other agents cannot reproduce.
+
+At minimum, document:
+
+| System | Requirement |
+|---|---|
+| Color system | semantic color roles, hex values, usage rules, accent limits, and replacement logic when client VI exists |
+| Typography system | font stack, fallback fonts, size ladder, weights, line-height rules, and dense-page minimum sizes |
+| Icon system | whether icons are used, icon style, stroke weight, allowed icon categories, and when numbers/labels replace icons |
+| Module system | reusable treatment for cover, strategy map, brief translation, table, chart, timeline, budget, risk, proof gallery, team, and close |
+| Shape language | radius, stroke, shadow, divider, card, panel, and table-border behavior |
+| Asset behavior | photography, screenshots, AI-generated conceptual visuals, illustration, texture, cropping, captioning, and source notes |
+| Layout recipes | density classes, page chrome, margins, title zones, lower-third plan, and rhythm rules |
+| QA rejects | concrete visual failures that require rebuild rather than small polish |
+
+Do not rely on raw palette variables alone. If two related colors are used, such as a bright signal red and a darker wine red, define their roles explicitly. Otherwise users will read the difference as accidental inconsistency.
+
+The design system contract should be stored next to the demo or template files and referenced by the public README or skill documentation when the template is published.
 
 ## Three-Page Sample Gate
 
