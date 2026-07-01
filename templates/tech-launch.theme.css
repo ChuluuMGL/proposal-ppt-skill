@@ -1,0 +1,49 @@
+/* =========================================================================
+   tech-launch theme
+   -------------------------------------------------------------------------
+   Best for: AI, SaaS, product launch, fintech, technical proposals.
+   Posture: keynote-focus, product/interface heroes, controlled radius.
+   Deliberately different from both editorial-brand (warm paper/serif) and
+   premium-boardroom (dark ink-blue board doc):
+   - light cool-grey canvas (near white), not paper-warm, not dark
+   - one electric accent (signal) + one success accent
+   - rounded panels for interface/system modules; sharp for data tables
+   ========================================================================= */
+
+.slide.tech-launch {
+  --canvas: #f4f6f9;        /* cool light grey, not warm paper */
+  --canvas-2: #eaeef3;
+  --panel: #ffffff;
+  --panel-2: #f0f3f7;
+  --ink: #0d1620;           /* near-black text on light */
+  --ink-soft: #3d4d5c;
+  --muted: #76858f;
+  --rule: #dde3ea;
+  --signal: #2b6cff;        /* electric launch blue */
+  --signal-soft: #e6efff;
+  --success: #12a672;       /* success/metric green */
+  --warn: #e0633a;
+  --grid: #e3e8ee;
+
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-sans);
+}
+
+.tech-launch .topbar { border-bottom-color: var(--rule); }
+.tech-launch .topbar .brand { color: var(--ink); letter-spacing: .04em; }
+.tech-launch .topbar .brand b { color: var(--signal); letter-spacing: .08em; }
+.tech-launch .topbar .crumb { color: var(--muted); }
+.tech-launch .footbar { color: var(--muted); border-top: 1px solid var(--rule); }
+.tech-launch .footbar .num { color: var(--signal); font-family: var(--font-en-display); }
+
+.tech-launch .eyebrow { color: var(--signal); font-style: normal; font-family: var(--font-en-display); letter-spacing: .02em; }
+.tech-launch .eyebrow b { color: var(--ink); font-family: var(--font-sans); }
+.tech-launch .page-title { color: var(--ink); font-size: 56px; letter-spacing: -.02em; font-weight: 800; line-height: 1.14; }
+.tech-launch .page-title em { font-style: normal; color: var(--signal); }
+
+/* shared rounded module look (interface/system) */
+.tech-launch .module {
+  background: var(--panel); border: 1px solid var(--rule); border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(13,22,32,.05);
+}

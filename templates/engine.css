@@ -1,0 +1,106 @@
+/* =========================================================================
+   proposal-ppt template engine — base layout
+   -------------------------------------------------------------------------
+   Flow-first layout for proposal slide demos. The #1 rule (learned the hard
+   way): build the page skeleton with normal document flow (flex/grid) so that
+   elements CANNOT overlap or reverse order by construction. Absolute
+   positioning is reserved for chrome and decoration only (page frame, folio,
+   eyebrow, decorative rules). Never build a content table, ledger, or column
+   layout out of absolutely-positioned siblings.
+
+   A deck = <main class="deck"> of <section class="slide-shell"> wrappers,
+   each containing one <article class="slide [family] [variant]">. The whole
+   stage scales to fit via --stage-scale (set by a tiny inline script).
+   ========================================================================= */
+
+:root {
+  --stage-scale: 1;
+  /* font stacks — families override --font-zh-serif / --font-en-display */
+  --font-sans: -apple-system, BlinkMacSystemFont, "PingFang SC", "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-zh-serif: "Songti SC", "STSong", "Source Han Serif SC", "Noto Serif SC", serif;
+  --font-en-display: "Playfair Display", Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body { font-family: var(--font-sans); padding: 40px 0 64px; }
+
+.deck { display: grid; gap: 48px; justify-content: center; }
+
+.slide-shell {
+  width: calc(1920px * var(--stage-scale));
+  height: calc(1080px * var(--stage-scale));
+  position: relative;
+}
+.slide {
+  position: absolute; inset: 0;
+  width: 1920px; height: 1080px;
+  overflow: hidden;
+  transform-origin: top left;
+  transform: scale(var(--stage-scale));
+  display: flex; flex-direction: column;       /* page = flow column */
+  padding: 64px 120px 56px;                    /* page frame via padding, not coords */
+  box-shadow: 0 24px 70px rgba(0,0,0,.30);
+}
+.slide h1, .slide h2, .slide h3, .slide p { margin: 0; }
+
+/* ---- chrome (the only absolutely-positioned elements) ---- */
+.topbar {
+  display: flex; align-items: baseline; justify-content: space-between;
+  padding-bottom: 22px; margin-bottom: 36px;
+  border-bottom: 1px solid var(--rule);
+}
+.topbar .brand {
+  font-family: var(--font-en-display); font-weight: 600;
+  font-size: 19px; letter-spacing: .34em;
+}
+.topbar .brand b {
+  font-family: var(--font-zh-serif); font-weight: 600;
+  letter-spacing: .18em; margin-left: 10px;
+}
+.topbar .crumb {
+  font-size: 13px; letter-spacing: .14em; text-transform: uppercase;
+  font-weight: 600;
+}
+.footbar {
+  margin-top: auto;                            /* pushes itself to the bottom in flow */
+  display: flex; align-items: baseline; justify-content: space-between;
+  padding-top: 18px;
+  font-size: 13px; letter-spacing: .1em; font-weight: 600;
+}
+.footbar .num { font-family: var(--font-en-display); font-size: 16px; letter-spacing: .04em; }
+
+/* ---- shared content primitives (flow) ---- */
+.eyebrow {
+  font-family: var(--font-en-display); font-style: italic;
+  font-size: 18px; margin-bottom: 18px;
+}
+.eyebrow b {
+  font-style: normal; font-family: var(--font-sans); font-weight: 800;
+  font-size: 13px; letter-spacing: .16em; margin-right: 12px;
+}
+.page-title {
+  font-family: var(--font-zh-serif); font-weight: 600;
+  line-height: 1.22; margin-bottom: 28px;
+}
+
+/* A content row = flex; side-by-side blocks cannot overlap. */
+.row-split { display: flex; gap: 44px; align-items: flex-start; }
+.row-split > .main { flex: 1; min-width: 0; }
+.row-split > .side { flex-shrink: 0; }
+
+/* A ledger = normal block flow of grid rows; rows stack, cannot reverse. */
+.ledger { border-top: 2px solid var(--ink); }
+.ledger .lrow {
+  display: grid; padding: 14px 0; align-items: baseline;
+  border-bottom: 1px solid var(--rule);
+}
+.ledger .lrow.lhead { border-bottom: 1px solid var(--ink); padding: 14px 0 16px; }
+.ledger .lrow.ltotal { border-bottom: 2px solid var(--ink); padding: 18px 0 8px; }
+
+/* Implication / conclusion strip — flows after content, never overlaps. */
+.implication {
+  margin-top: 26px; padding-top: 18px;
+  display: flex; align-items: center; gap: 30px;
+}
+.implication b { font-family: var(--font-en-display); font-style: italic; font-size: 22px; white-space: nowrap; }

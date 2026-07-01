@@ -40,7 +40,8 @@ function loadPlaywright() {
 
 const args = process.argv.slice(2);
 const htmlArg = args.find(a => !a.startsWith("--"));
-const renderDir = args[args.indexOf("--render") + 1];
+const renderIdx = args.indexOf("--render");
+const renderDir = renderIdx >= 0 ? args[renderIdx + 1] : undefined;
 if (!htmlArg) {
   console.error("Usage: audit_html_demo.mjs <demo.html> [--render out/]");
   process.exit(2);

@@ -1,0 +1,134 @@
+/* =========================================================================
+   premium-boardroom theme
+   -------------------------------------------------------------------------
+   Best for: B2B, consulting, finance, formal tenders, annual retainers.
+   Posture: cold, restrained, data-driven board document. Deliberately the
+   OPPOSITE aesthetic from editorial-brand (warm paper + serif) so the two
+   families never read as the same studio.
+   - dark ink-blue canvas, warm-white text
+   - sans-serif led (Inter/PingFang); Playfair ONLY for figures
+   - square corners, dense thin grid, almost no decorative color
+   ========================================================================= */
+
+.slide.premium-boardroom {
+  --canvas: #0f1a24;        /* deep ink-blue board canvas */
+  --canvas-2: #16242f;
+  --panel: #1b2c38;
+  --paper: #f3ece0;         /* warm white text on dark */
+  --ink: #f3ece0;           /* text is "ink" on dark = warm white */
+  --ink-soft: #c4d0d8;
+  --muted: #8294a0;
+  --rule: #2c4150;          /* thin grid lines on dark */
+  --rule-2: #3a5260;
+  --steel: #6fa8c7;         /* restrained steel-blue accent */
+  --ochre: #c79a4b;         /* single warm accent for figures/highlights */
+  --alert: #d97757;
+
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-sans);
+}
+
+/* font posture: sans-led. Override the base serif defaults. */
+.premium-boardroom .topbar .brand,
+.premium-boardroom .eyebrow,
+.premium-boardroom .page-title,
+.premium-boardroom .sub-thesis,
+.premium-boardroom .implication span,
+.premium-boardroom .ledger .litem,
+.premium-boardroom .boundary h3,
+.premium-boardroom .pillar h3 {
+  font-family: var(--font-sans);
+}
+.premium-boardroom .topbar .brand b { font-family: var(--font-sans); }
+
+.premium-boardroom .topbar { border-bottom-color: var(--rule); }
+.premium-boardroom .topbar .brand { color: var(--ink); letter-spacing: .28em; }
+.premium-boardroom .topbar .brand b { color: var(--steel); letter-spacing: .12em; }
+.premium-boardroom .topbar .crumb { color: var(--muted); }
+.premium-boardroom .footbar { color: var(--muted); border-top: 1px solid var(--rule); }
+.premium-boardroom .footbar .num { color: var(--ochre); font-family: var(--font-en-display); }
+
+.premium-boardroom .eyebrow { color: var(--steel); font-style: normal; font-family: var(--font-en-display); letter-spacing: .02em; }
+.premium-boardroom .eyebrow b { color: var(--ink); font-family: var(--font-sans); }
+.premium-boardroom .page-title {
+  color: var(--ink); font-size: 56px; letter-spacing: -.015em; font-weight: 800; line-height: 1.18;
+}
+.premium-boardroom .page-title em { font-style: normal; color: var(--steel); }
+.premium-boardroom .sub-thesis {
+  font-size: 22px; line-height: 1.6; color: var(--ink-soft); max-width: 1200px; margin-bottom: 36px; font-weight: 400;
+}
+.premium-boardroom .sub-thesis em { font-style: normal; color: var(--ochre); font-weight: 600; }
+
+/* ledger — dense thin grid on dark */
+.premium-boardroom .ledger { border-top: 2px solid var(--steel); }
+.premium-boardroom .ledger .lrow { grid-template-columns: 1.4fr .8fr 1.7fr 1.4fr 1.1fr; border-bottom-color: var(--rule); }
+.premium-boardroom .ledger .lhead { border-bottom-color: var(--steel); }
+.premium-boardroom .ledger .lhead > div {
+  font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); font-weight: 800;
+}
+.premium-boardroom .ledger .lrow > div { padding-right: 24px; }
+.premium-boardroom .ledger .litem { font-size: 22px; font-weight: 700; color: var(--ink); letter-spacing: -.005em; }
+.premium-boardroom .ledger .litem small {
+  display: block; font-family: var(--font-en-display); font-style: italic; font-size: 14px; color: var(--muted); font-weight: 500; margin-top: 4px; letter-spacing: .02em;
+}
+.premium-boardroom .ledger .lamt {
+  font-family: var(--font-en-display); font-size: 28px; font-weight: 600; color: var(--ochre);
+}
+.premium-boardroom .ledger .lcell { font-size: 16px; line-height: 1.45; color: var(--ink-soft); }
+.premium-boardroom .ledger .lcell b { color: var(--alert); font-weight: 600; }
+.premium-boardroom .ledger .ltotal { border-bottom: 2px solid var(--steel); }
+.premium-boardroom .ledger .ltotal .litem { font-size: 20px; color: var(--muted); }
+.premium-boardroom .ledger .ltotal .lamt { font-size: 36px; color: var(--ink); }
+
+/* boundary side card — panel, not warm paper */
+.premium-boardroom .boundary {
+  border-left: 2px solid var(--ochre); padding: 4px 0 0 30px; width: 320px;
+}
+.premium-boardroom .boundary .b-eye {
+  font-family: var(--font-en-display); font-style: italic; font-size: 19px; color: var(--ochre);
+}
+.premium-boardroom .boundary h3 {
+  margin-top: 8px; font-size: 23px; font-weight: 700; line-height: 1.25; letter-spacing: -.01em;
+}
+.premium-boardroom .boundary .rule { width: 52px; height: 2px; background: var(--steel); margin: 20px 0 18px; }
+.premium-boardroom .boundary .pair b {
+  display: block; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; font-weight: 800; color: var(--steel);
+}
+.premium-boardroom .boundary .pair b.not { color: var(--alert); }
+.premium-boardroom .boundary .pair span {
+  display: block; font-size: 15px; line-height: 1.5; color: var(--ink-soft); margin: 4px 0 14px;
+}
+
+.premium-boardroom .implication { border-top: 1px solid var(--rule); }
+.premium-boardroom .implication b { color: var(--ochre); }
+.premium-boardroom .implication span {
+  font-size: 20px; line-height: 1.5; color: var(--ink); font-weight: 500;
+}
+
+/* thesis-page pillars — dense grid on dark */
+.premium-boardroom .pillars {
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0;
+  border-top: 1px solid var(--steel); margin-top: auto;
+}
+.premium-boardroom .pillar {
+  padding: 30px 40px 0; border-right: 1px solid var(--rule); position: relative;
+}
+.premium-boardroom .pillar:first-child { padding-left: 0; }
+.premium-boardroom .pillar:last-child { border-right: 0; }
+.premium-boardroom .pillar .pnum {
+  display: inline-block; font-family: var(--font-en-display); font-style: italic; font-size: 28px; color: var(--ochre);
+}
+.premium-boardroom .pillar h3 {
+  margin-top: 14px; font-size: 26px; font-weight: 700; line-height: 1.2; letter-spacing: -.01em;
+}
+.premium-boardroom .pillar h3 b {
+  font-family: var(--font-en-display); font-style: italic; font-weight: 500; color: var(--steel); margin-right: 10px; font-size: 21px;
+}
+.premium-boardroom .pillar p {
+  margin-top: 16px; font-size: 17px; line-height: 1.6; color: var(--ink-soft); max-width: 380px; font-weight: 400;
+}
+.premium-boardroom .pillar .pin {
+  position: absolute; top: 30px; right: 40px;
+  font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); font-weight: 700;
+}

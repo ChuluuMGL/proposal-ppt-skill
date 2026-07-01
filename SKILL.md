@@ -37,6 +37,7 @@ Load only the references needed for the current task:
 - For visual direction, palette, typography, and PPT template use, read `references/visual-system.md`.
 - For default high-taste palette presets when no client VI is provided, read `references/palette-library.md`.
 - For reusable public style-template families, style DNA contracts, and three-page sample gates, read `references/style-template-strategy.md`.
+- For the flow-based HTML template engine and per-family theme CSS used to build reliable slide demos, read `templates/README.md` and use `templates/engine.css` plus a family theme.
 - For style-rich proposal routes and component-level style transformations, read `references/style-systems.md`.
 - For AI-generated images, user assets, HTML/SVG-to-PPT hybrid backgrounds, and visual asset QA, read `references/asset-pipeline.md`.
 - For free/commercial-safe font pairing and fallbacks, read `references/font-system.md`.
@@ -93,18 +94,22 @@ Follow `references/workflow.md` for the full stage-gate process. The high-level 
    - Use the route to decide chapter order, proof emphasis, visual style, and required page types.
    - Do not force every deck into the same structure.
 
-5. **Create the page plan before authoring slides**
+5. **Select a template family (visible checkpoint)**
+   - When no client VI, reference deck, or approved strong-style direction exists, run the Template Selection Gate from `references/workflow.md` (Stage 2.5): show the four public families ranked by fit, recommend one tied to the winning thesis, and let the user confirm — or show the three-page sample of the recommended family before scaling.
+   - This is an explicit, user-visible decision point. Do not skip silently into slide copy on an unconfirmed family in guided mode.
+
+6. **Create the page plan before authoring slides**
    - For every slide, specify: slide title, page purpose, key message, proof object, visual form, required source, and presenter-script intent.
    - Each slide must answer one commercial question.
    - Each slide title should be a conclusion sentence, not a vague noun.
 
-6. **Write slide copy**
+7. **Write slide copy**
    - Slides contain judgment, structure, proof, and key examples only.
    - Speaker notes / script contain oral reasoning and transitions.
    - Keep bullets short and action-oriented.
    - Remove internal wording such as `赢标逻辑`, `客户透露`, `内部判断`, `释标会之后`, unless the user explicitly wants an internal working draft.
 
-7. **Build or edit the PPTX**
+8. **Build or edit the PPTX**
    - If the user provides a template/reference deck, follow it as the visual source.
    - If the client has VI, use client brand colors and typography first.
    - If no visual source exists, use `references/visual-system.md` and the minimal template as fallback.
@@ -113,11 +118,11 @@ Follow `references/workflow.md` for the full stage-gate process. The high-level 
    - If a rich style has no approved reference deck, create or recommend the three-page style sample set before scaling: cover/big idea, proof/mechanism, and dense business page.
    - When creating a PowerPoint deck, use the active runtime's PPTX backend and follow `references/runtime-compatibility.md`, including render/overlap QA where available.
 
-8. **Write the presenter script**
+9. **Write the presenter script**
    - The `.md` must be usable by a presenter, not just a slide outline.
    - For each slide, include slide objective, why it appears here, exact talk track, transition sentence, and notes about numbers or claims that need confirmation.
 
-9. **Run final QA**
+10. **Run final QA**
    - Use `references/quality-check.md`.
    - Verify story continuity, slide-title quality, proof objects, source labels, visual alignment, text size, budget boundaries, KPI logic, and risk controls.
    - When a `.pptx` was produced, run `scripts/audit_proposal_pptx.py <deck.pptx> --script <script.md>` and resolve any errors before claiming delivery.

@@ -184,6 +184,44 @@ For strong visual routes, the preferred sample set is exactly:
 
 Use these samples to decide whether the style can be used across the deck or only on expressive pages.
 
+## Stage 2.5: Template Selection Gate
+
+This is an explicit, user-visible checkpoint. Do not skip silently into slide copy. When the visual source resolves to a public template family (no client VI, no user reference deck, no approved strong-style direction), stop and let the user choose the family before any page is authored.
+
+Required output:
+
+```markdown
+## 模板选择
+
+### 候选家族（按与本案的契合度排序）
+
+| 家族 | 一句话定位 | 适合本案的理由 | 不适合的点 |
+|---|---|---|---|
+| `premium-boardroom` | 严格网格、董事会文件感、高信任 proof | … | … |
+| `editorial-brand` | 图片/字体主导的杂志版式 | … | … |
+| `tech-launch` | 发布会式聚焦、产品/界面 hero | … | … |
+| `lifestyle-commerce` | 产品场景、目录式证据墙 | … | … |
+
+### 推荐
+
+- 首选家族：
+- 备选家族：
+- 理由（绑定赢标主张，不是审美偏好）：
+
+### 确认方式
+
+- 用户已指定家族：→ 直接用，记录在案
+- 用户未指定：→ 用首选家族，但先展示该家族的三页样张（封面 / 机制 / 密集页）供用户确认或改选
+- 用户拒绝首选：→ 切换备选，重做三页样张
+```
+
+Gate rules:
+
+- The recommendation must tie back to the winning thesis and proposal route, not to a personal visual preference. State *why this family helps the client decide*, e.g. "premium-boardroom because this is a formal tender judged on procurement rigor."
+- If the user has already supplied a client VI, reference deck, or explicit visual direction, skip the family table — that decision is already made. Just record the resolved visual source and move on.
+- For a public skill demo or a style-rich request, the three-page sample is mandatory before scaling; see `style-template-strategy.md`.
+- Never proceed to full slide copy on an unconfirmed family in guided mode. In auto mode, proceed with the top recommendation but still emit the three-page sample and record the assumption.
+
 ## Stage 3: Slide Copy Draft
 
 Write slide-level copy from the approved blueprint.
