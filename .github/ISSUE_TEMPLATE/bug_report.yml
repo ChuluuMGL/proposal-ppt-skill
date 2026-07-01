@@ -1,0 +1,47 @@
+name: Bug report
+description: Something in the proposal-ppt skill produces wrong or misleading output
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Describe the wrong output, broken slide, or misleading deliverable.
+      placeholder: "e.g. The deck claimed it was delivered but only a markdown file existed."
+    validations:
+      required: true
+  - type: dropdown
+    id: stage
+    attributes:
+      label: Which stage was affected?
+      options:
+        - Brief intake / audit
+        - Winning thesis / blueprint
+        - Slide copy / page plan
+        - PPTX build
+        - Presenter script (.md)
+        - Final QA
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: runtime
+    attributes:
+      label: Runtime / agent
+      placeholder: "Claude Code, Codex, Cursor, ..."
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Prompt or steps to reproduce
+      placeholder: "Paste the prompt you used and the brief context."
+    validations:
+      required: false
+  - type: checkboxes
+    id: honesty
+    attributes:
+      label: Anti-fabrication check
+      options:
+        - label: The output did not invent data, cases, pricing, or permissions (or if it did, I describe where).
+          required: true

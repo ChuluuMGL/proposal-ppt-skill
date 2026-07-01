@@ -1,0 +1,33 @@
+name: Feature request
+description: Suggest a new proposal route, style family, page type, or QA gate
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What proposal problem does this solve?
+      placeholder: "e.g. I pitch government tenders and the current routes miss compliance pages."
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of contribution is this?
+      options:
+        - New proposal route
+        - New style-template family
+        - New page type / proof object
+        - New QA gate / audit check
+        - Runtime compatibility
+        - Documentation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: reference
+    attributes:
+      label: Reference (optional)
+      description: A real proposal, deck, or benchmark this should learn from — not a copy.
+      placeholder: "Link or describe the reference and what grammar should be borrowed."
+    validations:
+      required: false
