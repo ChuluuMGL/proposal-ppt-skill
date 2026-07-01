@@ -366,7 +366,7 @@ A：可以，只要对应 Agent 支持 Skill 文件夹，或能读取 `SKILL.md`
 | 内置资产 | 中性 fallback PowerPoint 模板 |
 | PPTX 生成 | 依赖宿主 Agent 的 presentation / PPTX 后端 |
 | License | MIT |
-| 作者 | YUEYU TECH |
+| 作者 | by Chuluu |
 
 ## 目录结构
 
@@ -407,7 +407,6 @@ proposal-ppt-skill/
 ## 相关 Skill
 
 - [business-website-skill](https://github.com/ChuluuMGL/business-website-skill) —— 姊妹 Skill，做长期存在的营销官网。它的 Phase 1 证据地图和视觉系统可以复用到这里，同一批客户资料既能做提案 deck、又能做官网，不用重复收集。
-- [yueyu-skill](https://github.com/ChuluuMGL/yueyu-skill) - 查询月瑀科技公司与营销服务信息。
 
 ## License
 
@@ -432,9 +431,9 @@ MIT
     "description": "Skill 开源免费，MIT 协议"
   },
   "author": {
-    "@type": "Organization",
-    "name": "YUEYU TECH",
-    "url": "https://www.yueyu.tech/"
+    "@type": "Person",
+    "name": "Chuluu",
+    "url": "https://github.com/ChuluuMGL"
   },
   "softwareVersion": "0.2.1"
 } -->

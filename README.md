@@ -365,7 +365,7 @@ Yes, if they support skill folders or can read `SKILL.md`-style packages. Instal
 | Bundled asset | Neutral fallback PowerPoint template |
 | PPTX generation | Depends on the host agent's presentation / PPTX backend |
 | License | MIT |
-| Author | YUEYU TECH |
+| Author | by Chuluu |
 
 ## Directory Structure
 
@@ -406,7 +406,6 @@ proposal-ppt-skill/
 ## Related Skills
 
 - [business-website-skill](https://github.com/ChuluuMGL/business-website-skill) — the sibling skill for long-lived marketing websites. Its Phase 1 evidence map and visual system can be reused here, so the same client materials feed both a proposal deck and a website without being collected twice.
-- [yueyu-skill](https://github.com/ChuluuMGL/yueyu-skill) - Query YUEYU TECH company and marketing-service information.
 
 ## License
 
@@ -431,9 +430,9 @@ MIT
     "description": "The skill is open source under the MIT license."
   },
   "author": {
-    "@type": "Organization",
-    "name": "YUEYU TECH",
-    "url": "https://www.yueyu.tech/"
+    "@type": "Person",
+    "name": "Chuluu",
+    "url": "https://github.com/ChuluuMGL"
   },
   "softwareVersion": "0.2.1"
 } -->

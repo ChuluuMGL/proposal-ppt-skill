@@ -3,7 +3,7 @@
   "display_name": "Business Proposal Presentation",
   "description": "Create stage-gated commercial proposal PPT decks and presenter scripts with public style-template families, runtime compatibility, three-page sample gates, AI visual asset planning, font guidance, palette presets, and proof-object QA.",
   "version": "0.2.1",
-  "author": "YUEYU TECH",
+  "author": "by Chuluu",
   "license": "MIT",
   "repository": "https://github.com/ChuluuMGL/proposal-ppt-skill",
   "category": "business",
@@ -37,11 +37,6 @@
       "name": "business-website-skill",
       "repository": "https://github.com/ChuluuMGL/business-website-skill",
       "description": "Sibling skill for long-lived marketing websites; its Phase 1 evidence map and visual system can be reused so the same client materials feed both a proposal deck and a website."
-    },
-    {
-      "name": "yueyu-skill",
-      "repository": "https://github.com/ChuluuMGL/yueyu-skill",
-      "description": "Query YUEYU TECH company and marketing-service information."
     }
   ],
   "compatibility": {
