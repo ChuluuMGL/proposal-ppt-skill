@@ -49,6 +49,35 @@ Use the full content field deliberately.
 - Do not solve empty space with a decorative border or blank media frame. The added element must be proof, conclusion, navigation, source status, or an intentional visual anchor.
 - Keep internal safety distance inside tables, ledgers, cards, and column modules. Text should sit at least 18-24 px away from dividers, borders, and vertical rules. If a divider touches or nearly touches the first character of a column, the page fails detail QA even when there is no formal overlap.
 
+## Text Flow and Overlap Prevention
+
+These rules exist because hand-tuned absolute positioning and long CJK lines are the two most common sources of shipping defects. They were confirmed by a real production session where a 3-page demo leaked overlap and ragged wrapping across many revision rounds despite a DOM-boundary checker passing. An element being "inside the canvas" does not mean it is not overlapping another element.
+
+### Prefer document flow over absolute coordinates
+
+- Default to normal document flow (`block`, `flex`, `grid`) for the page skeleton. Elements that flow cannot overlap or reverse order by construction.
+- Reserve absolute positioning for chrome and decoration only (page frame, folio, eyebrow, decorative rules, a signature mark). Do not build the primary content table, ledger, or column layout out of absolutely-positioned siblings.
+- If two content blocks must sit side by side, use a flex/grid row, not two independent `position: absolute` boxes with hand-calculated x/y. Hand-calculated coordinates drift; flex gutters do not.
+- Never put a data table or repeated row set inside a flex container with default `align-items: stretch` and a `flex:1` child — this can pull the header out of order. Tables belong in normal block flow.
+
+### Long CJK headlines must be broken on purpose
+
+- Do not let a long Chinese title auto-wrap. Auto-wrap breaks at the last fitting character and leaves a ragged, unbalanced second line.
+- Break headlines manually with explicit line breaks at natural phrase boundaries (after a colon, comma, or clause end), and aim for roughly equal character counts per line.
+- Before sizing a headline, check the fit: `font-size × max-chars-on-longest-line ≤ container-width × 0.8`. If it does not fit with 20% margin, reduce the font size or shorten the text — do not hope it will wrap nicely.
+- Keep each line of a large headline short (typically ≤ 8-10 CJK characters at display sizes). A 15+ character line at 70px+ almost always rag-wraps.
+- Do not mix inline Latin emphasis (`<em>`, italic) mid-Chinese-line unnecessarily; it changes run metrics and can trigger uneven wrapping.
+
+### Subtitles and body copy
+
+- Constrain body and subtitle widths so they break at intended points. A 45-character Chinese sentence in a 760px column at 23px will wrap to a short, ragged tail — either widen the column, shorten the sentence, or raise it to a controlled two-line break.
+
+### Overlap is a delivery blocker, not a warning
+
+- Two text elements overlapping by even a few pixels reads as a broken deck to a non-technical viewer. Treat any element-to-element text overlap as a hard fail, equal to fabricating data.
+- Boundary checks ("nothing leaves the canvas") are necessary but not sufficient. Always also check element-to-element overlap before claiming a page is clean.
+- Because agents cannot reliably self-verify rendered visuals, a style sample or public demo must receive a human visual review before it is declared done. See the Hard Rule on visual sign-off in `SKILL.md`.
+
 ## Layout Beauty Score
 
 Before delivering a style sample or full proposal, score the layout honestly. Use this as a design gate, not as a client-facing page.

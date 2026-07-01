@@ -2,7 +2,7 @@
   "name": "proposal-ppt",
   "display_name": "Business Proposal Presentation",
   "description": "Create stage-gated commercial proposal PPT decks and presenter scripts with public style-template families, runtime compatibility, three-page sample gates, AI visual asset planning, font guidance, palette presets, and proof-object QA.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "YUEYU TECH",
   "license": "MIT",
   "repository": "https://github.com/ChuluuMGL/proposal-ppt-skill",
