@@ -1,21 +1,36 @@
 # proposal-ppt-skill
 
-> **Business Proposal Presentation Skill for AI Agents**
-> An open-source skill that helps AI agents create stage-gated commercial proposal decks, editable PowerPoint files, and presenter scripts from client briefs, research, budgets, cases, timelines, and execution plans.
+> **The proposal-writing brain that wins pitches — and it also produces the deck.**
+> An open-source AI agent skill that turns briefs, tenders, research, budgets, and cases into a *winning argument first*: a sharp winning thesis, proof-anchored slides, an editable `.pptx`, and a presenter script. Most AI tools make slides prettier; this one decides **why the proposal should win**, then builds the deck.
 
 [Simplified Chinese](./README.zh-CN.md) | English
 
 [![Skill](https://img.shields.io/badge/AI%20Skill-proposal--ppt-0E5E43)](./SKILL.md)
-[![Version](https://img.shields.io/badge/version-0.1.7-green)](./skill.json)
+[![Version](https://img.shields.io/badge/version-0.2.0-green)](./skill.json)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](./LICENSE)
-[![Template](https://img.shields.io/badge/template-PPTX-blue)](./assets/minimal-proposal-template.pptx)
+[![QA](https://img.shields.io/badge/QA-audited%20deck-0E5E43)](./scripts/audit_proposal_pptx.py)
 [![Workflow](https://img.shields.io/badge/workflow-stage--gated-purple)](./references/workflow.md)
 
----
+### Demo
 
-## What This Skill Does
+<table>
+<tr>
+<td width="600"><img src="./assets/demo/showcase-overview.png" alt="Three proposal style families: premium-boardroom, editorial-brand, tech-launch — rendered concept demos" width="600"/></td>
+<td width="300"><img src="./assets/demo/dense-page.png" alt="Dense budget / proof page" width="300"/></td>
+</tr>
+</table>
 
-`proposal-ppt` turns messy proposal inputs into a structured commercial presentation package:
+> Rendered HTML concept demos of the three public style families — **premium-boardroom**, **editorial-brand**, **tech-launch**. Real client photography is replaced with conceptual visuals; final `.pptx` fidelity depends on the host runtime's presentation backend. More samples in [`assets/demo/`](./assets/demo).
+
+### Why this skill, not another "pretty slides" tool
+
+Pitches are won on the **argument**, not the decoration. A beautiful deck with a weak thesis loses to a plain deck with a sharp one — but a plain deck never gets read. So this skill optimizes for the part that actually wins (the **winning thesis**, proof objects, budget boundaries, and risk removal) and treats premium design as the *permission to be heard*, not the product.
+
+It is **anti-fabrication by design**: it never invents data, cases, pricing, awards, or permissions, and it never claims a PowerPoint was delivered when only markdown, HTML, or a PDF exists. Deliverables are also **objectively auditable** — see [Objective QA](#objective-qa-dont-trust-verify).
+
+### What you get
+
+`proposal-ppt` turns messy proposal inputs into a structured commercial proposal package:
 
 | Output | What It Contains |
 |---|---|
@@ -24,7 +39,9 @@
 | Missing-information list | A clear list of unknowns that should be marked instead of invented. |
 | Style and asset plan | Optional rich style system, font pairing, asset plan, and AI-image/HTML/SVG background route when needed. |
 
-The purpose is not to make slides decorative. The purpose is to help the client understand why this proposal should be selected.
+### Table of contents
+
+[Use cases](#use-cases) · [Workflow](#workflow) · [Objective QA](#objective-qa-dont-trust-verify) · [Work modes](#work-modes) · [Style template families](#style-template-families) · [Rich style workflow](#rich-style-workflow) · [Proposal routes](#proposal-routes) · [Runtime compatibility](#runtime-compatibility) · [Installation](#installation) · [Recommended prompts](#recommended-prompts) · [Design principles](#design-principles) · [FAQ](#faq) · [Included files](#included-files) · [Related skills](#related-skills)
 
 ---
 
@@ -58,6 +75,28 @@ This skill uses a stage-gated workflow inspired by professional proposal product
 | 6. Final QA | Check logic, evidence, visual layout, budget, KPI, and risk. | Delivery-ready package |
 
 Default mode is `guided`: the agent stops after the blueprint and waits for confirmation before building the PPTX. If you ask it to proceed directly, it uses `auto` mode and marks missing information as "to be confirmed."
+
+---
+
+## Objective QA — don't trust, verify
+
+Deliverables are checked by an objective script, not only the agent's self-assessment. [`scripts/audit_proposal_pptx.py`](./scripts/audit_proposal_pptx.py) verifies a finished deck **without the agent in the loop**:
+
+- the `.pptx` is a valid Office Open XML package (zip + `[Content_Types].xml`);
+- actual slide count (and warns when a deck is too thin);
+- placeholder leakage (`待补充` / `TODO` / `TBC` / `lorem ipsum` / …) that should not survive into a shipped deck;
+- presenter-notes coverage and slide-count alignment against the `.md` script;
+- oversized empty "dead frame" regions (when `python-pptx` is available).
+
+```bash
+# audit a delivered deck against its presenter script
+python3 scripts/audit_proposal_pptx.py outputs/proposal.pptx --script outputs/proposal.md
+
+# audit the bundled blank template (fill-in markers are allowed)
+python3 scripts/audit_proposal_pptx.py assets/minimal-proposal-template.pptx --template
+```
+
+Pure standard library (`zipfile` + `xml`); `python-pptx` is optional and unlocks the deeper blank-frame checks. This closes the loop on the skill's *"do not claim a PPTX was delivered when it was not"* Hard Rule.
 
 ---
 
@@ -164,7 +203,10 @@ See [`references/style-template-strategy.md`](./references/style-template-strate
 | [`references/output-contract.md`](./references/output-contract.md) | Required PPTX and presenter-script output format. |
 | [`references/runtime-compatibility.md`](./references/runtime-compatibility.md) | Agent compatibility, PPTX backend requirements, and fallback modes. |
 | [`references/quality-check.md`](./references/quality-check.md) | Final QA checklist and common failure modes. |
+| [`references/frontend-slides-audit.md`](./references/frontend-slides-audit.md) | Practices borrowed from the `frontend-slides` project (visual discovery, fixed 16:9 stage, density modes). |
+| [`scripts/audit_proposal_pptx.py`](./scripts/audit_proposal_pptx.py) | Objective delivery QA — validates the pptx, slide count, placeholder leakage, and script alignment. |
 | [`assets/minimal-proposal-template.pptx`](./assets/minimal-proposal-template.pptx) | Neutral fallback PowerPoint template. |
+| [`assets/demo/`](./assets/demo) | Rendered concept-demo images of the three style families (shown at the top). |
 | [`agents/openai.yaml`](./agents/openai.yaml) | Codex/OpenAI-style skill UI metadata. |
 | [`skill.json`](./skill.json) | Machine-readable metadata for directories and marketplaces. |
 
@@ -337,10 +379,17 @@ proposal-ppt-skill/
 ├── agents/
 │   └── openai.yaml
 ├── assets/
+│   ├── demo/                          # rendered concept-demo images
 │   └── minimal-proposal-template.pptx
+├── scripts/
+│   └── audit_proposal_pptx.py         # objective delivery QA
+├── .github/
+│   ├── ISSUE_TEMPLATE/
+│   └── CONTRIBUTING.md
 └── references/
     ├── asset-pipeline.md
     ├── font-system.md
+    ├── frontend-slides-audit.md
     ├── output-contract.md
     ├── page-types.md
     ├── layout-rhythm.md
@@ -354,8 +403,9 @@ proposal-ppt-skill/
     └── workflow.md
 ```
 
-## Related Skill
+## Related Skills
 
+- [business-website-skill](https://github.com/ChuluuMGL/business-website-skill) — the sibling skill for long-lived marketing websites. Its Phase 1 evidence map and visual system can be reused here, so the same client materials feed both a proposal deck and a website without being collected twice.
 - [yueyu-skill](https://github.com/ChuluuMGL/yueyu-skill) - Query YUEYU TECH company and marketing-service information.
 
 ## License
@@ -385,5 +435,5 @@ MIT
     "name": "YUEYU TECH",
     "url": "https://www.yueyu.tech/"
   },
-  "softwareVersion": "0.1.7"
+  "softwareVersion": "0.2.0"
 } -->

@@ -5,6 +5,8 @@ description: Create, write, design, edit, or audit commercial proposal presentat
 
 # Proposal PPT
 
+> **Core value: the winning thesis and proof logic — *why this proposal should win*. Premium design is the gate that gets the deck read, not the reason it wins. Optimize for the argument first; treat visual quality as a pass/fail gate, not the goal.**
+
 Use this skill to turn client briefs, tender files, research, brand materials, budgets, cases, and execution plans into a commercial proposal package. When the runtime has PPTX support, the package includes:
 
 - an editable `.pptx`
@@ -41,6 +43,7 @@ Load only the references needed for the current task:
 - For final file and script format, read `references/output-contract.md`.
 - For runtime compatibility, PPTX backend requirements, and fallback modes, read `references/runtime-compatibility.md`.
 - For delivery QA and failure modes, read `references/quality-check.md`.
+- For audited practices borrowed from the `frontend-slides` project (visual discovery, fixed 16:9 stage, density modes), read `references/frontend-slides-audit.md`.
 
 Use `assets/minimal-proposal-template.pptx` only as a fallback visual asset when no client VI, reference deck, or stronger design direction is provided.
 
@@ -117,6 +120,7 @@ Follow `references/workflow.md` for the full stage-gate process. The high-level 
 9. **Run final QA**
    - Use `references/quality-check.md`.
    - Verify story continuity, slide-title quality, proof objects, source labels, visual alignment, text size, budget boundaries, KPI logic, and risk controls.
+   - When a `.pptx` was produced, run `scripts/audit_proposal_pptx.py <deck.pptx> --script <script.md>` and resolve any errors before claiming delivery.
    - Do not claim the deck is ready until the PPTX and script are both present and checked.
 
 ## Hard Rules
@@ -136,3 +140,4 @@ Follow `references/workflow.md` for the full stage-gate process. The high-level 
 - Do not present AI-generated visuals as real client proof. Mark them as conceptual when relevant.
 - Do not insert the skill author's company information into user decks unless the user explicitly asks to present under that company identity.
 - Do not hide runtime limitations. If the current agent cannot generate, render, or open PPTX files, say so and deliver the best fallback package instead.
+- Do not claim a deck passed QA when a `.pptx` exists without running `scripts/audit_proposal_pptx.py`. Resolve reported errors (invalid package, placeholder leakage, missing notes, slide/script mismatch) before declaring delivery.

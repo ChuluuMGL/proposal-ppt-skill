@@ -1,19 +1,34 @@
 # proposal-ppt-skill
 
-> **面向 AI Agent 的商业提案 PPT Skill**
-> 一个开源 Skill，用于把客户 brief、调研资料、预算、案例、排期和执行计划，转化为阶段化商业提案 PPT、可编辑 PowerPoint 文件和提案逐字稿。
+> **赢得比稿的提案写作大脑 —— 顺带把 PPT 也做出来。**
+> 一个开源 AI Agent Skill，把 brief、招标书、调研、预算、案例和执行计划，先变成**一套能赢的论证**：清晰的赢标主张、有证据支撑的页面、可编辑的 `.pptx` 和逐字稿。多数 AI 工具只把 PPT 做漂亮；这个 Skill 先决定**为什么这份方案该赢**，再把 deck 做出来。
 
 中文 | [English](./README.md)
 
 [![Skill](https://img.shields.io/badge/AI%20Skill-proposal--ppt-0E5E43)](./SKILL.md)
-[![Version](https://img.shields.io/badge/version-0.1.7-green)](./skill.json)
+[![Version](https://img.shields.io/badge/version-0.2.0-green)](./skill.json)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](./LICENSE)
-[![Template](https://img.shields.io/badge/template-PPTX-blue)](./assets/minimal-proposal-template.pptx)
+[![QA](https://img.shields.io/badge/QA-audited%20deck-0E5E43)](./scripts/audit_proposal_pptx.py)
 [![Workflow](https://img.shields.io/badge/workflow-stage--gated-purple)](./references/workflow.md)
 
----
+### Demo
 
-## 这个 Skill 能做什么
+<table>
+<tr>
+<td width="600"><img src="./assets/demo/showcase-overview.png" alt="三套提案风格家族 premium-boardroom、editorial-brand、tech-launch 渲染概念图" width="600"/></td>
+<td width="300"><img src="./assets/demo/dense-page.png" alt="密集预算 / 证据页" width="300"/></td>
+</tr>
+</table>
+
+> 三套公开风格家族（**premium-boardroom**、**editorial-brand**、**tech-launch**）的 HTML 渲染概念图。真实客户摄影已替换为概念视觉；最终 `.pptx` 保真度取决于宿主 runtime 的 presentation 后端。更多样张见 [`assets/demo/`](./assets/demo)。
+
+### 为什么是这个 Skill，而不是又一个“把 PPT 做好看”的工具
+
+比稿的胜负手在**论证**，不在装饰。漂亮的 deck 配上弱主张，会输给朴素 deck 配上锐利主张；但朴素 deck 根本没人看。所以这个 Skill 把精力压在真正决定输赢的部分（**赢标主张**、proof object、预算边界、风险消除），把高级设计定位成“被允许发言”的入场券，而不是产品本身。
+
+它**天然反幻觉**：从不编造数据、案例、报价、奖项或权限，也从不假装已经交付 PPTX、其实只给了 markdown / HTML / PDF。交付物还**可被客观审计** —— 见[客观质检](#客观质检)。
+
+### 这个 Skill 能做什么
 
 `proposal-ppt` 可以把杂乱的提案输入，整理成一套商业提案交付包：
 
@@ -24,7 +39,9 @@
 | 缺失信息清单 | 明确列出不能编造、需要客户补充或进一步确认的信息。 |
 | 风格与资产计划 | 可选的强风格系统、字体搭配、素材计划、AI 图像或 HTML/SVG 背景路线。 |
 
-它的目标不是“把 PPT 做漂亮”，而是帮助客户判断：为什么这份方案值得被选择。
+### 目录
+
+[适用场景](#适用场景) · [工作流程](#工作流程) · [客观质检](#客观质检) · [工作模式](#工作模式) · [风格模板家族](#风格模板家族) · [强风格工作流](#强风格工作流) · [提案路线](#提案路线) · [运行环境兼容性](#运行环境兼容性) · [安装](#安装) · [推荐提示词](#推荐提示词) · [设计原则](#设计原则) · [常见问答](#常见问答) · [包含文件](#包含文件) · [相关 Skill](#相关-skill)
 
 ---
 
@@ -59,6 +76,28 @@
 
 默认模式是 `guided`：Agent 会先输出提案蓝图，等待确认后再生成 PPTX。  
 如果你要求“直接生成”，它会进入 `auto` 模式，并把缺失信息标注为“待确认”。
+
+---
+
+## 客观质检
+
+交付物由客观脚本检查，而不是只靠 Agent 自评。[`scripts/audit_proposal_pptx.py`](./scripts/audit_proposal_pptx.py) 在**不依赖 Agent** 的情况下校验成品 deck：
+
+- `.pptx` 是合法的 Office Open XML 包（zip + `[Content_Types].xml`）；
+- 实际页数（页数过少会告警）；
+- 占位符泄漏（`待补充` / `TODO` / `TBC` / `lorem ipsum` / …）不应出现在交付的 deck 里；
+- 逐字稿 notes 覆盖率、`.md` 脚本与 deck 页数对齐；
+- 过大的空白“死框”区域（需 `python-pptx`）。
+
+```bash
+# 用逐字稿校验一份已交付的 deck
+python3 scripts/audit_proposal_pptx.py outputs/proposal.pptx --script outputs/proposal.md
+
+# 校验内置空白模板（允许填空标记）
+python3 scripts/audit_proposal_pptx.py assets/minimal-proposal-template.pptx --template
+```
+
+纯标准库（`zipfile` + `xml`）；`python-pptx` 可选，装上后解锁更深的空白框检测。这让“禁止假装已交付 PPTX”这条 Hard Rule 从“靠自觉”变成“靠脚本可验证”。
 
 ---
 
@@ -165,7 +204,10 @@
 | [`references/output-contract.md`](./references/output-contract.md) | PPTX 和逐字稿的输出格式要求。 |
 | [`references/runtime-compatibility.md`](./references/runtime-compatibility.md) | Agent 兼容性、PPTX 后端要求和降级路径。 |
 | [`references/quality-check.md`](./references/quality-check.md) | 交付前 QA 清单和常见失败模式。 |
+| [`references/frontend-slides-audit.md`](./references/frontend-slides-audit.md) | 借鉴自 `frontend-slides` 项目的做法（视觉发现、固定 16:9 画布、密度模式）。 |
+| [`scripts/audit_proposal_pptx.py`](./scripts/audit_proposal_pptx.py) | 客观交付质检 —— 校验 pptx、页数、占位符泄漏和逐字稿对齐。 |
 | [`assets/minimal-proposal-template.pptx`](./assets/minimal-proposal-template.pptx) | 中性 fallback PowerPoint 模板。 |
+| [`assets/demo/`](./assets/demo) | 三套风格家族的渲染概念图（见顶部 Demo）。 |
 | [`agents/openai.yaml`](./agents/openai.yaml) | Codex / OpenAI 风格 Skill 界面元数据。 |
 | [`skill.json`](./skill.json) | 供 Skill 目录、市场和其他 Agent 读取的机器可读元数据。 |
 
@@ -338,10 +380,17 @@ proposal-ppt-skill/
 ├── agents/
 │   └── openai.yaml
 ├── assets/
+│   ├── demo/                          # 渲染概念图
 │   └── minimal-proposal-template.pptx
+├── scripts/
+│   └── audit_proposal_pptx.py         # 客观交付质检
+├── .github/
+│   ├── ISSUE_TEMPLATE/
+│   └── CONTRIBUTING.md
 └── references/
     ├── asset-pipeline.md
     ├── font-system.md
+    ├── frontend-slides-audit.md
     ├── output-contract.md
     ├── page-types.md
     ├── layout-rhythm.md
@@ -357,6 +406,7 @@ proposal-ppt-skill/
 
 ## 相关 Skill
 
+- [business-website-skill](https://github.com/ChuluuMGL/business-website-skill) —— 姊妹 Skill，做长期存在的营销官网。它的 Phase 1 证据地图和视觉系统可以复用到这里，同一批客户资料既能做提案 deck、又能做官网，不用重复收集。
 - [yueyu-skill](https://github.com/ChuluuMGL/yueyu-skill) - 查询月瑀科技公司与营销服务信息。
 
 ## License
@@ -386,5 +436,5 @@ MIT
     "name": "YUEYU TECH",
     "url": "https://www.yueyu.tech/"
   },
-  "softwareVersion": "0.1.7"
+  "softwareVersion": "0.2.0"
 } -->
