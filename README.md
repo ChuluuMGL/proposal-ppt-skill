@@ -15,8 +15,8 @@
 
 <table>
 <tr>
-<td width="600"><img src="./assets/demo/showcase-overview.png" alt="Three proposal style families: premium-boardroom, editorial-brand, tech-launch — rendered concept demos" width="600"/></td>
-<td width="300"><img src="./assets/demo/dense-page.png" alt="Dense budget / proof page" width="300"/></td>
+<td width="600"><img src="./assets/demo/showcase-overview-v2.png" alt="Three proposal style families: premium-boardroom, editorial-brand, tech-launch — rendered concept demos by Chuluu" width="600"/></td>
+<td width="300"><img src="./assets/demo/dense-page-v2.png" alt="Dense budget / proof page" width="300"/></td>
 </tr>
 </table>
 

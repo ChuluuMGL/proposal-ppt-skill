@@ -15,8 +15,8 @@
 
 <table>
 <tr>
-<td width="600"><img src="./assets/demo/showcase-overview.png" alt="三套提案风格家族 premium-boardroom、editorial-brand、tech-launch 渲染概念图" width="600"/></td>
-<td width="300"><img src="./assets/demo/dense-page.png" alt="密集预算 / 证据页" width="300"/></td>
+<td width="600"><img src="./assets/demo/showcase-overview-v2.png" alt="三套提案风格家族 premium-boardroom、editorial-brand、tech-launch 渲染概念图 by Chuluu" width="600"/></td>
+<td width="300"><img src="./assets/demo/dense-page-v2.png" alt="密集预算 / 证据页" width="300"/></td>
 </tr>
 </table>
 
