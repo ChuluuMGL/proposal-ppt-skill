@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Premium Boardroom — Proposal Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,800;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../templates/engine.css">
+  <link rel="stylesheet" href="../../templates/premium-boardroom.theme.css">
+  <style>
+    /* demo-only layout variants — different from the editorial (tea) layouts */
+    .pb-cover-hero { display:flex; align-items:flex-end; gap:72px; margin-top:74px; }
+    .pb-cover-hero .hero-num {
+      font-family: var(--font-en-display); font-weight:600; font-size:292px; line-height:.82;
+      color: var(--steel); letter-spacing:-.04em;
+    }
+    .pb-cover-hero .hero-side { flex:1; padding-bottom: 30px; }
+    .pb-cover-hero .hero-side .kicker {
+      font-size:13px; letter-spacing:.22em; text-transform:uppercase; color:var(--muted); font-weight:800; margin-bottom:20px;
+    }
+    .pb-cover-hero .hero-side h1 {
+      font-size:70px; line-height:1.12; font-weight:800; letter-spacing:-.018em; color:var(--ink); margin:0;
+    }
+    .pb-cover-hero .hero-side h1 em { font-style:normal; color:var(--steel); }
+    .pb-cover-kpi {
+      display:grid; grid-template-columns: repeat(3,1fr); gap:0;
+      border-top:1px solid var(--rule); margin-top:44px; padding-top:24px;
+    }
+    .pb-cover-kpi .k { padding-right:30px; border-right:1px solid var(--rule); }
+    .pb-cover-kpi .k:last-child { border-right:0; }
+    .pb-cover-kpi .k b { display:block; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); font-weight:800; }
+    .pb-cover-kpi .k span { display:block; margin-top:12px; font-family:var(--font-en-display); font-size:42px; font-weight:600; color:var(--ochre); }
+    .pb-cover-kpi .k small { display:block; margin-top:6px; font-size:15px; color:var(--ink-soft); }
+    .pb-cover-proof {
+      margin-top:auto; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);
+      display:grid; grid-template-columns:1.1fr 1fr 1fr; align-items:stretch;
+    }
+    .pb-cover-proof .proof-head {
+      padding:22px 30px 20px 0; border-right:1px solid var(--rule);
+      font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); font-weight:800;
+    }
+    .pb-cover-proof .proof-head b {
+      display:block; margin-top:10px; font-size:20px; line-height:1.35; color:var(--ink);
+      text-transform:none; letter-spacing:-.01em;
+    }
+    .pb-cover-proof .proof-item { padding:22px 30px 20px; border-right:1px solid var(--rule); }
+    .pb-cover-proof .proof-item:last-child { border-right:0; }
+    .pb-cover-proof .proof-item b { display:block; font-size:15px; letter-spacing:.12em; text-transform:uppercase; color:var(--ochre); }
+    .pb-cover-proof .proof-item span { display:block; margin-top:9px; font-size:15px; line-height:1.45; color:var(--ink-soft); }
+
+    /* thesis page: left dark spine + right audit matrix */
+    .pb-thesis { display:flex; gap:0; margin-top:8px; flex:1; }
+    .pb-thesis .spine {
+      width:340px; flex-shrink:0; background:#0a131c; padding:48px 40px 48px 0; margin-right:48px;
+      border-right:1px solid var(--rule); display:flex; flex-direction:column; gap:0;
+    }
+    .pb-thesis .spine .chap {
+      font-family:var(--font-en-display); font-style:italic; font-size:96px; color:var(--steel); line-height:.9;
+    }
+    .pb-thesis .spine .chap-label { font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); font-weight:800; margin-top:16px; }
+    .pb-thesis .spine .stance { font-size:21px; line-height:1.55; color:var(--ink); font-weight:500; margin-top:34px; }
+    .pb-thesis .spine .stance em { font-style:normal; color:var(--ochre); font-weight:700; }
+    .pb-thesis .spine .anchor {
+      margin-top:44px; padding-top:28px; border-top:1px solid var(--rule);
+    }
+    .pb-thesis .spine .anchor b { display:block; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); font-weight:800; }
+    .pb-thesis .spine .anchor span { display:block; margin-top:14px; font-family:var(--font-en-display); font-size:64px; font-weight:600; color:var(--ochre); line-height:.9; }
+    .pb-thesis .spine .anchor small { display:block; margin-top:10px; font-size:15px; color:var(--ink-soft); }
+    .pb-thesis .spine .footnote { margin-top:auto; padding-top:36px; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); font-weight:800; }
+    .pb-thesis .matrix { flex:1; display:flex; flex-direction:column; justify-content:space-between; }
+    .pb-thesis .matrix h2 {
+      font-size:50px; font-weight:800; line-height:1.16; letter-spacing:-.015em; color:var(--ink); margin:0 0 30px;
+    }
+    .pb-thesis .matrix h2 em { font-style:normal; color:var(--steel); }
+    .pb-thesis .arow {
+      display:grid; grid-template-columns:.9fr 1.3fr 1fr .6fr; gap:24px;
+      padding:24px 0; border-top:1px solid var(--rule); align-items:baseline; flex:0 0 auto;
+    }
+    .pb-thesis .arow:first-of-type { border-top:1px solid var(--steel); }
+    .pb-thesis .arow .q { font-size:18px; font-weight:700; color:var(--ink); }
+    .pb-thesis .arow .q small { display:block; font-family:var(--font-en-display); font-style:italic; font-size:13px; color:var(--muted); font-weight:500; margin-top:3px; }
+    .pb-thesis .arow .proof { font-size:16px; line-height:1.45; color:var(--ink-soft); }
+    .pb-thesis .arow .proof b { color:var(--ochre); }
+    .pb-thesis .arow .owner { font-size:15px; color:var(--ink-soft); }
+    .pb-thesis .arow .verdict {
+      font-family:var(--font-en-display); font-style:italic; font-size:18px; color:var(--steel); text-align:right;
+    }
+
+    /* budget page: left bar-viz + right governance matrix */
+    .pb-budget-head { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:30px; }
+    .pb-budget-head h2 { font-size:46px; font-weight:800; line-height:1.16; letter-spacing:-.015em; color:var(--ink); margin:0; max-width:900px; }
+    .pb-budget-head h2 em { font-style:normal; color:var(--steel); }
+    .pb-budget-head .total { text-align:right; }
+    .pb-budget-head .total b { display:block; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); font-weight:800; }
+    .pb-budget-head .total span { display:block; margin-top:8px; font-family:var(--font-en-display); font-size:52px; font-weight:600; color:var(--ochre); }
+    .pb-budget-body { display:flex; gap:50px; align-items:stretch; }
+    .pb-bars { flex:1; }
+    .pb-bar { margin-bottom:20px; }
+    .pb-bar .blab { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px; }
+    .pb-bar .blab b { font-size:18px; font-weight:700; color:var(--ink); }
+    .pb-bar .blab b small { font-family:var(--font-en-display); font-style:italic; font-size:13px; color:var(--muted); font-weight:500; margin-left:8px; }
+    .pb-bar .blab span { font-family:var(--font-en-display); font-size:24px; font-weight:600; color:var(--ochre); }
+    .pb-bar .track { height:14px; background:var(--panel); position:relative; }
+    .pb-bar .fill { position:absolute; left:0; top:0; bottom:0; background:var(--steel); }
+    .pb-bar .fill.alt { background:var(--ochre); }
+    .pb-bar .note { margin-top:6px; font-size:14px; color:var(--ink-soft); max-width:62%; }
+    .pb-bar .note b { color:var(--alert); }
+    .pb-gov { width:360px; flex-shrink:0; border-left:1px solid var(--rule); padding-left:36px; }
+    .pb-gov .g-eye { font-family:var(--font-en-display); font-style:italic; font-size:18px; color:var(--steel); }
+    .pb-gov h3 { margin:8px 0 20px; font-size:22px; font-weight:700; color:var(--ink); letter-spacing:-.01em; }
+    .pb-gov .grow { display:grid; grid-template-columns:1.1fr 1fr; gap:10px 16px; padding:12px 0; border-top:1px solid var(--rule); }
+    .pb-gov .grow:first-of-type { border-top:1px solid var(--steel); }
+    .pb-gov .grow b { font-size:15px; font-weight:700; color:var(--ink); }
+    .pb-gov .grow span { font-size:14px; color:var(--ink-soft); }
+    .pb-proof-strip {
+      margin-top:54px; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);
+      display:grid; grid-template-columns:1.05fr 1fr 1fr 1fr; align-items:stretch;
+    }
+    .pb-proof-strip .head {
+      padding:24px 28px 22px 0; border-right:1px solid var(--rule);
+      font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); font-weight:800;
+    }
+    .pb-proof-strip .head b {
+      display:block; margin-top:12px; font-size:22px; line-height:1.3; letter-spacing:-.01em;
+      text-transform:none; color:var(--ink); font-weight:800;
+    }
+    .pb-proof-strip .proof-step {
+      padding:24px 28px 22px; border-right:1px solid var(--rule);
+    }
+    .pb-proof-strip .proof-step:last-child { border-right:0; }
+    .pb-proof-strip .proof-step b { display:block; font-size:16px; color:var(--ochre); letter-spacing:.08em; text-transform:uppercase; }
+    .pb-proof-strip .proof-step span { display:block; margin-top:10px; font-size:17px; line-height:1.48; color:var(--ink-soft); }
+  </style>
+</head>
+<body>
+  <main class="deck">
+
+    <!-- 01 COVER — data-led annual-report style -->
+    <section class="slide-shell"><article class="slide premium-boardroom">
+      <div class="topbar">
+        <div class="brand">CHULUU<b>by Chuluu</b></div>
+        <div class="crumb">Digital Transformation Proposal · 数字化转型提案</div>
+      </div>
+
+      <div class="pb-cover-hero">
+        <div class="hero-num">03</div>
+        <div class="hero-side">
+          <div class="kicker">三次系统失败之后 · After three failed rollouts</div>
+          <h1>把转型，做成<em>董事会能签字</em>的<br>确定性方案。</h1>
+        </div>
+      </div>
+
+      <div class="pb-cover-kpi">
+        <div class="k"><b>Root cause</b><span>0 / 3</span><small>历史系统有业务 owner 接手</small></div>
+        <div class="k"><b>Our fix</b><span>100%</span><small>每个动作绑定 owner + 验收</small></div>
+        <div class="k"><b>Timeline</b><span>18 月</span><small>治理先行，系统分阶段</small></div>
+      </div>
+
+      <div class="pb-cover-proof">
+        <div class="proof-head">Board memo rule<b>首页先交代为什么这次能被签字。</b></div>
+        <div class="proof-item"><b>Decision</b><span>从“买系统”改成“买可追责结果”。</span></div>
+        <div class="proof-item"><b>Proof path</b><span>治理蓝图、owner、验收口径在第一页同时出现。</span></div>
+      </div>
+
+      <div class="footbar">
+        <span>Confidential · 概念演示，非真实客户数据</span>
+        <span class="num">01 / 03</span>
+      </div>
+    </article></section>
+
+    <!-- 02 WINNING THESIS — dark spine + audit matrix -->
+    <section class="slide-shell"><article class="slide premium-boardroom">
+      <div class="topbar">
+        <div class="brand">CHULUU<b>by Chuluu</b></div>
+        <div class="crumb">Winning Thesis · 赢标主张</div>
+      </div>
+
+      <div class="pb-thesis">
+        <aside class="spine">
+          <div>
+            <div class="chap">02</div>
+            <div class="chap-label">赢标主张</div>
+            <p class="stance">转型的风险不在技术，而在<em>没人能为结果负责</em>。</p>
+          </div>
+          <div class="anchor">
+            <b>可交付物 / Deliverables</b>
+            <span>4</span>
+            <small>治理蓝图 · 责任矩阵 · 路线图 · 验收标准</small>
+          </div>
+          <div class="footnote">治理先行 · Governance first</div>
+        </aside>
+        <div class="matrix">
+          <h2>先建<em>治理结构</em>，再上系统——<br>把转型从 IT 项目升级为经营项目。</h2>
+          <div class="arow">
+            <div class="q">谁在买什么<small>What they buy</small></div>
+            <div class="proof">客户买的不是系统，是<b>可追责的业务结果</b>。</div>
+            <div class="owner">决策层 / 采购委员会</div>
+            <div class="verdict">Insight</div>
+          </div>
+          <div class="arow">
+            <div class="q">判断标准<small>Decision criteria</small></div>
+            <div class="proof">每个动作是否有 <b>owner + KPI + 验收口径</b>。</div>
+            <div class="owner">治理委员会</div>
+            <div class="verdict">Stance</div>
+          </div>
+          <div class="arow">
+            <div class="q">证明对象<small>Proof object</small></div>
+            <div class="proof">治理蓝图 · 责任矩阵 · 分阶段路线图 · 验收标准。</div>
+            <div class="owner">主笔 / PM</div>
+            <div class="verdict">Proof</div>
+          </div>
+          <div class="arow">
+            <div class="q">边界<small>Boundary</small></div>
+            <div class="proof">含治理与赋能，<b>不含硬件与第三方授权</b>。</div>
+            <div class="owner">商务</div>
+            <div class="verdict">Trust</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footbar">
+        <span>每页回答一个采购问题 · Every slide answers one buying question</span>
+        <span class="num">02 / 03</span>
+      </div>
+    </article></section>
+
+    <!-- 03 BUDGET — bar viz + governance matrix -->
+    <section class="slide-shell"><article class="slide premium-boardroom">
+      <div class="topbar">
+        <div class="brand">CHULUU<b>by Chuluu</b></div>
+        <div class="crumb">Budget Structure · 预算结构</div>
+      </div>
+
+      <div class="pb-budget-head">
+        <h2>预算的优先级，<br>就是<em>转型的顺序</em>。</h2>
+        <div class="total"><b>Total / 合计</b><span>¥400万</span></div>
+      </div>
+
+      <div class="pb-budget-body">
+        <div class="pb-bars">
+          <div class="pb-bar">
+            <div class="blab"><b>治理蓝图<small>Governance</small></b><span>¥60万 · 15%</span></div>
+            <div class="track"><div class="fill" style="width:15%"></div></div>
+            <div class="note">owner 矩阵 · KPI · 验收口径 — 含工作坊</div>
+          </div>
+          <div class="pb-bar">
+            <div class="blab"><b>系统实施<small>Rollout</small></b><span>¥180万 · 45%</span></div>
+            <div class="track"><div class="fill alt" style="width:45%"></div></div>
+            <div class="note">分阶段上线 — <b>不含硬件</b></div>
+          </div>
+          <div class="pb-bar">
+            <div class="blab"><b>组织赋能<small>Enablement</small></b><span>¥90万 · 22%</span></div>
+            <div class="track"><div class="fill" style="width:22%"></div></div>
+            <div class="note">业务培训 + SOP 落地 — 含驻场</div>
+          </div>
+          <div class="pb-bar">
+            <div class="blab"><b>运营陪跑<small>Operation</small></b><span>¥70万 · 18%</span></div>
+            <div class="track"><div class="fill" style="width:18%"></div></div>
+            <div class="note">上线后 6 个月复盘 — <b>不含投流</b></div>
+          </div>
+        </div>
+
+        <aside class="pb-gov">
+          <div class="g-eye">Governance</div>
+          <h3>每笔钱，<br>谁花、怎么验收。</h3>
+          <div class="grow"><b>治理蓝图</b><span>主笔 · 评审通过</span></div>
+          <div class="grow"><b>系统实施</b><span>PM · 上线报告</span></div>
+          <div class="grow"><b>组织赋能</b><span>HRBP · 考核通过</span></div>
+          <div class="grow"><b>运营陪跑</b><span>PM · 月报+季复盘</span></div>
+          <div class="grow"><b>不含项</b><span>硬件 · 授权 · 投流</span></div>
+        </aside>
+      </div>
+
+      <div class="pb-proof-strip">
+        <div class="head">Acceptance logic<b>预算不是数字，是一套可审计动作。</b></div>
+        <div class="proof-step"><b>Owner</b><span>每项预算绑定业务负责人和评审节点。</span></div>
+        <div class="proof-step"><b>Evidence</b><span>每笔费用对应蓝图、报告、培训记录或月报。</span></div>
+        <div class="proof-step"><b>Boundary</b><span>硬件、授权、投流等第三方成本单列确认。</span></div>
+      </div>
+
+      <div class="footbar">
+        <span>金额为演示占位 · Amounts are conceptual placeholders</span>
+        <span class="num">03 / 03</span>
+      </div>
+    </article></section>
+
+  </main>
+  <script>
+    function fitStage() {
+      const margin = 96;
+      const scale = Math.min(1, Math.max(0.3, (window.innerWidth - margin) / 1920));
+      document.documentElement.style.setProperty("--stage-scale", scale.toFixed(4));
+    }
+    fitStage();
+    window.addEventListener("resize", fitStage);
+  </script>
+</body>
+</html>

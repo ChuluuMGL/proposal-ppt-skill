@@ -15,12 +15,32 @@
 
 <table>
 <tr>
-<td width="600"><img src="./assets/demo/showcase-overview-v2.png" alt="三套提案风格家族 premium-boardroom、editorial-brand、tech-launch 渲染概念图 by Chuluu" width="600"/></td>
-<td width="300"><img src="./assets/demo/dense-page-v2.png" alt="密集预算 / 证据页" width="300"/></td>
+<td width="33%">
+<a href="https://raw.githack.com/ChuluuMGL/proposal-ppt-skill/main/docs/demo/premium-boardroom-demo.html"><img src="./assets/demo/cover-premium-boardroom-v2.png" alt="premium-boardroom 提案 demo 封面" width="100%"/></a><br/>
+<b>premium-boardroom</b><br/>
+严格网格、董事会文件感、高信任 proof 页面。<br/>
+<a href="https://raw.githack.com/ChuluuMGL/proposal-ppt-skill/main/docs/demo/premium-boardroom-demo.html">打开 HTML demo</a>
+</td>
+<td width="33%">
+<a href="https://raw.githack.com/ChuluuMGL/proposal-ppt-skill/main/docs/demo/editorial-brand-demo.html"><img src="./assets/demo/editorial-brand-cover-v2.png" alt="editorial-brand 提案 demo 封面" width="100%"/></a><br/>
+<b>editorial-brand</b><br/>
+杂志式字体、编辑节奏、高端消费品气质。<br/>
+<a href="https://raw.githack.com/ChuluuMGL/proposal-ppt-skill/main/docs/demo/editorial-brand-demo.html">打开 HTML demo</a>
+</td>
+<td width="33%">
+<a href="https://raw.githack.com/ChuluuMGL/proposal-ppt-skill/main/docs/demo/tech-launch-demo.html"><img src="./assets/demo/tech-launch-page-v2.png" alt="tech-launch 提案 demo 封面" width="100%"/></a><br/>
+<b>tech-launch</b><br/>
+产品/界面 hero、发布会清晰度、KPI 与验收证明。<br/>
+<a href="https://raw.githack.com/ChuluuMGL/proposal-ppt-skill/main/docs/demo/tech-launch-demo.html">打开 HTML demo</a>
+</td>
 </tr>
 </table>
 
-> 三套公开风格家族（**premium-boardroom**、**editorial-brand**、**tech-launch**）的 HTML 渲染概念图。真实客户摄影已替换为概念视觉；最终 `.pptx` 保真度取决于宿主 runtime 的 presentation 后端。更多样张见 [`assets/demo/`](./assets/demo)。
+> HTML demo 已提交在 [`docs/demo/`](./docs/demo)。GitHub README 不能直接内嵌渲染仓库里的 HTML 文件，所以预览链接使用 RawGitHack。真实客户摄影已替换为概念视觉；最终 `.pptx` 保真度取决于宿主 runtime 的 presentation 后端。
+
+**Proof-dense 密集页示例**
+
+<img src="./assets/demo/dense-page-v2.png" alt="密集预算 / 证据页" width="720"/>
 
 ### 为什么是这个 Skill，而不是又一个“把 PPT 做好看”的工具
 

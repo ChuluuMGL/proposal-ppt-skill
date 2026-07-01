@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Editorial Lifestyle — Proposal Demo by Chuluu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,800;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --stage-scale: 1;
+      --site-bg: #1a1714;
+
+      --paper: #f3ece0;
+      --paper-2: #ece2d2;
+      --paper-3: #e4d8c4;
+      --ink: #1c1814;
+      --ink-soft: #3a342c;
+      --muted: #8c8170;
+      --rule: #d3c6b0;
+      --tea: #2f4a37;
+      --tea-soft: #4d6a4f;
+      --clay: #9a5a38;
+      --seal: #b0382c;
+      --gold: #a8814a;
+
+      --font-zh-serif: "Songti SC", "STSong", "Source Han Serif SC", "Noto Serif SC", serif;
+      --font-en-display: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+      --font-en-serif: "Cormorant Garamond", Georgia, serif;
+      --font-sans: -apple-system, BlinkMacSystemFont, "PingFang SC", "Inter", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; background: var(--site-bg); }
+    body { font-family: var(--font-sans); color: var(--ink); padding: 48px 0 72px; }
+    .deck { display: grid; gap: 54px; justify-content: center; }
+    .slide-shell { width: calc(1920px * var(--stage-scale)); height: calc(1080px * var(--stage-scale)); position: relative; }
+    .slide {
+      position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden;
+      transform-origin: top left; transform: scale(var(--stage-scale));
+      box-shadow: 0 26px 80px rgba(0,0,0,.42);
+    }
+    .slide h1, .slide h2, .slide h3, .slide p { margin: 0; }
+
+    /* shared chrome */
+    .topbar {
+      position: absolute; left: 120px; right: 120px; top: 64px;
+      display: flex; align-items: baseline; justify-content: space-between;
+      padding-bottom: 22px; border-bottom: 1px solid var(--rule);
+    }
+    .topbar .brand { font-family: var(--font-en-display); font-size: 19px; font-weight: 600; letter-spacing: .34em; color: var(--ink); }
+    .topbar .brand b { font-family: var(--font-zh-serif); font-weight: 600; letter-spacing: .18em; margin-left: 10px; color: var(--tea); }
+    .topbar .crumb { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+    .footbar {
+      position: absolute; left: 120px; right: 120px; bottom: 60px;
+      display: flex; align-items: baseline; justify-content: space-between;
+      padding-top: 20px; border-top: 1px solid var(--rule);
+      font-size: 13px; letter-spacing: .1em; color: var(--muted); font-weight: 600;
+    }
+    .footbar .num { font-family: var(--font-en-display); font-size: 16px; color: var(--ink); letter-spacing: .04em; }
+    .eyebrow {
+      font-family: var(--font-en-display); font-style: italic; font-size: 18px;
+      color: var(--clay); letter-spacing: .02em;
+    }
+    .eyebrow b { font-style: normal; font-family: var(--font-sans); font-weight: 800; font-size: 13px; letter-spacing: .16em; color: var(--ink); margin-right: 12px; }
+
+    /* ---------- COVER ---------- */
+    .cover { background: var(--paper); }
+    .cover .promise { position: absolute; left: 120px; top: 258px; width: 1160px; }
+    .cover .promise .kicker {
+      font-size: 14px; letter-spacing: .26em; text-transform: uppercase;
+      color: var(--tea); font-weight: 800; margin-bottom: 30px;
+    }
+    .cover h1 {
+      font-family: var(--font-zh-serif); font-weight: 600;
+      font-size: 94px; line-height: 1.12; letter-spacing: .006em; color: var(--ink);
+      max-width: 1110px;
+      text-wrap: balance;
+    }
+    .cover h1 em { font-style: normal; color: var(--tea); }
+    .cover .thesis {
+      margin-top: 34px; width: 760px; font-family: var(--font-zh-serif);
+      font-size: 23px; line-height: 1.7; color: var(--ink-soft); font-weight: 400;
+    }
+    .cover .thesis em { font-style: normal; color: var(--clay); font-weight: 500; }
+    .cover .meta-row {
+      position: absolute; left: 120px; bottom: 150px; width: 880px;
+      display: grid; grid-template-columns: repeat(3, auto); column-gap: 64px; row-gap: 6px;
+    }
+    .cover .meta-row dt { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+    .cover .meta-row dd { margin: 0; font-family: var(--font-zh-serif); font-size: 19px; color: var(--ink); font-weight: 500; }
+
+    /* right-side typographic year-mark (no drawn logo) */
+    .yearmark {
+      position: absolute; right: 120px; top: 250px; width: 420px; height: 560px;
+      border-left: 1px solid var(--rule); padding-left: 44px;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .yearmark .label {
+      font-size: 12px; letter-spacing: .24em; text-transform: uppercase; color: var(--muted); font-weight: 800;
+    }
+    .yearmark .big-year {
+      margin-top: 16px; font-family: var(--font-en-display); font-style: italic; font-weight: 500;
+      font-size: 172px; line-height: .86; color: var(--tea); letter-spacing: -.02em;
+    }
+    .yearmark .zh-year {
+      margin-top: 20px; font-family: var(--font-zh-serif); font-size: 28px; color: var(--ink-soft);
+      letter-spacing: .42em; font-weight: 500;
+    }
+    .yearmark .rule { width: 56px; height: 2px; background: var(--gold); margin: 28px 0 24px; }
+    .yearmark .scope { font-family: var(--font-zh-serif); font-size: 20px; line-height: 1.75; color: var(--ink-soft); }
+    .yearmark .scope b { color: var(--clay); font-weight: 600; }
+    .yearmark .foot { margin-top: 22px; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+
+    /* ---------- THESIS ---------- */
+    .thesis-page { background: var(--paper); }
+    .thesis-page .head { position: absolute; left: 120px; top: 158px; }
+    .thesis-page .big {
+      position: absolute; left: 120px; top: 250px; width: 1500px;
+      font-family: var(--font-zh-serif); font-weight: 600;
+      font-size: 74px; line-height: 1.22; letter-spacing: .005em; color: var(--ink);
+    }
+    .thesis-page .big em { font-style: normal; color: var(--tea); }
+    .thesis-page .sub-thesis {
+      position: absolute; left: 120px; top: 552px; width: 1500px;
+      font-family: var(--font-zh-serif); font-weight: 500;
+      font-size: 30px; line-height: 1.4; color: var(--clay); letter-spacing: .01em;
+    }
+    .thesis-page .sub-thesis em { font-style: normal; color: var(--tea); font-weight: 600; }
+    .thesis-page .quote-mark {
+      position: absolute; left: 96px; top: 210px; font-family: var(--font-en-display);
+      font-size: 150px; line-height: 1; color: var(--paper-3);
+    }
+    .pillars {
+      position: absolute; left: 120px; right: 120px; bottom: 168px; height: 300px;
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0;
+      border-top: 1px solid var(--ink);
+    }
+    .pillar { padding: 34px 44px 0; border-right: 1px solid var(--rule); position: relative; }
+    .pillar:last-child { border-right: 0; }
+    .pillar:first-child { padding-left: 0; }
+    .pillar .pnum { display: inline-block; font-family: var(--font-en-display); font-style: italic; font-size: 30px; color: var(--clay); }
+    .pillar h3 { margin-top: 16px; font-family: var(--font-zh-serif); font-size: 30px; font-weight: 600; letter-spacing: .02em; color: var(--ink); }
+    .pillar h3 b { font-family: var(--font-en-display); font-style: italic; font-weight: 500; color: var(--tea); margin-right: 10px; font-size: 24px; }
+    .pillar p { margin-top: 18px; font-size: 18px; line-height: 1.62; color: var(--ink-soft); font-weight: 400; max-width: 420px; }
+    .pillar .pin { position: absolute; top: 34px; right: 44px; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+
+    /* ---------- BUDGET ---------- */
+    .budget-page { background: var(--paper); }
+    .budget-page .head { position: absolute; left: 120px; top: 158px; }
+    .budget-page .big {
+      position: absolute; left: 120px; top: 240px; width: 1100px;
+      font-family: var(--font-zh-serif); font-weight: 600; font-size: 58px; line-height: 1.22; color: var(--ink);
+    }
+    .budget-page .big em { font-style: normal; color: var(--tea); }
+    .ledger {
+      position: absolute; left: 120px; top: 420px; width: 1220px;
+      border-top: 2px solid var(--ink);
+    }
+    .ledger .row {
+      display: grid; grid-template-columns: 1.45fr .78fr 1.75fr 1.35fr 1.15fr;
+      border-bottom: 1px solid var(--rule); padding: 12px 0; align-items: center;
+      column-gap: 0;
+    }
+    .ledger .row.row-h { border-bottom: 1px solid var(--ink); padding: 14px 0 16px; }
+    .ledger .row.head > div {
+      font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); font-weight: 800;
+    }
+    .ledger .row > div { padding-right: 30px; min-width: 0; }
+    .ledger .item { font-family: var(--font-zh-serif); font-size: 24px; font-weight: 600; color: var(--ink); }
+    .ledger .item small { display: block; font-family: var(--font-en-display); font-style: italic; font-size: 15px; color: var(--muted); font-weight: 500; margin-top: 4px; letter-spacing: .02em; }
+    .ledger .amt { font-family: var(--font-en-display); font-size: 30px; font-weight: 600; color: var(--tea); letter-spacing: .01em; }
+    .ledger .cell { font-size: 17px; line-height: 1.45; color: var(--ink-soft); font-weight: 400; }
+    .ledger .cell b { color: var(--clay); font-weight: 600; }
+    .ledger .row.total {
+      grid-template-columns: 1.45fr .78fr 4.25fr;
+      border-bottom: 2px solid var(--ink);
+      padding: 16px 0 12px;
+      align-items: center;
+    }
+    .ledger .row.total .item { font-size: 22px; color: var(--muted); }
+    .ledger .row.total .amt {
+      font-size: 38px;
+      line-height: 1;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+    .ledger .row.total .cell {
+      font-size: 18px;
+      line-height: 1.46;
+    }
+
+    .boundary {
+      position: absolute; right: 120px; top: 420px; width: 380px;
+      border-left: 2px solid var(--seal); padding: 6px 0 0 32px;
+    }
+    .boundary .b-eye { font-family: var(--font-en-display); font-style: italic; font-size: 20px; color: var(--seal); }
+    .boundary h3 { margin-top: 8px; font-family: var(--font-zh-serif); font-size: 26px; font-weight: 600; color: var(--ink); }
+    .boundary .rule { width: 56px; height: 2px; background: var(--gold); margin: 22px 0; }
+    .boundary .pair { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    .boundary .pair b { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--tea); font-weight: 800; }
+    .boundary .pair b.not { color: var(--seal); }
+    .boundary .pair span { display: block; font-size: 16px; line-height: 1.55; color: var(--ink-soft); margin-top: 4px; }
+
+    .implication {
+      position: absolute; left: 120px; right: 120px; bottom: 118px;
+      display: flex; align-items: center; gap: 30px; min-height: 56px;
+      padding-top: 16px; border-top: 1px solid var(--rule);
+    }
+    .implication b { font-family: var(--font-en-display); font-style: italic; font-size: 22px; color: var(--clay); white-space: nowrap; }
+    .implication span { font-family: var(--font-zh-serif); font-size: 21px; line-height: 1.5; color: var(--ink); font-weight: 500; }
+  </style>
+</head>
+<body>
+  <main class="deck">
+
+    <!-- 01 COVER -->
+    <section class="slide-shell"><article class="slide cover">
+      <div class="topbar">
+        <div class="brand">CHULUU<b>by Chuluu</b></div>
+        <div class="crumb">2026 Brand &amp; Social Proposal · 年度品牌营销提案</div>
+      </div>
+
+      <div class="promise">
+        <div class="kicker">新中式精品茶 · Premium Tea Lifestyle</div>
+        <h1>让一杯好茶，<br>成为日常的<em>中式仪式</em>。</h1>
+        <p class="thesis">在所有茶都在卷产地时，概念品牌占领<em>"日常仪式感"</em>。</p>
+      </div>
+
+      <aside class="yearmark">
+        <div>
+          <div class="label">Volume · 年度提案</div>
+          <div class="big-year">2026</div>
+          <div class="zh-year">二零二六</div>
+        </div>
+        <div>
+          <div class="rule"></div>
+          <div class="scope">品牌资产 · 内容矩阵 ·<br>社媒种草 · 跨界联名 ·<br><b>礼赠节点 · 私域复购</b></div>
+          <div class="foot">Five proof objects · 五个可交付动作</div>
+        </div>
+      </aside>
+
+      <dl class="meta-row">
+        <div><dt>Client</dt><dd>Concept Client</dd></div>
+        <div><dt>Author</dt><dd>by Chuluu</dd></div>
+        <div><dt>Scope</dt><dd>品牌 · 内容 · 社媒 · 礼赠</dd></div>
+      </dl>
+
+      <div class="footbar">
+        <span>Confidential proposal · 概念演示，非真实客户数据</span>
+        <span class="num">01 / 03</span>
+      </div>
+    </article></section>
+
+    <!-- 02 WINNING THESIS -->
+    <section class="slide-shell"><article class="slide thesis-page">
+      <div class="topbar">
+        <div class="brand">CHULUU<b>by Chuluu</b></div>
+        <div class="crumb">Winning Thesis · 赢标主张</div>
+      </div>
+
+      <div class="head"><span class="eyebrow"><b>01</b>Winning thesis</span></div>
+      <div class="quote-mark">&ldquo;</div>
+      <h2 class="big">把品牌，做成一个<br>可被日常佩戴的<br><em>中式审美符号</em>。</h2>
+      <p class="sub-thesis">—— 不是卖茶叶，而是卖一种<em>日常仪式</em>。</p>
+
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pnum">i.</div>
+          <h3><b>Insight</b>洞察</h3>
+          <p>新中式审美红利、茶饮年轻化、礼赠场景刚需三股力量同时到位；但同类品牌都在卷产地，没人占领"日常仪式感"这个位置。</p>
+          <div class="pin">市场判断</div>
+        </div>
+        <div class="pillar">
+          <div class="pnum">ii.</div>
+          <h3><b>Stance</b>主张</h3>
+          <p>从"卖茶叶"转为"卖中式生活仪式"——用内容资产、跨界联名、礼盒体系，把品牌做成可佩戴、可赠送、可复购的审美符号。</p>
+          <div class="pin">品牌路径</div>
+        </div>
+        <div class="pillar">
+          <div class="pnum">iii.</div>
+          <h3><b>Proof</b>证据</h3>
+          <p>视觉系统 · 达人矩阵 · 文化 IP 联名 · 节点礼盒 · 私域复购，五个可交付、可验收的动作支撑主张，而非停在口号。</p>
+          <div class="pin">可交付物</div>
+        </div>
+      </div>
+
+      <div class="footbar">
+        <span>每一页回答一个采购问题 · Every slide answers one buying question</span>
+        <span class="num">02 / 03</span>
+      </div>
+    </article></section>
+
+    <!-- 03 BUDGET -->
+    <section class="slide-shell"><article class="slide budget-page">
+      <div class="topbar">
+        <div class="brand">CHULUU<b>by Chuluu</b></div>
+        <div class="crumb">Budget Structure · 预算结构</div>
+      </div>
+
+      <div class="head"><span class="eyebrow"><b>05</b>Budget structure</span></div>
+      <h2 class="big">预算的高级感，<br>来自<em>清楚的边界</em>，而不是更复杂的表格。</h2>
+
+      <div class="ledger">
+        <div class="row row-h">
+          <div>项目 / Item</div><div>费用 / Amount</div><div>产出 / Delivery</div><div>验收 / Acceptance</div><div>边界 / Boundary</div>
+        </div>
+        <div class="row">
+          <div class="item">品牌内容资产<small>Brand content</small></div>
+          <div class="amt">¥80万</div>
+          <div class="cell">视觉系统 · 内容矩阵 · 季度大片</div>
+          <div class="cell">成片 + 内容台账</div>
+          <div class="cell"><b>含拍摄</b>，不含产品</div>
+        </div>
+        <div class="row">
+          <div class="item">社媒种草<small>Social seeding</small></div>
+          <div class="amt">¥120万</div>
+          <div class="cell">60 位达人矩阵 · 站内外种草</div>
+          <div class="cell">发布链接 + 效果数据</div>
+          <div class="cell">不含投流加热</div>
+        </div>
+        <div class="row">
+          <div class="item">跨界联名<small>Crossover IP</small></div>
+          <div class="amt">¥60万</div>
+          <div class="cell">2 个文化 IP 联名 · 限定产品</div>
+          <div class="cell">联名产品 + 首发事件</div>
+          <div class="cell"><b>授权另计</b></div>
+        </div>
+        <div class="row">
+          <div class="item">礼赠节点<small>Gifting moments</small></div>
+          <div class="amt">¥90万</div>
+          <div class="cell">中秋 · 春节礼盒营销</div>
+          <div class="cell">礼盒销量 + 口碑</div>
+          <div class="cell">含包装，不含物流</div>
+        </div>
+        <div class="row total">
+          <div class="item">合计 / Total<small style="font-style:italic">conceptual demo figures</small></div>
+          <div class="amt">¥450万</div>
+          <div class="cell">五个动作覆盖品牌资产、种草、联名、礼赠、私域——每一笔都对应可交付物。</div>
+        </div>
+      </div>
+
+      <aside class="boundary">
+        <div class="b-eye">Boundary</div>
+        <h3>含 / 不含，<br>必须单列。</h3>
+        <div class="rule"></div>
+        <div class="pair">
+          <div><b>Included 含</b><span>内容产出 · 媒介执行 · 达人合作 · 礼盒包装</span></div>
+          <div><b class="not">Not included 不含</b><span>产品成本 · 线下门店 · 仓储物流 · 第三方授权</span></div>
+        </div>
+      </aside>
+
+      <div class="implication">
+        <b>商业含义</b>
+        <span>客户看到的不是报价单，而是每一笔预算如何转化为可交付、可验收、可复盘的商业动作。</span>
+      </div>
+
+      <div class="footbar">
+        <span>金额为演示占位 · Amounts are conceptual placeholders</span>
+        <span class="num">03 / 03</span>
+      </div>
+    </article></section>
+
+  </main>
+  <script>
+    function fitStage() {
+      const margin = 96;
+      const scale = Math.min(1, Math.max(0.3, (window.innerWidth - margin) / 1920));
+      document.documentElement.style.setProperty("--stage-scale", scale.toFixed(4));
+    }
+    fitStage();
+    window.addEventListener("resize", fitStage);
+  </script>
+</body>
+</html>

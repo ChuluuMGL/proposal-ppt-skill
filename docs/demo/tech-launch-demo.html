@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tech Launch — Proposal Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,800;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../templates/engine.css">
+  <link rel="stylesheet" href="../../templates/tech-launch.theme.css">
+  <style>
+    /* demo-only layouts — keynote/product-hero, distinct from editorial & boardroom */
+    /* COVER: 1/2 statement + 1/2 product UI hero */
+    .tl-cover {
+      display:grid; grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
+      gap:72px; margin-top:86px; align-items:start;
+    }
+    .tl-cover .left { min-width:0; padding-top:22px; }
+    .tl-cover .left .kicker {
+      display:inline-block; font-size:13px; letter-spacing:.12em; text-transform:uppercase;
+      color:var(--signal); font-weight:800; background:var(--signal-soft);
+      padding:8px 16px; border-radius:999px; margin-bottom:28px;
+    }
+    .tl-cover .left h1 {
+      font-size:72px; line-height:1.1; font-weight:800; letter-spacing:-.018em; color:var(--ink); margin:0;
+      max-width:680px;
+    }
+    .tl-cover .left h1 em { font-style:normal; color:var(--signal); }
+    .tl-cover .left p {
+      margin-top:30px; font-size:22px; line-height:1.55; color:var(--ink-soft); max-width:640px;
+    }
+    .tl-cover .left p b { color:var(--success); font-weight:700; }
+    .tl-cover .hero-ui { width:100%; min-width:0; }
+    .tl-ui {
+      background:var(--panel); border:1px solid var(--rule); border-radius:22px; overflow:hidden;
+      box-shadow:0 24px 70px rgba(13,22,32,.12);
+    }
+    .tl-ui .ui-bar { display:flex; gap:7px; padding:16px 20px; background:var(--panel-2); border-bottom:1px solid var(--rule); }
+    .tl-ui .ui-bar i { width:11px; height:11px; border-radius:50%; background:var(--rule); display:inline-block; }
+    .tl-ui .ui-bar i:first-child { background:var(--warn); }
+    .tl-ui .ui-bar b { margin-left:14px; font-size:13px; color:var(--muted); font-weight:700; letter-spacing:.04em; }
+    .tl-ui .ui-body { padding:34px 36px 32px; }
+    .tl-ui .ui-row { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:18px; }
+    .tl-ui .ui-row b { font-size:14px; color:var(--muted); font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
+    .tl-ui .ui-row span { font-family:var(--font-en-display); font-size:34px; font-weight:600; color:var(--signal); }
+    .tl-ui .ui-chart { height:166px; background:var(--canvas-2); border-radius:14px; position:relative; overflow:hidden; margin-bottom:22px; }
+    .tl-ui .ui-chart svg { position:absolute; inset:0; width:100%; height:100%; }
+    .tl-ui .ui-tags { display:flex; gap:10px; }
+    .tl-ui .ui-tags span {
+      font-size:13px; font-weight:700; color:var(--ink-soft); background:var(--canvas-2);
+      padding:7px 14px; border-radius:8px;
+    }
+    .tl-ui .ui-tags span.on { background:var(--success); color:#fff; }
+    .tl-cover-proof {
+      margin-top:auto; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);
+      display:grid; grid-template-columns:1.1fr 1fr 1fr 1fr; align-items:stretch;
+    }
+    .tl-cover-proof .proof-head {
+      padding:22px 28px 20px 0; border-right:1px solid var(--rule);
+      font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--signal); font-weight:800;
+    }
+    .tl-cover-proof .proof-head b {
+      display:block; margin-top:9px; font-size:21px; line-height:1.3; letter-spacing:-.01em; text-transform:none; color:var(--ink);
+    }
+    .tl-cover-proof .proof-item { padding:22px 28px 20px; border-right:1px solid var(--rule); }
+    .tl-cover-proof .proof-item:last-child { border-right:0; }
+    .tl-cover-proof .proof-item b { display:block; font-size:15px; color:var(--ink); }
+    .tl-cover-proof .proof-item span { display:block; margin-top:8px; font-size:14px; line-height:1.45; color:var(--ink-soft); }
+
+    /* THESIS: left stance + right capability vs proof two-column */
+    .tl-thesis { display:flex; gap:56px; margin-top:20px; flex:1; }
+    .tl-thesis .stance-col { width:440px; flex-shrink:0; }
+    .tl-thesis .stance-col .num { font-family:var(--font-en-display); font-style:italic; font-size:72px; color:var(--signal); line-height:.9; }
+    .tl-thesis .stance-col h2 {
+      margin-top:18px; font-size:46px; font-weight:800; line-height:1.16; letter-spacing:-.02em; color:var(--ink);
+    }
+    .tl-thesis .stance-col h2 em { font-style:normal; color:var(--signal); }
+    .tl-thesis .stance-col p { margin-top:24px; font-size:19px; line-height:1.6; color:var(--ink-soft); text-align:left; }
+    .tl-thesis .stance-col p b { color:var(--success); }
+    .tl-caps { flex:1; display:flex; flex-direction:column; gap:0; }
+    .tl-cap {
+      display:grid; grid-template-columns:.8fr 1.4fr .5fr; gap:24px; align-items:center;
+      padding:24px 0; border-top:1px solid var(--rule);
+      flex:1;
+    }
+    .tl-cap:first-of-type { border-top:1px solid var(--signal); }
+    .tl-cap .cap { font-size:20px; font-weight:700; color:var(--ink); }
+    .tl-cap .cap small { display:block; font-family:var(--font-en-display); font-style:italic; font-size:13px; color:var(--muted); font-weight:500; margin-top:3px; }
+    .tl-cap .proof { font-size:16px; line-height:1.5; color:var(--ink-soft); }
+    .tl-cap .proof b { color:var(--ink); font-weight:700; }
+    .tl-cap .chip {
+      justify-self:end; font-size:13px; font-weight:800; color:#fff; background:var(--success);
+      padding:7px 14px; border-radius:999px; letter-spacing:.04em;
+    }
+    .tl-cap .chip.plan { background:var(--signal); }
+    .tl-control-strip {
+      margin-top:38px; border-top:1px solid var(--signal); border-bottom:1px solid var(--rule);
+      display:grid; grid-template-columns:1.1fr 1fr 1fr 1fr; align-items:stretch;
+    }
+    .tl-control-strip .label {
+      padding:24px 28px 22px 0; border-right:1px solid var(--rule);
+      font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:var(--signal); font-weight:800;
+    }
+    .tl-control-strip .label b { display:block; margin-top:12px; font-size:24px; line-height:1.25; letter-spacing:-.02em; text-transform:none; color:var(--ink); }
+    .tl-control-strip .step {
+      padding:24px 28px 22px; border-right:1px solid var(--rule); min-height:118px;
+    }
+    .tl-control-strip .step:last-child { border-right:0; }
+    .tl-control-strip .step b { display:block; font-size:17px; color:var(--ink); }
+    .tl-control-strip .step span { display:block; margin-top:10px; font-size:15px; line-height:1.45; color:var(--ink-soft); }
+
+    /* METRIC page: 4 metric cards + KPI progress panel */
+    .tl-metrics { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin-top:20px; }
+    .tl-metric { padding:26px 28px; }
+    .tl-metric b { display:block; font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); font-weight:800; }
+    .tl-metric span { display:block; margin-top:16px; font-family:var(--font-en-display); font-size:46px; font-weight:600; color:var(--signal); letter-spacing:-.02em; line-height:.95; }
+    .tl-metric span.g { color:var(--success); }
+    .tl-metric small { display:block; margin-top:10px; font-size:15px; color:var(--ink-soft); }
+    .tl-kpi-panel { margin-top:28px; padding:30px 36px 28px; flex:1; display:flex; flex-direction:column; }
+    .tl-kpi-panel .kh { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:24px; }
+    .tl-kpi-panel .kh b { font-size:15px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); font-weight:800; }
+    .tl-kpi-panel .kh span { font-size:15px; color:var(--ink-soft); }
+    .tl-kpi { display:grid; grid-template-columns:1fr 1fr; gap:18px 50px; }
+    .tl-kpi .kr { }
+    .tl-kpi .kr .lab { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px; }
+    .tl-kpi .kr .lab b { font-size:16px; font-weight:700; color:var(--ink); }
+    .tl-kpi .kr .lab span { font-family:var(--font-en-display); font-size:18px; font-weight:600; color:var(--ink); }
+    .tl-kpi .kr .track { height:10px; background:var(--canvas-2); border-radius:999px; overflow:hidden; }
+    .tl-kpi .kr .fill { height:100%; background:var(--signal); border-radius:999px; }
+    .tl-kpi .kr .fill.g { background:var(--success); }
+    .tl-kpi .kr small { display:block; margin-top:7px; font-size:13px; color:var(--muted); max-width:85%; }
+    .tl-acceptance-rail {
+      margin-top:auto; padding-top:26px; border-top:1px solid var(--rule);
+      display:grid; grid-template-columns:1fr 1fr 1fr; gap:18px;
+    }
+    .tl-acceptance-rail .phase {
+      background:var(--canvas-2); border:1px solid var(--rule); border-radius:14px;
+      padding:20px 22px; min-height:112px;
+    }
+    .tl-acceptance-rail .phase b {
+      display:block; font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:var(--signal); font-weight:800;
+    }
+    .tl-acceptance-rail .phase span {
+      display:block; margin-top:10px; font-size:18px; color:var(--ink); font-weight:800;
+    }
+    .tl-acceptance-rail .phase small {
+      display:block; margin-top:8px; font-size:14px; line-height:1.45; color:var(--ink-soft);
+    }
+  </style>
+</head>
+<body>
+  <main class="deck">
+
+    <!-- 01 COVER — statement + product UI hero -->
+    <section class="slide-shell"><article class="slide tech-launch">
+      <div class="topbar">
+        <div class="brand">CHULUU<b>by Chuluu</b></div>
+        <div class="crumb">AI Customer Service · 智能客服方案</div>
+      </div>
+
+      <div class="tl-cover">
+        <div class="left">
+          <span class="kicker">AI Customer Service · 智能客服</span>
+          <h1>把 80% 的客服<br>变成<em>秒回、可控、<br>可追溯</em>。</h1>
+          <p>不是再上一个聊天机器人，而是一套能<b>接管、转人工、留痕、复盘</b>的客服操作系统——让人只处理真正需要人的问题。</p>
+        </div>
+        <div class="hero-ui">
+          <div class="tl-ui">
+            <div class="ui-bar"><i></i><i></i><i></i><b>chuluu-console / live</b></div>
+            <div class="ui-body">
+              <div class="ui-row"><b>Auto-resolved</b><span>82%</span></div>
+              <div class="ui-chart">
+                <svg viewBox="0 0 720 180" preserveAspectRatio="none" role="img" aria-label="auto-resolution trend">
+                  <defs>
+                    <linearGradient id="sparkArea" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="var(--signal)" stop-opacity=".26"/>
+                      <stop offset="100%" stop-color="var(--signal)" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                  <line x1="42" y1="42" x2="680" y2="42" stroke="var(--grid)" stroke-width="1" vector-effect="non-scaling-stroke"/>
+                  <line x1="42" y1="88" x2="680" y2="88" stroke="var(--grid)" stroke-width="1" vector-effect="non-scaling-stroke"/>
+                  <line x1="42" y1="134" x2="680" y2="134" stroke="var(--grid)" stroke-width="1" vector-effect="non-scaling-stroke"/>
+                  <path d="M48 132 C90 132 118 122 158 118 C206 113 244 92 292 88 C347 84 383 70 430 66 C482 62 520 54 570 52 C620 50 645 42 672 34 L672 150 L48 150 Z" fill="url(#sparkArea)"/>
+                  <path d="M48 132 C90 132 118 122 158 118 C206 113 244 92 292 88 C347 84 383 70 430 66 C482 62 520 54 570 52 C620 50 645 42 672 34" fill="none" stroke="var(--signal)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+                  <circle cx="48" cy="132" r="4.5" fill="var(--signal)"/>
+                  <circle cx="158" cy="118" r="4.5" fill="var(--signal)"/>
+                  <circle cx="292" cy="88" r="4.5" fill="var(--signal)"/>
+                  <circle cx="430" cy="66" r="4.5" fill="var(--signal)"/>
+                  <circle cx="570" cy="52" r="4.5" fill="var(--signal)"/>
+                  <circle cx="672" cy="34" r="14" fill="var(--signal)" opacity=".16"/>
+                  <circle cx="672" cy="34" r="6.5" fill="#fff" stroke="var(--signal)" stroke-width="3" vector-effect="non-scaling-stroke"/>
+                </svg>
+              </div>
+              <div class="ui-tags"><span class="on">已接管</span><span>转人工 18%</span><span>平均响应 0.8s</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-cover-proof">
+        <div class="proof-head">Launch proof<b>把 AI 能力翻译成采购能判断的证据。</b></div>
+        <div class="proof-item"><b>接管</b><span>哪些问题由 AI 闭环，哪些必须转人工。</span></div>
+        <div class="proof-item"><b>留痕</b><span>每次回答都保留来源、意图和处理轨迹。</span></div>
+        <div class="proof-item"><b>复盘</b><span>错误样本进入知识库和质检报告。</span></div>
+      </div>
+
+      <div class="footbar">
+        <span>Confidential · 概念演示，非真实客户数据</span>
+        <span class="num">01 / 03</span>
+      </div>
+    </article></section>
+
+    <!-- 02 THESIS — stance + capability vs proof -->
+    <section class="slide-shell"><article class="slide tech-launch">
+      <div class="topbar">
+        <div class="brand">CHULUU<b>by Chuluu</b></div>
+        <div class="crumb">Winning Thesis · 赢标主张</div>
+      </div>
+
+      <div class="tl-thesis">
+        <div class="stance-col">
+          <div class="eyebrow"><b>02</b>Winning thesis</div>
+          <div class="num">02</div>
+          <h2>赢点不是更聪明，<br>而是<em>更可控</em>。</h2>
+          <p>零售集团怕的不是机器人答错，是<b>答错了没人知道、没人接管</b>。所以我们的差异是控制台——每条对话可追溯、可转人工、可复盘。</p>
+        </div>
+        <div class="tl-caps">
+          <div class="tl-cap">
+            <div class="cap">接管率<small>Auto-resolution</small></div>
+            <div class="proof">82% 工单由 AI 直接闭环，<b>剩余 18% 平滑转人工</b>并带上下文。</div>
+            <div class="chip">已验证</div>
+          </div>
+          <div class="tl-cap">
+            <div class="cap">可控性<small>Control</small></div>
+            <div class="proof">每条对话<b>留痕、可回放、可标注</b>，合规与质检可按周出报告。</div>
+            <div class="chip">已验证</div>
+          </div>
+          <div class="tl-cap">
+            <div class="cap">上线周期<small>Time-to-live</small></div>
+            <div class="proof">知识库 + 话术 + 接管策略 <b>6 周上线</b>，分品类灰度。</div>
+            <div class="chip plan">计划中</div>
+          </div>
+          <div class="tl-cap">
+            <div class="cap">成本<small>Cost</small></div>
+            <div class="proof">单工单成本降至原来的 <b>30%</b>，省下的人力转高价值客诉。</div>
+            <div class="chip plan">预期</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-control-strip">
+        <div class="label">Control path<b>把每次接管都变成可审计链路</b></div>
+        <div class="step"><b>01 接管</b><span>先识别高频问题，由 AI 直接闭环；不可答问题立即转人工。</span></div>
+        <div class="step"><b>02 留痕</b><span>每条对话保留意图、引用知识、转接原因和人工处理结果。</span></div>
+        <div class="step"><b>03 复盘</b><span>每周输出质检报告，把错误答案转化为知识库修正任务。</span></div>
+      </div>
+
+      <div class="footbar">
+        <span>每页回答一个采购问题 · Every slide answers one buying question</span>
+        <span class="num">02 / 03</span>
+      </div>
+    </article></section>
+
+    <!-- 03 METRICS — 4 cards + KPI progress panel -->
+    <section class="slide-shell"><article class="slide tech-launch">
+      <div class="topbar">
+        <div class="brand">CHULUU<b>by Chuluu</b></div>
+        <div class="crumb">KPI & Acceptance · 验收指标</div>
+      </div>
+
+      <div class="eyebrow"><b>05</b>KPI &amp; acceptance</div>
+      <h2 class="page-title" style="font-size:48px;">验收不是"上线"，<br>是<em>四个数字达标</em>。</h2>
+
+      <div class="tl-metrics">
+        <div class="tl-metric module"><b>Auto-resolved</b><span>82%</span><small>AI 直接闭环工单占比</small></div>
+        <div class="tl-metric module"><span class="g">0.8s</span><b style="margin-top:14px;">Avg response</b><small>平均首次响应时长</small></div>
+        <div class="tl-metric module"><b>CSAT</b><span class="g">4.6 / 5</span><small>客户满意度（目标 ≥4.3）</small></div>
+        <div class="tl-metric module"><b>Cost / ticket</b><span>−70%</span><small>单工单成本降幅</small></div>
+      </div>
+
+      <div class="tl-kpi-panel module">
+        <div class="kh"><b>Acceptance roadmap · 验收路线</b><span>6 周灰度 → 12 周全量</span></div>
+        <div class="tl-kpi">
+          <div class="kr"><div class="lab"><b>知识库覆盖</b><span>≥ 90%</span></div><div class="track"><div class="fill" style="width:90%"></div></div><small>Top 500 问题命中率</small></div>
+          <div class="kr"><div class="lab"><b>转人工平滑率</b><span>≥ 95%</span></div><div class="track"><div class="fill g" style="width:95%"></div></div><small>转接不带上下文 ≤5%</small></div>
+          <div class="kr"><div class="lab"><b>留痕可回放</b><span>100%</span></div><div class="track"><div class="fill" style="width:100%"></div></div><small>每条对话可追溯</small></div>
+          <div class="kr"><div class="lab"><b>合规质检</b><span>周报</span></div><div class="track"><div class="fill g" style="width:80%"></div></div><small>每周自动出质检报告</small></div>
+        </div>
+        <div class="tl-acceptance-rail">
+          <div class="phase"><b>Week 01-02</b><span>知识库体检</span><small>确认 Top 问题、风险话术、不可回答边界。</small></div>
+          <div class="phase"><b>Week 03-06</b><span>灰度接管</span><small>按品类上线，日更错误样本和转人工原因。</small></div>
+          <div class="phase"><b>Week 07-12</b><span>全量验收</span><small>用四个指标决定扩量、复盘和后续运营。</small></div>
+        </div>
+      </div>
+
+      <div class="footbar">
+        <span>指标为演示占位 · Metrics are conceptual placeholders</span>
+        <span class="num">03 / 03</span>
+      </div>
+    </article></section>
+
+  </main>
+  <script>
+    function fitStage() {
+      const margin = 96;
+      const scale = Math.min(1, Math.max(0.3, (window.innerWidth - margin) / 1920));
+      document.documentElement.style.setProperty("--stage-scale", scale.toFixed(4));
+    }
+    fitStage();
+    window.addEventListener("resize", fitStage);
+  </script>
+</body>
+</html>

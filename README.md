@@ -15,12 +15,32 @@
 
 <table>
 <tr>
-<td width="600"><img src="./assets/demo/showcase-overview-v2.png" alt="Three proposal style families: premium-boardroom, editorial-brand, tech-launch — rendered concept demos by Chuluu" width="600"/></td>
-<td width="300"><img src="./assets/demo/dense-page-v2.png" alt="Dense budget / proof page" width="300"/></td>
+<td width="33%">
+<a href="https://raw.githack.com/ChuluuMGL/proposal-ppt-skill/main/docs/demo/premium-boardroom-demo.html"><img src="./assets/demo/cover-premium-boardroom-v2.png" alt="premium-boardroom proposal demo cover" width="100%"/></a><br/>
+<b>premium-boardroom</b><br/>
+Strict grid, board-document clarity, high-trust proof pages.<br/>
+<a href="https://raw.githack.com/ChuluuMGL/proposal-ppt-skill/main/docs/demo/premium-boardroom-demo.html">Open HTML demo</a>
+</td>
+<td width="33%">
+<a href="https://raw.githack.com/ChuluuMGL/proposal-ppt-skill/main/docs/demo/editorial-brand-demo.html"><img src="./assets/demo/editorial-brand-cover-v2.png" alt="editorial-brand proposal demo cover" width="100%"/></a><br/>
+<b>editorial-brand</b><br/>
+Magazine-like typography, editorial rhythm, premium consumer tone.<br/>
+<a href="https://raw.githack.com/ChuluuMGL/proposal-ppt-skill/main/docs/demo/editorial-brand-demo.html">Open HTML demo</a>
+</td>
+<td width="33%">
+<a href="https://raw.githack.com/ChuluuMGL/proposal-ppt-skill/main/docs/demo/tech-launch-demo.html"><img src="./assets/demo/tech-launch-page-v2.png" alt="tech-launch proposal demo cover" width="100%"/></a><br/>
+<b>tech-launch</b><br/>
+Product/interface hero, launch clarity, KPI and acceptance proof.<br/>
+<a href="https://raw.githack.com/ChuluuMGL/proposal-ppt-skill/main/docs/demo/tech-launch-demo.html">Open HTML demo</a>
+</td>
 </tr>
 </table>
 
-> Rendered HTML concept demos of the three public style families — **premium-boardroom**, **editorial-brand**, **tech-launch**. Real client photography is replaced with conceptual visuals; final `.pptx` fidelity depends on the host runtime's presentation backend. More samples in [`assets/demo/`](./assets/demo).
+> The HTML demos are committed under [`docs/demo/`](./docs/demo). GitHub does not render repository HTML files directly inside README, so the preview links use RawGitHack. Real client photography is replaced with conceptual visuals; final `.pptx` fidelity depends on the host runtime's presentation backend.
+
+**Proof-dense page example**
+
+<img src="./assets/demo/dense-page-v2.png" alt="Dense budget / proof page" width="720"/>
 
 ### Why this skill, not another "pretty slides" tool
 
