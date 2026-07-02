@@ -46,7 +46,7 @@ Priority order:
 5. Public template family from `style-template-strategy.md` plus palette/font/asset plan
 6. `assets/minimal-proposal-template.pptx` fallback
 
-When a strong style is requested and no approved reference deck exists, the visual source is not considered approved until the three-page style sample gate in `style-systems.md` passes.
+When a strong style is requested and no approved reference deck exists, the visual source is not considered approved until the three-page style sample gate in `style-template-strategy.md` passes.
 
 ### Required Deliverables
 
@@ -216,7 +216,7 @@ Required output:
 | `premium-boardroom` | 严格网格、董事会文件感、高信任 proof | … | … |
 | `editorial-brand` | 图片/字体主导的杂志版式 | … | … |
 | `tech-launch` | 发布会式聚焦、产品/界面 hero | … | … |
-| `lifestyle-commerce` | 产品场景、目录式证据墙 | … | … |
+| `consumer-lifestyle` | 产品场景、目录式证据墙 | … | … |
 
 ### 推荐
 
@@ -324,7 +324,7 @@ Build order:
 4. Complete the Visual System Card from `visual-system-card.md`, using the selected `templates/style-specs/*.md` where available.
 5. Run the Style DNA Contract; define commercial fit, layout grammar, assets, typography, component transformations, density rhythm, business-clean pages, and anti-examples before drawing.
 6. Select fonts and fallbacks from `font-system.md`.
-7. Create or generate required assets using `asset-pipeline.md`; keep key business text editable.
+7. Create or generate required assets; keep key business text editable.
 8. For a new style/template route, build or specify three full-size samples first: cover/big-idea, strategy/mechanism, and proof-dense.
 9. Create master chrome: margins, title zone, page numbers, footer/source style.
 10. Build slides by page type and density class from `layout-rhythm.md`.

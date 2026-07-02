@@ -28,24 +28,29 @@ If information is missing, continue with a working draft and mark unknowns as `�
 
 ## Reference Loading
 
-Load only the references needed for the current task:
+Load only the references the current task needs. Grouped so you can pick in seconds:
 
-- For guided execution modes, stage gates, and user-option handling, read `references/workflow.md`.
-- For story structure and proposal type routing, read `references/proposal-routes.md`.
-- For page planning and proof objects, read `references/page-types.md`.
-- For slide rhythm, whitespace balance, layout density, and page-to-page pacing, read `references/layout-rhythm.md`.
-- For visual direction, palette, typography, and PPT template use, read `references/visual-system.md`.
-- For the required pre-build visual decision card, read `references/visual-system-card.md`.
-- For default high-taste palette presets when no client VI is provided, read `references/palette-library.md`.
-- For reusable public style-template families, style DNA contracts, and three-page sample gates, read `references/style-template-strategy.md`.
-- For the flow-based HTML template engine, per-family theme CSS, and reusable style specs, read `templates/README.md`, `templates/style-specs/README.md`, and the selected family spec.
-- For style-rich proposal routes and component-level style transformations, read `references/style-systems.md`.
-- For AI-generated images, user assets, HTML/SVG-to-PPT hybrid backgrounds, and visual asset QA, read `references/asset-pipeline.md`.
-- For free/commercial-safe font pairing and fallbacks, read `references/font-system.md`.
-- For final file and script format, read `references/output-contract.md`.
-- For runtime compatibility, PPTX backend requirements, and fallback modes, read `references/runtime-compatibility.md`.
-- For delivery QA and failure modes, read `references/quality-check.md`.
-- For audited practices borrowed from the `frontend-slides` project (visual discovery, fixed 16:9 stage, density modes), read `references/frontend-slides-audit.md`.
+**Routing & structure**
+- Stages, gates, option handling — `references/workflow.md`
+- Proposal type routing and chapter structure — `references/proposal-routes.md`
+- Page types and proof-object standards — `references/page-types.md`
+
+**Visual**
+- Pre-build visual decision card (required) — `references/visual-system-card.md`
+- Visual direction, typography, charts, screenshots — `references/visual-system.md`
+- The 4 core template families + Style DNA + three-page sample gate — `references/style-template-strategy.md`
+- Palette presets when no client VI — `references/palette-library.md`
+- Font pairing and fallbacks — `references/font-system.md`
+- Density, whitespace, page-to-page rhythm — `references/layout-rhythm.md`
+- HTML engine, family themes, style specs — `templates/README.md` and `templates/style-specs/`
+
+**QA**
+- Delivery QA and failure modes — `references/quality-check.md`
+- Objective deck audit — `scripts/audit_proposal_pptx.py`; HTML overlap audit — `scripts/audit_html_demo.mjs`
+
+**Output & runtime**
+- File/script format and multi-format contract — `references/output-contract.md`
+- Runtime compatibility, PPTX backends, fallbacks — `references/runtime-compatibility.md`
 
 Use `assets/minimal-proposal-template.pptx` only as a fallback visual asset when no client VI, reference deck, or stronger design direction is provided.
 
@@ -121,7 +126,6 @@ Follow `references/workflow.md` for the full stage-gate process. The high-level 
    - If no visual source exists, use `references/visual-system.md` and the minimal template as fallback.
    - If a rich style is requested or no client VI exists, run the Style DNA Gate in `references/style-template-strategy.md` before building the deck.
    - Do not start drawing until the visual system card has concrete color, typography, asset, chart, module, and reject rules.
-   - Use `references/style-systems.md` for component-level style transformations after the route is chosen.
    - If a rich style has no approved reference deck, create or recommend the three-page style sample set before scaling: cover/big idea, proof/mechanism, and dense business page.
    - When creating a PowerPoint deck, use the active runtime's PPTX backend and follow `references/runtime-compatibility.md`, including render/overlap QA where available.
 

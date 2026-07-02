@@ -25,4 +25,4 @@ Available specs:
 | `premium-boardroom.md` | Formal tenders, B2B consulting, finance, board-level trust |
 | `editorial-brand.md` | Brand marketing, fashion, beauty, hospitality, premium consumer |
 | `tech-launch.md` | AI, SaaS, product launch, fintech, technical proposals |
-| `lifestyle-commerce.md` | FMCG, food & beverage, retail, creator/content commerce |
+| `consumer-lifestyle.md` | FMCG, food & beverage, retail, creator/content commerce |

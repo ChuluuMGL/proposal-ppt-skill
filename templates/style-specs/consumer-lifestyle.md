@@ -1,4 +1,4 @@
-# lifestyle-commerce Style Spec
+# consumer-lifestyle Style Spec
 
 ## Position
 

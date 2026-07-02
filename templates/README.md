@@ -19,7 +19,7 @@ absolute coordinates drift and overlap; flex gutters do not.
 | `premium-boardroom.theme.css` | B2B / consulting / finance / tenders. Square corners, thin rules, board-document clarity. |
 | `editorial-brand.theme.css` | *(planned)* Image/typography-led magazine layouts for brand, fashion, beauty. |
 | `tech-launch.theme.css` | *(planned)* Keynote focus, product/interface heroes, controlled radius. |
-| `lifestyle-commerce.theme.css` | *(planned)* Product scenes, catalog proof walls, commerce clarity. |
+| `consumer-lifestyle.theme.css` | *(planned)* Product scenes, catalog proof walls, commerce clarity. |
 | `style-specs/` | Reusable color, typography, image, chart, module, density, and reject-rule contracts for each core family. |
 
 ## Using a template

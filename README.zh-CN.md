@@ -16,19 +16,19 @@
 每个风格家族 3 页样张（封面 · 赢标主张 · 预算 / 验收），点开图片可看大图：
 
 **premium-boardroom** — 严格网格、董事会文件感、高信任 proof 页面。
-![premium-boardroom · 封面 / 赢标主张 / 预算](./assets/demo/premium-boardroom-3up.png)
+[![premium-boardroom · 封面 / 赢标主张 / 预算](./assets/demo/premium-boardroom-3up.png)](./assets/demo/premium-boardroom-3up.png)
 
 **editorial-brand** — 杂志式字体、编辑节奏、高端消费品气质。
-![editorial-brand · 封面 / 赢标主张 / 预算](./assets/demo/editorial-brand-3up.png)
+[![editorial-brand · 封面 / 赢标主张 / 预算](./assets/demo/editorial-brand-3up.png)](./assets/demo/editorial-brand-3up.png)
 
 **tech-launch** — 产品 / 界面 hero、发布会清晰度、KPI 与验收证明。
-![tech-launch · 封面 / 赢标主张 / 预算](./assets/demo/tech-launch-3up.png)
+[![tech-launch · 封面 / 赢标主张 / 预算](./assets/demo/tech-launch-3up.png)](./assets/demo/tech-launch-3up.png)
 
 > 需要完整交互时，HTML 源文件在 [`docs/demo/`](./docs/demo)，可本地打开。真实客户摄影已替换为概念视觉；最终 `.pptx` 保真度取决于宿主 runtime 的 presentation 后端。
 
 ### 风格库一览
 
-不止上面 3 个 demo。`proposal-ppt` 内置 **4 个核心模板家族**（覆盖完整提案）+ **12 个扩展风格变体**（封面 / 章节 / 表达页），客户没有 VI 时直接路由。
+客户没有 VI 时，`proposal-ppt` 直接路由到下面 **4 个核心模板家族**。不做"100 种风格"——4 个覆盖完整提案，把精力留给论证而不是视觉兔子洞。
 
 **核心家族 · 完整 deck 覆盖**
 
@@ -37,13 +37,9 @@
 | `premium-boardroom` | B2B、咨询、金融、正式竞标、年度服务 |
 | `editorial-brand` | 品牌营销、时尚、美妆、高端消费、文旅 |
 | `tech-launch` | AI、SaaS、产品发布、金融科技、技术方案 |
-| `lifestyle-commerce` | FMCG、食品饮料、零售、达人内容、电商社媒 |
+| `consumer-lifestyle` | FMCG、食品饮料、零售、消费品、达人内容 |
 
-**扩展风格变体 · 表达型页面**
-
-`fashion-beauty-editorial` · `beauty-gloss-clinical` · `japanese-minimal` · `japanese-magazine-collage` · `cinematic-photography` · `web3-ai-glass` · `pixel-retro` · `oil-salon` · `french-editorial` · `american-campaign-bold` · `craft-paper-natural` · `e-reader-mono`
-
-> 核心家族见 [`references/style-template-strategy.md`](./references/style-template-strategy.md)；扩展变体的组件变形见 [`references/style-systems.md`](./references/style-systems.md)。任一扩展风格若要铺满全 deck，必须先通过三页样张门槛（封面 / 机制 / 密集页）；只适合封面的风格会被限制在表达型页面，预算/KPI/风险页回到清晰商务结构。
+> 4 个家族的完整规则见 [`references/style-template-strategy.md`](./references/style-template-strategy.md)。任何新风格上线前必须先通过三页样张门槛（封面 / 机制 / 密集页）；只适合封面的风格会被限制在表达页，预算 / KPI / 风险页一律回到清晰商务结构。
 
 ### 为什么是这个 Skill，而不是又一个“把 PPT 做好看”的工具
 
@@ -149,26 +145,20 @@ python3 scripts/audit_proposal_pptx.py assets/minimal-proposal-template.pptx --t
 
 如果一个风格只适合封面或章节页，Skill 会把它限制为表达型页面；预算、KPI、风险和 Brief 覆盖页会回到更清晰的商务结构。
 
-新增风格系统包括：`fashion-beauty-editorial`、`beauty-gloss-clinical`、`japanese-minimal`、`japanese-magazine-collage`、`cinematic-photography`、`web3-ai-glass`、`pixel-retro`、`oil-salon`、`french-editorial`、`american-campaign-bold`、`craft-paper-natural`、`e-reader-mono`。
+强风格是**例外**，不是主线：只在你明确要求、且能提供素材或艺术指导时才做；否则一律走上面 4 个核心家族。任何强风格上线前都要先过三页样张门槛。
 
 ---
 
 ## 运行环境兼容性
 
-这个 Skill 不是独立 PPTX 渲染引擎。它提供提案策略、页面规划、视觉系统、逐字稿和 QA 闸门；最终是否能直接生成可编辑 `.pptx`，取决于宿主 Agent 是否具备 PPTX 生成/编辑后端。`.html` deck 是一等交付格式，适合网页展示、高保真视觉或当前 runtime 没有 PPTX 后端的情况。
+这个 Skill 不是独立 PPTX 渲染引擎——它提供提案策略、页面规划、视觉系统、逐字稿和 QA 闸门。
 
-| 状态 | Runtime / Agent | 说明 |
-|---|---|---|
-| tested | Claude Code | 用户在 2026-06 做过本地提案生成流程测试。PPTX 输出仍依赖宿主工具能力。 |
-| tested | Codex / OpenAI coding agent | 本仓库编辑、校验、发布，以及本地 PPTX 风格 demo 生成在 Codex 环境验证。 |
-| expected | Generic `SKILL.md` readers | 只要能读取本地 skill 文件夹和 references，理论可作为指令包工作。 |
-| expected, unverified | Cursor / Windsurf / Trae / Qoder / Antigravity / OpenClaw / Hermes | 预计可读取，但未逐一维护者实测。正式使用前应验证 skill 调用、文件访问和 PPTX 后端。 |
+- **能跑在哪**：任何能读 `SKILL.md` + 能写文件的环境（Claude Code、Codex、Cursor、Windsurf、Trae、Qoder 等通用 Agent）。Claude Code 和 Codex 已实测；其余理论可用、未逐一验证。
+- **PPTX**：需要后端（`python-pptx` / `pptxgenjs` / Office 自动化 / 宿主 presentation 工具）。
+- **HTML / PDF**：不依赖后端，任何 runtime 都能出——无 PPTX 后端时默认出 HTML 完整 deck，PDF 按需导出。
+- **连 HTML 都做不了时**：降级为蓝图、逐页文案、视觉规格。
 
 完整说明见 [`references/runtime-compatibility.md`](./references/runtime-compatibility.md)。
-
-可编辑 `.pptx` 生成需要至少一种后端：宿主 presentation skill、`python-pptx`、`pptxgenjs`、Office-compatible exporter、PowerPoint / Keynote / LibreOffice 自动化，或其他等价工具。
-
-如果当前 runtime 没有 PPTX 后端，Skill 应优先生成完整 `.html` 提案 deck 和逐字稿，并可按需导出 `.pdf`。只有连 HTML deck 都无法生成时，才降级为提案蓝图、逐页文案和视觉规格。
 
 ---
 
@@ -197,7 +187,7 @@ python3 scripts/audit_proposal_pptx.py assets/minimal-proposal-template.pptx --t
 | `premium-boardroom` | B2B、咨询、金融、正式竞标、年度服务 | 严格网格、董事会文件感、高信任 proof 页面。 |
 | `editorial-brand` | 品牌营销、时尚、美妆、高端消费、酒店文旅 | 图片或字体主导的杂志版式，配商业解释 caption。 |
 | `tech-launch` | AI、SaaS、产品发布、金融科技、技术方案 | 发布会式聚焦、产品/界面 hero、清晰系统图。 |
-| `lifestyle-commerce` | FMCG、食品饮料、零售、达人内容、电商社媒 | 产品场景、目录式证据墙、执行样张和转化清晰度。 |
+| `consumer-lifestyle` | FMCG、食品饮料、零售、消费品、达人内容 | 产品场景、目录式证据墙、执行样张和品牌质感。 |
 
 新的强风格路线必须先通过三页样张检查，再扩展成完整 PPT：
 
@@ -222,9 +212,6 @@ python3 scripts/audit_proposal_pptx.py assets/minimal-proposal-template.pptx --t
 | [`references/visual-system-card.md`](./references/visual-system-card.md) | 正式绘制前必须输出的视觉系统卡：颜色、字体、图片、图表、模块、密度和重做规则。 |
 | [`references/palette-library.md`](./references/palette-library.md) | 无客户 VI 时使用的高级默认配色预设。 |
 | [`references/style-template-strategy.md`](./references/style-template-strategy.md) | 4 个公开风格模板家族、Style DNA 合约和三页样张门槛。 |
-| [`references/style-systems.md`](./references/style-systems.md) | Swiss、发布会极简、时尚美妆、日式极简、拼贴、摄影叙事、Web3/AI glass、像素、油画等二级组件变形参考。 |
-| [`references/frontend-slides-audit.md`](./references/frontend-slides-audit.md) | 借鉴自 `frontend-slides` 项目的方法：视觉发现、固定 16:9 画布、密度模式。 |
-| [`references/asset-pipeline.md`](./references/asset-pipeline.md) | 用户素材、AI 生成图、HTML/SVG 背景和图片 QA 规则。 |
 | [`references/font-system.md`](./references/font-system.md) | 免费可商用字体搭配和 fallback。 |
 | [`references/output-contract.md`](./references/output-contract.md) | PPTX 和逐字稿的输出格式要求。 |
 | [`references/runtime-compatibility.md`](./references/runtime-compatibility.md) | Agent 兼容性、PPTX 后端要求和降级路径。 |
@@ -322,7 +309,7 @@ brief:
 6. 哪些页面必须保持清晰商务页
 
 视觉方向：
-premium-boardroom / editorial-brand / tech-launch / lifestyle-commerce
+premium-boardroom / editorial-brand / tech-launch / consumer-lifestyle
 
 brief:
 ...
@@ -391,7 +378,7 @@ A：可以，只要对应 Agent 支持 Skill 文件夹，或能读取 `SKILL.md`
 | 内置资产 | 中性 fallback PowerPoint 模板 |
 | PPTX 生成 | 依赖宿主 Agent 的 presentation / PPTX 后端 |
 | License | MIT |
-| 作者 | by Chuluu |
+| 作者 | Chuluu |
 
 ## 相关 Skill
 

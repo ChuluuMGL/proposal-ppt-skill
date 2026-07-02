@@ -106,7 +106,7 @@ Choose shape language by proposal posture:
 - `premium-boardroom`: mostly square or 0-3 px radius; use thin rules, ledgers, memo panels, and straight document frames. Avoid rounded SaaS cards.
 - `editorial-brand`: square image crops, caption rails, thin rules, and occasional sharp color blocks. Use rounded corners only when the brand reference requires softness.
 - `tech-launch`: controlled 10-18 px radius for interface panels, status modules, and product UI; do not round every proof object.
-- `lifestyle-commerce`: 10-18 px radius is acceptable for catalog cards and sample boards, but tables and budget pages should stay sharper.
+- `consumer-lifestyle`: 10-18 px radius is acceptable for catalog cards and sample boards, but tables and budget pages should stay sharper.
 
 Do not mix square and rounded components randomly. If a page contains both, the reason should be clear: for example, a square proof table plus rounded product sample cards.
 

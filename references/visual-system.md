@@ -1,15 +1,15 @@
 # Visual System
 
-Use client VI first. Use a user-provided reference deck before any fallback style. Use this guide only when no stronger visual source exists. For page density and rhythm, use `layout-rhythm.md`. For richer default color choices, use `palette-library.md`. For reusable public template families and the three-page sample gate, use `style-template-strategy.md`. For component-level style transformations, use `style-systems.md`, `asset-pipeline.md`, and `font-system.md`.
+Use client VI first. Use a user-provided reference deck before any fallback style. Use this guide only when no stronger visual source exists. For page density and rhythm, use `layout-rhythm.md`. For richer default color choices, use `palette-library.md`. For reusable public template families and the three-page sample gate, use `style-template-strategy.md`. For component-level style transformations, use `style-template-strategy.md`, `visual-system-card.md`, and `font-system.md`.
 
 ## Visual Style Families
 
-Choose one primary family, then pick a specific palette from `palette-library.md`. If no client VI exists, first route to one of the four public template families in `style-template-strategy.md`: `premium-boardroom`, `editorial-brand`, `tech-launch`, or `lifestyle-commerce`. If the user asks for a specific custom style such as magazine, launch, cinematic, Web3, pixel, oil, or e-reader, use `style-systems.md` as a transformation reference instead of merely changing colors. Do not reuse the same green/gold palette for every proposal.
+Choose one primary family, then pick a specific palette from `palette-library.md`. If no client VI exists, first route to one of the four public template families in `style-template-strategy.md`: `premium-boardroom`, `editorial-brand`, `tech-launch`, or `consumer-lifestyle`. If the user asks for a specific custom style such as magazine, launch, cinematic, Web3, pixel, oil, or e-reader, use `style-template-strategy.md` as a transformation reference instead of merely changing colors. Do not reuse the same green/gold palette for every proposal.
 
 When no VI exists, choose one of two routes:
 
 1. **Clean business route**: use a palette from `palette-library.md` plus the layout recipes in `layout-rhythm.md`.
-2. **Strong style route**: use `style-systems.md`, run the three-page style sample gate, and only then scale the style.
+2. **Strong style route**: use `style-template-strategy.md`, run the three-page style sample gate, and only then scale the style.
 
 Do not mix many style families in one deck. A proposal may use one primary style plus one restrained accent language. For example, `fashion-beauty-editorial` may use clean clinical tables, but it should not also introduce pixel frames or Web3 glass unless the brief explicitly demands a multi-world concept.
 
@@ -116,7 +116,7 @@ Rules:
 - Do not stretch images.
 - Do not rely on stock-looking dark, blurred, decorative images to carry the argument.
 - Cite or label third-party sources when needed.
-- For AI-generated images, HTML/SVG backgrounds, or texture assets, follow `asset-pipeline.md`.
+- For AI-generated images, HTML/SVG backgrounds, or texture assets, follow `visual-system-card.md`.
 - Keep commercial text, tables, budgets, KPI, and risk controls editable whenever possible. Use generated/HTML assets mainly as background, texture, collage, or hero visual layers.
 
 ## Minimal Template Asset
@@ -128,4 +128,4 @@ Rules:
 - the user still needs an editable PPTX quickly.
 
 Do not force this template when the client has an established style.
-Do not treat the fallback template as a quality benchmark for strong visual directions. For editorial, cinematic, pixel, oil, Web3/glass, or product-launch styles, use `style-systems.md` and `asset-pipeline.md` instead of repainting the fallback template.
+Do not treat the fallback template as a quality benchmark for strong visual directions. For editorial, cinematic, pixel, oil, Web3/glass, or product-launch styles, use `style-template-strategy.md` and `visual-system-card.md` instead of repainting the fallback template.

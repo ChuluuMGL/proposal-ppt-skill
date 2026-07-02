@@ -57,7 +57,7 @@ Default to these four public style families when the user has no client VI or re
 | `premium-boardroom` | B2B, consulting, finance, formal tenders, annual service retainers | strict grid, high-trust editorial reports, board documents | standard / proof-dense |
 | `editorial-brand` | brand marketing, fashion, beauty, premium consumer, hospitality | magazine spread, art direction, product/people/scene-led pages | breathing / standard |
 | `tech-launch` | AI, SaaS, product launch, Web3/fintech when clarity matters | keynote minimalism, product hero, interface/system diagrams | breathing / standard |
-| `lifestyle-commerce` | FMCG, food/beverage, retail, social/content/e-commerce proposals | catalog, campaign moodboard, product scene, social proof wall | standard / proof-dense |
+| `consumer-lifestyle` | FMCG, food/beverage, retail, consumer-brand proposals | catalog, campaign moodboard, product scene, social proof wall | standard / proof-dense |
 
 Do not use oil, pixel, kindle/e-reader, or other expressive modes as default public templates. Use them only when the user explicitly asks and after 2-3 full-size samples pass review. The default public skill should feel broadly useful, not like a novelty style gallery.
 
@@ -251,9 +251,9 @@ Reject if:
 - the deck looks like a crypto website instead of a proposal,
 - all pages become dark dashboards.
 
-### lifestyle-commerce
+### consumer-lifestyle
 
-Use for FMCG, food, beverage, retail, creator/content, and commerce proposals where product scenes and execution samples matter.
+Use for FMCG, food, beverage, retail, consumer-brand proposals where product scenes and execution samples matter.
 
 DNA:
 

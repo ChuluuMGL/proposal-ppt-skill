@@ -16,19 +16,19 @@
 Three sample pages per style family (cover · winning thesis · budget / acceptance). Click an image to view it full-size:
 
 **premium-boardroom** — Strict grid, board-document clarity, high-trust proof pages.
-![premium-boardroom · cover / thesis / budget](./assets/demo/premium-boardroom-3up.png)
+[![premium-boardroom · cover / thesis / budget](./assets/demo/premium-boardroom-3up.png)](./assets/demo/premium-boardroom-3up.png)
 
 **editorial-brand** — Magazine-like typography, editorial rhythm, premium consumer tone.
-![editorial-brand · cover / thesis / budget](./assets/demo/editorial-brand-3up.png)
+[![editorial-brand · cover / thesis / budget](./assets/demo/editorial-brand-3up.png)](./assets/demo/editorial-brand-3up.png)
 
 **tech-launch** — Product/interface hero, launch clarity, KPI and acceptance proof.
-![tech-launch · cover / thesis / budget](./assets/demo/tech-launch-3up.png)
+[![tech-launch · cover / thesis / budget](./assets/demo/tech-launch-3up.png)](./assets/demo/tech-launch-3up.png)
 
 > The HTML sources live under [`docs/demo/`](./docs/demo) — open them locally for full interactivity. Real client photography is replaced with conceptual visuals; final `.pptx` fidelity depends on the host runtime's presentation backend.
 
 ### Style library at a glance
 
-More than the three demos above. `proposal-ppt` ships **4 core template families** (full-deck coverage) + **12 extended style variants** (cover / section / expressive pages), auto-routed when the client has no VI.
+When the client has no VI, `proposal-ppt` routes to the **4 core template families** below. Not "100 styles" — four families cover a full proposal, so the effort goes into the argument, not a visual rabbit hole.
 
 **Core families · full-deck coverage**
 
@@ -37,13 +37,9 @@ More than the three demos above. `proposal-ppt` ships **4 core template families
 | `premium-boardroom` | B2B, consulting, finance, formal tenders, annual retainers |
 | `editorial-brand` | Brand marketing, fashion, beauty, premium consumer, travel |
 | `tech-launch` | AI, SaaS, product launches, fintech, technical solutions |
-| `lifestyle-commerce` | FMCG, food & beverage, retail, creator content, e-commerce social |
+| `consumer-lifestyle` | FMCG, food & beverage, retail, consumer goods, creator content |
 
-**Extended variants · expressive pages**
-
-`fashion-beauty-editorial` · `beauty-gloss-clinical` · `japanese-minimal` · `japanese-magazine-collage` · `cinematic-photography` · `web3-ai-glass` · `pixel-retro` · `oil-salon` · `french-editorial` · `american-campaign-bold` · `craft-paper-natural` · `e-reader-mono`
-
-> Core families live in [`references/style-template-strategy.md`](./references/style-template-strategy.md); component-level variants in [`references/style-systems.md`](./references/style-systems.md). Any extended style must pass the three-page sample gate (cover / mechanism / dense page) before scaling to a full deck; styles that only suit covers are restricted to expressive pages, while budget / KPI / risk pages fall back to clean business structure.
+> The four families are specified in [`references/style-template-strategy.md`](./references/style-template-strategy.md). Any new style must pass the three-page sample gate (cover / mechanism / dense page) before scaling; styles that only suit covers are restricted to expressive pages, while budget / KPI / risk pages always fall back to clean business structure.
 
 ### Why this skill, not another "pretty slides" tool
 
@@ -148,26 +144,20 @@ It first defines the Style DNA and prefers a three-page sample gate:
 
 If a style only works for cover or divider pages, the skill restricts it to expressive pages. Budget, KPI, risk, and brief-coverage pages return to clearer business structures.
 
-Included style systems include `fashion-beauty-editorial`, `beauty-gloss-clinical`, `japanese-minimal`, `japanese-magazine-collage`, `cinematic-photography`, `web3-ai-glass`, `pixel-retro`, `oil-salon`, `french-editorial`, `american-campaign-bold`, `craft-paper-natural`, and `e-reader-mono`.
+Rich styles are the **exception**, not the default: only when you explicitly ask and can supply assets or art direction; otherwise the four core families above are used. Any rich style must pass the three-page sample gate before it ships.
 
 ---
 
 ## Runtime Compatibility
 
-This skill is not a standalone PPTX rendering engine. It provides proposal strategy, page planning, visual systems, presenter scripts, and QA gates. Direct editable `.pptx` generation depends on the host agent's presentation backend; `.html` decks are first-class deliverables when web/high-fidelity output is preferred or no PPTX backend is available.
+This skill is not a standalone PPTX rendering engine — it provides proposal strategy, page planning, visual systems, presenter scripts, and QA gates.
 
-| Status | Runtime / Agent | Notes |
-|---|---|---|
-| tested | Claude Code | User-tested with a local proposal-generation flow in 2026-06. PPTX output still depends on host tooling. |
-| tested | Codex / OpenAI coding agent | Repository editing, validation, publishing, and local PPTX style-demo generation were validated in Codex. |
-| expected | Generic `SKILL.md` readers | Expected when the agent can read local skill folders and referenced markdown files. |
-| expected, unverified | Cursor / Windsurf / Trae / Qoder / Antigravity / OpenClaw / Hermes | Expected as instruction packs, but not maintainer-verified. Validate invocation, file access, and PPTX backend before auto mode. |
+- **Where it runs**: any environment that can read `SKILL.md` and write files (Claude Code, Codex, Cursor, Windsurf, Trae, Qoder, …). Claude Code and Codex are tested; others are expected but not individually verified.
+- **PPTX**: needs a backend (`python-pptx` / `pptxgenjs` / Office automation / a host presentation tool).
+- **HTML / PDF**: backend-free — any runtime can produce them. With no PPTX backend, the skill defaults to a complete HTML deck and exports PDF on demand.
+- **When even HTML is impossible**: falls back to blueprint / slide copy / visual spec.
 
-See [`references/runtime-compatibility.md`](./references/runtime-compatibility.md) for the full matrix.
-
-Editable `.pptx` generation requires at least one backend: host presentation skill/tooling, `python-pptx`, `pptxgenjs`, an Office-compatible exporter, PowerPoint / Keynote / LibreOffice automation, or an equivalent runtime-specific tool.
-
-If the current runtime has no PPTX backend, the skill should create a complete `.html` proposal deck and presenter script when possible, then offer `.pdf` export. It should only fall back to blueprint / slide copy / visual specification when even an HTML deck cannot be produced.
+See [`references/runtime-compatibility.md`](./references/runtime-compatibility.md) for details.
 
 ---
 
@@ -196,7 +186,7 @@ When no client visual identity or reference deck is provided, the skill routes v
 | `premium-boardroom` | B2B, consulting, finance, tenders, annual retainers | Strict grid, board-document clarity, high-trust proof pages. |
 | `editorial-brand` | Brand marketing, fashion, beauty, premium consumer, hospitality | Image-led or typography-led editorial spreads with business captions. |
 | `tech-launch` | AI, SaaS, product launch, fintech, technical proposals | Keynote-like focus, product/interface heroes, clear system diagrams. |
-| `lifestyle-commerce` | FMCG, food/beverage, retail, creator/content/social commerce | Product scenes, catalog proof walls, execution samples, commerce clarity. |
+| `consumer-lifestyle` | FMCG, food/beverage, retail, consumer goods, creator content | Product scenes, catalog proof walls, execution samples, brand texture. |
 
 New style routes must pass a three-page sample gate before scaling to a full deck:
 
@@ -221,9 +211,6 @@ See [`references/style-template-strategy.md`](./references/style-template-strate
 | [`references/visual-system-card.md`](./references/visual-system-card.md) | Required pre-build visual decision card: colors, fonts, images, charts, modules, density, rejects. |
 | [`references/palette-library.md`](./references/palette-library.md) | Default high-taste palette presets when no client visual identity exists. |
 | [`references/style-template-strategy.md`](./references/style-template-strategy.md) | Four public style-template families, Style DNA contract, and three-page sample gate. |
-| [`references/style-systems.md`](./references/style-systems.md) | Secondary component transformations such as Swiss, launch minimal, beauty editorial, Japanese minimal, collage, cinematic, Web3/AI glass, pixel, and oil. |
-| [`references/frontend-slides-audit.md`](./references/frontend-slides-audit.md) | Practices borrowed from the `frontend-slides` project: visual discovery, fixed 16:9 stage, density modes. |
-| [`references/asset-pipeline.md`](./references/asset-pipeline.md) | User assets, AI-generated visuals, HTML/SVG backgrounds, and image QA rules. |
 | [`references/font-system.md`](./references/font-system.md) | Free/commercial-safe font pairings and fallbacks. |
 | [`references/output-contract.md`](./references/output-contract.md) | Required PPTX and presenter-script output format. |
 | [`references/runtime-compatibility.md`](./references/runtime-compatibility.md) | Agent compatibility, PPTX backend requirements, and fallback modes. |
@@ -321,7 +308,7 @@ Before generating PPTX, recommend:
 6. page types that should stay business-clean
 
 Visual direction:
-premium-boardroom / editorial-brand / tech-launch / lifestyle-commerce
+premium-boardroom / editorial-brand / tech-launch / consumer-lifestyle
 
 Brief:
 ...
@@ -390,7 +377,7 @@ Yes, if they support skill folders or can read `SKILL.md`-style packages. Instal
 | Bundled asset | Neutral fallback PowerPoint template |
 | PPTX generation | Depends on the host agent's presentation / PPTX backend |
 | License | MIT |
-| Author | by Chuluu |
+| Author | Chuluu |
 
 ## Related Skills
 
