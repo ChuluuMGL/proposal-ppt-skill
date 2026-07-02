@@ -2,14 +2,17 @@
 
 > **The proposal-writing brain that wins pitches — and it also produces the deck.**
 > An open-source AI agent skill that turns briefs, tenders, research, budgets, and cases into a *winning argument first*: a sharp winning thesis, proof-anchored slides, an editable `.pptx`, and a presenter script. Most AI tools make slides prettier; this one decides **why the proposal should win**, then builds the deck.
+>
+> Created and maintained by **Chuluu**.
 
 [Simplified Chinese](./README.zh-CN.md) | English
 
 [![Skill](https://img.shields.io/badge/AI%20Skill-proposal--ppt-0E5E43)](./SKILL.md)
-[![Version](https://img.shields.io/badge/version-0.3.0-green)](./skill.json)
+[![Version](https://img.shields.io/badge/version-0.3.1-green)](./skill.json)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](./LICENSE)
 [![QA](https://img.shields.io/badge/QA-audited%20deck-0E5E43)](./scripts/audit_proposal_pptx.py)
 [![Workflow](https://img.shields.io/badge/workflow-stage--gated-purple)](./references/workflow.md)
+[![by Chuluu](https://img.shields.io/badge/by-Chuluu-0E5E43)](https://github.com/ChuluuMGL)
 
 ### Demo
 
@@ -174,27 +177,6 @@ The skill does not force every proposal into the same template. It routes the pr
 | Partnership, sponsorship, and resource integration | Sponsorship, channel cooperation, joint marketing, investment packages. |
 
 See [`references/proposal-routes.md`](./references/proposal-routes.md) for the full routing logic.
-
----
-
-## Style Template Families
-
-When no client visual identity or reference deck is provided, the skill routes visual design into four public template families instead of repainting the same fallback deck:
-
-| Template Family | Best For | Visual Logic |
-|---|---|---|
-| `premium-boardroom` | B2B, consulting, finance, tenders, annual retainers | Strict grid, board-document clarity, high-trust proof pages. |
-| `editorial-brand` | Brand marketing, fashion, beauty, premium consumer, hospitality | Image-led or typography-led editorial spreads with business captions. |
-| `tech-launch` | AI, SaaS, product launch, fintech, technical proposals | Keynote-like focus, product/interface heroes, clear system diagrams. |
-| `consumer-lifestyle` | FMCG, food/beverage, retail, consumer goods, creator content | Product scenes, catalog proof walls, execution samples, brand texture. |
-
-New style routes must pass a three-page sample gate before scaling to a full deck:
-
-1. cover or big-idea page,
-2. strategy or mechanism page,
-3. proof-dense page such as budget, KPI, risk, timeline, or brief coverage.
-
-See [`references/style-template-strategy.md`](./references/style-template-strategy.md).
 
 ---
 
@@ -385,7 +367,16 @@ Yes, if they support skill folders or can read `SKILL.md`-style packages. Instal
 
 ## License
 
-MIT
+MIT. Copyright (c) 2026 Chuluu.
+
+## Ownership
+
+| Item | Value |
+|---|---|
+| Copyright holder | Chuluu |
+| Maintainer / GitHub publisher | [ChuluuMGL](https://github.com/ChuluuMGL) |
+| Website | [github.com/ChuluuMGL](https://github.com/ChuluuMGL) |
+| Notice | [NOTICE](./NOTICE) |
 
 ---
 
@@ -410,5 +401,5 @@ MIT
     "name": "Chuluu",
     "url": "https://github.com/ChuluuMGL"
   },
-  "softwareVersion": "0.3.0"
+  "softwareVersion": "0.3.1"
 } -->

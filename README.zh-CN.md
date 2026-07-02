@@ -2,14 +2,17 @@
 
 > **赢得比稿的提案写作大脑 —— 顺带把 PPT 也做出来。**
 > 一个开源 AI Agent Skill，把 brief、招标书、调研、预算、案例和执行计划，先变成**一套能赢的论证**：清晰的赢标主张、有证据支撑的页面、可编辑的 `.pptx` 和逐字稿。多数 AI 工具只把 PPT 做漂亮；这个 Skill 先决定**为什么这份方案该赢**，再把 deck 做出来。
+>
+> 由 **Chuluu** 创建并维护。
 
 中文 | [English](./README.md)
 
 [![Skill](https://img.shields.io/badge/AI%20Skill-proposal--ppt-0E5E43)](./SKILL.md)
-[![Version](https://img.shields.io/badge/version-0.3.0-green)](./skill.json)
+[![Version](https://img.shields.io/badge/version-0.3.1-green)](./skill.json)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](./LICENSE)
 [![QA](https://img.shields.io/badge/QA-audited%20deck-0E5E43)](./scripts/audit_proposal_pptx.py)
 [![Workflow](https://img.shields.io/badge/workflow-stage--gated-purple)](./references/workflow.md)
+[![by Chuluu](https://img.shields.io/badge/by-Chuluu-0E5E43)](https://github.com/ChuluuMGL)
 
 ### Demo
 
@@ -175,27 +178,6 @@ python3 scripts/audit_proposal_pptx.py assets/minimal-proposal-template.pptx --t
 | 招商、赞助与资源整合 | 赞助、渠道合作、联合营销、权益包和资源包。 |
 
 完整路由逻辑见 [`references/proposal-routes.md`](./references/proposal-routes.md)。
-
----
-
-## 风格模板家族
-
-当客户没有 VI、没有参考 PPT 时，这个 Skill 不再只给 fallback 模板换色，而是先路由到 4 个公开模板家族：
-
-| 模板家族 | 适合项目 | 视觉逻辑 |
-|---|---|---|
-| `premium-boardroom` | B2B、咨询、金融、正式竞标、年度服务 | 严格网格、董事会文件感、高信任 proof 页面。 |
-| `editorial-brand` | 品牌营销、时尚、美妆、高端消费、酒店文旅 | 图片或字体主导的杂志版式，配商业解释 caption。 |
-| `tech-launch` | AI、SaaS、产品发布、金融科技、技术方案 | 发布会式聚焦、产品/界面 hero、清晰系统图。 |
-| `consumer-lifestyle` | FMCG、食品饮料、零售、消费品、达人内容 | 产品场景、目录式证据墙、执行样张和品牌质感。 |
-
-新的强风格路线必须先通过三页样张检查，再扩展成完整 PPT：
-
-1. 封面或 big idea 页；
-2. 策略或机制页；
-3. proof-dense 页，例如预算、KPI、风险、排期或 brief 覆盖。
-
-详见 [`references/style-template-strategy.md`](./references/style-template-strategy.md)。
 
 ---
 
@@ -386,7 +368,16 @@ A：可以，只要对应 Agent 支持 Skill 文件夹，或能读取 `SKILL.md`
 
 ## License
 
-MIT
+MIT. Copyright (c) 2026 Chuluu.
+
+## Ownership
+
+| 项目 | 值 |
+|---|---|
+| Copyright holder | Chuluu |
+| Maintainer / GitHub publisher | [ChuluuMGL](https://github.com/ChuluuMGL) |
+| Website | [github.com/ChuluuMGL](https://github.com/ChuluuMGL) |
+| Notice | [NOTICE](./NOTICE) |
 
 ---
 
@@ -411,5 +402,5 @@ MIT
     "name": "Chuluu",
     "url": "https://github.com/ChuluuMGL"
   },
-  "softwareVersion": "0.3.0"
+  "softwareVersion": "0.3.1"
 } -->
