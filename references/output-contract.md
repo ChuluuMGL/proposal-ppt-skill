@@ -1,15 +1,24 @@
 # Output Contract
 
-When the task is to create a commercial proposal, deliver a PPTX and a presenter script Markdown file.
+A proposal deliverable = a **deck** + a **presenter script (`.md`)**. The deck has three first-class formats — pick by use case and runtime capability, never by default:
 
-If the current runtime cannot create an editable PPTX, do not claim full delivery. Use a fallback mode from `runtime-compatibility.md` and clearly label the package as blueprint/script/spec/prototype output.
+| Format | Deliver when | Requires |
+|---|---|---|
+| `.pptx` | Client wants editable / corporate template / further manual editing | a PPTX backend (`python-pptx`, `pptxgenjs`, Office automation, or a host presentation skill) |
+| `.html` | Web presentation, embedding, animation, or highest fidelity; also the default deck format when no PPTX backend is available | only file-write — works in any runtime |
+| `.pdf` | Email, print, procurement submission | export from the HTML deck (headless print) or from PPTX |
+
+Never silently swap formats. If the user asked for PPTX but only HTML/PDF is producible, state it explicitly and let them choose — do not relabel an HTML deck as a finished PPTX, and do not treat HTML/PDF as a mere "fallback" when the user requested it.
+
+The presenter script `.md` and the missing-information list are always required, regardless of deck format. If even an HTML deck is not possible, fall back to blueprint / copy-and-script / template-spec per `runtime-compatibility.md` and label the package accordingly.
 
 ## File Naming
 
 Use clear names:
 
-- `<client-or-project>-proposal.pptx`
+- `<client-or-project>-proposal.pptx` / `.html` / `.pdf`
 - `<client-or-project>-proposal-script.md`
+- for HTML: a self-contained `<...>-proposal.html` (single file preferred), plus an optional `<...>-3up.png` contact sheet for quick preview
 
 If the user specifies a folder, use it. Otherwise create an `outputs/` folder under the active workspace or another project-appropriate output directory.
 
@@ -33,6 +42,24 @@ The deck must include, unless the user asks for a different format:
 14. Closing recommendation and next steps
 
 For lightweight proposals, combine items, but do not omit the commercial logic.
+
+## HTML Deck Contract
+
+When the deck is HTML (chosen format, or the default when no PPTX backend exists):
+
+- One self-contained `.html` file (inline CSS; web fonts via CDN or system stacks) so it opens by double-click with no server.
+- Fixed 16:9 stage (1920×1080 design canvas) that scales to fit the viewport; one `<section class="slide-shell">` per slide, in document order — flow-first layout, no absolute-positioned content tables, no overlap, no reverse (see `layout-rhythm.md`).
+- Business text stays as **real selectable text**, never flattened to images. Charts are inline SVG with real data points and labels, not decorative doodles.
+- Carry the same proof objects, density rhythm, and page chrome (brand bar, page numbers, source footer) a PPTX would — an HTML deck is a full proposal, not a sketch.
+- Ship a contact-sheet PNG (`<...>-3up.png`) next to the HTML for preview/README embedding.
+
+HTML is a legitimate primary deliverable for web-presented, animated, or high-fidelity proposals — not a downgrade of PPTX.
+
+## PDF Contract
+
+- Export the PDF from the finished HTML (headless print, one page per slide, 16:9) or from the PPTX. Do not hand-layout a separate PDF that drifts from the source deck.
+- Preserve text as vector (selectable), not raster, so figures and names stay copyable.
+- The source deck (HTML or PPTX) remains the single source of truth; the PDF is a render of it.
 
 ## Presenter Script Markdown
 
@@ -85,12 +112,24 @@ If inputs are incomplete, include a section in the script:
 
 Use this list instead of stopping unless the missing item prevents even a rough proposal from being drafted.
 
+## Optional Skill Credit (opt-in, default off)
+
+By default, deliverables carry **no** skill or author credit — a client proposal must read as the client's own work. Do not insert the skill author's company, name, or links into user deliverables unless the user explicitly asks.
+
+When the user is sharing a deck publicly (portfolio, open demo, conference talk) and wants to help the skill spread, they may enable a single, removable footer line on the **closing slide only**:
+
+> *Made with the proposal-ppt skill · github.com/ChuluuMGL/proposal-ppt-skill*
+
+Rules: off by default; closing slide only; one line; fully removable; never on client-facing bid/tender decks unless the user opts in. This is the only sanctioned attribution — no watermarks, no logos, no hidden metadata.
+
 ## User-Facing Summary
 
 After finishing, report:
 
-- PPTX path
+- deck format delivered: `.pptx` / `.html` / `.pdf` — and why that format was chosen
+- deck path
 - script MD path
+- skill credit: off (default) / opt-in footer on closing slide
 - mode used: guided / auto / edit / audit / fallback
 - runtime/agent used
 - PPTX backend used, or fallback reason if unavailable

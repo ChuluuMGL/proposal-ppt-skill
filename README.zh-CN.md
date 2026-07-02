@@ -6,41 +6,44 @@
 中文 | [English](./README.md)
 
 [![Skill](https://img.shields.io/badge/AI%20Skill-proposal--ppt-0E5E43)](./SKILL.md)
-[![Version](https://img.shields.io/badge/version-0.2.1-green)](./skill.json)
+[![Version](https://img.shields.io/badge/version-0.3.0-green)](./skill.json)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](./LICENSE)
 [![QA](https://img.shields.io/badge/QA-audited%20deck-0E5E43)](./scripts/audit_proposal_pptx.py)
 [![Workflow](https://img.shields.io/badge/workflow-stage--gated-purple)](./references/workflow.md)
 
 ### Demo
 
-<table>
-<tr>
-<td width="33%">
-<a href="https://raw.githack.com/ChuluuMGL/proposal-ppt-skill/main/docs/demo/premium-boardroom-demo.html"><img src="./assets/demo/cover-premium-boardroom-v2.png" alt="premium-boardroom 提案 demo 封面" width="100%"/></a><br/>
-<b>premium-boardroom</b><br/>
-严格网格、董事会文件感、高信任 proof 页面。<br/>
-<a href="https://raw.githack.com/ChuluuMGL/proposal-ppt-skill/main/docs/demo/premium-boardroom-demo.html">打开 HTML demo</a>
-</td>
-<td width="33%">
-<a href="https://raw.githack.com/ChuluuMGL/proposal-ppt-skill/main/docs/demo/editorial-brand-demo.html"><img src="./assets/demo/editorial-brand-cover-v2.png" alt="editorial-brand 提案 demo 封面" width="100%"/></a><br/>
-<b>editorial-brand</b><br/>
-杂志式字体、编辑节奏、高端消费品气质。<br/>
-<a href="https://raw.githack.com/ChuluuMGL/proposal-ppt-skill/main/docs/demo/editorial-brand-demo.html">打开 HTML demo</a>
-</td>
-<td width="33%">
-<a href="https://raw.githack.com/ChuluuMGL/proposal-ppt-skill/main/docs/demo/tech-launch-demo.html"><img src="./assets/demo/tech-launch-page-v2.png" alt="tech-launch 提案 demo 封面" width="100%"/></a><br/>
-<b>tech-launch</b><br/>
-产品/界面 hero、发布会清晰度、KPI 与验收证明。<br/>
-<a href="https://raw.githack.com/ChuluuMGL/proposal-ppt-skill/main/docs/demo/tech-launch-demo.html">打开 HTML demo</a>
-</td>
-</tr>
-</table>
+每个风格家族 3 页样张（封面 · 赢标主张 · 预算 / 验收），点开图片可看大图：
 
-> HTML demo 已提交在 [`docs/demo/`](./docs/demo)。GitHub README 不能直接内嵌渲染仓库里的 HTML 文件，所以预览链接使用 RawGitHack。真实客户摄影已替换为概念视觉；最终 `.pptx` 保真度取决于宿主 runtime 的 presentation 后端。
+**premium-boardroom** — 严格网格、董事会文件感、高信任 proof 页面。
+![premium-boardroom · 封面 / 赢标主张 / 预算](./assets/demo/premium-boardroom-3up.png)
 
-**Proof-dense 密集页示例**
+**editorial-brand** — 杂志式字体、编辑节奏、高端消费品气质。
+![editorial-brand · 封面 / 赢标主张 / 预算](./assets/demo/editorial-brand-3up.png)
 
-<img src="./assets/demo/dense-page-v2.png" alt="密集预算 / 证据页" width="720"/>
+**tech-launch** — 产品 / 界面 hero、发布会清晰度、KPI 与验收证明。
+![tech-launch · 封面 / 赢标主张 / 预算](./assets/demo/tech-launch-3up.png)
+
+> 需要完整交互时，HTML 源文件在 [`docs/demo/`](./docs/demo)，可本地打开。真实客户摄影已替换为概念视觉；最终 `.pptx` 保真度取决于宿主 runtime 的 presentation 后端。
+
+### 风格库一览
+
+不止上面 3 个 demo。`proposal-ppt` 内置 **4 个核心模板家族**（覆盖完整提案）+ **12 个扩展风格变体**（封面 / 章节 / 表达页），客户没有 VI 时直接路由。
+
+**核心家族 · 完整 deck 覆盖**
+
+| 家族 | 适合项目 |
+|---|---|
+| `premium-boardroom` | B2B、咨询、金融、正式竞标、年度服务 |
+| `editorial-brand` | 品牌营销、时尚、美妆、高端消费、文旅 |
+| `tech-launch` | AI、SaaS、产品发布、金融科技、技术方案 |
+| `lifestyle-commerce` | FMCG、食品饮料、零售、达人内容、电商社媒 |
+
+**扩展风格变体 · 表达型页面**
+
+`fashion-beauty-editorial` · `beauty-gloss-clinical` · `japanese-minimal` · `japanese-magazine-collage` · `cinematic-photography` · `web3-ai-glass` · `pixel-retro` · `oil-salon` · `french-editorial` · `american-campaign-bold` · `craft-paper-natural` · `e-reader-mono`
+
+> 核心家族见 [`references/style-template-strategy.md`](./references/style-template-strategy.md)；扩展变体的组件变形见 [`references/style-systems.md`](./references/style-systems.md)。任一扩展风格若要铺满全 deck，必须先通过三页样张门槛（封面 / 机制 / 密集页）；只适合封面的风格会被限制在表达型页面，预算/KPI/风险页回到清晰商务结构。
 
 ### 为什么是这个 Skill，而不是又一个“把 PPT 做好看”的工具
 
@@ -90,11 +93,11 @@
 | 1. Brief 审计 | 区分已确认事实和缺失信息。 | Brief 审计 |
 | 2. 提案蓝图 | 建立赢标主张、章节结构、逐页规划和 proof object。 | 待确认蓝图 |
 | 3. 逐页文案 | 撰写页面标题、正文、图表/矩阵/样稿说明。 | 逐页内容草稿 |
-| 4. PPT 绘制 | 生成或修改 PowerPoint 文件。 | 可编辑 `.pptx` |
+| 4. Deck 绘制 | 按选定格式生成或修改提案 deck。 | `.pptx` / `.html` / `.pdf` |
 | 5. 逐字稿 | 撰写提案逻辑和逐页讲述话术。 | `.md` 逐字稿 |
 | 6. 最终 QA | 检查逻辑、证据、视觉、预算、KPI 和风险。 | 可交付文件包 |
 
-默认模式是 `guided`：Agent 会先输出提案蓝图，等待确认后再生成 PPTX。  
+默认模式是 `guided`：Agent 会先输出提案蓝图，等待确认后再生成 deck。
 如果你要求“直接生成”，它会进入 `auto` 模式，并把缺失信息标注为“待确认”。
 
 ---
@@ -125,8 +128,8 @@ python3 scripts/audit_proposal_pptx.py assets/minimal-proposal-template.pptx --t
 
 | 模式 | 适用情况 | 行为 |
 |---|---|---|
-| `guided` | 需要先确认策略和结构。 | 先输出审计和蓝图，确认后再做 PPTX。 |
-| `auto` | 需要快速得到完整初稿。 | 直接生成 PPTX 和逐字稿，假设项明确标注。 |
+| `guided` | 需要先确认策略和结构。 | 先输出审计和蓝图，确认后再做 deck。 |
+| `auto` | 需要快速得到完整初稿。 | 直接生成完整 deck（`.pptx`、`.html` 或 `.pdf`）和逐字稿，假设项明确标注。 |
 | `edit` | 已有 PPTX 需要优化。 | 保留原视觉系统，除非你要求重新设计。 |
 | `audit` | 只需要审阅或诊断。 | 输出问题、风险和修改建议，不生成新 PPT。 |
 
@@ -152,7 +155,7 @@ python3 scripts/audit_proposal_pptx.py assets/minimal-proposal-template.pptx --t
 
 ## 运行环境兼容性
 
-这个 Skill 不是独立 PPTX 渲染引擎。它提供提案策略、页面规划、视觉系统、逐字稿和 QA 闸门；最终是否能直接生成可编辑 `.pptx`，取决于宿主 Agent 是否具备 PPTX 生成/编辑后端。
+这个 Skill 不是独立 PPTX 渲染引擎。它提供提案策略、页面规划、视觉系统、逐字稿和 QA 闸门；最终是否能直接生成可编辑 `.pptx`，取决于宿主 Agent 是否具备 PPTX 生成/编辑后端。`.html` deck 是一等交付格式，适合网页展示、高保真视觉或当前 runtime 没有 PPTX 后端的情况。
 
 | 状态 | Runtime / Agent | 说明 |
 |---|---|---|
@@ -165,7 +168,7 @@ python3 scripts/audit_proposal_pptx.py assets/minimal-proposal-template.pptx --t
 
 可编辑 `.pptx` 生成需要至少一种后端：宿主 presentation skill、`python-pptx`、`pptxgenjs`、Office-compatible exporter、PowerPoint / Keynote / LibreOffice 自动化，或其他等价工具。
 
-如果当前 runtime 没有 PPTX 后端，Skill 应降级输出：提案蓝图、逐页文案、视觉规格和逐字稿，而不是假装已经生成 PowerPoint。
+如果当前 runtime 没有 PPTX 后端，Skill 应优先生成完整 `.html` 提案 deck 和逐字稿，并可按需导出 `.pdf`。只有连 HTML deck 都无法生成时，才降级为提案蓝图、逐页文案和视觉规格。
 
 ---
 
@@ -216,18 +219,20 @@ python3 scripts/audit_proposal_pptx.py assets/minimal-proposal-template.pptx --t
 | [`references/page-types.md`](./references/page-types.md) | 页型库和 proof object 标准。 |
 | [`references/layout-rhythm.md`](./references/layout-rhythm.md) | 页面密度、留白均衡和整套 PPT 节奏规则。 |
 | [`references/visual-system.md`](./references/visual-system.md) | 视觉方向、字体、版式、图表和截图规范。 |
+| [`references/visual-system-card.md`](./references/visual-system-card.md) | 正式绘制前必须输出的视觉系统卡：颜色、字体、图片、图表、模块、密度和重做规则。 |
 | [`references/palette-library.md`](./references/palette-library.md) | 无客户 VI 时使用的高级默认配色预设。 |
 | [`references/style-template-strategy.md`](./references/style-template-strategy.md) | 4 个公开风格模板家族、Style DNA 合约和三页样张门槛。 |
 | [`references/style-systems.md`](./references/style-systems.md) | Swiss、发布会极简、时尚美妆、日式极简、拼贴、摄影叙事、Web3/AI glass、像素、油画等二级组件变形参考。 |
+| [`references/frontend-slides-audit.md`](./references/frontend-slides-audit.md) | 借鉴自 `frontend-slides` 项目的方法：视觉发现、固定 16:9 画布、密度模式。 |
 | [`references/asset-pipeline.md`](./references/asset-pipeline.md) | 用户素材、AI 生成图、HTML/SVG 背景和图片 QA 规则。 |
 | [`references/font-system.md`](./references/font-system.md) | 免费可商用字体搭配和 fallback。 |
 | [`references/output-contract.md`](./references/output-contract.md) | PPTX 和逐字稿的输出格式要求。 |
 | [`references/runtime-compatibility.md`](./references/runtime-compatibility.md) | Agent 兼容性、PPTX 后端要求和降级路径。 |
 | [`references/quality-check.md`](./references/quality-check.md) | 交付前 QA 清单和常见失败模式。 |
-| [`references/frontend-slides-audit.md`](./references/frontend-slides-audit.md) | 借鉴自 `frontend-slides` 项目的做法（视觉发现、固定 16:9 画布、密度模式）。 |
 | [`scripts/audit_proposal_pptx.py`](./scripts/audit_proposal_pptx.py) | 客观交付质检 —— 校验 pptx、页数、占位符泄漏和逐字稿对齐。 |
 | [`assets/minimal-proposal-template.pptx`](./assets/minimal-proposal-template.pptx) | 中性 fallback PowerPoint 模板。 |
 | [`assets/demo/`](./assets/demo) | 三套风格家族的渲染概念图（见顶部 Demo）。 |
+| [`templates/style-specs/`](./templates/style-specs/) | 核心模板家族的颜色、字体、图片、图表、表格、模块和重做规则。 |
 | [`agents/openai.yaml`](./agents/openai.yaml) | Codex / OpenAI 风格 Skill 界面元数据。 |
 | [`skill.json`](./skill.json) | 供 Skill 目录、市场和其他 Agent 读取的机器可读元数据。 |
 
@@ -285,18 +290,18 @@ brief:
 ...
 ```
 
-### 直接生成 PPTX 和逐字稿
+### 直接生成 deck 和逐字稿
 
 ```text
 用 $proposal-ppt 直接根据下面 brief 产出：
-1. 可编辑 PowerPoint 文件
+1. 最适合当前 runtime 的提案 deck（有 PPTX 后端则 `.pptx`，否则 `.html`）
 2. 同名 Markdown 逐字稿
 
 要求：
 - 自动判断提案类型和页数
 - 缺失信息标注为待确认
 - 不编造数据、案例、报价和效果
-- 没有客户 VI 时使用 fallback 商务模板
+- 没有客户 VI 时先输出视觉系统卡，再绘制页面
 - 输出到当前项目 outputs 文件夹
 
 brief:
@@ -359,7 +364,7 @@ brief:
 A：这是 AI Skill。内置 PPTX 只是中性 fallback 模板，核心价值是提案工作流、页型规划、proof object 逻辑和逐字稿结构。
 
 **Q：它会自动生成 PPTX 吗？**  
-A：可以，但需要在支持创建或编辑 PowerPoint 的 Agent 环境中使用，例如宿主 presentation tool、`python-pptx`、`pptxgenjs`、Office-compatible exporter 或 PowerPoint / Keynote / LibreOffice 自动化。没有 PPTX 后端时，应降级为蓝图、逐页文案和逐字稿。
+A：可以，但需要在支持创建或编辑 PowerPoint 的 Agent 环境中使用，例如宿主 presentation tool、`python-pptx`、`pptxgenjs`、Office-compatible exporter 或 PowerPoint / Keynote / LibreOffice 自动化。没有 PPTX 后端时，应优先输出完整 HTML deck，而不是假装已经生成 PowerPoint。
 
 **Q：需要 MCP 服务器吗？**  
 A：不需要。这是本地 Skill 包，不是 MCP Server。
@@ -388,42 +393,6 @@ A：可以，只要对应 Agent 支持 Skill 文件夹，或能读取 `SKILL.md`
 | License | MIT |
 | 作者 | by Chuluu |
 
-## 目录结构
-
-```text
-proposal-ppt-skill/
-├── SKILL.md
-├── README.md
-├── README.zh-CN.md
-├── LICENSE
-├── skill.json
-├── agents/
-│   └── openai.yaml
-├── assets/
-│   ├── demo/                          # 渲染概念图
-│   └── minimal-proposal-template.pptx
-├── scripts/
-│   └── audit_proposal_pptx.py         # 客观交付质检
-├── .github/
-│   ├── ISSUE_TEMPLATE/
-│   └── CONTRIBUTING.md
-└── references/
-    ├── asset-pipeline.md
-    ├── font-system.md
-    ├── frontend-slides-audit.md
-    ├── output-contract.md
-    ├── page-types.md
-    ├── layout-rhythm.md
-    ├── palette-library.md
-    ├── proposal-routes.md
-    ├── quality-check.md
-    ├── runtime-compatibility.md
-    ├── style-template-strategy.md
-    ├── style-systems.md
-    ├── visual-system.md
-    └── workflow.md
-```
-
 ## 相关 Skill
 
 - [business-website-skill](https://github.com/ChuluuMGL/business-website-skill) —— 姊妹 Skill，做长期存在的营销官网。它的 Phase 1 证据地图和视觉系统可以复用到这里，同一批客户资料既能做提案 deck、又能做官网，不用重复收集。
@@ -440,7 +409,7 @@ MIT
   "@type": "SoftwareApplication",
   "name": "proposal-ppt-skill",
   "alternateName": "商业提案 PPT Skill",
-  "description": "开源 AI Agent Skill，用于根据 brief、调研、预算、案例和执行计划生成阶段化商业提案 PowerPoint 文件与逐字稿。",
+  "description": "开源 AI Agent Skill，用于根据 brief、调研、预算、案例和执行计划生成阶段化商业提案 deck、视觉系统卡与逐字稿。",
   "url": "https://github.com/ChuluuMGL/proposal-ppt-skill",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Any",
@@ -455,5 +424,5 @@ MIT
     "name": "Chuluu",
     "url": "https://github.com/ChuluuMGL"
   },
-  "softwareVersion": "0.2.1"
+  "softwareVersion": "0.3.0"
 } -->

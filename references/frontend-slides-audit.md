@@ -8,29 +8,23 @@ Source:
 
 ## Judgment
 
-`frontend-slides` is useful for improving proposal-ppt page design workflow, especially for HTML-based style demos. Its value is not a ready-made commercial proposal template. The useful part is the visual production method:
+`frontend-slides` is useful for improving proposal-ppt workflow because it treats slide generation as a staged visual-production system, not a one-shot prompt. Its value here is the method, not the exact layouts.
 
-1. show visual directions before building the full deck,
-2. author slides on a fixed 16:9 stage,
-3. use compact metadata before loading a large template library,
-4. reject generic AI-looking slides,
-5. separate low-density speaker-led pages from dense reading-first pages.
-
-Proposal-ppt should borrow the method, not copy the demo layouts, screenshots, copy, or protected visual compositions.
+Proposal-ppt should borrow the production discipline and adapt it to commercial proposal logic: winning thesis, proof objects, budget boundaries, risk control, and presenter script stay above visual novelty.
 
 ## Transferable Practices
 
-### Visual Discovery
+### Visual Discovery Before Production
 
-When no client VI, approved reference, or chosen template family exists, create 2-3 visual directions or a three-page sample set before scaling to a full deck. The samples must look like real proposal pages, not diagnostic cards.
+When no client VI, approved reference, or chosen template family exists, create visual directions or a three-page sample set before scaling to a full deck. The samples must look like real proposal pages, not diagnostic cards.
 
-### Fixed Stage
+### Fixed 16:9 Stage
 
 For HTML demos, author each slide on a fixed 16:9 canvas, preferably `1920x1080`, and scale the whole stage in the browser. Do not let the slide composition reflow by viewport width.
 
 ### Progressive Template Loading
 
-If a template library is available, shortlist using compact metadata first. Load full design rules only after a family is selected.
+If a template library is available, shortlist using compact metadata first. Load full style rules only after a family is selected.
 
 ### Anti-Generic Design
 
@@ -48,10 +42,12 @@ Use breathing pages for live-pitch emphasis and proof-dense pages for tender, bu
 - Do not bulk-import all template styles before they pass proposal-specific sample gates.
 - Do not copy screenshots, exact compositions, demo wording, or protected images.
 
-## Integration In Proposal-ppt
+## Integration In proposal-ppt
 
 Use this source as support for:
 
+- `workflow.md` Stage 2.5 Template Selection Gate,
+- `visual-system-card.md` Visual System Card Gate,
 - `style-template-strategy.md` Visual Discovery Gate,
 - `runtime-compatibility.md` HTML Demo Stage Contract,
 - `quality-check.md` HTML Demo Visual QA Gate.

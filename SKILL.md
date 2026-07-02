@@ -7,9 +7,9 @@ description: Create, write, design, edit, or audit commercial proposal presentat
 
 > **Core value: the winning thesis and proof logic — *why this proposal should win*. Premium design is the gate that gets the deck read, not the reason it wins. Optimize for the argument first; treat visual quality as a pass/fail gate, not the goal.**
 
-Use this skill to turn client briefs, tender files, research, brand materials, budgets, cases, and execution plans into a commercial proposal package. When the runtime has PPTX support, the package includes:
+Use this skill to turn client briefs, tender files, research, brand materials, budgets, cases, and execution plans into a commercial proposal package:
 
-- an editable `.pptx`
+- a deck in the chosen format — `.pptx` (editable), `.html` (web / high-fidelity, works in any runtime), or `.pdf` (email / print)
 - a same-name presenter script `.md`
 - a missing-information list when inputs are incomplete
 
@@ -17,12 +17,12 @@ The goal is not to decorate information. The goal is to help the client decide w
 
 ## Required Output
 
-When creating a proposal in a runtime with PPTX support, produce both deliverables unless the user explicitly asks for only one:
+When creating a proposal, produce both deliverables unless the user explicitly asks for only one:
 
-1. `*.pptx` with the full proposal deck.
+1. The **deck** — `.pptx`, `.html`, or `.pdf` per the output-format routing in `references/workflow.md` (Stage 0). `.html` is a complete first-class deck and the default when no PPTX backend exists — not a fallback sketch.
 2. `*.md` with presenter script. Include presentation logic, slide-by-slide talking points, transition notes, and exact speaker script. Do not put long oral explanation into slide bodies.
 
-If PPTX support is unavailable, downgrade using `references/runtime-compatibility.md` and state the limitation clearly.
+If the requested format cannot be produced, say so and agree an alternative with the user — do not silently swap formats. See `references/output-contract.md` and `references/runtime-compatibility.md`.
 
 If information is missing, continue with a working draft and mark unknowns as `待补充`, `待确认`, `暂无公开数据`, or `需客户确认`. Do not invent data, results, awards, client cases, pricing, permissions, or platform rules.
 
@@ -35,9 +35,10 @@ Load only the references needed for the current task:
 - For page planning and proof objects, read `references/page-types.md`.
 - For slide rhythm, whitespace balance, layout density, and page-to-page pacing, read `references/layout-rhythm.md`.
 - For visual direction, palette, typography, and PPT template use, read `references/visual-system.md`.
+- For the required pre-build visual decision card, read `references/visual-system-card.md`.
 - For default high-taste palette presets when no client VI is provided, read `references/palette-library.md`.
 - For reusable public style-template families, style DNA contracts, and three-page sample gates, read `references/style-template-strategy.md`.
-- For the flow-based HTML template engine and per-family theme CSS used to build reliable slide demos, read `templates/README.md` and use `templates/engine.css` plus a family theme.
+- For the flow-based HTML template engine, per-family theme CSS, and reusable style specs, read `templates/README.md`, `templates/style-specs/README.md`, and the selected family spec.
 - For style-rich proposal routes and component-level style transformations, read `references/style-systems.md`.
 - For AI-generated images, user assets, HTML/SVG-to-PPT hybrid backgrounds, and visual asset QA, read `references/asset-pipeline.md`.
 - For free/commercial-safe font pairing and fallbacks, read `references/font-system.md`.
@@ -70,7 +71,7 @@ At the start of a PPTX creation task, identify the available backend:
 - image-generation backend, if needed
 - fallback mode if the backend is missing
 
-If the runtime cannot create an editable `.pptx`, downgrade honestly to `blueprint-only`, `copy-and-script`, `template-spec`, or `html-demo` mode from `references/runtime-compatibility.md`. Do not claim a PowerPoint deck was delivered when only markdown, HTML, images, or a PDF exists.
+If the runtime cannot create an editable `.pptx`, default the deck to `.html` (a complete proposal) and offer `.pdf` export — these are first-class deliverables, not downgrades. Reserve `blueprint-only`, `copy-and-script`, `template-spec` for when even an HTML deck cannot be produced. The one thing you must never do is relabel an HTML, PDF, or markdown file as a finished `.pptx`.
 
 ## Workflow
 
@@ -98,31 +99,37 @@ Follow `references/workflow.md` for the full stage-gate process. The high-level 
    - When no client VI, reference deck, or approved strong-style direction exists, run the Template Selection Gate from `references/workflow.md` (Stage 2.5): show the four public families ranked by fit, recommend one tied to the winning thesis, and let the user confirm — or show the three-page sample of the recommended family before scaling.
    - This is an explicit, user-visible decision point. Do not skip silently into slide copy on an unconfirmed family in guided mode.
 
-6. **Create the page plan before authoring slides**
+6. **Lock the visual system card before authoring slides**
+   - Use `references/visual-system-card.md` plus the selected `templates/style-specs/*.md`.
+   - Define color roles, font ladder, image rules, chart/table rules, module grammar, density rhythm, and reject rules before drawing.
+   - If client VI exists, translate it into roles; if no VI exists, choose a palette/template family and record the assumption.
+
+7. **Create the page plan before authoring slides**
    - For every slide, specify: slide title, page purpose, key message, proof object, visual form, required source, and presenter-script intent.
    - Each slide must answer one commercial question.
    - Each slide title should be a conclusion sentence, not a vague noun.
 
-7. **Write slide copy**
+8. **Write slide copy**
    - Slides contain judgment, structure, proof, and key examples only.
    - Speaker notes / script contain oral reasoning and transitions.
    - Keep bullets short and action-oriented.
    - Remove internal wording such as `赢标逻辑`, `客户透露`, `内部判断`, `释标会之后`, unless the user explicitly wants an internal working draft.
 
-8. **Build or edit the PPTX**
+9. **Build or edit the deck**
    - If the user provides a template/reference deck, follow it as the visual source.
    - If the client has VI, use client brand colors and typography first.
    - If no visual source exists, use `references/visual-system.md` and the minimal template as fallback.
    - If a rich style is requested or no client VI exists, run the Style DNA Gate in `references/style-template-strategy.md` before building the deck.
+   - Do not start drawing until the visual system card has concrete color, typography, asset, chart, module, and reject rules.
    - Use `references/style-systems.md` for component-level style transformations after the route is chosen.
    - If a rich style has no approved reference deck, create or recommend the three-page style sample set before scaling: cover/big idea, proof/mechanism, and dense business page.
    - When creating a PowerPoint deck, use the active runtime's PPTX backend and follow `references/runtime-compatibility.md`, including render/overlap QA where available.
 
-9. **Write the presenter script**
+10. **Write the presenter script**
    - The `.md` must be usable by a presenter, not just a slide outline.
    - For each slide, include slide objective, why it appears here, exact talk track, transition sentence, and notes about numbers or claims that need confirmation.
 
-10. **Run final QA**
+11. **Run final QA**
    - Use `references/quality-check.md`.
    - Verify story continuity, slide-title quality, proof objects, source labels, visual alignment, text size, budget boundaries, KPI logic, and risk controls.
    - When a `.pptx` was produced, run `scripts/audit_proposal_pptx.py <deck.pptx> --script <script.md>` and resolve any errors before claiming delivery.
@@ -143,7 +150,8 @@ Follow `references/workflow.md` for the full stage-gate process. The high-level 
 - Do not publish or reuse a style-rich template/demo unless full-size slides have been visually reviewed, not only contact-sheet checked.
 - Do not scale a new visual style to a full deck before the cover/big-idea, strategy/mechanism, and proof-dense sample pages pass full-size review.
 - Do not present AI-generated visuals as real client proof. Mark them as conceptual when relevant.
-- Do not insert the skill author's company information into user decks unless the user explicitly asks to present under that company identity.
+- Do not insert the skill author's company information into user decks. The only sanctioned attribution is the opt-in, default-off, closing-slide-only credit line defined in `references/output-contract.md` — and only when the user explicitly enables it for public sharing.
+- Do not silently substitute deck formats. Deliver the format the user asked for; if only HTML/PDF is possible when PPTX was requested, say so and let the user choose. Never relabel an HTML, PDF, or markdown file as a finished `.pptx`.
 - Do not hide runtime limitations. If the current agent cannot generate, render, or open PPTX files, say so and deliver the best fallback package instead.
 - Do not claim a deck passed QA when a `.pptx` exists without running `scripts/audit_proposal_pptx.py`. Resolve reported errors (invalid package, placeholder leakage, missing notes, slide/script mismatch) before declaring delivery.
 - Do not declare a visual page or style demo "done" by self-judgment alone. Agents cannot reliably verify rendered line-wrapping, optical overlap, or aesthetic balance. For any HTML style demo, run `scripts/audit_html_demo.mjs` to catch element overlap and boundary overflow; for any `.pptx`, run `scripts/audit_proposal_pptx.py` to catch text-box overflow and shape overlap. Then require a human visual review before treating the page as finished. An undetected ragged wrap or two overlapping text boxes read as a broken deck to a non-technical viewer and count as a delivery defect, not a cosmetic note.

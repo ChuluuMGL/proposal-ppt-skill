@@ -6,41 +6,44 @@
 [Simplified Chinese](./README.zh-CN.md) | English
 
 [![Skill](https://img.shields.io/badge/AI%20Skill-proposal--ppt-0E5E43)](./SKILL.md)
-[![Version](https://img.shields.io/badge/version-0.2.1-green)](./skill.json)
+[![Version](https://img.shields.io/badge/version-0.3.0-green)](./skill.json)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](./LICENSE)
 [![QA](https://img.shields.io/badge/QA-audited%20deck-0E5E43)](./scripts/audit_proposal_pptx.py)
 [![Workflow](https://img.shields.io/badge/workflow-stage--gated-purple)](./references/workflow.md)
 
 ### Demo
 
-<table>
-<tr>
-<td width="33%">
-<a href="https://raw.githack.com/ChuluuMGL/proposal-ppt-skill/main/docs/demo/premium-boardroom-demo.html"><img src="./assets/demo/cover-premium-boardroom-v2.png" alt="premium-boardroom proposal demo cover" width="100%"/></a><br/>
-<b>premium-boardroom</b><br/>
-Strict grid, board-document clarity, high-trust proof pages.<br/>
-<a href="https://raw.githack.com/ChuluuMGL/proposal-ppt-skill/main/docs/demo/premium-boardroom-demo.html">Open HTML demo</a>
-</td>
-<td width="33%">
-<a href="https://raw.githack.com/ChuluuMGL/proposal-ppt-skill/main/docs/demo/editorial-brand-demo.html"><img src="./assets/demo/editorial-brand-cover-v2.png" alt="editorial-brand proposal demo cover" width="100%"/></a><br/>
-<b>editorial-brand</b><br/>
-Magazine-like typography, editorial rhythm, premium consumer tone.<br/>
-<a href="https://raw.githack.com/ChuluuMGL/proposal-ppt-skill/main/docs/demo/editorial-brand-demo.html">Open HTML demo</a>
-</td>
-<td width="33%">
-<a href="https://raw.githack.com/ChuluuMGL/proposal-ppt-skill/main/docs/demo/tech-launch-demo.html"><img src="./assets/demo/tech-launch-page-v2.png" alt="tech-launch proposal demo cover" width="100%"/></a><br/>
-<b>tech-launch</b><br/>
-Product/interface hero, launch clarity, KPI and acceptance proof.<br/>
-<a href="https://raw.githack.com/ChuluuMGL/proposal-ppt-skill/main/docs/demo/tech-launch-demo.html">Open HTML demo</a>
-</td>
-</tr>
-</table>
+Three sample pages per style family (cover · winning thesis · budget / acceptance). Click an image to view it full-size:
 
-> The HTML demos are committed under [`docs/demo/`](./docs/demo). GitHub does not render repository HTML files directly inside README, so the preview links use RawGitHack. Real client photography is replaced with conceptual visuals; final `.pptx` fidelity depends on the host runtime's presentation backend.
+**premium-boardroom** — Strict grid, board-document clarity, high-trust proof pages.
+![premium-boardroom · cover / thesis / budget](./assets/demo/premium-boardroom-3up.png)
 
-**Proof-dense page example**
+**editorial-brand** — Magazine-like typography, editorial rhythm, premium consumer tone.
+![editorial-brand · cover / thesis / budget](./assets/demo/editorial-brand-3up.png)
 
-<img src="./assets/demo/dense-page-v2.png" alt="Dense budget / proof page" width="720"/>
+**tech-launch** — Product/interface hero, launch clarity, KPI and acceptance proof.
+![tech-launch · cover / thesis / budget](./assets/demo/tech-launch-3up.png)
+
+> The HTML sources live under [`docs/demo/`](./docs/demo) — open them locally for full interactivity. Real client photography is replaced with conceptual visuals; final `.pptx` fidelity depends on the host runtime's presentation backend.
+
+### Style library at a glance
+
+More than the three demos above. `proposal-ppt` ships **4 core template families** (full-deck coverage) + **12 extended style variants** (cover / section / expressive pages), auto-routed when the client has no VI.
+
+**Core families · full-deck coverage**
+
+| Family | Suited for |
+|---|---|
+| `premium-boardroom` | B2B, consulting, finance, formal tenders, annual retainers |
+| `editorial-brand` | Brand marketing, fashion, beauty, premium consumer, travel |
+| `tech-launch` | AI, SaaS, product launches, fintech, technical solutions |
+| `lifestyle-commerce` | FMCG, food & beverage, retail, creator content, e-commerce social |
+
+**Extended variants · expressive pages**
+
+`fashion-beauty-editorial` · `beauty-gloss-clinical` · `japanese-minimal` · `japanese-magazine-collage` · `cinematic-photography` · `web3-ai-glass` · `pixel-retro` · `oil-salon` · `french-editorial` · `american-campaign-bold` · `craft-paper-natural` · `e-reader-mono`
+
+> Core families live in [`references/style-template-strategy.md`](./references/style-template-strategy.md); component-level variants in [`references/style-systems.md`](./references/style-systems.md). Any extended style must pass the three-page sample gate (cover / mechanism / dense page) before scaling to a full deck; styles that only suit covers are restricted to expressive pages, while budget / KPI / risk pages fall back to clean business structure.
 
 ### Why this skill, not another "pretty slides" tool
 
@@ -90,11 +93,11 @@ This skill uses a stage-gated workflow inspired by professional proposal product
 | 1. Brief intake | Separate confirmed facts from missing information. | Brief audit |
 | 2. Proposal blueprint | Build the winning thesis, chapter flow, page plan, and proof objects. | Blueprint for approval |
 | 3. Slide copy | Write concise slide copy and proof-object content. | Slide-level copy draft |
-| 4. PPT build | Create or edit the PowerPoint deck. | Editable `.pptx` |
+| 4. Deck build | Create or edit the deck in the chosen format. | `.pptx` / `.html` / `.pdf` |
 | 5. Presenter script | Write the proposal logic and slide-by-slide talk track. | `.md` script |
 | 6. Final QA | Check logic, evidence, visual layout, budget, KPI, and risk. | Delivery-ready package |
 
-Default mode is `guided`: the agent stops after the blueprint and waits for confirmation before building the PPTX. If you ask it to proceed directly, it uses `auto` mode and marks missing information as "to be confirmed."
+Default mode is `guided`: the agent stops after the blueprint and waits for confirmation before building the deck. If you ask it to proceed directly, it uses `auto` mode and marks missing information as "to be confirmed."
 
 ---
 
@@ -125,7 +128,7 @@ Pure standard library (`zipfile` + `xml`); `python-pptx` is optional and unlocks
 | Mode | When to Use | Behavior |
 |---|---|---|
 | `guided` | You want to review the strategy before slides are built. | Produces the audit and blueprint first, then waits for confirmation. |
-| `auto` | You need a complete first draft quickly. | Builds the full PPTX and script with assumptions clearly marked. |
+| `auto` | You need a complete first draft quickly. | Builds the full deck (`.pptx`, `.html`, or `.pdf`) and script with assumptions clearly marked. |
 | `edit` | You already have a PPTX. | Preserves the deck's visual system unless you ask for a redesign. |
 | `audit` | You only want review feedback. | Reviews the deck and returns findings, risks, and revision suggestions. |
 
@@ -151,7 +154,7 @@ Included style systems include `fashion-beauty-editorial`, `beauty-gloss-clinica
 
 ## Runtime Compatibility
 
-This skill is not a standalone PPTX rendering engine. It provides proposal strategy, page planning, visual systems, presenter scripts, and QA gates. Direct editable `.pptx` generation depends on the host agent's presentation backend.
+This skill is not a standalone PPTX rendering engine. It provides proposal strategy, page planning, visual systems, presenter scripts, and QA gates. Direct editable `.pptx` generation depends on the host agent's presentation backend; `.html` decks are first-class deliverables when web/high-fidelity output is preferred or no PPTX backend is available.
 
 | Status | Runtime / Agent | Notes |
 |---|---|---|
@@ -164,7 +167,7 @@ See [`references/runtime-compatibility.md`](./references/runtime-compatibility.m
 
 Editable `.pptx` generation requires at least one backend: host presentation skill/tooling, `python-pptx`, `pptxgenjs`, an Office-compatible exporter, PowerPoint / Keynote / LibreOffice automation, or an equivalent runtime-specific tool.
 
-If the current runtime has no PPTX backend, the skill should downgrade to a proposal blueprint, slide-by-slide copy, visual specification, and presenter script instead of pretending a PowerPoint file was created.
+If the current runtime has no PPTX backend, the skill should create a complete `.html` proposal deck and presenter script when possible, then offer `.pdf` export. It should only fall back to blueprint / slide copy / visual specification when even an HTML deck cannot be produced.
 
 ---
 
@@ -215,18 +218,20 @@ See [`references/style-template-strategy.md`](./references/style-template-strate
 | [`references/page-types.md`](./references/page-types.md) | Page-type library and proof-object standards. |
 | [`references/layout-rhythm.md`](./references/layout-rhythm.md) | Slide density, whitespace balance, and deck pacing rules. |
 | [`references/visual-system.md`](./references/visual-system.md) | Visual families, typography, layout, chart, and screenshot rules. |
+| [`references/visual-system-card.md`](./references/visual-system-card.md) | Required pre-build visual decision card: colors, fonts, images, charts, modules, density, rejects. |
 | [`references/palette-library.md`](./references/palette-library.md) | Default high-taste palette presets when no client visual identity exists. |
 | [`references/style-template-strategy.md`](./references/style-template-strategy.md) | Four public style-template families, Style DNA contract, and three-page sample gate. |
 | [`references/style-systems.md`](./references/style-systems.md) | Secondary component transformations such as Swiss, launch minimal, beauty editorial, Japanese minimal, collage, cinematic, Web3/AI glass, pixel, and oil. |
+| [`references/frontend-slides-audit.md`](./references/frontend-slides-audit.md) | Practices borrowed from the `frontend-slides` project: visual discovery, fixed 16:9 stage, density modes. |
 | [`references/asset-pipeline.md`](./references/asset-pipeline.md) | User assets, AI-generated visuals, HTML/SVG backgrounds, and image QA rules. |
 | [`references/font-system.md`](./references/font-system.md) | Free/commercial-safe font pairings and fallbacks. |
 | [`references/output-contract.md`](./references/output-contract.md) | Required PPTX and presenter-script output format. |
 | [`references/runtime-compatibility.md`](./references/runtime-compatibility.md) | Agent compatibility, PPTX backend requirements, and fallback modes. |
 | [`references/quality-check.md`](./references/quality-check.md) | Final QA checklist and common failure modes. |
-| [`references/frontend-slides-audit.md`](./references/frontend-slides-audit.md) | Practices borrowed from the `frontend-slides` project (visual discovery, fixed 16:9 stage, density modes). |
 | [`scripts/audit_proposal_pptx.py`](./scripts/audit_proposal_pptx.py) | Objective delivery QA — validates the pptx, slide count, placeholder leakage, and script alignment. |
 | [`assets/minimal-proposal-template.pptx`](./assets/minimal-proposal-template.pptx) | Neutral fallback PowerPoint template. |
 | [`assets/demo/`](./assets/demo) | Rendered concept-demo images of the three style families (shown at the top). |
+| [`templates/style-specs/`](./templates/style-specs/) | Reusable color, font, image, chart, table, module, and reject-rule contracts for core families. |
 | [`agents/openai.yaml`](./agents/openai.yaml) | Codex/OpenAI-style skill UI metadata. |
 | [`skill.json`](./skill.json) | Machine-readable metadata for directories and marketplaces. |
 
@@ -284,18 +289,18 @@ Brief:
 ...
 ```
 
-### Direct PPTX and Presenter Script
+### Direct Deck and Presenter Script
 
 ```text
 Use $proposal-ppt to directly generate:
-1. an editable PowerPoint deck
+1. a proposal deck in the best available format (.pptx if editable PPTX backend exists; otherwise .html)
 2. a same-name presenter script in Markdown
 
 Requirements:
 - infer the proposal route and slide count
 - mark missing information as to be confirmed
 - do not invent data, cases, pricing, or performance results
-- use the fallback business template if no client visual identity is available
+- output a visual system card before drawing if no client visual identity is available
 - save outputs to the current project's outputs folder
 
 Brief:
@@ -358,7 +363,7 @@ File:
 It is an AI skill. The included PPTX is only a neutral fallback template. The main value is the workflow, page planning, proof-object logic, and presenter-script structure.
 
 **Does it create the PPTX automatically?**  
-Yes, when used inside an agent that can create or edit PowerPoint files, such as a host presentation tool, `python-pptx`, `pptxgenjs`, an Office-compatible exporter, or PowerPoint / Keynote / LibreOffice automation. Without a PPTX backend, it should downgrade to blueprint, slide copy, visual specification, and presenter script.
+Yes, when used inside an agent that can create or edit PowerPoint files, such as a host presentation tool, `python-pptx`, `pptxgenjs`, an Office-compatible exporter, or PowerPoint / Keynote / LibreOffice automation. Without a PPTX backend, it should produce a complete HTML deck when possible, plus the same presenter script.
 
 **Does it require an MCP server?**  
 No. This is a local skill package, not an MCP server.
@@ -387,42 +392,6 @@ Yes, if they support skill folders or can read `SKILL.md`-style packages. Instal
 | License | MIT |
 | Author | by Chuluu |
 
-## Directory Structure
-
-```text
-proposal-ppt-skill/
-├── SKILL.md
-├── README.md
-├── README.zh-CN.md
-├── LICENSE
-├── skill.json
-├── agents/
-│   └── openai.yaml
-├── assets/
-│   ├── demo/                          # rendered concept-demo images
-│   └── minimal-proposal-template.pptx
-├── scripts/
-│   └── audit_proposal_pptx.py         # objective delivery QA
-├── .github/
-│   ├── ISSUE_TEMPLATE/
-│   └── CONTRIBUTING.md
-└── references/
-    ├── asset-pipeline.md
-    ├── font-system.md
-    ├── frontend-slides-audit.md
-    ├── output-contract.md
-    ├── page-types.md
-    ├── layout-rhythm.md
-    ├── palette-library.md
-    ├── proposal-routes.md
-    ├── quality-check.md
-    ├── runtime-compatibility.md
-    ├── style-template-strategy.md
-    ├── style-systems.md
-    ├── visual-system.md
-    └── workflow.md
-```
-
 ## Related Skills
 
 - [business-website-skill](https://github.com/ChuluuMGL/business-website-skill) — the sibling skill for long-lived marketing websites. Its Phase 1 evidence map and visual system can be reused here, so the same client materials feed both a proposal deck and a website without being collected twice.
@@ -439,7 +408,7 @@ MIT
   "@type": "SoftwareApplication",
   "name": "proposal-ppt-skill",
   "alternateName": "Business Proposal Presentation Skill",
-  "description": "Open-source AI agent skill for creating stage-gated business proposal PowerPoint decks and presenter scripts from briefs, research, budgets, cases, and execution plans.",
+  "description": "Open-source AI agent skill for creating stage-gated business proposal decks, visual system cards, and presenter scripts from briefs, research, budgets, cases, and execution plans.",
   "url": "https://github.com/ChuluuMGL/proposal-ppt-skill",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Any",
@@ -454,5 +423,5 @@ MIT
     "name": "Chuluu",
     "url": "https://github.com/ChuluuMGL"
   },
-  "softwareVersion": "0.2.1"
+  "softwareVersion": "0.3.0"
 } -->

@@ -20,6 +20,7 @@ absolute coordinates drift and overlap; flex gutters do not.
 | `editorial-brand.theme.css` | *(planned)* Image/typography-led magazine layouts for brand, fashion, beauty. |
 | `tech-launch.theme.css` | *(planned)* Keynote focus, product/interface heroes, controlled radius. |
 | `lifestyle-commerce.theme.css` | *(planned)* Product scenes, catalog proof walls, commerce clarity. |
+| `style-specs/` | Reusable color, typography, image, chart, module, density, and reject-rule contracts for each core family. |
 
 ## Using a template
 
@@ -48,3 +49,9 @@ node scripts/audit_html_demo.mjs path/to/demo.html --render out/
 
 This catches element overlap and boundary overflow that boundary checks and
 agent self-review miss. Aesthetic balance still needs a human eye.
+
+## Style Specs
+
+Before using a family in a real deck, load the matching file under
+`style-specs/` and convert it into the project-specific visual system card from
+`references/visual-system-card.md`.

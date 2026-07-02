@@ -52,7 +52,7 @@ When a strong style is requested and no approved reference deck exists, the visu
 
 Default deliverables:
 
-- editable `.pptx`
+- deck in the chosen output format (`.pptx` / `.html` / `.pdf` — see Output Format below)
 - presenter script `.md`
 - missing-information section inside the `.md`
 
@@ -61,8 +61,23 @@ Optional deliverables:
 - outline-only blueprint
 - page-by-page copy deck plan
 - budget table appendix
-- speaker notes embedded in PPTX
+- speaker notes embedded in PPTX (or hidden notes in HTML)
 - bilingual version
+- contact-sheet PNG (recommended for HTML decks)
+
+### Output Format
+
+Route the deck format by use case and runtime capability — a first-class decision, not an afterthought:
+
+| Asked for / situation | Deliver |
+|---|---|
+| Editable, corporate template, client will hand-edit | `.pptx` (needs a PPTX backend) |
+| Web present, embed, animate, or highest fidelity | `.html` |
+| Email / print / procurement submission | `.pdf` (rendered from HTML or PPTX) |
+| No PPTX backend available | `.html` as the default deck (still a complete proposal), `.pdf` on demand — do not silently downgrade to blueprint-only |
+| User wants several | build the HTML deck first, then export PDF and/or PPTX from the same source |
+
+Default when unspecified + PPTX backend exists: `.pptx`. Default when unspecified + no PPTX backend: `.html`. Confirm the format in the Stage 0 summary whenever it could affect the client (e.g. a tender that mandates native PPTX).
 
 ### Runtime Capability Check
 
@@ -75,7 +90,7 @@ Image-generation backend:
 Fallback mode if PPTX backend is unavailable:
 ```
 
-If no PPTX backend is available, do not enter full PPT build mode. Use `blueprint-only`, `copy-and-script`, `template-spec`, or `html-demo` fallback and state the limitation clearly.
+If no PPTX backend is available, default the **deck** to `.html` (a complete proposal, not a sketch) and offer `.pdf` export. Reserve `blueprint-only`, `copy-and-script`, `template-spec` fallbacks for when even an HTML deck cannot be produced, and state the limitation clearly.
 
 ## Stage 0 Output
 
@@ -88,6 +103,7 @@ If the user has not already specified routing, output a compact startup summary:
 - 提案类型：
 - 页数深度：
 - 视觉来源：
+- 输出格式：pptx / html / pdf
 - PPTX 后端：
 - 预览/渲染能力：
 - 必须包含：
@@ -150,7 +166,7 @@ Required output:
 
 ### 5. 视觉系统建议
 
-若使用强风格路线，必须包含：
+必须按 `visual-system-card.md` 完成视觉系统卡。若使用强风格路线，还必须包含：
 
 - 模板家族：
 - 商业适配理由：
@@ -174,7 +190,7 @@ Required output:
 ### 8. 需要确认的问题
 ```
 
-Gate: in guided mode, stop here and ask the user to confirm the blueprint before building PPTX. If a rich style is requested, no client VI exists, or a reusable public template is being created, use `style-template-strategy.md` and create/specify the three-page sample gate before scaling to the full deck. In auto mode, proceed, but still apply the Style DNA Contract and record visual assumptions in the script.
+Gate: in guided mode, stop here and ask the user to confirm the blueprint before building the deck. If a rich style is requested, no client VI exists, or a reusable public template is being created, use `style-template-strategy.md`, `visual-system-card.md`, and the selected `templates/style-specs/*.md`; create/specify the three-page sample gate before scaling to the full deck. In auto mode, proceed, but still apply the Visual System Card and Style DNA Contract and record visual assumptions in the script.
 
 For strong visual routes, the preferred sample set is exactly:
 
@@ -222,6 +238,56 @@ Gate rules:
 - For a public skill demo or a style-rich request, the three-page sample is mandatory before scaling; see `style-template-strategy.md`.
 - Never proceed to full slide copy on an unconfirmed family in guided mode. In auto mode, proceed with the top recommendation but still emit the three-page sample and record the assumption.
 
+## Stage 2.6: Visual System Card Gate
+
+This is the practical design-system step that makes the deck more beautiful and consistent. It is required before Stage 3 slide copy and Stage 4 deck build whenever no strict client template is already controlling the deck.
+
+Required output:
+
+```markdown
+## 视觉系统卡
+
+### 模板与商业理由
+- 模板家族：
+- 适合本案的原因：
+- 不适合承载的页面：
+
+### 色彩系统
+| 角色 | Hex / 来源 | 用法 | 限制 |
+|---|---|---|---|
+
+### 字体系统
+| 层级 | 字体 | 字号范围 | 字重 | 行距 | 规则 |
+|---|---|---|---|---|---|
+
+### 图片与资产规则
+| 资产类型 | 用途 | 来源 | 裁切/比例 | 禁止事项 |
+|---|---|---|---|---|
+
+### 图表与数据规则
+| 图表类型 | 推荐样式 | 标注方式 | 禁止事项 |
+|---|---|---|---|
+
+### 模块系统
+| 页面/模块 | 布局规则 | Proof object | 密度 |
+|---|---|---|---|
+
+### 页面节奏
+| 页码范围 | 密度 | 作用 | 处理方式 |
+|---|---|---|---|
+
+### Reject Rules
+- 必须重做的问题：
+```
+
+Gate rules:
+
+- Use the selected `templates/style-specs/*.md` as the starting point when a public family is chosen.
+- If client VI exists, translate the client colors and fonts into semantic roles instead of inventing a new palette.
+- If the visual system card contains only mood words, reject it and rewrite it.
+- Do not start drawing slides until chart/table rules and image behavior are explicit.
+- In auto mode, include a concise version of the visual system card in the script or final package notes.
+
 ## Stage 3: Slide Copy Draft
 
 Write slide-level copy from the approved blueprint.
@@ -242,27 +308,30 @@ Quality gate:
 - Every slide has a visible proof object.
 - No slide depends on long oral explanation to make sense.
 
-## Stage 4: PPT Build
+## Stage 4: Deck Build
 
-Build or edit the PPTX after the copy draft is stable.
+Build or edit the deck after the copy draft is stable. The format was chosen in Stage 0 (Output Format).
 
-Use the identified PPTX backend and its QA rules from `runtime-compatibility.md`. For new PowerPoint decks, produce editable objects rather than screenshots where possible.
+- For `.pptx`: use the identified PPTX backend and its QA rules from `runtime-compatibility.md`; produce editable objects, not screenshots.
+- For `.html`: build a self-contained 16:9 staged deck (one `slide-shell` per slide, flow-first); this is the default when no PPTX backend exists and a proud primary when fidelity/animation matters.
+- For `.pdf`: export from the finished HTML (headless print) or PPTX — never hand-layout a separate PDF.
 
 Build order:
 
-1. Create or inherit visual system.
+1. Create or inherit the visual system.
 2. Select a named palette from `palette-library.md` when no client VI exists.
 3. If no client VI exists or a rich style is requested, select a public template family from `style-template-strategy.md` or document the explicit custom route.
-4. Run the Style DNA Contract; define commercial fit, layout grammar, assets, typography, component transformations, density rhythm, business-clean pages, and anti-examples before drawing.
-5. Select fonts and fallbacks from `font-system.md`.
-6. Create or generate required assets using `asset-pipeline.md`; keep key business text editable.
-7. For a new style/template route, build or specify three full-size samples first: cover/big-idea, strategy/mechanism, and proof-dense.
-8. Create master chrome: margins, title zone, page numbers, footer/source style.
-9. Build slides by page type and density class from `layout-rhythm.md`.
-10. Insert proof objects: tables, matrices, timelines, screenshots, diagrams, sample pages.
-11. Render full-size previews and a contact sheet.
-12. Fix overlap, clipping, wrapping, alignment, density, over-clustered content, dead empty zones, weak style recognition, identical component grammar across styles, and low-taste primitive-shape placeholders.
-13. Run PPTX compatibility QA from `quality-check.md`; if the file is structurally valid but PowerPoint cannot open it, rewrite it through an Office-compatible exporter and deliver the repaired copy.
+4. Complete the Visual System Card from `visual-system-card.md`, using the selected `templates/style-specs/*.md` where available.
+5. Run the Style DNA Contract; define commercial fit, layout grammar, assets, typography, component transformations, density rhythm, business-clean pages, and anti-examples before drawing.
+6. Select fonts and fallbacks from `font-system.md`.
+7. Create or generate required assets using `asset-pipeline.md`; keep key business text editable.
+8. For a new style/template route, build or specify three full-size samples first: cover/big-idea, strategy/mechanism, and proof-dense.
+9. Create master chrome: margins, title zone, page numbers, footer/source style.
+10. Build slides by page type and density class from `layout-rhythm.md`.
+11. Insert proof objects: tables, matrices, timelines, screenshots, diagrams, sample pages.
+12. Render full-size previews and a contact sheet.
+13. Fix overlap, clipping, wrapping, alignment, density, over-clustered content, dead empty zones, weak style recognition, identical component grammar across styles, and low-taste primitive-shape placeholders.
+14. Run PPTX compatibility QA from `quality-check.md`; if the file is structurally valid but PowerPoint cannot open it, rewrite it through an Office-compatible exporter and deliver the repaired copy.
 
 Gate: do not deliver before rendering/inspection when the runtime can render. If rendering/open validation is unavailable, say exactly what was checked and what remains unverified.
 
@@ -286,11 +355,13 @@ Run `quality-check.md` before final response.
 
 Final response must include:
 
-- PPTX path
+- deck format delivered: `.pptx` / `.html` / `.pdf`
+- deck path
 - script MD path
 - mode used: guided / auto / edit / audit
-- runtime and PPTX backend used
+- runtime and deck/PPTX backend used
 - template or visual source used
+- visual system card status
 - QA performed
 - unresolved assumptions
 

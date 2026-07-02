@@ -112,6 +112,14 @@ Do not rely on raw palette variables alone. If two related colors are used, such
 
 The design system contract should be stored next to the demo or template files and referenced by the public README or skill documentation when the template is published.
 
+For the public template families in this repository, the reusable design-system contracts live in `templates/style-specs/`. When a family is selected, load that spec and convert it into the shorter, project-specific Visual System Card from `visual-system-card.md`.
+
+The relationship is:
+
+1. `style-template-strategy.md` chooses the family and checks whether it is commercially appropriate.
+2. `templates/style-specs/<family>.md` provides the reusable color, typography, asset, chart, and module grammar.
+3. `visual-system-card.md` turns those reusable rules into the concrete rules for the current client deck.
+
 ## Three-Page Sample Gate
 
 For a new style family, visual route, or public reusable template, do not build a full deck first. Build or specify three sample pages:
