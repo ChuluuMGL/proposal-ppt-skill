@@ -8,7 +8,7 @@
 中文 | [English](./README.md)
 
 [![Skill](https://img.shields.io/badge/AI%20Skill-proposal--ppt-0E5E43)](./SKILL.md)
-[![Version](https://img.shields.io/badge/version-0.3.2-green)](./skill.json)
+[![Version](https://img.shields.io/badge/version-0.3.3-green)](./skill.json)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](./LICENSE)
 [![QA](https://img.shields.io/badge/QA-audited%20deck-0E5E43)](./scripts/audit_proposal_pptx.py)
 [![Workflow](https://img.shields.io/badge/workflow-stage--gated-purple)](./references/workflow.md)
@@ -25,10 +25,7 @@
 [![editorial-brand · 封面 / 赢标主张 / 预算](./assets/demo/editorial-brand-3up.png)](./assets/demo/editorial-brand-3up.png)
 
 **tech-launch** — 产品 / 界面 hero、发布会清晰度、KPI 与验收证明。
-[![tech-launch · 封面 / 赢标主张 / 预算](./assets/demo/tech-launch-3up.png)
-
-**consumer-lifestyle** — 产品场景、目录式证据墙、FMCG / 零售 / 便利爆品。
-[![consumer-lifestyle · 封面 / 赢标主张 / 预算](./assets/demo/consumer-lifestyle-3up.png)](./assets/demo/consumer-lifestyle-3up.png)](./assets/demo/tech-launch-3up.png)
+[![tech-launch · 封面 / 赢标主张 / 预算](./assets/demo/tech-launch-3up.png)(./assets/demo/tech-launch-3up.png)
 
 > 需要完整交互时，HTML 源文件在 [`docs/demo/`](./docs/demo)，可本地打开。真实客户摄影已替换为概念视觉；最终 `.pptx` 保真度取决于宿主 runtime 的 presentation 后端。
 
@@ -405,5 +402,5 @@ MIT. Copyright (c) 2026 Chuluu.
     "name": "Chuluu",
     "url": "https://github.com/ChuluuMGL"
   },
-  "softwareVersion": "0.3.2"
+  "softwareVersion": "0.3.3"
 } -->
