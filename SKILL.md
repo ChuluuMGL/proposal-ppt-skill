@@ -34,6 +34,7 @@ Load only the references the current task needs. Grouped so you can pick in seco
 - Stages, gates, option handling — `references/workflow.md`
 - Proposal type routing and chapter structure — `references/proposal-routes.md`
 - Page types and proof-object standards — `references/page-types.md`
+- Brief compliance matrix (required for brief/tender responses) — `references/brief-compliance.md`
 
 **Visual**
 - Pre-build visual decision card (required) — `references/visual-system-card.md`
@@ -142,6 +143,7 @@ Follow `references/workflow.md` for the full stage-gate process. The high-level 
 ## Hard Rules
 
 - Do not fabricate data, awards, clients, case outcomes, screenshots, platform permissions, or third-party endorsements.
+- Do not deliver a proposal that drifts from the brief. For any brief / tender / RFP response, build a Brief Compliance Matrix (`references/brief-compliance.md`) mapping every brief requirement to a slide + proof. Block delivery while any **weighted** requirement is uncovered or any slide maps to no requirement — a beautiful but off-brief deck is a failed deliverable.
 - Do not use customer-sensitive examples in reusable templates or public skill assets.
 - Do not default to a service-list deck. Start from the client problem and decision criteria.
 - Do not let budget pages hide exclusions or uncertain costs in unreadable footnotes.

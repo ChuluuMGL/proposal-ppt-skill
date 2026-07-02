@@ -10,7 +10,9 @@ A proposal deliverable = a **deck** + a **presenter script (`.md`)**. The deck h
 
 Never silently swap formats. If the user asked for PPTX but only HTML/PDF is producible, state it explicitly and let them choose — do not relabel an HTML deck as a finished PPTX, and do not treat HTML/PDF as a mere "fallback" when the user requested it.
 
-The presenter script `.md` and the missing-information list are always required, regardless of deck format. If even an HTML deck is not possible, fall back to blueprint / copy-and-script / template-spec per `runtime-compatibility.md` and label the package accordingly.
+The presenter script `.md` and the missing-information list are always required, regardless of deck format.
+
+For any brief / tender / RFP response, a **Brief Compliance Matrix** (`references/brief-compliance.md`) is also required — a table mapping every brief requirement to the slide + proof that addresses it. If even an HTML deck is not possible, fall back to blueprint / copy-and-script / template-spec per `runtime-compatibility.md` and label the package accordingly.
 
 ## File Naming
 

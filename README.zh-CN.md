@@ -8,7 +8,7 @@
 中文 | [English](./README.md)
 
 [![Skill](https://img.shields.io/badge/AI%20Skill-proposal--ppt-0E5E43)](./SKILL.md)
-[![Version](https://img.shields.io/badge/version-0.3.3-green)](./skill.json)
+[![Version](https://img.shields.io/badge/version-0.4.0-green)](./skill.json)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](./LICENSE)
 [![QA](https://img.shields.io/badge/QA-audited%20deck-0E5E43)](./scripts/audit_proposal_pptx.py)
 [![Workflow](https://img.shields.io/badge/workflow-stage--gated-purple)](./references/workflow.md)
@@ -402,5 +402,5 @@ MIT. Copyright (c) 2026 Chuluu.
     "name": "Chuluu",
     "url": "https://github.com/ChuluuMGL"
   },
-  "softwareVersion": "0.3.3"
+  "softwareVersion": "0.4.0"
 } -->

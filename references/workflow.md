@@ -141,6 +141,17 @@ Required output:
 
 Gate: do not invent missing fields. In guided mode, continue to Stage 2 using clearly marked assumptions unless the missing field blocks structure.
 
+## Stage 1.5: Brief Decomposition (brief / tender / RFP responses)
+
+For any proposal responding to a brief, tender, or RFP, decompose the source into a numbered, scored requirement list *before* planning pages. Follow `references/brief-compliance.md`:
+
+- Extract the brief's OWN requirements / scoring criteria (verbatim where listed), one per row, with type, weight (if stated), and source location.
+- Ambiguous or unverifiable items → mark `待确认`, do not invent.
+- This list is the backbone every page must map back to (Stage 2 page plan + Stage 6 compliance gate).
+
+For open creative pitches with no stated criteria, infer 3–7 decision criteria from the client goal and mark them as assumptions — see the open-brief fallback in `brief-compliance.md`.
+
+
 ## Stage 2: Proposal Blueprint
 
 Create the commercial logic before slide copy.
@@ -352,6 +363,9 @@ The script should make the presenter's reasoning explicit, while the slide remai
 ## Stage 6: Final QA and Handoff
 
 Run `quality-check.md` before final response.
+
+Run the **Brief Compliance Gate** (for brief / tender / RFP responses): every brief requirement maps to a slide + proof (`✅`); no **weighted** requirement is left a `⚠️ 缺口`; no slide is an unmapped 自嗨页. Deliver the compliance matrix as a client-facing appendix. See `references/brief-compliance.md`.
+
 
 Final response must include:
 
