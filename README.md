@@ -8,7 +8,7 @@
 [Simplified Chinese](./README.zh-CN.md) | English
 
 [![Skill](https://img.shields.io/badge/AI%20Skill-proposal--ppt-0E5E43)](./SKILL.md)
-[![Version](https://img.shields.io/badge/version-0.4.0-green)](./skill.json)
+[![Version](https://img.shields.io/badge/version-0.4.1-green)](./skill.json)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](./LICENSE)
 [![QA](https://img.shields.io/badge/QA-audited%20deck-0E5E43)](./scripts/audit_proposal_pptx.py)
 [![Workflow](https://img.shields.io/badge/workflow-stage--gated-purple)](./references/workflow.md)
@@ -241,76 +241,37 @@ Restart your agent after installation so the skill metadata is reloaded.
 
 ## Recommended Prompts
 
-### Guided Blueprint First
+### Blueprint first, then confirm
 
 ```text
 Use $proposal-ppt to create a business proposal from the brief below.
 
-Do not generate the PPTX yet. First return:
-1. Brief audit
+Do not build the deck yet. First return:
+1. Brief audit + compliance matrix (extract every scored requirement with weight and source)
 2. Winning thesis
 3. Chapter structure
-4. Slide-by-slide titles, page purpose, and proof object
-5. Visual system recommendation
+4. Slide-by-slide titles, proof object, and which brief requirement each slide maps to
+5. Visual system card (colors / fonts / charts / modules / reject rules)
 6. Questions that need my confirmation
 
-Brief:
+brief:
 ...
 ```
 
-### Direct Deck and Presenter Script
+### Generate deck and script directly
 
 ```text
-Use $proposal-ppt to directly generate:
-1. a proposal deck in the best available format (.pptx if editable PPTX backend exists; otherwise .html)
-2. a same-name presenter script in Markdown
+Use $proposal-ppt to produce, from the brief below:
+1. The deck format that fits this runtime (.pptx if a backend exists, else .html)
+2. A same-name Markdown presenter script
+3. The Brief Compliance Matrix (as an appendix)
 
-Requirements:
-- infer the proposal route and slide count
-- mark missing information as to be confirmed
-- do not invent data, cases, pricing, or performance results
-- output a visual system card before drawing if no client visual identity is available
-- save outputs to the current project's outputs folder
-
-Brief:
+Requirements: infer type and page count; mark unknowns as to-be-confirmed; do not invent data; emit the visual system card before drawing; run the compliance gate before delivery.
+brief:
 ...
 ```
 
-### Style-Rich Proposal
-
-```text
-Use $proposal-ppt in guided mode to create a style-rich business proposal.
-
-Before generating PPTX, recommend:
-1. proposal route and winning thesis
-2. template family from style-template-strategy.md
-3. Style DNA and three-page sample gate
-4. font pairing and fallback
-5. visual asset plan, including user assets vs AI-generated conceptual assets
-6. page types that should stay business-clean
-
-Visual direction:
-premium-boardroom / editorial-brand / tech-launch / consumer-lifestyle
-
-Brief:
-...
-```
-
-### Existing Deck Revision
-
-```text
-Use $proposal-ppt to revise this existing proposal PPTX.
-
-Goals:
-- preserve the current visual style
-- improve the winning thesis and chapter logic
-- convert slide titles into conclusion sentences
-- add proof-object recommendations
-- output a matching presenter script in Markdown
-
-File:
-...
-```
+> Full prompts for style-rich proposals and existing-deck revision are in [`references/workflow.md`](./references/workflow.md).
 
 ---
 
@@ -401,5 +362,5 @@ MIT. Copyright (c) 2026 Chuluu.
     "name": "Chuluu",
     "url": "https://github.com/ChuluuMGL"
   },
-  "softwareVersion": "0.4.0"
+  "softwareVersion": "0.4.1"
 } -->

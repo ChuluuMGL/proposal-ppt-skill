@@ -8,7 +8,7 @@
 中文 | [English](./README.md)
 
 [![Skill](https://img.shields.io/badge/AI%20Skill-proposal--ppt-0E5E43)](./SKILL.md)
-[![Version](https://img.shields.io/badge/version-0.4.0-green)](./skill.json)
+[![Version](https://img.shields.io/badge/version-0.4.1-green)](./skill.json)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](./LICENSE)
 [![QA](https://img.shields.io/badge/QA-audited%20deck-0E5E43)](./scripts/audit_proposal_pptx.py)
 [![Workflow](https://img.shields.io/badge/workflow-stage--gated-purple)](./references/workflow.md)
@@ -247,12 +247,12 @@ git clone https://github.com/ChuluuMGL/proposal-ppt-skill.git \
 ```text
 用 $proposal-ppt 根据下面 brief 做一份商业提案。
 
-先不要生成 PPTX。请先输出：
-1. Brief 审计
+先不要生成 deck。请先输出：
+1. Brief 审计 + 合规矩阵（逐条拆出评分项，标权重和来源）
 2. 赢标主张
 3. 章节结构
-4. 逐页标题、页面目的、proof object
-5. 视觉系统建议
+4. 逐页标题、proof object，以及每页对应哪条 brief 要求
+5. 视觉系统卡（颜色/字体/图表/模块/拒绝规则）
 6. 需要我确认的问题
 
 brief:
@@ -263,55 +263,16 @@ brief:
 
 ```text
 用 $proposal-ppt 直接根据下面 brief 产出：
-1. 最适合当前 runtime 的提案 deck（有 PPTX 后端则 `.pptx`，否则 `.html`）
+1. 最适合当前 runtime 的提案 deck（有 PPTX 后端则 .pptx，否则 .html）
 2. 同名 Markdown 逐字稿
+3. Brief 合规矩阵（作为附录）
 
-要求：
-- 自动判断提案类型和页数
-- 缺失信息标注为待确认
-- 不编造数据、案例、报价和效果
-- 没有客户 VI 时先输出视觉系统卡，再绘制页面
-- 输出到当前项目 outputs 文件夹
-
+要求：自动判断类型和页数；缺失信息标待确认；不编造数据；先出视觉系统卡再绘制页面；交付前跑合规闸门。
 brief:
 ...
 ```
 
-### 强风格提案
-
-```text
-用 $proposal-ppt in guided mode 做一份强风格商业提案。
-
-先不要生成 PPTX，请先推荐：
-1. 提案路线和赢标主张
-2. style-template-strategy.md 中的模板家族
-3. Style DNA 和三页样张检查
-4. 字体搭配和 fallback
-5. 视觉资产计划，包括用户素材和 AI 概念图
-6. 哪些页面必须保持清晰商务页
-
-视觉方向：
-premium-boardroom / editorial-brand / tech-launch / consumer-lifestyle
-
-brief:
-...
-```
-
-### 修改已有提案 PPT
-
-```text
-用 $proposal-ppt 修改这个已有提案 PPTX。
-
-目标：
-- 保留原视觉风格
-- 优化赢标主张和章节逻辑
-- 每页改成结论句标题
-- 补 proof object 建议
-- 同步输出逐字稿 MD
-
-文件：
-...
-```
+> 强风格提案、修改已有 PPT 的完整 prompt 见 [`references/workflow.md`](./references/workflow.md)。
 
 ---
 
@@ -402,5 +363,5 @@ MIT. Copyright (c) 2026 Chuluu.
     "name": "Chuluu",
     "url": "https://github.com/ChuluuMGL"
   },
-  "softwareVersion": "0.4.0"
+  "softwareVersion": "0.4.1"
 } -->
