@@ -8,7 +8,7 @@
 [Simplified Chinese](./README.zh-CN.md) | English
 
 [![Skill](https://img.shields.io/badge/AI%20Skill-proposal--ppt-0E5E43)](./SKILL.md)
-[![Version](https://img.shields.io/badge/version-0.3.1-green)](./skill.json)
+[![Version](https://img.shields.io/badge/version-0.3.2-green)](./skill.json)
 [![License: MIT](https://img.shields.io/badge/license-MIT-yellow)](./LICENSE)
 [![QA](https://img.shields.io/badge/QA-audited%20deck-0E5E43)](./scripts/audit_proposal_pptx.py)
 [![Workflow](https://img.shields.io/badge/workflow-stage--gated-purple)](./references/workflow.md)
@@ -25,7 +25,10 @@ Three sample pages per style family (cover · winning thesis · budget / accepta
 [![editorial-brand · cover / thesis / budget](./assets/demo/editorial-brand-3up.png)](./assets/demo/editorial-brand-3up.png)
 
 **tech-launch** — Product/interface hero, launch clarity, KPI and acceptance proof.
-[![tech-launch · cover / thesis / budget](./assets/demo/tech-launch-3up.png)](./assets/demo/tech-launch-3up.png)
+[![tech-launch · cover / thesis / budget](./assets/demo/tech-launch-3up.png)
+
+**consumer-lifestyle** — Product scenes, catalog proof walls, FMCG / retail / convenience hero.
+[![consumer-lifestyle · cover / thesis / budget](./assets/demo/consumer-lifestyle-3up.png)](./assets/demo/consumer-lifestyle-3up.png)](./assets/demo/tech-launch-3up.png)
 
 > The HTML sources live under [`docs/demo/`](./docs/demo) — open them locally for full interactivity. Real client photography is replaced with conceptual visuals; final `.pptx` fidelity depends on the host runtime's presentation backend.
 
@@ -401,5 +404,5 @@ MIT. Copyright (c) 2026 Chuluu.
     "name": "Chuluu",
     "url": "https://github.com/ChuluuMGL"
   },
-  "softwareVersion": "0.3.1"
+  "softwareVersion": "0.3.2"
 } -->
